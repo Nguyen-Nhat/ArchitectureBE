@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.archi.common.auth";
+option java_outer_classname = "AuthProto";
+
+service AuthService {
+  rpc GetUserInfo(GetUserInfoRequest) returns(GetUserInfoResponse);
+}
+
+message GetUserInfoRequest {
+  int64 id = 1;
+}
+
+message GetUserInfoResponse {
+  int64 code = 1;
+  string message = 2;
+}
