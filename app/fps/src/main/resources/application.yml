@@ -27,7 +27,7 @@ management:
 aws:
   bucket:
     name: software-architecture-s3
-    access_key:
-    secret_key:
+    access_key: AKIA47CRXZEFI2GQPOHK
+    secret_key: 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
   cloud_front:
     distribution_domain: d17qqou2670rat.cloudfront.net
