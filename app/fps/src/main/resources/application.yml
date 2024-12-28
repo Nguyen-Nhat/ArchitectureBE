@@ -1,2 +1,33 @@
+spring:
+  application:
+    name: fps
 server:
   port: 8088
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  otlp:
+    metrics:
+      export:
+        url: http://13.210.238.162:4318/v1/metrics
+        step: 10s
+
+    tracing:
+      endpoint: http://13.210.238.162:4318/v1/traces
+  log:
+    exporter:
+      endpoint: http://13.210.238.162:4317
+
+  tracing:
+    sampling:
+      probability: 1
+aws:
+  bucket:
+    name: software-architecture-s3
+    access_key: AKIA47CRXZEFI2GQPOHK
+    secret_key: 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
+  cloud_front:
+    distribution_domain: d17qqou2670rat.cloudfront.net

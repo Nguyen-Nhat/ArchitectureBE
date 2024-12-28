@@ -1,4 +1,4 @@
-package org.archi.auth.config;
+package org.archi.fps.config;
 
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
@@ -17,6 +17,7 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 
 @Configuration
@@ -37,7 +38,7 @@ public class OTelConfig {
     }
 
     @Bean
-    SdkLoggerProvider otelSdkLoggerProvider(ObjectProvider<LogRecordProcessor> logRecordProcessors) {
+    SdkLoggerProvider otelSdkLoggerProvider(Environment environment, ObjectProvider<LogRecordProcessor> logRecordProcessors) {
         Resource springResource = Resource.create(Attributes.of(ResourceAttributes.SERVICE_NAME, serviceName));
         SdkLoggerProviderBuilder builder = SdkLoggerProvider.builder()
                 .setResource(Resource.getDefault().merge(springResource));
