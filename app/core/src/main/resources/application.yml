@@ -19,3 +19,24 @@ management:
   tracing:
     sampling:
       probability: 1
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://pg-123-software-archietecture.g.aivencloud.com:24304/defaultdb
+    username: avnadmin
+    password: AVNS_wHto-Oo314q58y0n5fr
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    enabled: false
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

@@ -42,13 +42,13 @@ public class OTelConfig {
         return builder.build();
     }
 
-    @Bean
-    LogRecordProcessor otelLogRecordProcessor() {
-        return BatchLogRecordProcessor
-                .builder(
-                        OtlpGrpcLogRecordExporter.builder()
-                                .setEndpoint("http://localhost:4317")
-                                .build())
-                .build();
-    }
+//    @Bean
+//    LogRecordProcessor otelLogRecordProcessor() {
+//        return BatchLogRecordProcessor
+//                .builder(
+//                        OtlpGrpcLogRecordExporter.builder()
+//                                .setEndpoint("http://localhost:4317")
+//                                .build())
+//                .build();
+//    }
 }
