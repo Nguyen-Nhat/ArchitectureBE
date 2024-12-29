@@ -14,13 +14,17 @@ import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.semconv.ResourceAttributes;
 import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 
 
 @Configuration
 public class OTelConfig {
+    @Value("${management.log.exporter.endpoint}")
+    private String otelEndpoint;
+    @Value("${spring.application.name}")
+    private String serviceName;
     @Bean
     OpenTelemetry openTelemetry(SdkLoggerProvider sdkLoggerProvider, SdkTracerProvider sdkTracerProvider, ContextPropagators contextPropagators) {
         OpenTelemetrySdk openTelemetrySdk = OpenTelemetrySdk.builder()
@@ -33,22 +37,22 @@ public class OTelConfig {
     }
 
     @Bean
-    SdkLoggerProvider otelSdkLoggerProvider(Environment environment, ObjectProvider<LogRecordProcessor> logRecordProcessors) {
-        String applicationName = environment.getProperty("spring.application.name", "application");
-        Resource springResource = Resource.create(Attributes.of(ResourceAttributes.SERVICE_NAME, applicationName));
+    SdkLoggerProvider otelSdkLoggerProvider(ObjectProvider<LogRecordProcessor> logRecordProcessors) {
+        Resource springResource = Resource.create(Attributes.of(ResourceAttributes.SERVICE_NAME, serviceName));
         SdkLoggerProviderBuilder builder = SdkLoggerProvider.builder()
                 .setResource(Resource.getDefault().merge(springResource));
         logRecordProcessors.orderedStream().forEach(builder::addLogRecordProcessor);
         return builder.build();
     }
 
-//    @Bean
-//    LogRecordProcessor otelLogRecordProcessor() {
-//        return BatchLogRecordProcessor
-//                .builder(
-//                        OtlpGrpcLogRecordExporter.builder()
-//                                .setEndpoint("http://localhost:4317")
-//                                .build())
-//                .build();
-//    }
+
+    @Bean
+    LogRecordProcessor otelLogRecordProcessor() {
+        return BatchLogRecordProcessor
+                .builder(
+                        OtlpGrpcLogRecordExporter.builder()
+                                .setEndpoint(otelEndpoint)
+                                .build())
+                .build();
+    }
 }
