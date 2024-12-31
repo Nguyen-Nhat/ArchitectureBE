@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.archi.common.auth";
+option java_outer_classname = "LoginProto";
+
+service LoginService {
+  rpc PostLogin(PostLoginRequest) returns(PostLoginResponse);
+}
+
+message PostLoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message PostLoginResponse {
+  int64 status = 1;
+  string message = 2;
+  string accessToken = 3;
+  string refreshToken = 4;
+  string tokenType = 5;
+  string expiresIn = 6;
+}
