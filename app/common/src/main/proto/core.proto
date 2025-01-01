@@ -6,6 +6,14 @@ option java_outer_classname = "CoreProto";
 
 service CoreService {
   rpc GetVouchers(GetVouchersRequest) returns(GetVouchersResponse);
+  rpc GenerateVoucher(GenerateVoucherRequest) returns(GenerateVoucherResponse);
+  rpc CreateVoucherType(CreateVoucherTypeRequest) returns(CreateVoucherTypeResponse);
+
+  rpc GetCampaigns(GetCampaignsRequest) returns(GetCampaignsResponse);
+  rpc SearchCampaign(SearchCampaignRequest) returns(SearchCampaignResponse);
+  rpc CreateCampaign(CreateCampaignRequest) returns(CreateCampaignResponse);
+  rpc GetCampaignsByBrandId(GetCampaignsByBrandIdReq) returns(GetCampaignsByBrandIdRes);
+  rpc UpdateCampaign(UpdateCampaignReq) returns(UpdateCampaignRes);
 }
 
 message GetVouchersRequest {
@@ -15,3 +23,97 @@ message GetVouchersRequest {
 message GetVouchersResponse {
   string message = 1;
 }
+
+message GenerateVoucherRequest {
+  int64 voucherTypeId = 1;
+  string duration = 2; // minutes
+  int64 brandId = 3;
+}
+
+message GenerateVoucherResponse {
+  int64 id = 1;
+  string issuedAt = 2;
+  string expiredDate = 3;
+  string status = 4;
+  string QRCode = 5;
+  int64 brandId = 6;
+  int64 voucherType = 7;
+}
+
+message CreateVoucherTypeRequest {
+  string name = 1;
+  double value = 2;
+  string imageUrl = 3;
+  string description = 4;
+  int64 brandId = 5;
+}
+message CreateVoucherTypeResponse {
+  VoucherType voucherType = 1;
+}
+message VoucherType {
+  int64 id = 1;
+  string name = 2;
+  double value = 3;
+  string imageUrl = 4;
+  string description = 5;
+  int64 brandId = 6;
+}
+
+message GetCampaignsRequest {
+  string startDate = 1;
+  string endDate = 2;
+}
+
+message GetCampaignsResponse {
+  repeated Campaign campaigns = 1;
+}
+
+message Campaign {
+  int64 id = 1;
+  string name = 2;
+  string imageUrl = 3;
+  string description = 4;
+  string startDate = 5;
+  string endDate = 6;
+  string status = 7;
+}
+
+message SearchCampaignRequest {
+  string term = 1;
+}
+
+message SearchCampaignResponse {
+  repeated Campaign campaigns = 1;
+}
+
+message CreateCampaignRequest {
+  string name = 1;
+  string imageUrl = 2;
+  string startDate = 3;
+  string endDate = 4;
+  string status = 5;
+  int64 brandId = 6;
+}
+
+message CreateCampaignResponse {
+  Campaign campaign = 1;
+}
+
+message GetCampaignsByBrandIdReq {
+  int64 brandId = 1;
+}
+message GetCampaignsByBrandIdRes {
+  repeated Campaign campaigns = 1;
+}
+message UpdateCampaignReq {
+  int64 campaignId = 1;
+  string newName = 2;
+  string newImageUrl = 3;
+  string newStartDate = 4;
+  string newEndDate = 5;
+  string newStatus = 6;
+}
+message UpdateCampaignRes {
+  Campaign campaign = 1;
+}
+

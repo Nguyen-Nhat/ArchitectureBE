@@ -5,13 +5,13 @@
 
 package org.archi.common.core;
 
-public interface GetVouchersRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GetVouchersRequest)
+public interface GetCampaignsByBrandIdReqOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:GetCampaignsByBrandIdReq)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>int64 brandId = 1;</code>
+   * @return The brandId.
    */
-  long getId();
+  long getBrandId();
 }

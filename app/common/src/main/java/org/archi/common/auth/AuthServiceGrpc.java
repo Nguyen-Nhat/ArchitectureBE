@@ -1,13 +1,25 @@
 package org.archi.common.auth;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.54.0)",
+    value = "by gRPC proto compiler (version 1.9.1)",
     comments = "Source: auth.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class AuthServiceGrpc {
 
   private AuthServiceGrpc() {}
@@ -15,49 +27,44 @@ public final class AuthServiceGrpc {
   public static final String SERVICE_NAME = "AuthService";
 
   // Static method descriptors that strictly reflect the proto.
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetUserInfoMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetUserInfoRequest,
+      org.archi.common.auth.GetUserInfoResponse> METHOD_GET_USER_INFO = getGetUserInfoMethod();
+
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetUserInfoRequest,
       org.archi.common.auth.GetUserInfoResponse> getGetUserInfoMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetUserInfo",
-      requestType = org.archi.common.auth.GetUserInfoRequest.class,
-      responseType = org.archi.common.auth.GetUserInfoResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetUserInfoRequest,
       org.archi.common.auth.GetUserInfoResponse> getGetUserInfoMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetUserInfoRequest, org.archi.common.auth.GetUserInfoResponse> getGetUserInfoMethod;
     if ((getGetUserInfoMethod = AuthServiceGrpc.getGetUserInfoMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetUserInfoMethod = AuthServiceGrpc.getGetUserInfoMethod) == null) {
-          AuthServiceGrpc.getGetUserInfoMethod = getGetUserInfoMethod =
+          AuthServiceGrpc.getGetUserInfoMethod = getGetUserInfoMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetUserInfoRequest, org.archi.common.auth.GetUserInfoResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUserInfo"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetUserInfo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetUserInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetUserInfoResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetUserInfo"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetUserInfo"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetUserInfoMethod;
+     }
+     return getGetUserInfoMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static AuthServiceStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AuthServiceStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<AuthServiceStub>() {
-        @java.lang.Override
-        public AuthServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new AuthServiceStub(channel, callOptions);
-        }
-      };
-    return AuthServiceStub.newStub(factory, channel);
+    return new AuthServiceStub(channel);
   }
 
   /**
@@ -65,14 +72,7 @@ public final class AuthServiceGrpc {
    */
   public static AuthServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AuthServiceBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<AuthServiceBlockingStub>() {
-        @java.lang.Override
-        public AuthServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new AuthServiceBlockingStub(channel, callOptions);
-        }
-      };
-    return AuthServiceBlockingStub.newStub(factory, channel);
+    return new AuthServiceBlockingStub(channel);
   }
 
   /**
@@ -80,52 +80,48 @@ public final class AuthServiceGrpc {
    */
   public static AuthServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AuthServiceFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<AuthServiceFutureStub>() {
-        @java.lang.Override
-        public AuthServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new AuthServiceFutureStub(channel, callOptions);
-        }
-      };
-    return AuthServiceFutureStub.newStub(factory, channel);
+    return new AuthServiceFutureStub(channel);
   }
 
   /**
    */
-  public interface AsyncService {
+  public static abstract class AuthServiceImplBase implements io.grpc.BindableService {
 
     /**
      */
-    default void getUserInfo(org.archi.common.auth.GetUserInfoRequest request,
+    public void getUserInfo(org.archi.common.auth.GetUserInfoRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetUserInfoResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserInfoMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetUserInfoMethod(), responseObserver);
     }
-  }
-
-  /**
-   * Base class for the server implementation of the service AuthService.
-   */
-  public static abstract class AuthServiceImplBase
-      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return AuthServiceGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getGetUserInfoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetUserInfoRequest,
+                org.archi.common.auth.GetUserInfoResponse>(
+                  this, METHODID_GET_USER_INFO)))
+          .build();
     }
   }
 
   /**
-   * A stub to allow clients to do asynchronous rpc calls to service AuthService.
    */
-  public static final class AuthServiceStub
-      extends io.grpc.stub.AbstractAsyncStub<AuthServiceStub> {
-    private AuthServiceStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class AuthServiceStub extends io.grpc.stub.AbstractStub<AuthServiceStub> {
+    private AuthServiceStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private AuthServiceStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected AuthServiceStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected AuthServiceStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new AuthServiceStub(channel, callOptions);
     }
 
@@ -133,48 +129,52 @@ public final class AuthServiceGrpc {
      */
     public void getUserInfo(org.archi.common.auth.GetUserInfoRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetUserInfoResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetUserInfoMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service AuthService.
    */
-  public static final class AuthServiceBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<AuthServiceBlockingStub> {
-    private AuthServiceBlockingStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class AuthServiceBlockingStub extends io.grpc.stub.AbstractStub<AuthServiceBlockingStub> {
+    private AuthServiceBlockingStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private AuthServiceBlockingStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected AuthServiceBlockingStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected AuthServiceBlockingStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new AuthServiceBlockingStub(channel, callOptions);
     }
 
     /**
      */
     public org.archi.common.auth.GetUserInfoResponse getUserInfo(org.archi.common.auth.GetUserInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetUserInfoMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service AuthService.
    */
-  public static final class AuthServiceFutureStub
-      extends io.grpc.stub.AbstractFutureStub<AuthServiceFutureStub> {
-    private AuthServiceFutureStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class AuthServiceFutureStub extends io.grpc.stub.AbstractStub<AuthServiceFutureStub> {
+    private AuthServiceFutureStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private AuthServiceFutureStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected AuthServiceFutureStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected AuthServiceFutureStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new AuthServiceFutureStub(channel, callOptions);
     }
 
@@ -182,7 +182,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetUserInfoResponse> getUserInfo(
         org.archi.common.auth.GetUserInfoRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetUserInfoMethod(), getCallOptions()), request);
     }
   }
@@ -194,10 +194,10 @@ public final class AuthServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AsyncService serviceImpl;
+    private final AuthServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AsyncService serviceImpl, int methodId) {
+    MethodHandlers(AuthServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -224,18 +224,6 @@ public final class AuthServiceGrpc {
           throw new AssertionError();
       }
     }
-  }
-
-  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          getGetUserInfoMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetUserInfoRequest,
-              org.archi.common.auth.GetUserInfoResponse>(
-                service, METHODID_GET_USER_INFO)))
-        .build();
   }
 
   private static abstract class AuthServiceBaseDescriptorSupplier

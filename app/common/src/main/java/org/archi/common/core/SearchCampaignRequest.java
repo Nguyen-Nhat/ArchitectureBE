@@ -6,12 +6,12 @@
 package org.archi.common.core;
 
 /**
- * Protobuf type {@code GetVouchersRequest}
+ * Protobuf type {@code SearchCampaignRequest}
  */
-public final class GetVouchersRequest extends
+public final class SearchCampaignRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:GetVouchersRequest)
-    GetVouchersRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:SearchCampaignRequest)
+    SearchCampaignRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,37 +20,66 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 1,
       /* suffix= */ "",
-      GetVouchersRequest.class.getName());
+      SearchCampaignRequest.class.getName());
   }
-  // Use GetVouchersRequest.newBuilder() to construct.
-  private GetVouchersRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use SearchCampaignRequest.newBuilder() to construct.
+  private SearchCampaignRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private GetVouchersRequest() {
+  private SearchCampaignRequest() {
+    term_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_descriptor;
+    return org.archi.common.core.CoreProto.internal_static_SearchCampaignRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_fieldAccessorTable
+    return org.archi.common.core.CoreProto.internal_static_SearchCampaignRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.core.GetVouchersRequest.class, org.archi.common.core.GetVouchersRequest.Builder.class);
+            org.archi.common.core.SearchCampaignRequest.class, org.archi.common.core.SearchCampaignRequest.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private long id_ = 0L;
+  public static final int TERM_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object term_ = "";
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>string term = 1;</code>
+   * @return The term.
    */
   @java.lang.Override
-  public long getId() {
-    return id_;
+  public java.lang.String getTerm() {
+    java.lang.Object ref = term_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      term_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string term = 1;</code>
+   * @return The bytes for term.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTermBytes() {
+    java.lang.Object ref = term_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      term_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -67,8 +96,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
-      output.writeInt64(1, id_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(term_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, term_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -79,9 +108,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(term_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, term_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -93,13 +121,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.core.GetVouchersRequest)) {
+    if (!(obj instanceof org.archi.common.core.SearchCampaignRequest)) {
       return super.equals(obj);
     }
-    org.archi.common.core.GetVouchersRequest other = (org.archi.common.core.GetVouchersRequest) obj;
+    org.archi.common.core.SearchCampaignRequest other = (org.archi.common.core.SearchCampaignRequest) obj;
 
-    if (getId()
-        != other.getId()) return false;
+    if (!getTerm()
+        .equals(other.getTerm())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -111,52 +139,51 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
+    hash = (37 * hash) + TERM_FIELD_NUMBER;
+    hash = (53 * hash) + getTerm().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(byte[] data)
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(java.io.InputStream input)
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -164,26 +191,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static org.archi.common.core.GetVouchersRequest parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.core.SearchCampaignRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static org.archi.common.core.GetVouchersRequest parseDelimitedFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.SearchCampaignRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -196,7 +223,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.core.GetVouchersRequest prototype) {
+  public static Builder newBuilder(org.archi.common.core.SearchCampaignRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -212,26 +239,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetVouchersRequest}
+   * Protobuf type {@code SearchCampaignRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetVouchersRequest)
-      org.archi.common.core.GetVouchersRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:SearchCampaignRequest)
+      org.archi.common.core.SearchCampaignRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_descriptor;
+      return org.archi.common.core.CoreProto.internal_static_SearchCampaignRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_fieldAccessorTable
+      return org.archi.common.core.CoreProto.internal_static_SearchCampaignRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.core.GetVouchersRequest.class, org.archi.common.core.GetVouchersRequest.Builder.class);
+              org.archi.common.core.SearchCampaignRequest.class, org.archi.common.core.SearchCampaignRequest.Builder.class);
     }
 
-    // Construct using org.archi.common.core.GetVouchersRequest.newBuilder()
+    // Construct using org.archi.common.core.SearchCampaignRequest.newBuilder()
     private Builder() {
 
     }
@@ -245,24 +272,24 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      id_ = 0L;
+      term_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_descriptor;
+      return org.archi.common.core.CoreProto.internal_static_SearchCampaignRequest_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersRequest getDefaultInstanceForType() {
-      return org.archi.common.core.GetVouchersRequest.getDefaultInstance();
+    public org.archi.common.core.SearchCampaignRequest getDefaultInstanceForType() {
+      return org.archi.common.core.SearchCampaignRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersRequest build() {
-      org.archi.common.core.GetVouchersRequest result = buildPartial();
+    public org.archi.common.core.SearchCampaignRequest build() {
+      org.archi.common.core.SearchCampaignRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -270,34 +297,36 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersRequest buildPartial() {
-      org.archi.common.core.GetVouchersRequest result = new org.archi.common.core.GetVouchersRequest(this);
+    public org.archi.common.core.SearchCampaignRequest buildPartial() {
+      org.archi.common.core.SearchCampaignRequest result = new org.archi.common.core.SearchCampaignRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(org.archi.common.core.GetVouchersRequest result) {
+    private void buildPartial0(org.archi.common.core.SearchCampaignRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.id_ = id_;
+        result.term_ = term_;
       }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.core.GetVouchersRequest) {
-        return mergeFrom((org.archi.common.core.GetVouchersRequest)other);
+      if (other instanceof org.archi.common.core.SearchCampaignRequest) {
+        return mergeFrom((org.archi.common.core.SearchCampaignRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.core.GetVouchersRequest other) {
-      if (other == org.archi.common.core.GetVouchersRequest.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
+    public Builder mergeFrom(org.archi.common.core.SearchCampaignRequest other) {
+      if (other == org.archi.common.core.SearchCampaignRequest.getDefaultInstance()) return this;
+      if (!other.getTerm().isEmpty()) {
+        term_ = other.term_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -325,11 +354,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              id_ = input.readInt64();
+            case 10: {
+              term_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 8
+            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -347,55 +376,95 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private long id_ ;
+    private java.lang.Object term_ = "";
     /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
+     * <code>string term = 1;</code>
+     * @return The term.
      */
-    @java.lang.Override
-    public long getId() {
-      return id_;
+    public java.lang.String getTerm() {
+      java.lang.Object ref = term_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        term_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
+     * <code>string term = 1;</code>
+     * @return The bytes for term.
+     */
+    public com.google.protobuf.ByteString
+        getTermBytes() {
+      java.lang.Object ref = term_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        term_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string term = 1;</code>
+     * @param value The term to set.
      * @return This builder for chaining.
      */
-    public Builder setId(long value) {
-
-      id_ = value;
+    public Builder setTerm(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      term_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 id = 1;</code>
+     * <code>string term = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearTerm() {
+      term_ = getDefaultInstance().getTerm();
       bitField0_ = (bitField0_ & ~0x00000001);
-      id_ = 0L;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string term = 1;</code>
+     * @param value The bytes for term to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTermBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      term_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:GetVouchersRequest)
+    // @@protoc_insertion_point(builder_scope:SearchCampaignRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:GetVouchersRequest)
-  private static final org.archi.common.core.GetVouchersRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:SearchCampaignRequest)
+  private static final org.archi.common.core.SearchCampaignRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.core.GetVouchersRequest();
+    DEFAULT_INSTANCE = new org.archi.common.core.SearchCampaignRequest();
   }
 
-  public static org.archi.common.core.GetVouchersRequest getDefaultInstance() {
+  public static org.archi.common.core.SearchCampaignRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetVouchersRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetVouchersRequest>() {
+  private static final com.google.protobuf.Parser<SearchCampaignRequest>
+      PARSER = new com.google.protobuf.AbstractParser<SearchCampaignRequest>() {
     @java.lang.Override
-    public GetVouchersRequest parsePartialFrom(
+    public SearchCampaignRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -414,17 +483,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetVouchersRequest> parser() {
+  public static com.google.protobuf.Parser<SearchCampaignRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetVouchersRequest> getParserForType() {
+  public com.google.protobuf.Parser<SearchCampaignRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.core.GetVouchersRequest getDefaultInstanceForType() {
+  public org.archi.common.core.SearchCampaignRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

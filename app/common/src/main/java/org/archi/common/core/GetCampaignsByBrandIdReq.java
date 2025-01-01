@@ -6,12 +6,12 @@
 package org.archi.common.core;
 
 /**
- * Protobuf type {@code GetVouchersRequest}
+ * Protobuf type {@code GetCampaignsByBrandIdReq}
  */
-public final class GetVouchersRequest extends
+public final class GetCampaignsByBrandIdReq extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:GetVouchersRequest)
-    GetVouchersRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:GetCampaignsByBrandIdReq)
+    GetCampaignsByBrandIdReqOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,37 +20,37 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 1,
       /* suffix= */ "",
-      GetVouchersRequest.class.getName());
+      GetCampaignsByBrandIdReq.class.getName());
   }
-  // Use GetVouchersRequest.newBuilder() to construct.
-  private GetVouchersRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use GetCampaignsByBrandIdReq.newBuilder() to construct.
+  private GetCampaignsByBrandIdReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private GetVouchersRequest() {
+  private GetCampaignsByBrandIdReq() {
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_descriptor;
+    return org.archi.common.core.CoreProto.internal_static_GetCampaignsByBrandIdReq_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_fieldAccessorTable
+    return org.archi.common.core.CoreProto.internal_static_GetCampaignsByBrandIdReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.core.GetVouchersRequest.class, org.archi.common.core.GetVouchersRequest.Builder.class);
+            org.archi.common.core.GetCampaignsByBrandIdReq.class, org.archi.common.core.GetCampaignsByBrandIdReq.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private long id_ = 0L;
+  public static final int BRANDID_FIELD_NUMBER = 1;
+  private long brandId_ = 0L;
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>int64 brandId = 1;</code>
+   * @return The brandId.
    */
   @java.lang.Override
-  public long getId() {
-    return id_;
+  public long getBrandId() {
+    return brandId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -67,8 +67,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
-      output.writeInt64(1, id_);
+    if (brandId_ != 0L) {
+      output.writeInt64(1, brandId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -79,9 +79,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (brandId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id_);
+        .computeInt64Size(1, brandId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -93,13 +93,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.core.GetVouchersRequest)) {
+    if (!(obj instanceof org.archi.common.core.GetCampaignsByBrandIdReq)) {
       return super.equals(obj);
     }
-    org.archi.common.core.GetVouchersRequest other = (org.archi.common.core.GetVouchersRequest) obj;
+    org.archi.common.core.GetCampaignsByBrandIdReq other = (org.archi.common.core.GetCampaignsByBrandIdReq) obj;
 
-    if (getId()
-        != other.getId()) return false;
+    if (getBrandId()
+        != other.getBrandId()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -111,52 +111,52 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (37 * hash) + BRANDID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
+        getBrandId());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(byte[] data)
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(java.io.InputStream input)
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -164,26 +164,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static org.archi.common.core.GetVouchersRequest parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static org.archi.common.core.GetVouchersRequest parseDelimitedFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.core.GetVouchersRequest parseFrom(
+  public static org.archi.common.core.GetCampaignsByBrandIdReq parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -196,7 +196,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.core.GetVouchersRequest prototype) {
+  public static Builder newBuilder(org.archi.common.core.GetCampaignsByBrandIdReq prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -212,26 +212,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetVouchersRequest}
+   * Protobuf type {@code GetCampaignsByBrandIdReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetVouchersRequest)
-      org.archi.common.core.GetVouchersRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:GetCampaignsByBrandIdReq)
+      org.archi.common.core.GetCampaignsByBrandIdReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_descriptor;
+      return org.archi.common.core.CoreProto.internal_static_GetCampaignsByBrandIdReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_fieldAccessorTable
+      return org.archi.common.core.CoreProto.internal_static_GetCampaignsByBrandIdReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.core.GetVouchersRequest.class, org.archi.common.core.GetVouchersRequest.Builder.class);
+              org.archi.common.core.GetCampaignsByBrandIdReq.class, org.archi.common.core.GetCampaignsByBrandIdReq.Builder.class);
     }
 
-    // Construct using org.archi.common.core.GetVouchersRequest.newBuilder()
+    // Construct using org.archi.common.core.GetCampaignsByBrandIdReq.newBuilder()
     private Builder() {
 
     }
@@ -245,24 +245,24 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      id_ = 0L;
+      brandId_ = 0L;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_descriptor;
+      return org.archi.common.core.CoreProto.internal_static_GetCampaignsByBrandIdReq_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersRequest getDefaultInstanceForType() {
-      return org.archi.common.core.GetVouchersRequest.getDefaultInstance();
+    public org.archi.common.core.GetCampaignsByBrandIdReq getDefaultInstanceForType() {
+      return org.archi.common.core.GetCampaignsByBrandIdReq.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersRequest build() {
-      org.archi.common.core.GetVouchersRequest result = buildPartial();
+    public org.archi.common.core.GetCampaignsByBrandIdReq build() {
+      org.archi.common.core.GetCampaignsByBrandIdReq result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -270,34 +270,34 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersRequest buildPartial() {
-      org.archi.common.core.GetVouchersRequest result = new org.archi.common.core.GetVouchersRequest(this);
+    public org.archi.common.core.GetCampaignsByBrandIdReq buildPartial() {
+      org.archi.common.core.GetCampaignsByBrandIdReq result = new org.archi.common.core.GetCampaignsByBrandIdReq(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(org.archi.common.core.GetVouchersRequest result) {
+    private void buildPartial0(org.archi.common.core.GetCampaignsByBrandIdReq result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.id_ = id_;
+        result.brandId_ = brandId_;
       }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.core.GetVouchersRequest) {
-        return mergeFrom((org.archi.common.core.GetVouchersRequest)other);
+      if (other instanceof org.archi.common.core.GetCampaignsByBrandIdReq) {
+        return mergeFrom((org.archi.common.core.GetCampaignsByBrandIdReq)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.core.GetVouchersRequest other) {
-      if (other == org.archi.common.core.GetVouchersRequest.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
+    public Builder mergeFrom(org.archi.common.core.GetCampaignsByBrandIdReq other) {
+      if (other == org.archi.common.core.GetCampaignsByBrandIdReq.getDefaultInstance()) return this;
+      if (other.getBrandId() != 0L) {
+        setBrandId(other.getBrandId());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -326,7 +326,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 8: {
-              id_ = input.readInt64();
+              brandId_ = input.readInt64();
               bitField0_ |= 0x00000001;
               break;
             } // case 8
@@ -347,55 +347,55 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private long id_ ;
+    private long brandId_ ;
     /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
+     * <code>int64 brandId = 1;</code>
+     * @return The brandId.
      */
     @java.lang.Override
-    public long getId() {
-      return id_;
+    public long getBrandId() {
+      return brandId_;
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
+     * <code>int64 brandId = 1;</code>
+     * @param value The brandId to set.
      * @return This builder for chaining.
      */
-    public Builder setId(long value) {
+    public Builder setBrandId(long value) {
 
-      id_ = value;
+      brandId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int64 brandId = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearBrandId() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      id_ = 0L;
+      brandId_ = 0L;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:GetVouchersRequest)
+    // @@protoc_insertion_point(builder_scope:GetCampaignsByBrandIdReq)
   }
 
-  // @@protoc_insertion_point(class_scope:GetVouchersRequest)
-  private static final org.archi.common.core.GetVouchersRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:GetCampaignsByBrandIdReq)
+  private static final org.archi.common.core.GetCampaignsByBrandIdReq DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.core.GetVouchersRequest();
+    DEFAULT_INSTANCE = new org.archi.common.core.GetCampaignsByBrandIdReq();
   }
 
-  public static org.archi.common.core.GetVouchersRequest getDefaultInstance() {
+  public static org.archi.common.core.GetCampaignsByBrandIdReq getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetVouchersRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetVouchersRequest>() {
+  private static final com.google.protobuf.Parser<GetCampaignsByBrandIdReq>
+      PARSER = new com.google.protobuf.AbstractParser<GetCampaignsByBrandIdReq>() {
     @java.lang.Override
-    public GetVouchersRequest parsePartialFrom(
+    public GetCampaignsByBrandIdReq parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -414,17 +414,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetVouchersRequest> parser() {
+  public static com.google.protobuf.Parser<GetCampaignsByBrandIdReq> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetVouchersRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetCampaignsByBrandIdReq> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.core.GetVouchersRequest getDefaultInstanceForType() {
+  public org.archi.common.core.GetCampaignsByBrandIdReq getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
