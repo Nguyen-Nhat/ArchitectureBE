@@ -5,14 +5,14 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.54.0)",
+    value = "by gRPC proto compiler (version 1.69.0)",
     comments = "Source: core.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CoreServiceGrpc {
 
   private CoreServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "CoreService";
+  public static final java.lang.String SERVICE_NAME = "CoreService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetVouchersRequest,
@@ -261,9 +261,9 @@ public final class CoreServiceGrpc {
   private static final class CoreServiceMethodDescriptorSupplier
       extends CoreServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CoreServiceMethodDescriptorSupplier(String methodName) {
+    CoreServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

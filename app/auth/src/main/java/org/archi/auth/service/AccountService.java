@@ -36,4 +36,8 @@ public class AccountService {
   public Account findByIdOrElseThrow(long l) {
     return accountRepo.findById(l).orElseThrow(() -> new ResourceNotFoundException("Account not found", Map.of("account_id", String.valueOf(l))));
   }
+
+  public Account findById(long l) {
+    return accountRepo.findById(l).orElse(null);
+  }
 }

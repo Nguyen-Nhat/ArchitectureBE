@@ -3,10 +3,13 @@ package org.archi.common.auth;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ *Verify Email Service
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.69.0)",
-    comments = "Source: verifyEmail.proto")
+    comments = "Source: auth.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VerifyEmailServiceGrpc {
 
@@ -91,6 +94,9 @@ public final class VerifyEmailServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Verify Email Service
+   * </pre>
    */
   public interface AsyncService {
 
@@ -104,6 +110,9 @@ public final class VerifyEmailServiceGrpc {
 
   /**
    * Base class for the server implementation of the service VerifyEmailService.
+   * <pre>
+   *Verify Email Service
+   * </pre>
    */
   public static abstract class VerifyEmailServiceImplBase
       implements io.grpc.BindableService, AsyncService {
@@ -115,6 +124,9 @@ public final class VerifyEmailServiceGrpc {
 
   /**
    * A stub to allow clients to do asynchronous rpc calls to service VerifyEmailService.
+   * <pre>
+   *Verify Email Service
+   * </pre>
    */
   public static final class VerifyEmailServiceStub
       extends io.grpc.stub.AbstractAsyncStub<VerifyEmailServiceStub> {
@@ -140,6 +152,9 @@ public final class VerifyEmailServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VerifyEmailService.
+   * <pre>
+   *Verify Email Service
+   * </pre>
    */
   public static final class VerifyEmailServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<VerifyEmailServiceBlockingStub> {
@@ -164,6 +179,9 @@ public final class VerifyEmailServiceGrpc {
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service VerifyEmailService.
+   * <pre>
+   *Verify Email Service
+   * </pre>
    */
   public static final class VerifyEmailServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<VerifyEmailServiceFutureStub> {
@@ -244,7 +262,7 @@ public final class VerifyEmailServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return org.archi.common.auth.VerifyEmailProto.getDescriptor();
+      return org.archi.common.auth.AuthProto.getDescriptor();
     }
 
     @java.lang.Override

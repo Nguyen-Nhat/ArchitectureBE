@@ -3,10 +3,13 @@ package org.archi.common.auth;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ *Refresh token service
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.69.0)",
-    comments = "Source: refreshToken.proto")
+    comments = "Source: auth.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RefreshTokenServiceGrpc {
 
@@ -91,6 +94,9 @@ public final class RefreshTokenServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Refresh token service
+   * </pre>
    */
   public interface AsyncService {
 
@@ -104,6 +110,9 @@ public final class RefreshTokenServiceGrpc {
 
   /**
    * Base class for the server implementation of the service RefreshTokenService.
+   * <pre>
+   *Refresh token service
+   * </pre>
    */
   public static abstract class RefreshTokenServiceImplBase
       implements io.grpc.BindableService, AsyncService {
@@ -115,6 +124,9 @@ public final class RefreshTokenServiceGrpc {
 
   /**
    * A stub to allow clients to do asynchronous rpc calls to service RefreshTokenService.
+   * <pre>
+   *Refresh token service
+   * </pre>
    */
   public static final class RefreshTokenServiceStub
       extends io.grpc.stub.AbstractAsyncStub<RefreshTokenServiceStub> {
@@ -140,6 +152,9 @@ public final class RefreshTokenServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RefreshTokenService.
+   * <pre>
+   *Refresh token service
+   * </pre>
    */
   public static final class RefreshTokenServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<RefreshTokenServiceBlockingStub> {
@@ -164,6 +179,9 @@ public final class RefreshTokenServiceGrpc {
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service RefreshTokenService.
+   * <pre>
+   *Refresh token service
+   * </pre>
    */
   public static final class RefreshTokenServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<RefreshTokenServiceFutureStub> {
@@ -244,7 +262,7 @@ public final class RefreshTokenServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return org.archi.common.auth.RefreshTokenProto.getDescriptor();
+      return org.archi.common.auth.AuthProto.getDescriptor();
     }
 
     @java.lang.Override

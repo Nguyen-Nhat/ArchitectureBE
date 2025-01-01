@@ -15,15 +15,85 @@ public final class AuthProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GetUserInfoRequest_descriptor;
+    internal_static_PostVerifyTokenRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GetUserInfoRequest_fieldAccessorTable;
+      internal_static_PostVerifyTokenRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GetUserInfoResponse_descriptor;
+    internal_static_PostVerifyTokenResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GetUserInfoResponse_fieldAccessorTable;
+      internal_static_PostVerifyTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostRegisterRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostRegisterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostRegisterResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostRegisterResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostLoginRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostLoginRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostLoginResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostLoginResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostLogoutRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostLogoutRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostLogoutResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostLogoutResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostRefreshTokenRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostRefreshTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostRefreshTokenResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostRefreshTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetVerifyEmailRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetVerifyEmailRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetVerifyEmailResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetVerifyEmailResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetBrandInfoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetBrandInfoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetBrandInfoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetBrandInfoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPlayerInfoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPlayerInfoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPlayerInfoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPlayerInfoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -33,29 +103,156 @@ public final class AuthProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nauth.proto\" \n\022GetUserInfoRequest\022\n\n\002id" +
-      "\030\001 \001(\003\"4\n\023GetUserInfoResponse\022\014\n\004code\030\001 " +
-      "\001(\003\022\017\n\007message\030\002 \001(\t2G\n\013AuthService\0228\n\013G" +
-      "etUserInfo\022\023.GetUserInfoRequest\032\024.GetUse" +
-      "rInfoResponseB$\n\025org.archi.common.authB\t" +
-      "AuthProtoP\001b\006proto3"
+      "\n\nauth.proto\"\'\n\026PostVerifyTokenRequest\022\r" +
+      "\n\005token\030\001 \001(\t\"T\n\027PostVerifyTokenResponse" +
+      "\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\n\n\002id\030" +
+      "\003 \001(\003\022\014\n\004role\030\004 \001(\t\"k\n\023PostRegisterReque" +
+      "st\022\020\n\010username\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\022\r" +
+      "\n\005email\030\004 \001(\t\022\023\n\013phoneNumber\030\005 \001(\t\022\014\n\004ro" +
+      "le\030\006 \001(\t\"7\n\024PostRegisterResponse\022\016\n\006stat" +
+      "us\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"6\n\020PostLoginRe" +
+      "quest\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(" +
+      "\t\"\205\001\n\021PostLoginResponse\022\016\n\006status\030\001 \001(\003\022" +
+      "\017\n\007message\030\002 \001(\t\022\023\n\013accessToken\030\003 \001(\t\022\024\n" +
+      "\014refreshToken\030\004 \001(\t\022\021\n\ttokenType\030\005 \001(\t\022\021" +
+      "\n\texpiresIn\030\006 \001(\003\"(\n\021PostLogoutRequest\022\023" +
+      "\n\013accessToken\030\001 \001(\t\"5\n\022PostLogoutRespons" +
+      "e\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"/\n\027Po" +
+      "stRefreshTokenRequest\022\024\n\014refreshToken\030\001 " +
+      "\001(\t\"v\n\030PostRefreshTokenResponse\022\016\n\006statu" +
+      "s\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\023\n\013accessToken\030" +
+      "\003 \001(\t\022\021\n\texpiresIn\030\004 \001(\003\022\021\n\ttokenType\030\005 " +
+      "\001(\t\"&\n\025GetVerifyEmailRequest\022\r\n\005token\030\001 " +
+      "\001(\t\"9\n\026GetVerifyEmailResponse\022\016\n\006status\030" +
+      "\001 \001(\003\022\017\n\007message\030\002 \001(\t\"!\n\023GetBrandInfoRe" +
+      "quest\022\n\n\002id\030\001 \001(\003\"\220\001\n\024GetBrandInfoRespon" +
+      "se\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\n\n\002i" +
+      "d\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\r\n\005field\030\005 \001(\t\022\017\n\007" +
+      "address\030\006 \001(\t\022\013\n\003gps\030\007 \001(\t\022\020\n\010isEnable\030\010" +
+      " \001(\010\"\"\n\024GetPlayerInfoRequest\022\n\n\002id\030\001 \001(\003" +
+      "\"\227\001\n\025GetPlayerInfoResponse\022\016\n\006status\030\001 \001" +
+      "(\003\022\017\n\007message\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\014\n\004name\030" +
+      "\004 \001(\t\022\016\n\006avatar\030\005 \001(\t\022\021\n\tbirthDate\030\006 \001(\003" +
+      "\022\016\n\006gender\030\007 \001(\t\022\020\n\010facebook\030\010 \001(\t2Z\n\022Ve" +
+      "rifyTokenService\022D\n\017PostVerifyToken\022\027.Po" +
+      "stVerifyTokenRequest\032\030.PostVerifyTokenRe" +
+      "sponse2N\n\017RegisterService\022;\n\014PostRegiste" +
+      "r\022\024.PostRegisterRequest\032\025.PostRegisterRe" +
+      "sponse2B\n\014LoginService\0222\n\tPostLogin\022\021.Po" +
+      "stLoginRequest\032\022.PostLoginResponse2F\n\rLo" +
+      "goutService\0225\n\nPostLogout\022\022.PostLogoutRe" +
+      "quest\032\023.PostLogoutResponse2^\n\023RefreshTok" +
+      "enService\022G\n\020PostRefreshToken\022\030.PostRefr" +
+      "eshTokenRequest\032\031.PostRefreshTokenRespon" +
+      "se2W\n\022VerifyEmailService\022A\n\016GetVerifyEma" +
+      "il\022\026.GetVerifyEmailRequest\032\027.GetVerifyEm" +
+      "ailResponse2O\n\020BrandInfoService\022;\n\014GetBr" +
+      "andInfo\022\024.GetBrandInfoRequest\032\025.GetBrand" +
+      "InfoResponse2S\n\021PlayerInfoService\022>\n\rGet" +
+      "PlayerInfo\022\025.GetPlayerInfoRequest\032\026.GetP" +
+      "layerInfoResponseB$\n\025org.archi.common.au" +
+      "thB\tAuthProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_GetUserInfoRequest_descriptor =
+    internal_static_PostVerifyTokenRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_GetUserInfoRequest_fieldAccessorTable = new
+    internal_static_PostVerifyTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GetUserInfoRequest_descriptor,
-        new java.lang.String[] { "Id", });
-    internal_static_GetUserInfoResponse_descriptor =
+        internal_static_PostVerifyTokenRequest_descriptor,
+        new java.lang.String[] { "Token", });
+    internal_static_PostVerifyTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_GetUserInfoResponse_fieldAccessorTable = new
+    internal_static_PostVerifyTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GetUserInfoResponse_descriptor,
-        new java.lang.String[] { "Code", "Message", });
+        internal_static_PostVerifyTokenResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Id", "Role", });
+    internal_static_PostRegisterRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_PostRegisterRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostRegisterRequest_descriptor,
+        new java.lang.String[] { "Username", "Password", "Email", "PhoneNumber", "Role", });
+    internal_static_PostRegisterResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_PostRegisterResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostRegisterResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_PostLoginRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_PostLoginRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostLoginRequest_descriptor,
+        new java.lang.String[] { "Username", "Password", });
+    internal_static_PostLoginResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_PostLoginResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostLoginResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "AccessToken", "RefreshToken", "TokenType", "ExpiresIn", });
+    internal_static_PostLogoutRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_PostLogoutRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostLogoutRequest_descriptor,
+        new java.lang.String[] { "AccessToken", });
+    internal_static_PostLogoutResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_PostLogoutResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostLogoutResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_PostRefreshTokenRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_PostRefreshTokenRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostRefreshTokenRequest_descriptor,
+        new java.lang.String[] { "RefreshToken", });
+    internal_static_PostRefreshTokenResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_PostRefreshTokenResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostRefreshTokenResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "AccessToken", "ExpiresIn", "TokenType", });
+    internal_static_GetVerifyEmailRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_GetVerifyEmailRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetVerifyEmailRequest_descriptor,
+        new java.lang.String[] { "Token", });
+    internal_static_GetVerifyEmailResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_GetVerifyEmailResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetVerifyEmailResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_GetBrandInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_GetBrandInfoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetBrandInfoRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_GetBrandInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_GetBrandInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetBrandInfoResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Id", "Name", "Field", "Address", "Gps", "IsEnable", });
+    internal_static_GetPlayerInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_GetPlayerInfoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPlayerInfoRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_GetPlayerInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_GetPlayerInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPlayerInfoResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Id", "Name", "Avatar", "BirthDate", "Gender", "Facebook", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -3,10 +3,13 @@ package org.archi.common.auth;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ *Login Service
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.69.0)",
-    comments = "Source: login.proto")
+    comments = "Source: auth.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LoginServiceGrpc {
 
@@ -91,6 +94,9 @@ public final class LoginServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Login Service
+   * </pre>
    */
   public interface AsyncService {
 
@@ -104,6 +110,9 @@ public final class LoginServiceGrpc {
 
   /**
    * Base class for the server implementation of the service LoginService.
+   * <pre>
+   *Login Service
+   * </pre>
    */
   public static abstract class LoginServiceImplBase
       implements io.grpc.BindableService, AsyncService {
@@ -115,6 +124,9 @@ public final class LoginServiceGrpc {
 
   /**
    * A stub to allow clients to do asynchronous rpc calls to service LoginService.
+   * <pre>
+   *Login Service
+   * </pre>
    */
   public static final class LoginServiceStub
       extends io.grpc.stub.AbstractAsyncStub<LoginServiceStub> {
@@ -140,6 +152,9 @@ public final class LoginServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LoginService.
+   * <pre>
+   *Login Service
+   * </pre>
    */
   public static final class LoginServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<LoginServiceBlockingStub> {
@@ -164,6 +179,9 @@ public final class LoginServiceGrpc {
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service LoginService.
+   * <pre>
+   *Login Service
+   * </pre>
    */
   public static final class LoginServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<LoginServiceFutureStub> {
@@ -244,7 +262,7 @@ public final class LoginServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return org.archi.common.auth.LoginProto.getDescriptor();
+      return org.archi.common.auth.AuthProto.getDescriptor();
     }
 
     @java.lang.Override

@@ -17,16 +17,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class ProjectConfigSecurity {
-
-  @Bean
-  SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http.sessionManagement(config -> config.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-    http.csrf(AbstractHttpConfigurer::disable);
-    http.authorizeHttpRequests(config -> config.anyRequest().permitAll());
-    return http.build();
-  }
-
-
   @Bean
   PasswordEncoder passwordEncoder() {
     return PasswordEncoderFactories.createDelegatingPasswordEncoder();
@@ -40,16 +30,4 @@ public class ProjectConfigSecurity {
     providerManager.setEraseCredentialsAfterAuthentication(false);
     return providerManager;
   }
-
-  // CORS Configuration
-  @Bean
-  public WebMvcConfigurer corsConfigurer() {
-    return new WebMvcConfigurer() {
-      @Override
-      public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedOrigins("*").allowCredentials(false).exposedHeaders("*").allowedMethods("*");
-      }
-    };
-  }
-
 }

@@ -9,8 +9,12 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class PlayerService {
   private final PlayerRepo playerRepo;
+
   public Player save(Player player) {
     return playerRepo.save(player);
   }
 
+  public Player findById(long id) {
+    return playerRepo.findById(id).orElse(null);
+  }
 }

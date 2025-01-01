@@ -2,6 +2,7 @@ grpc:
   server:
     port: 9444
 
+
 management:
   endpoints:
     web:
@@ -50,3 +51,5 @@ spring:
   threads:
     virtual:
       enabled: true
+server:
+  port: 8081

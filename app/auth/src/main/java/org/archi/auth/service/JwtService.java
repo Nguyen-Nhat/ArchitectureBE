@@ -3,10 +3,8 @@ package org.archi.auth.service;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.archi.auth.model.Account;
-import org.archi.common.auth.PostRefreshTokenRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -33,10 +31,20 @@ public class JwtService {
   }
 
   public String generateRefreshToken(Account account) {
-    return buildToken(account, refreshExpiration);
+    return buildRefreshToken(account, refreshExpiration);
   }
 
   public String buildToken(Account account, long expiration) {
+    SecretKey secretKey = getSecretKey();
+    return Jwts.builder().setIssuer("Auth service")
+            .claim("account_id", account.getId())
+            .claim("role", account.getRole().getName().toString())
+            .setIssuedAt(new Date(System.currentTimeMillis()))
+            .setExpiration(new Date(System.currentTimeMillis() + expiration))
+            .signWith(secretKey).compact();
+  }
+
+  public String buildRefreshToken(Account account, long expiration) {
     SecretKey secretKey = getSecretKey();
     return Jwts.builder().setIssuer("Auth service")
             .claim("account_id", account.getId())

@@ -12,4 +12,8 @@ public class BrandService {
   public Brand save(Brand brand) {
     return brandRepo.save(brand);
   }
+
+  public Brand findById(long id) {
+    return brandRepo.findById(id).orElse(null);
+  }
 }

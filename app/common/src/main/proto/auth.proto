@@ -4,15 +4,134 @@ option java_multiple_files = true;
 option java_package = "org.archi.common.auth";
 option java_outer_classname = "AuthProto";
 
-service AuthService {
-  rpc GetUserInfo(GetUserInfoRequest) returns(GetUserInfoResponse);
+/*Verify Token Service*/
+service VerifyTokenService {
+  rpc PostVerifyToken(PostVerifyTokenRequest) returns(PostVerifyTokenResponse);
 }
-
-message GetUserInfoRequest {
-  int64 id = 1;
+message PostVerifyTokenRequest {
+  string token = 1;
 }
+message PostVerifyTokenResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3; // account id.
+  string role = 4;
+}
+/*Verify Token Service*/
 
-message GetUserInfoResponse {
-  int64 code = 1;
+
+/*Register Service*/
+service RegisterService {
+  rpc PostRegister(PostRegisterRequest) returns(PostRegisterResponse);
+}
+message PostRegisterRequest {
+  string username = 2;
+  string password = 3;
+  string email = 4;
+  string phoneNumber = 5;
+  string role = 6;
+}
+message PostRegisterResponse {
+  int64 status = 1;
   string message = 2;
 }
+/*Register Service*/
+
+/*Login Service*/
+service LoginService {
+  rpc PostLogin(PostLoginRequest) returns(PostLoginResponse);
+}
+message PostLoginRequest {
+  string username = 1;
+  string password = 2;
+}
+message PostLoginResponse {
+  int64 status = 1;
+  string message = 2;
+  string accessToken = 3;
+  string refreshToken = 4;
+  string tokenType = 5;
+  int64 expiresIn = 6;
+}
+/*Login Service*/
+
+/*Logout Service*/
+service LogoutService {
+  rpc PostLogout(PostLogoutRequest) returns(PostLogoutResponse);
+}
+message PostLogoutRequest {
+  string accessToken = 1;
+}
+message PostLogoutResponse {
+  int64 status = 1;
+  string message = 2;
+}
+/*Logout Service*/
+
+/*Refresh token service*/
+service RefreshTokenService {
+  rpc PostRefreshToken(PostRefreshTokenRequest) returns(PostRefreshTokenResponse);
+}
+message PostRefreshTokenRequest {
+  string refreshToken = 1;
+}
+message PostRefreshTokenResponse {
+  int64 status = 1;
+  string message = 2;
+  string accessToken = 3;
+  int64 expiresIn = 4;
+  string tokenType = 5;
+}
+/*Refresh token service*/
+
+/*Verify Email Service*/
+service VerifyEmailService {
+  rpc GetVerifyEmail(GetVerifyEmailRequest) returns(GetVerifyEmailResponse);
+}
+message GetVerifyEmailRequest {
+  string token = 1; // Token có được từ request param.
+}
+message GetVerifyEmailResponse {
+  int64 status = 1; // Thành công thì trả về 200, thất bại thì trả về 400
+  string message = 2;
+}
+/*Verify Email Service*/
+
+
+/*Get Brand Info*/
+service BrandInfoService {
+  rpc GetBrandInfo(GetBrandInfoRequest) returns(GetBrandInfoResponse);
+}
+message GetBrandInfoRequest {
+  int64 id = 1; /*Account ID*/
+}
+message GetBrandInfoResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string name = 4;
+  string field = 5;
+  string address = 6;
+  string gps = 7;
+  bool isEnable = 8;
+}
+/*Get Brand Info*/
+
+/*Get Player Info*/
+service PlayerInfoService {
+  rpc GetPlayerInfo(GetPlayerInfoRequest) returns(GetPlayerInfoResponse);
+}
+message GetPlayerInfoRequest {
+  int64 id = 1; /*Account ID*/
+}
+message GetPlayerInfoResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string name = 4;
+  string avatar = 5;
+  int64 birthDate = 6;
+  string gender = 7;
+  string facebook = 8;
+}
+/*Get Player Info*/

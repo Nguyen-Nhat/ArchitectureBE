@@ -3,11 +3,15 @@
 
 package org.archi.common.auth;
 
-public interface GetUserInfoRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GetUserInfoRequest)
+public interface GetBrandInfoRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:GetBrandInfoRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   *Account ID
+   * </pre>
+   *
    * <code>int64 id = 1;</code>
    * @return The id.
    */

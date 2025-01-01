@@ -3,10 +3,13 @@ package org.archi.common.auth;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ *Logout Service
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.69.0)",
-    comments = "Source: logout.proto")
+    comments = "Source: auth.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LogoutServiceGrpc {
 
@@ -91,6 +94,9 @@ public final class LogoutServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Logout Service
+   * </pre>
    */
   public interface AsyncService {
 
@@ -104,6 +110,9 @@ public final class LogoutServiceGrpc {
 
   /**
    * Base class for the server implementation of the service LogoutService.
+   * <pre>
+   *Logout Service
+   * </pre>
    */
   public static abstract class LogoutServiceImplBase
       implements io.grpc.BindableService, AsyncService {
@@ -115,6 +124,9 @@ public final class LogoutServiceGrpc {
 
   /**
    * A stub to allow clients to do asynchronous rpc calls to service LogoutService.
+   * <pre>
+   *Logout Service
+   * </pre>
    */
   public static final class LogoutServiceStub
       extends io.grpc.stub.AbstractAsyncStub<LogoutServiceStub> {
@@ -140,6 +152,9 @@ public final class LogoutServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LogoutService.
+   * <pre>
+   *Logout Service
+   * </pre>
    */
   public static final class LogoutServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<LogoutServiceBlockingStub> {
@@ -164,6 +179,9 @@ public final class LogoutServiceGrpc {
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service LogoutService.
+   * <pre>
+   *Logout Service
+   * </pre>
    */
   public static final class LogoutServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<LogoutServiceFutureStub> {
@@ -244,7 +262,7 @@ public final class LogoutServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return org.archi.common.auth.LogoutProto.getDescriptor();
+      return org.archi.common.auth.AuthProto.getDescriptor();
     }
 
     @java.lang.Override

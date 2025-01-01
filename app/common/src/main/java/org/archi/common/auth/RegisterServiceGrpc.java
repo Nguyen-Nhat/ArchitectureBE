@@ -3,10 +3,13 @@ package org.archi.common.auth;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ *Register Service
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.69.0)",
-    comments = "Source: register.proto")
+    comments = "Source: auth.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RegisterServiceGrpc {
 
@@ -91,6 +94,9 @@ public final class RegisterServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Register Service
+   * </pre>
    */
   public interface AsyncService {
 
@@ -104,6 +110,9 @@ public final class RegisterServiceGrpc {
 
   /**
    * Base class for the server implementation of the service RegisterService.
+   * <pre>
+   *Register Service
+   * </pre>
    */
   public static abstract class RegisterServiceImplBase
       implements io.grpc.BindableService, AsyncService {
@@ -115,6 +124,9 @@ public final class RegisterServiceGrpc {
 
   /**
    * A stub to allow clients to do asynchronous rpc calls to service RegisterService.
+   * <pre>
+   *Register Service
+   * </pre>
    */
   public static final class RegisterServiceStub
       extends io.grpc.stub.AbstractAsyncStub<RegisterServiceStub> {
@@ -140,6 +152,9 @@ public final class RegisterServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RegisterService.
+   * <pre>
+   *Register Service
+   * </pre>
    */
   public static final class RegisterServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<RegisterServiceBlockingStub> {
@@ -164,6 +179,9 @@ public final class RegisterServiceGrpc {
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service RegisterService.
+   * <pre>
+   *Register Service
+   * </pre>
    */
   public static final class RegisterServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<RegisterServiceFutureStub> {
@@ -244,7 +262,7 @@ public final class RegisterServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return org.archi.common.auth.RegisterProto.getDescriptor();
+      return org.archi.common.auth.AuthProto.getDescriptor();
     }
 
     @java.lang.Override

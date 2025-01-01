@@ -32,6 +32,14 @@ public class AuthenticationService {
     if (response != null && response.isAuthenticated()) {
       // Xác thực thành công.
       Account account = accountService.findByUsername(request.getUsername());
+
+      if (!account.getIsActive()) {
+        return PostLoginResponse.newBuilder()
+                .setStatus(HttpStatus.FORBIDDEN.value())
+                .setMessage("Account is not active")
+                .build();
+      }
+
       String accessToken = jwtService.generateAccessToken(account);
       String refreshToken = jwtService.generateRefreshToken(account);
       revokeAllAccessToken(account);
@@ -49,7 +57,7 @@ public class AuthenticationService {
               .setRefreshToken(refreshToken)
               .setMessage("Success")
               .setTokenType("Bearer")
-              .setExpiresIn(String.valueOf(expire))
+              .setExpiresIn(expire.getTime())
               .build();
     }
     return PostLoginResponse.newBuilder()
@@ -82,7 +90,8 @@ public class AuthenticationService {
       return PostRefreshTokenResponse.newBuilder()
               .setStatus(HttpStatus.OK.value())
               .setAccessToken(accessToken)
-              .setExpiresIn(String.valueOf(expire))
+              .setExpiresIn(expire.getTime())
+              .setTokenType("Bearer")
               .setMessage("Success")
               .build();
     } catch (ResourceNotFoundException rs) {
@@ -151,5 +160,14 @@ public class AuthenticationService {
               .setMessage("Internal server error")
               .build();
     }
+  }
+
+  public void verifyToken(String token) {
+    // Hàm thực hiện xác thực token.
+    if (!jwtService.isValid(token)) {
+      throw new RuntimeException("Invalid token");
+    }
+
+
   }
 }
