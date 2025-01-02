@@ -4,19 +4,22 @@
 package org.archi.common.auth;
 
 /**
- * Protobuf type {@code PostVerifyTokenResponse}
+ * Protobuf type {@code GetAccountInfoResponse}
  */
-public final class PostVerifyTokenResponse extends
+public final class GetAccountInfoResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:PostVerifyTokenResponse)
-    PostVerifyTokenResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:GetAccountInfoResponse)
+    GetAccountInfoResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use PostVerifyTokenResponse.newBuilder() to construct.
-  private PostVerifyTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetAccountInfoResponse.newBuilder() to construct.
+  private GetAccountInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private PostVerifyTokenResponse() {
+  private GetAccountInfoResponse() {
     message_ = "";
+    username_ = "";
+    email_ = "";
+    phoneNumber_ = "";
     role_ = "";
   }
 
@@ -24,7 +27,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new PostVerifyTokenResponse();
+    return new GetAccountInfoResponse();
   }
 
   @java.lang.Override
@@ -34,15 +37,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.auth.AuthProto.internal_static_PostVerifyTokenResponse_descriptor;
+    return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.auth.AuthProto.internal_static_PostVerifyTokenResponse_fieldAccessorTable
+    return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.auth.PostVerifyTokenResponse.class, org.archi.common.auth.PostVerifyTokenResponse.Builder.class);
+            org.archi.common.auth.GetAccountInfoResponse.class, org.archi.common.auth.GetAccountInfoResponse.Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -97,10 +100,6 @@ private static final long serialVersionUID = 0L;
   public static final int ID_FIELD_NUMBER = 3;
   private long id_;
   /**
-   * <pre>
-   * account id.
-   * </pre>
-   *
    * <code>int64 id = 3;</code>
    * @return The id.
    */
@@ -109,10 +108,124 @@ private static final long serialVersionUID = 0L;
     return id_;
   }
 
-  public static final int ROLE_FIELD_NUMBER = 4;
+  public static final int USERNAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object username_;
+  /**
+   * <code>string username = 4;</code>
+   * @return The username.
+   */
+  @java.lang.Override
+  public java.lang.String getUsername() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      username_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string username = 4;</code>
+   * @return The bytes for username.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUsernameBytes() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      username_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EMAIL_FIELD_NUMBER = 5;
+  private volatile java.lang.Object email_;
+  /**
+   * <code>string email = 5;</code>
+   * @return The email.
+   */
+  @java.lang.Override
+  public java.lang.String getEmail() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      email_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string email = 5;</code>
+   * @return The bytes for email.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEmailBytes() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      email_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PHONENUMBER_FIELD_NUMBER = 6;
+  private volatile java.lang.Object phoneNumber_;
+  /**
+   * <code>string phoneNumber = 6;</code>
+   * @return The phoneNumber.
+   */
+  @java.lang.Override
+  public java.lang.String getPhoneNumber() {
+    java.lang.Object ref = phoneNumber_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      phoneNumber_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string phoneNumber = 6;</code>
+   * @return The bytes for phoneNumber.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPhoneNumberBytes() {
+    java.lang.Object ref = phoneNumber_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      phoneNumber_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROLE_FIELD_NUMBER = 7;
   private volatile java.lang.Object role_;
   /**
-   * <code>string role = 4;</code>
+   * <code>string role = 7;</code>
    * @return The role.
    */
   @java.lang.Override
@@ -129,7 +242,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string role = 4;</code>
+   * <code>string role = 7;</code>
    * @return The bytes for role.
    */
   @java.lang.Override
@@ -145,6 +258,17 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ISACTIVE_FIELD_NUMBER = 8;
+  private boolean isActive_;
+  /**
+   * <code>bool isActive = 8;</code>
+   * @return The isActive.
+   */
+  @java.lang.Override
+  public boolean getIsActive() {
+    return isActive_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -170,8 +294,20 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(3, id_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, username_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, email_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, phoneNumber_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, role_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, role_);
+    }
+    if (isActive_ != false) {
+      output.writeBool(8, isActive_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -193,8 +329,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, id_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, username_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, email_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, phoneNumber_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, role_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, role_);
+    }
+    if (isActive_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, isActive_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -206,10 +355,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.auth.PostVerifyTokenResponse)) {
+    if (!(obj instanceof org.archi.common.auth.GetAccountInfoResponse)) {
       return super.equals(obj);
     }
-    org.archi.common.auth.PostVerifyTokenResponse other = (org.archi.common.auth.PostVerifyTokenResponse) obj;
+    org.archi.common.auth.GetAccountInfoResponse other = (org.archi.common.auth.GetAccountInfoResponse) obj;
 
     if (getStatus()
         != other.getStatus()) return false;
@@ -217,8 +366,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMessage())) return false;
     if (getId()
         != other.getId()) return false;
+    if (!getUsername()
+        .equals(other.getUsername())) return false;
+    if (!getEmail()
+        .equals(other.getEmail())) return false;
+    if (!getPhoneNumber()
+        .equals(other.getPhoneNumber())) return false;
     if (!getRole()
         .equals(other.getRole())) return false;
+    if (getIsActive()
+        != other.getIsActive()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -238,76 +395,85 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUsername().hashCode();
+    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getEmail().hashCode();
+    hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
+    hash = (53 * hash) + getPhoneNumber().hashCode();
     hash = (37 * hash) + ROLE_FIELD_NUMBER;
     hash = (53 * hash) + getRole().hashCode();
+    hash = (37 * hash) + ISACTIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsActive());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(byte[] data)
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(java.io.InputStream input)
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.auth.GetAccountInfoResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseDelimitedFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.PostVerifyTokenResponse parseFrom(
+  public static org.archi.common.auth.GetAccountInfoResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -320,7 +486,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.auth.PostVerifyTokenResponse prototype) {
+  public static Builder newBuilder(org.archi.common.auth.GetAccountInfoResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -336,26 +502,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code PostVerifyTokenResponse}
+   * Protobuf type {@code GetAccountInfoResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:PostVerifyTokenResponse)
-      org.archi.common.auth.PostVerifyTokenResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:GetAccountInfoResponse)
+      org.archi.common.auth.GetAccountInfoResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.auth.AuthProto.internal_static_PostVerifyTokenResponse_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.auth.AuthProto.internal_static_PostVerifyTokenResponse_fieldAccessorTable
+      return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.auth.PostVerifyTokenResponse.class, org.archi.common.auth.PostVerifyTokenResponse.Builder.class);
+              org.archi.common.auth.GetAccountInfoResponse.class, org.archi.common.auth.GetAccountInfoResponse.Builder.class);
     }
 
-    // Construct using org.archi.common.auth.PostVerifyTokenResponse.newBuilder()
+    // Construct using org.archi.common.auth.GetAccountInfoResponse.newBuilder()
     private Builder() {
 
     }
@@ -374,7 +540,15 @@ private static final long serialVersionUID = 0L;
 
       id_ = 0L;
 
+      username_ = "";
+
+      email_ = "";
+
+      phoneNumber_ = "";
+
       role_ = "";
+
+      isActive_ = false;
 
       return this;
     }
@@ -382,17 +556,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.auth.AuthProto.internal_static_PostVerifyTokenResponse_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoResponse_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.PostVerifyTokenResponse getDefaultInstanceForType() {
-      return org.archi.common.auth.PostVerifyTokenResponse.getDefaultInstance();
+    public org.archi.common.auth.GetAccountInfoResponse getDefaultInstanceForType() {
+      return org.archi.common.auth.GetAccountInfoResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.auth.PostVerifyTokenResponse build() {
-      org.archi.common.auth.PostVerifyTokenResponse result = buildPartial();
+    public org.archi.common.auth.GetAccountInfoResponse build() {
+      org.archi.common.auth.GetAccountInfoResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -400,12 +574,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.PostVerifyTokenResponse buildPartial() {
-      org.archi.common.auth.PostVerifyTokenResponse result = new org.archi.common.auth.PostVerifyTokenResponse(this);
+    public org.archi.common.auth.GetAccountInfoResponse buildPartial() {
+      org.archi.common.auth.GetAccountInfoResponse result = new org.archi.common.auth.GetAccountInfoResponse(this);
       result.status_ = status_;
       result.message_ = message_;
       result.id_ = id_;
+      result.username_ = username_;
+      result.email_ = email_;
+      result.phoneNumber_ = phoneNumber_;
       result.role_ = role_;
+      result.isActive_ = isActive_;
       onBuilt();
       return result;
     }
@@ -444,16 +622,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.auth.PostVerifyTokenResponse) {
-        return mergeFrom((org.archi.common.auth.PostVerifyTokenResponse)other);
+      if (other instanceof org.archi.common.auth.GetAccountInfoResponse) {
+        return mergeFrom((org.archi.common.auth.GetAccountInfoResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.auth.PostVerifyTokenResponse other) {
-      if (other == org.archi.common.auth.PostVerifyTokenResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.archi.common.auth.GetAccountInfoResponse other) {
+      if (other == org.archi.common.auth.GetAccountInfoResponse.getDefaultInstance()) return this;
       if (other.getStatus() != 0L) {
         setStatus(other.getStatus());
       }
@@ -464,9 +642,24 @@ private static final long serialVersionUID = 0L;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
+      if (!other.getUsername().isEmpty()) {
+        username_ = other.username_;
+        onChanged();
+      }
+      if (!other.getEmail().isEmpty()) {
+        email_ = other.email_;
+        onChanged();
+      }
+      if (!other.getPhoneNumber().isEmpty()) {
+        phoneNumber_ = other.phoneNumber_;
+        onChanged();
+      }
       if (!other.getRole().isEmpty()) {
         role_ = other.role_;
         onChanged();
+      }
+      if (other.getIsActive() != false) {
+        setIsActive(other.getIsActive());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -510,10 +703,30 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 24
             case 34: {
-              role_ = input.readStringRequireUtf8();
+              username_ = input.readStringRequireUtf8();
 
               break;
             } // case 34
+            case 42: {
+              email_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 42
+            case 50: {
+              phoneNumber_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 50
+            case 58: {
+              role_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 58
+            case 64: {
+              isActive_ = input.readBool();
+
+              break;
+            } // case 64
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -639,10 +852,6 @@ private static final long serialVersionUID = 0L;
 
     private long id_ ;
     /**
-     * <pre>
-     * account id.
-     * </pre>
-     *
      * <code>int64 id = 3;</code>
      * @return The id.
      */
@@ -651,10 +860,6 @@ private static final long serialVersionUID = 0L;
       return id_;
     }
     /**
-     * <pre>
-     * account id.
-     * </pre>
-     *
      * <code>int64 id = 3;</code>
      * @param value The id to set.
      * @return This builder for chaining.
@@ -666,10 +871,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * account id.
-     * </pre>
-     *
      * <code>int64 id = 3;</code>
      * @return This builder for chaining.
      */
@@ -680,9 +881,237 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object username_ = "";
+    /**
+     * <code>string username = 4;</code>
+     * @return The username.
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string username = 4;</code>
+     * @return The bytes for username.
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string username = 4;</code>
+     * @param value The username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsername(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      username_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsername() {
+      
+      username_ = getDefaultInstance().getUsername();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 4;</code>
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      username_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object email_ = "";
+    /**
+     * <code>string email = 5;</code>
+     * @return The email.
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string email = 5;</code>
+     * @return The bytes for email.
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string email = 5;</code>
+     * @param value The email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmail(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      email_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEmail() {
+      
+      email_ = getDefaultInstance().getEmail();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 5;</code>
+     * @param value The bytes for email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      email_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object phoneNumber_ = "";
+    /**
+     * <code>string phoneNumber = 6;</code>
+     * @return The phoneNumber.
+     */
+    public java.lang.String getPhoneNumber() {
+      java.lang.Object ref = phoneNumber_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phoneNumber_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string phoneNumber = 6;</code>
+     * @return The bytes for phoneNumber.
+     */
+    public com.google.protobuf.ByteString
+        getPhoneNumberBytes() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        phoneNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string phoneNumber = 6;</code>
+     * @param value The phoneNumber to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhoneNumber(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      phoneNumber_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string phoneNumber = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPhoneNumber() {
+      
+      phoneNumber_ = getDefaultInstance().getPhoneNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string phoneNumber = 6;</code>
+     * @param value The bytes for phoneNumber to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhoneNumberBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      phoneNumber_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object role_ = "";
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 7;</code>
      * @return The role.
      */
     public java.lang.String getRole() {
@@ -698,7 +1127,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 7;</code>
      * @return The bytes for role.
      */
     public com.google.protobuf.ByteString
@@ -715,7 +1144,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 7;</code>
      * @param value The role to set.
      * @return This builder for chaining.
      */
@@ -730,7 +1159,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearRole() {
@@ -740,7 +1169,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string role = 4;</code>
+     * <code>string role = 7;</code>
      * @param value The bytes for role to set.
      * @return This builder for chaining.
      */
@@ -752,6 +1181,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       role_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isActive_ ;
+    /**
+     * <code>bool isActive = 8;</code>
+     * @return The isActive.
+     */
+    @java.lang.Override
+    public boolean getIsActive() {
+      return isActive_;
+    }
+    /**
+     * <code>bool isActive = 8;</code>
+     * @param value The isActive to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsActive(boolean value) {
+      
+      isActive_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool isActive = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsActive() {
+      
+      isActive_ = false;
       onChanged();
       return this;
     }
@@ -768,23 +1228,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:PostVerifyTokenResponse)
+    // @@protoc_insertion_point(builder_scope:GetAccountInfoResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:PostVerifyTokenResponse)
-  private static final org.archi.common.auth.PostVerifyTokenResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:GetAccountInfoResponse)
+  private static final org.archi.common.auth.GetAccountInfoResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.auth.PostVerifyTokenResponse();
+    DEFAULT_INSTANCE = new org.archi.common.auth.GetAccountInfoResponse();
   }
 
-  public static org.archi.common.auth.PostVerifyTokenResponse getDefaultInstance() {
+  public static org.archi.common.auth.GetAccountInfoResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PostVerifyTokenResponse>
-      PARSER = new com.google.protobuf.AbstractParser<PostVerifyTokenResponse>() {
+  private static final com.google.protobuf.Parser<GetAccountInfoResponse>
+      PARSER = new com.google.protobuf.AbstractParser<GetAccountInfoResponse>() {
     @java.lang.Override
-    public PostVerifyTokenResponse parsePartialFrom(
+    public GetAccountInfoResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -803,17 +1263,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<PostVerifyTokenResponse> parser() {
+  public static com.google.protobuf.Parser<GetAccountInfoResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<PostVerifyTokenResponse> getParserForType() {
+  public com.google.protobuf.Parser<GetAccountInfoResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.auth.PostVerifyTokenResponse getDefaultInstanceForType() {
+  public org.archi.common.auth.GetAccountInfoResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -8,30 +8,6 @@ grpc:
     authService:
       address: localhost:9444
       negotiation-type: plaintext
-    verifyTokenService:
-      address: localhost:9444
-      negotiation-type: plaintext
-
-    registerService:
-      address: localhost:9444
-      negotiation-type: plaintext
-
-    loginService:
-      address: localhost:9444
-      negotiation-type: plaintext
-
-    logoutService:
-      address: localhost:9444
-      negotiation-type: plaintext
-
-    refreshTokenService:
-      address: localhost:9444
-      negotiation-type: plaintext
-
-    verifyEmailService:
-      address: localhost:9444
-      negotiation-type: plaintext
-
 
 management:
   endpoints:

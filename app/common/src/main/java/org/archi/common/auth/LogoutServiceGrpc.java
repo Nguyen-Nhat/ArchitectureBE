@@ -3,9 +3,6 @@ package org.archi.common.auth;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
- * <pre>
- *Logout Service
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.69.0)",
@@ -18,37 +15,6 @@ public final class LogoutServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "LogoutService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PostLogoutRequest,
-      org.archi.common.auth.PostLogoutResponse> getPostLogoutMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostLogout",
-      requestType = org.archi.common.auth.PostLogoutRequest.class,
-      responseType = org.archi.common.auth.PostLogoutResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.archi.common.auth.PostLogoutRequest,
-      org.archi.common.auth.PostLogoutResponse> getPostLogoutMethod() {
-    io.grpc.MethodDescriptor<org.archi.common.auth.PostLogoutRequest, org.archi.common.auth.PostLogoutResponse> getPostLogoutMethod;
-    if ((getPostLogoutMethod = LogoutServiceGrpc.getPostLogoutMethod) == null) {
-      synchronized (LogoutServiceGrpc.class) {
-        if ((getPostLogoutMethod = LogoutServiceGrpc.getPostLogoutMethod) == null) {
-          LogoutServiceGrpc.getPostLogoutMethod = getPostLogoutMethod =
-              io.grpc.MethodDescriptor.<org.archi.common.auth.PostLogoutRequest, org.archi.common.auth.PostLogoutResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostLogout"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.archi.common.auth.PostLogoutRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.archi.common.auth.PostLogoutResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new LogoutServiceMethodDescriptorSupplier("PostLogout"))
-              .build();
-        }
-      }
-    }
-    return getPostLogoutMethod;
-  }
-
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -94,25 +60,12 @@ public final class LogoutServiceGrpc {
   }
 
   /**
-   * <pre>
-   *Logout Service
-   * </pre>
    */
   public interface AsyncService {
-
-    /**
-     */
-    default void postLogout(org.archi.common.auth.PostLogoutRequest request,
-        io.grpc.stub.StreamObserver<org.archi.common.auth.PostLogoutResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostLogoutMethod(), responseObserver);
-    }
   }
 
   /**
    * Base class for the server implementation of the service LogoutService.
-   * <pre>
-   *Logout Service
-   * </pre>
    */
   public static abstract class LogoutServiceImplBase
       implements io.grpc.BindableService, AsyncService {
@@ -124,9 +77,6 @@ public final class LogoutServiceGrpc {
 
   /**
    * A stub to allow clients to do asynchronous rpc calls to service LogoutService.
-   * <pre>
-   *Logout Service
-   * </pre>
    */
   public static final class LogoutServiceStub
       extends io.grpc.stub.AbstractAsyncStub<LogoutServiceStub> {
@@ -140,21 +90,10 @@ public final class LogoutServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new LogoutServiceStub(channel, callOptions);
     }
-
-    /**
-     */
-    public void postLogout(org.archi.common.auth.PostLogoutRequest request,
-        io.grpc.stub.StreamObserver<org.archi.common.auth.PostLogoutResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostLogoutMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LogoutService.
-   * <pre>
-   *Logout Service
-   * </pre>
    */
   public static final class LogoutServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<LogoutServiceBlockingStub> {
@@ -168,20 +107,10 @@ public final class LogoutServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new LogoutServiceBlockingStub(channel, callOptions);
     }
-
-    /**
-     */
-    public org.archi.common.auth.PostLogoutResponse postLogout(org.archi.common.auth.PostLogoutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostLogoutMethod(), getCallOptions(), request);
-    }
   }
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service LogoutService.
-   * <pre>
-   *Logout Service
-   * </pre>
    */
   public static final class LogoutServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<LogoutServiceFutureStub> {
@@ -195,17 +124,8 @@ public final class LogoutServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new LogoutServiceFutureStub(channel, callOptions);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PostLogoutResponse> postLogout(
-        org.archi.common.auth.PostLogoutRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostLogoutMethod(), getCallOptions()), request);
-    }
   }
 
-  private static final int METHODID_POST_LOGOUT = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -224,10 +144,6 @@ public final class LogoutServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_POST_LOGOUT:
-          serviceImpl.postLogout((org.archi.common.auth.PostLogoutRequest) request,
-              (io.grpc.stub.StreamObserver<org.archi.common.auth.PostLogoutResponse>) responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -246,13 +162,6 @@ public final class LogoutServiceGrpc {
 
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          getPostLogoutMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PostLogoutRequest,
-              org.archi.common.auth.PostLogoutResponse>(
-                service, METHODID_POST_LOGOUT)))
         .build();
   }
 
@@ -301,7 +210,6 @@ public final class LogoutServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new LogoutServiceFileDescriptorSupplier())
-              .addMethod(getPostLogoutMethod())
               .build();
         }
       }

@@ -4,25 +4,64 @@ option java_multiple_files = true;
 option java_package = "org.archi.common.auth";
 option java_outer_classname = "AuthProto";
 
-/*Verify Token Service*/
-service VerifyTokenService {
+service AuthService {
+  rpc PostRegister(PostRegisterRequest) returns(PostRegisterResponse);
+  rpc PostLogin(PostLoginRequest) returns(PostLoginResponse);
+  rpc PostLogout(PostLogoutRequest) returns(PostLogoutResponse);
+  rpc PostRefreshToken(PostRefreshTokenRequest) returns(PostRefreshTokenResponse);
+  rpc GetVerifyEmail(GetVerifyEmailRequest) returns(GetVerifyEmailResponse);
   rpc PostVerifyToken(PostVerifyTokenRequest) returns(PostVerifyTokenResponse);
+  rpc GetBrandInfo(GetBrandInfoRequest) returns(GetBrandInfoResponse);
+  rpc GetPlayerInfo(GetPlayerInfoRequest) returns(GetPlayerInfoResponse);
+  rpc GetAccountInfo(GetAccountInfoRequest) returns(GetAccountInfoResponse);
+  rpc PostCreateAccount(PostCreateAccountRequest) returns(PostCreateAccountResponse);
+  rpc DeleteAccount(DeleteAccountRequest) returns(DeleteAccountResponse);
 }
-message PostVerifyTokenRequest {
-  string token = 1;
+
+message PostCreateAccountRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+  string phoneNumber = 4;
+  string role = 5;
 }
-message PostVerifyTokenResponse {
+message PostCreateAccountResponse {
   int64 status = 1;
   string message = 2;
-  int64 id = 3; // account id.
-  string role = 4;
 }
-/*Verify Token Service*/
 
+message PutUpdateAccountRequest {
+  string username = 1;
+  string email = 2;
+  string phoneNumber = 3;
+  string role = 4;
+  bool isActive = 5;
+}
+message PutUpdateAccountResponse {
+  int64 status = 1;
+  string message = 2;
+}
 
-/*Register Service*/
-service RegisterService {
-  rpc PostRegister(PostRegisterRequest) returns(PostRegisterResponse);
+message DeleteAccountRequest {
+  int64 id = 1;
+}
+message DeleteAccountResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message GetAccountInfoRequest {
+  int64 id = 1;
+}
+message GetAccountInfoResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string username = 4;
+  string email = 5;
+  string phoneNumber = 6;
+  string role = 7;
+  bool isActive = 8;
 }
 message PostRegisterRequest {
   string username = 2;
@@ -34,12 +73,6 @@ message PostRegisterRequest {
 message PostRegisterResponse {
   int64 status = 1;
   string message = 2;
-}
-/*Register Service*/
-
-/*Login Service*/
-service LoginService {
-  rpc PostLogin(PostLoginRequest) returns(PostLoginResponse);
 }
 message PostLoginRequest {
   string username = 1;
@@ -53,11 +86,8 @@ message PostLoginResponse {
   string tokenType = 5;
   int64 expiresIn = 6;
 }
-/*Login Service*/
-
-/*Logout Service*/
 service LogoutService {
-  rpc PostLogout(PostLogoutRequest) returns(PostLogoutResponse);
+
 }
 message PostLogoutRequest {
   string accessToken = 1;
@@ -65,12 +95,6 @@ message PostLogoutRequest {
 message PostLogoutResponse {
   int64 status = 1;
   string message = 2;
-}
-/*Logout Service*/
-
-/*Refresh token service*/
-service RefreshTokenService {
-  rpc PostRefreshToken(PostRefreshTokenRequest) returns(PostRefreshTokenResponse);
 }
 message PostRefreshTokenRequest {
   string refreshToken = 1;
@@ -82,12 +106,6 @@ message PostRefreshTokenResponse {
   int64 expiresIn = 4;
   string tokenType = 5;
 }
-/*Refresh token service*/
-
-/*Verify Email Service*/
-service VerifyEmailService {
-  rpc GetVerifyEmail(GetVerifyEmailRequest) returns(GetVerifyEmailResponse);
-}
 message GetVerifyEmailRequest {
   string token = 1; // Token có được từ request param.
 }
@@ -95,12 +113,14 @@ message GetVerifyEmailResponse {
   int64 status = 1; // Thành công thì trả về 200, thất bại thì trả về 400
   string message = 2;
 }
-/*Verify Email Service*/
-
-
-/*Get Brand Info*/
-service BrandInfoService {
-  rpc GetBrandInfo(GetBrandInfoRequest) returns(GetBrandInfoResponse);
+message PostVerifyTokenRequest {
+  string token = 1;
+}
+message PostVerifyTokenResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3; // account id.
+  string role = 4;
 }
 message GetBrandInfoRequest {
   int64 id = 1; /*Account ID*/
@@ -115,12 +135,6 @@ message GetBrandInfoResponse {
   string gps = 7;
   bool isEnable = 8;
 }
-/*Get Brand Info*/
-
-/*Get Player Info*/
-service PlayerInfoService {
-  rpc GetPlayerInfo(GetPlayerInfoRequest) returns(GetPlayerInfoResponse);
-}
 message GetPlayerInfoRequest {
   int64 id = 1; /*Account ID*/
 }
@@ -134,4 +148,3 @@ message GetPlayerInfoResponse {
   string gender = 7;
   string facebook = 8;
 }
-/*Get Player Info*/

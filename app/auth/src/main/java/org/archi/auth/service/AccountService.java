@@ -33,11 +33,18 @@ public class AccountService {
     return accountRepo.save(account);
   }
 
-  public Account findByIdOrElseThrow(long l) {
+  public Account findByIdOrElseThrow(Long l) {
+    if (l == null) {
+      throw new ResourceNotFoundException("Account not found", Map.of("account_id", "null"));
+    }
     return accountRepo.findById(l).orElseThrow(() -> new ResourceNotFoundException("Account not found", Map.of("account_id", String.valueOf(l))));
   }
 
   public Account findById(long l) {
     return accountRepo.findById(l).orElse(null);
+  }
+
+  public void delete(Account account) {
+    accountRepo.delete(account);
   }
 }

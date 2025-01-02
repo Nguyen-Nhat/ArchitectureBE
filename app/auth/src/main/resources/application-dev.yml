@@ -1,16 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/vou_auth_db # T?o db s?n tr??c khi run app.
+    url: jdbc:postgresql://localhost:5432/vou_auth_db
     username: postgres
     password: 49@Da5J,[KsemDN
   jpa:
     show-sql: true
     database: postgresql
-
-application:
-  security:
-    jwt:
-      secret-key: ${SECRET_KEY}
-      expiration: 86400000 # a day
-      refresh-token:
-        expiration: 604800000 # 7 days

@@ -3,8 +3,8 @@
 
 package org.archi.common.auth;
 
-public interface PostVerifyTokenResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:PostVerifyTokenResponse)
+public interface PutUpdateAccountResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:PutUpdateAccountResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -24,26 +24,4 @@ public interface PostVerifyTokenResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMessageBytes();
-
-  /**
-   * <pre>
-   * account id.
-   * </pre>
-   *
-   * <code>int64 id = 3;</code>
-   * @return The id.
-   */
-  long getId();
-
-  /**
-   * <code>string role = 4;</code>
-   * @return The role.
-   */
-  java.lang.String getRole();
-  /**
-   * <code>string role = 4;</code>
-   * @return The bytes for role.
-   */
-  com.google.protobuf.ByteString
-      getRoleBytes();
 }

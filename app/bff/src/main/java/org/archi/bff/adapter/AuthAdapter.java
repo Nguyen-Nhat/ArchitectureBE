@@ -7,46 +7,46 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthAdapter {
 
-  @GrpcClient("registerService")
-  private RegisterServiceGrpc.RegisterServiceBlockingStub registerServiceClient;
-
-  @GrpcClient("loginService")
-  private LoginServiceGrpc.LoginServiceBlockingStub loginServiceClient;
-
-  @GrpcClient("verifyEmailService")
-  private VerifyEmailServiceGrpc.VerifyEmailServiceBlockingStub verifyEmailServiceClient;
-
-  @GrpcClient("logoutService")
-  private LogoutServiceGrpc.LogoutServiceBlockingStub logoutServiceClient;
-
-  @GrpcClient("refreshTokenService")
-  private RefreshTokenServiceGrpc.RefreshTokenServiceBlockingStub refreshTokenServiceClient;
-
-  @GrpcClient("verifyTokenService")
-  private VerifyTokenServiceGrpc.VerifyTokenServiceBlockingStub verifyTokenServiceClient;
+  @GrpcClient("authService")
+  private AuthServiceGrpc.AuthServiceBlockingStub authServiceClient;
 
 
   public PostRegisterResponse postRegister(PostRegisterRequest request) {
-    return registerServiceClient.postRegister(request);
+    return authServiceClient.postRegister(request);
   }
 
   public GetVerifyEmailResponse getVerifyEmail(GetVerifyEmailRequest request) {
-    return verifyEmailServiceClient.getVerifyEmail(request);
+    return authServiceClient.getVerifyEmail(request);
   }
 
   public PostLoginResponse postLogin(PostLoginRequest request) {
-    return loginServiceClient.postLogin(request);
+    return authServiceClient.postLogin(request);
   }
 
   public PostLogoutResponse postLogout(PostLogoutRequest request) {
-    return logoutServiceClient.postLogout(request);
+    return authServiceClient.postLogout(request);
   }
 
   public PostRefreshTokenResponse postRefreshToken(PostRefreshTokenRequest postRequest) {
-    return refreshTokenServiceClient.postRefreshToken(postRequest);
+    return authServiceClient.postRefreshToken(postRequest);
   }
 
   public PostVerifyTokenResponse postVerifyToken(PostVerifyTokenRequest request) {
-    return verifyTokenServiceClient.postVerifyToken(request);
+    return authServiceClient.postVerifyToken(request);
+  }
+
+  public GetAccountInfoResponse getAccountInfo(GetAccountInfoRequest request) {
+    return authServiceClient.getAccountInfo(request);
+  }
+
+  public GetBrandInfoResponse getBrandInfo(GetBrandInfoRequest request) {
+    return authServiceClient.getBrandInfo(request);
+  }
+  public GetPlayerInfoResponse getPlayerInfo(GetPlayerInfoRequest request) {
+    return authServiceClient.getPlayerInfo(request);
+  }
+
+  public DeleteAccountResponse deleteAccount(DeleteAccountRequest request) {
+    return authServiceClient.deleteAccount(request);
   }
 }

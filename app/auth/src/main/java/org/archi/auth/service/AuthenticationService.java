@@ -1,8 +1,13 @@
 package org.archi.auth.service;
 
 import com.google.api.Http;
+import io.grpc.Status;
+import io.netty.util.internal.StringUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.archi.auth.enums.GENDER;
+import org.archi.auth.enums.ROLE;
 import org.archi.auth.exceptions.ResourceNotFoundException;
 import org.archi.auth.model.*;
 import org.archi.auth.repo.AccessTokenRepo;
@@ -11,7 +16,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.Locale;
@@ -25,6 +32,85 @@ public class AuthenticationService {
   private final JwtService jwtService;
   private final AccessTokenRepo accessTokenRepo;
   private final AccessTokenService accessTokenService;
+  private final RoleService roleService;
+  private final PasswordEncoder passwordEncoder;
+  private final PlayerService playerService;
+  private final BrandService brandService;
+  private final EmailService emailService;
+
+
+  @Transactional(rollbackFor = {ResourceNotFoundException.class, RuntimeException.class})
+  public PostRegisterResponse register(PostRegisterRequest request) {
+    ROLE name = ROLE.valueOf(request.getRole().toUpperCase(Locale.ROOT));
+    Role role = roleService.findByName(name);
+    if (role == null) {
+      return PostRegisterResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Role not found").build();
+    }
+
+    String username = request.getUsername();
+    String password = request.getPassword();
+    String phoneNumber = request.getPhoneNumber();
+    String email = request.getEmail();
+    if (accountService.findByUsername(username) != null || accountService.findByEmail(email) != null || accountService.findByPhoneNumber(phoneNumber) != null) {
+      return PostRegisterResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Account already exists").build();
+    }
+
+    Account account = Account.builder()
+            .username(username)
+            .password(passwordEncoder.encode(password))
+            .email(email)
+            .phoneNumber(phoneNumber)
+            .isActive(false)  ///  Chưa active, phải thực hiện xác thực thông qua email trước.
+            .role(role)
+            .build();
+
+    Account saved = accountService.save(account);
+    if (saved == null || saved.getId() <= 0) {
+      throw new RuntimeException("Failed to save account");
+    }
+
+    String body = emailService.generateBodyText(saved);
+    emailService.sendEmail(saved.getEmail(), "Verify Your Account", body);
+
+    switch (name) {
+      case ROLE.PLAYER: {
+        // Tạo mới tài khoản player.
+        Player player = Player.builder()
+                .name("")
+                .avatar("")
+                .birthDate(new java.sql.Date(new Date().getTime()))
+                .gender(GENDER.OTHER)
+                .facebook("")
+                .account(saved)
+                .build();
+        player = playerService.save(player);
+        if (player == null || player.getId() <= 0) {
+          throw new RuntimeException("Failed to save player");
+        }
+        break;
+      }
+      case ROLE.BRAND: {
+        // Tạo mới tài khoản brand.
+        Brand brand = Brand.builder()
+                .name("")
+                .field("")
+                .address("")
+                .gps("")
+                .isEnable(false)
+                .account(saved)
+                .build();
+        brand = brandService.save(brand);
+        if (brand == null || brand.getId() <= 0) {
+          throw new RuntimeException("Failed to save brand");
+        }
+        break;
+      }
+      default:
+        return PostRegisterResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Role not found").build();
+    }
+    return PostRegisterResponse.newBuilder().setStatus(HttpStatus.CREATED.value()).setMessage("Success").build();
+  }
+
   public PostLoginResponse login(PostLoginRequest request) {
     Authentication authentication = UsernamePasswordAuthenticationToken.unauthenticated(request.getUsername(), request.getPassword());
     Authentication response = authenticationManager.authenticate(authentication); // Thực hiện authenticate bằng cách dùng @Bean Manager đã tạo trong ProjectConfigSecurity để xác thực.
@@ -107,7 +193,6 @@ public class AuthenticationService {
     }
   }
 
-
   public void revokeAllAccessToken(Account account) {
     // Xóa tất cả access token của account.
     var validUserTokens = accessTokenRepo.findAllValidTokenByUser(account.getId());
@@ -162,12 +247,100 @@ public class AuthenticationService {
     }
   }
 
-  public void verifyToken(String token) {
-    // Hàm thực hiện xác thực token.
-    if (!jwtService.isValid(token)) {
-      throw new RuntimeException("Invalid token");
+  public GetVerifyEmailResponse verifyEmail(GetVerifyEmailRequest request) {
+    if (jwtService.isValid(request.getToken())) {
+      // Cập nhật trạng thái của email đã được xác thực
+      Long accountId = jwtService.getAccountId(request.getToken());
+      if (accountId == null)
+        return GetVerifyEmailResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Invalid token").build();
+      Account account = accountService.findById(accountId);
+      if (account == null)
+        return GetVerifyEmailResponse.newBuilder().setStatus(HttpStatus.NOT_FOUND.value()).setMessage("Account not found").build();
+      account.setIsActive(true);
+      accountService.save(account);
+      return GetVerifyEmailResponse.newBuilder().setStatus(HttpStatus.OK.value()).setMessage("Email verified").build();
+    } else if (jwtService.isExpired(request.getToken())) {
+      return GetVerifyEmailResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Token expired").build();
+    }
+    return GetVerifyEmailResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Invalid token").build();
+  }
+
+  @Transactional(rollbackFor = {ResourceNotFoundException.class, RuntimeException.class})
+  public PostCreateAccountResponse createAccount(PostCreateAccountRequest request) {
+    ROLE name = ROLE.valueOf(request.getRole().toUpperCase(Locale.ROOT));
+    Role role = roleService.findByName(name);
+    if (role == null) {
+      return PostCreateAccountResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Role not found").build();
     }
 
+    String username = request.getUsername();
+    String password = request.getPassword();
+    String phoneNumber = request.getPhoneNumber();
+    String email = request.getEmail();
+    if (accountService.findByUsername(username) != null || accountService.findByEmail(email) != null || accountService.findByPhoneNumber(phoneNumber) != null) {
+      return PostCreateAccountResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Account already exists").build();
+    }
 
+    Account account = Account.builder()
+            .username(username)
+            .password(passwordEncoder.encode(password))
+            .email(email)
+            .phoneNumber(phoneNumber)
+            .isActive(false)  ///  Chưa active, admin phải sử dụng chức năng cập nhật để bật active.
+            .role(role)
+            .build();
+
+    Account saved = accountService.save(account);
+    if (saved == null || saved.getId() <= 0) {
+      throw new RuntimeException("Failed to save account");
+    }
+
+    switch (name) {
+      case ROLE.PLAYER: {
+        // Tạo mới tài khoản player.
+        Player player = Player.builder()
+                .name("")
+                .avatar("")
+                .birthDate(new java.sql.Date(new Date().getTime()))
+                .gender(GENDER.OTHER)
+                .facebook("")
+                .account(saved)
+                .build();
+        player = playerService.save(player);
+        if (player == null || player.getId() <= 0) {
+          throw new RuntimeException("Failed to save player");
+        }
+        break;
+      }
+      case ROLE.BRAND: {
+        // Tạo mới tài khoản brand.
+        Brand brand = Brand.builder()
+                .name("")
+                .field("")
+                .address("")
+                .gps("")
+                .isEnable(false)
+                .account(saved)
+                .build();
+        brand = brandService.save(brand);
+        if (brand == null || brand.getId() <= 0) {
+          throw new RuntimeException("Failed to save brand");
+        }
+        break;
+      }
+      default:
+        return PostCreateAccountResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Role not found").build();
+    }
+    return PostCreateAccountResponse.newBuilder().setStatus(HttpStatus.CREATED.value()).setMessage("Success").build();
+  }
+
+
+  public DeleteAccountResponse deleteAccount(DeleteAccountRequest request) {
+    Account account = accountService.findById(request.getId());
+    if (account == null || account.getId() <= 0) {
+      return DeleteAccountResponse.newBuilder().setStatus(HttpStatus.NOT_FOUND.value()).setMessage("Account not found").build();
+    }
+    accountService.delete(account);
+    return DeleteAccountResponse.newBuilder().setStatus(HttpStatus.OK.value()).setMessage("Success").build();
   }
 }

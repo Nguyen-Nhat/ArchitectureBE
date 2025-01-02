@@ -27,16 +27,4 @@ public class CoreController {
         LOGGER.info("nhat.ntm");
         return ResponseEntity.ok("hello");
     }
-
-    @PreAuthorize("hasRole('BRAND')")
-    @GetMapping(value = "/users/brand-info")
-    public ResponseEntity<String> getBrandInfo(Authentication authentication) {
-        return ResponseEntity.ok("brand info");
-    }
-
-    @PreAuthorize("hasRole('PLAYER')")
-    @GetMapping(value = "/users/player-info")
-    public ResponseEntity<String> getPlayerInfo() {
-        return ResponseEntity.ok("player info");
-    }
 }

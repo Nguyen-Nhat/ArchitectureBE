@@ -26,8 +26,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    username: maivanminh.se@gmail.com
+    password: bvcx tsfj tbgi ifzz
     properties:
       mail:
         smtp:
@@ -53,3 +53,11 @@ spring:
       enabled: true
 server:
   port: 8081
+
+application:
+  security:
+    jwt:
+      secret-key: $2a$12$iP3.JTboJiEaRDe3lLx4oOkZbBCf8Yf.7SO8UR8D8g2NWvNL3m0nu
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
