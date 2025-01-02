@@ -5,14 +5,146 @@ option java_package = "org.archi.common.auth";
 option java_outer_classname = "AuthProto";
 
 service AuthService {
-  rpc GetUserInfo(GetUserInfoRequest) returns(GetUserInfoResponse);
+  rpc PostRegister(PostRegisterRequest) returns(PostRegisterResponse);
+  rpc PostLogin(PostLoginRequest) returns(PostLoginResponse);
+  rpc PostLogout(PostLogoutRequest) returns(PostLogoutResponse);
+  rpc PostRefreshToken(PostRefreshTokenRequest) returns(PostRefreshTokenResponse);
+  rpc GetVerifyEmail(GetVerifyEmailRequest) returns(GetVerifyEmailResponse);
+  rpc PostVerifyToken(PostVerifyTokenRequest) returns(PostVerifyTokenResponse);
+  rpc GetBrandInfo(GetBrandInfoRequest) returns(GetBrandInfoResponse);
+  rpc GetPlayerInfo(GetPlayerInfoRequest) returns(GetPlayerInfoResponse);
+  rpc GetAccountInfo(GetAccountInfoRequest) returns(GetAccountInfoResponse);
+  rpc PostCreateAccount(PostCreateAccountRequest) returns(PostCreateAccountResponse);
+  rpc DeleteAccount(DeleteAccountRequest) returns(DeleteAccountResponse);
 }
 
-message GetUserInfoRequest {
+message PostCreateAccountRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+  string phoneNumber = 4;
+  string role = 5;
+}
+message PostCreateAccountResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message PutUpdateAccountRequest {
+  string username = 1;
+  string email = 2;
+  string phoneNumber = 3;
+  string role = 4;
+  bool isActive = 5;
+}
+message PutUpdateAccountResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message DeleteAccountRequest {
   int64 id = 1;
 }
-
-message GetUserInfoResponse {
-  int64 code = 1;
+message DeleteAccountResponse {
+  int64 status = 1;
   string message = 2;
+}
+
+message GetAccountInfoRequest {
+  int64 id = 1;
+}
+message GetAccountInfoResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string username = 4;
+  string email = 5;
+  string phoneNumber = 6;
+  string role = 7;
+  bool isActive = 8;
+}
+message PostRegisterRequest {
+  string username = 2;
+  string password = 3;
+  string email = 4;
+  string phoneNumber = 5;
+  string role = 6;
+}
+message PostRegisterResponse {
+  int64 status = 1;
+  string message = 2;
+}
+message PostLoginRequest {
+  string username = 1;
+  string password = 2;
+}
+message PostLoginResponse {
+  int64 status = 1;
+  string message = 2;
+  string accessToken = 3;
+  string refreshToken = 4;
+  string tokenType = 5;
+  int64 expiresIn = 6;
+}
+service LogoutService {
+
+}
+message PostLogoutRequest {
+  string accessToken = 1;
+}
+message PostLogoutResponse {
+  int64 status = 1;
+  string message = 2;
+}
+message PostRefreshTokenRequest {
+  string refreshToken = 1;
+}
+message PostRefreshTokenResponse {
+  int64 status = 1;
+  string message = 2;
+  string accessToken = 3;
+  int64 expiresIn = 4;
+  string tokenType = 5;
+}
+message GetVerifyEmailRequest {
+  string token = 1; // Token có được từ request param.
+}
+message GetVerifyEmailResponse {
+  int64 status = 1; // Thành công thì trả về 200, thất bại thì trả về 400
+  string message = 2;
+}
+message PostVerifyTokenRequest {
+  string token = 1;
+}
+message PostVerifyTokenResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3; // account id.
+  string role = 4;
+}
+message GetBrandInfoRequest {
+  int64 id = 1; /*Account ID*/
+}
+message GetBrandInfoResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string name = 4;
+  string field = 5;
+  string address = 6;
+  string gps = 7;
+  bool isEnable = 8;
+}
+message GetPlayerInfoRequest {
+  int64 id = 1; /*Account ID*/
+}
+message GetPlayerInfoResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string name = 4;
+  string avatar = 5;
+  int64 birthDate = 6;
+  string gender = 7;
+  string facebook = 8;
 }

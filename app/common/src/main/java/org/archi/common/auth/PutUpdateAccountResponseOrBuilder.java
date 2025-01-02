@@ -3,15 +3,15 @@
 
 package org.archi.common.auth;
 
-public interface GetUserInfoResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GetUserInfoResponse)
+public interface PutUpdateAccountResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:PutUpdateAccountResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 code = 1;</code>
-   * @return The code.
+   * <code>int64 status = 1;</code>
+   * @return The status.
    */
-  long getCode();
+  long getStatus();
 
   /**
    * <code>string message = 2;</code>

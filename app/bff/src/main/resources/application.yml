@@ -6,10 +6,10 @@ server:
 grpc:
   client:
     coreService:
-      address: static://localhost:9443
+      address: localhost:9443
       negotiation-type: plaintext
     authService:
-      address: static://localhost:9444
+      address: localhost:9444
       negotiation-type: plaintext
 
 management:
