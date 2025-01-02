@@ -1,9 +1,6 @@
 package org.archi.bff.adapter;
 
 import net.devh.boot.grpc.client.inject.GrpcClient;
-import org.archi.common.auth.AuthServiceGrpc;
-import org.archi.common.auth.GetUserInfoRequest;
-import org.archi.common.auth.GetUserInfoResponse;
 import org.springframework.stereotype.Service;
 
 @Service
