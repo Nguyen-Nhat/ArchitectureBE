@@ -1,8 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/vou_auth_db
-    username: postgres
-    password: 49@Da5J,[KsemDN
-  jpa:
-    show-sql: true
-    database: postgresql
