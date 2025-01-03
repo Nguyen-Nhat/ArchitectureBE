@@ -8,14 +8,26 @@ public interface GetVouchersResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string message = 1;</code>
-   * @return The message.
+   * <code>repeated .Voucher vouchers = 1;</code>
    */
-  java.lang.String getMessage();
+  java.util.List<org.archi.common.core.Voucher> 
+      getVouchersList();
   /**
-   * <code>string message = 1;</code>
-   * @return The bytes for message.
+   * <code>repeated .Voucher vouchers = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getMessageBytes();
+  org.archi.common.core.Voucher getVouchers(int index);
+  /**
+   * <code>repeated .Voucher vouchers = 1;</code>
+   */
+  int getVouchersCount();
+  /**
+   * <code>repeated .Voucher vouchers = 1;</code>
+   */
+  java.util.List<? extends org.archi.common.core.VoucherOrBuilder> 
+      getVouchersOrBuilderList();
+  /**
+   * <code>repeated .Voucher vouchers = 1;</code>
+   */
+  org.archi.common.core.VoucherOrBuilder getVouchersOrBuilder(
+      int index);
 }

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetVouchersResponse() {
-    message_ = "";
+    vouchers_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -31,6 +31,56 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private GetVouchersResponse(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              vouchers_ = new java.util.ArrayList<org.archi.common.core.Voucher>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            vouchers_.add(
+                input.readMessage(org.archi.common.core.Voucher.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        vouchers_ = java.util.Collections.unmodifiableList(vouchers_);
+      }
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.archi.common.core.CoreProto.internal_static_GetVouchersResponse_descriptor;
@@ -44,42 +94,44 @@ private static final long serialVersionUID = 0L;
             org.archi.common.core.GetVouchersResponse.class, org.archi.common.core.GetVouchersResponse.Builder.class);
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+  public static final int VOUCHERS_FIELD_NUMBER = 1;
+  private java.util.List<org.archi.common.core.Voucher> vouchers_;
   /**
-   * <code>string message = 1;</code>
-   * @return The message.
+   * <code>repeated .Voucher vouchers = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      message_ = s;
-      return s;
-    }
+  public java.util.List<org.archi.common.core.Voucher> getVouchersList() {
+    return vouchers_;
   }
   /**
-   * <code>string message = 1;</code>
-   * @return The bytes for message.
+   * <code>repeated .Voucher vouchers = 1;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      message_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public java.util.List<? extends org.archi.common.core.VoucherOrBuilder> 
+      getVouchersOrBuilderList() {
+    return vouchers_;
+  }
+  /**
+   * <code>repeated .Voucher vouchers = 1;</code>
+   */
+  @java.lang.Override
+  public int getVouchersCount() {
+    return vouchers_.size();
+  }
+  /**
+   * <code>repeated .Voucher vouchers = 1;</code>
+   */
+  @java.lang.Override
+  public org.archi.common.core.Voucher getVouchers(int index) {
+    return vouchers_.get(index);
+  }
+  /**
+   * <code>repeated .Voucher vouchers = 1;</code>
+   */
+  @java.lang.Override
+  public org.archi.common.core.VoucherOrBuilder getVouchersOrBuilder(
+      int index) {
+    return vouchers_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -96,10 +148,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+    for (int i = 0; i < vouchers_.size(); i++) {
+      output.writeMessage(1, vouchers_.get(i));
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -108,10 +160,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+    for (int i = 0; i < vouchers_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, vouchers_.get(i));
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -126,9 +179,9 @@ private static final long serialVersionUID = 0L;
     }
     org.archi.common.core.GetVouchersResponse other = (org.archi.common.core.GetVouchersResponse) obj;
 
-    if (!getMessage()
-        .equals(other.getMessage())) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!getVouchersList()
+        .equals(other.getVouchersList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -139,9 +192,11 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    if (getVouchersCount() > 0) {
+      hash = (37 * hash) + VOUCHERS_FIELD_NUMBER;
+      hash = (53 * hash) + getVouchersList().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -258,19 +313,29 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.archi.common.core.GetVouchersResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getVouchersFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      message_ = "";
-
+      if (vouchersBuilder_ == null) {
+        vouchers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        vouchersBuilder_.clear();
+      }
       return this;
     }
 
@@ -297,7 +362,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.archi.common.core.GetVouchersResponse buildPartial() {
       org.archi.common.core.GetVouchersResponse result = new org.archi.common.core.GetVouchersResponse(this);
-      result.message_ = message_;
+      int from_bitField0_ = bitField0_;
+      if (vouchersBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          vouchers_ = java.util.Collections.unmodifiableList(vouchers_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.vouchers_ = vouchers_;
+      } else {
+        result.vouchers_ = vouchersBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -346,11 +420,33 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.archi.common.core.GetVouchersResponse other) {
       if (other == org.archi.common.core.GetVouchersResponse.getDefaultInstance()) return this;
-      if (!other.getMessage().isEmpty()) {
-        message_ = other.message_;
-        onChanged();
+      if (vouchersBuilder_ == null) {
+        if (!other.vouchers_.isEmpty()) {
+          if (vouchers_.isEmpty()) {
+            vouchers_ = other.vouchers_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureVouchersIsMutable();
+            vouchers_.addAll(other.vouchers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.vouchers_.isEmpty()) {
+          if (vouchersBuilder_.isEmpty()) {
+            vouchersBuilder_.dispose();
+            vouchersBuilder_ = null;
+            vouchers_ = other.vouchers_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            vouchersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getVouchersFieldBuilder() : null;
+          } else {
+            vouchersBuilder_.addAllMessages(other.vouchers_);
+          }
+        }
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -365,112 +461,259 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      org.archi.common.core.GetVouchersResponse parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              message_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 10
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (org.archi.common.core.GetVouchersResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
+    }
+    private int bitField0_;
+
+    private java.util.List<org.archi.common.core.Voucher> vouchers_ =
+      java.util.Collections.emptyList();
+    private void ensureVouchersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        vouchers_ = new java.util.ArrayList<org.archi.common.core.Voucher>(vouchers_);
+        bitField0_ |= 0x00000001;
+       }
     }
 
-    private java.lang.Object message_ = "";
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.archi.common.core.Voucher, org.archi.common.core.Voucher.Builder, org.archi.common.core.VoucherOrBuilder> vouchersBuilder_;
+
     /**
-     * <code>string message = 1;</code>
-     * @return The message.
+     * <code>repeated .Voucher vouchers = 1;</code>
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
+    public java.util.List<org.archi.common.core.Voucher> getVouchersList() {
+      if (vouchersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(vouchers_);
       } else {
-        return (java.lang.String) ref;
+        return vouchersBuilder_.getMessageList();
       }
     }
     /**
-     * <code>string message = 1;</code>
-     * @return The bytes for message.
+     * <code>repeated .Voucher vouchers = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
+    public int getVouchersCount() {
+      if (vouchersBuilder_ == null) {
+        return vouchers_.size();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        return vouchersBuilder_.getCount();
       }
     }
     /**
-     * <code>string message = 1;</code>
-     * @param value The message to set.
-     * @return This builder for chaining.
+     * <code>repeated .Voucher vouchers = 1;</code>
      */
-    public Builder setMessage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-      onChanged();
+    public org.archi.common.core.Voucher getVouchers(int index) {
+      if (vouchersBuilder_ == null) {
+        return vouchers_.get(index);
+      } else {
+        return vouchersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public Builder setVouchers(
+        int index, org.archi.common.core.Voucher value) {
+      if (vouchersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVouchersIsMutable();
+        vouchers_.set(index, value);
+        onChanged();
+      } else {
+        vouchersBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>string message = 1;</code>
-     * @return This builder for chaining.
+     * <code>repeated .Voucher vouchers = 1;</code>
      */
-    public Builder clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-      onChanged();
+    public Builder setVouchers(
+        int index, org.archi.common.core.Voucher.Builder builderForValue) {
+      if (vouchersBuilder_ == null) {
+        ensureVouchersIsMutable();
+        vouchers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        vouchersBuilder_.setMessage(index, builderForValue.build());
+      }
       return this;
     }
     /**
-     * <code>string message = 1;</code>
-     * @param value The bytes for message to set.
-     * @return This builder for chaining.
+     * <code>repeated .Voucher vouchers = 1;</code>
      */
-    public Builder setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value;
-      onChanged();
+    public Builder addVouchers(org.archi.common.core.Voucher value) {
+      if (vouchersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVouchersIsMutable();
+        vouchers_.add(value);
+        onChanged();
+      } else {
+        vouchersBuilder_.addMessage(value);
+      }
       return this;
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public Builder addVouchers(
+        int index, org.archi.common.core.Voucher value) {
+      if (vouchersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVouchersIsMutable();
+        vouchers_.add(index, value);
+        onChanged();
+      } else {
+        vouchersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public Builder addVouchers(
+        org.archi.common.core.Voucher.Builder builderForValue) {
+      if (vouchersBuilder_ == null) {
+        ensureVouchersIsMutable();
+        vouchers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        vouchersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public Builder addVouchers(
+        int index, org.archi.common.core.Voucher.Builder builderForValue) {
+      if (vouchersBuilder_ == null) {
+        ensureVouchersIsMutable();
+        vouchers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        vouchersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public Builder addAllVouchers(
+        java.lang.Iterable<? extends org.archi.common.core.Voucher> values) {
+      if (vouchersBuilder_ == null) {
+        ensureVouchersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, vouchers_);
+        onChanged();
+      } else {
+        vouchersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public Builder clearVouchers() {
+      if (vouchersBuilder_ == null) {
+        vouchers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        vouchersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public Builder removeVouchers(int index) {
+      if (vouchersBuilder_ == null) {
+        ensureVouchersIsMutable();
+        vouchers_.remove(index);
+        onChanged();
+      } else {
+        vouchersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public org.archi.common.core.Voucher.Builder getVouchersBuilder(
+        int index) {
+      return getVouchersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public org.archi.common.core.VoucherOrBuilder getVouchersOrBuilder(
+        int index) {
+      if (vouchersBuilder_ == null) {
+        return vouchers_.get(index);  } else {
+        return vouchersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public java.util.List<? extends org.archi.common.core.VoucherOrBuilder> 
+         getVouchersOrBuilderList() {
+      if (vouchersBuilder_ != null) {
+        return vouchersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(vouchers_);
+      }
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public org.archi.common.core.Voucher.Builder addVouchersBuilder() {
+      return getVouchersFieldBuilder().addBuilder(
+          org.archi.common.core.Voucher.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public org.archi.common.core.Voucher.Builder addVouchersBuilder(
+        int index) {
+      return getVouchersFieldBuilder().addBuilder(
+          index, org.archi.common.core.Voucher.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .Voucher vouchers = 1;</code>
+     */
+    public java.util.List<org.archi.common.core.Voucher.Builder> 
+         getVouchersBuilderList() {
+      return getVouchersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.archi.common.core.Voucher, org.archi.common.core.Voucher.Builder, org.archi.common.core.VoucherOrBuilder> 
+        getVouchersFieldBuilder() {
+      if (vouchersBuilder_ == null) {
+        vouchersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.archi.common.core.Voucher, org.archi.common.core.Voucher.Builder, org.archi.common.core.VoucherOrBuilder>(
+                vouchers_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        vouchers_ = null;
+      }
+      return vouchersBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -505,18 +748,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new GetVouchersResponse(input, extensionRegistry);
     }
   };
 

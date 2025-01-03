@@ -189,7 +189,7 @@ public final class AuthProto {
       "\227\001\n\025GetPlayerInfoResponse\022\016\n\006status\030\001 \001(" +
       "\003\022\017\n\007message\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\014\n\004name\030\004" +
       " \001(\t\022\016\n\006avatar\030\005 \001(\t\022\021\n\tbirthDate\030\006 \001(\003\022" +
-      "\016\n\006gender\030\007 \001(\t\022\020\n\010facebook\030\010 \001(\t2\234\006\n\013Au" +
+      "\016\n\006gender\030\007 \001(\t\022\020\n\010facebook\030\010 \001(\t2\323\005\n\013Au" +
       "thService\022;\n\014PostRegister\022\024.PostRegister" +
       "Request\032\025.PostRegisterResponse\0222\n\tPostLo" +
       "gin\022\021.PostLoginRequest\032\022.PostLoginRespon" +
@@ -206,12 +206,10 @@ public final class AuthProto {
       "ccountInfo\022\026.GetAccountInfoRequest\032\027.Get" +
       "AccountInfoResponse\022J\n\021PostCreateAccount" +
       "\022\031.PostCreateAccountRequest\032\032.PostCreate" +
-      "AccountResponse\022G\n\020PutUpdateAccount\022\030.Pu" +
-      "tUpdateAccountRequest\032\031.PutUpdateAccount" +
-      "Response\022>\n\rDeleteAccount\022\025.DeleteAccoun" +
-      "tRequest\032\026.DeleteAccountResponse2\017\n\rLogo" +
-      "utServiceB$\n\025org.archi.common.authB\tAuth" +
-      "ProtoP\001b\006proto3"
+      "AccountResponse\022>\n\rDeleteAccount\022\025.Delet" +
+      "eAccountRequest\032\026.DeleteAccountResponse2" +
+      "\017\n\rLogoutServiceB$\n\025org.archi.common.aut" +
+      "hB\tAuthProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

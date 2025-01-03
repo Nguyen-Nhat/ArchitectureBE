@@ -1,32 +1,38 @@
 package org.archi.common.auth;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.69.0)",
+    value = "by gRPC proto compiler (version 1.9.1)",
     comments = "Source: auth.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class LogoutServiceGrpc {
 
   private LogoutServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "LogoutService";
+  public static final String SERVICE_NAME = "LogoutService";
 
   // Static method descriptors that strictly reflect the proto.
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static LogoutServiceStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LogoutServiceStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<LogoutServiceStub>() {
-        @java.lang.Override
-        public LogoutServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new LogoutServiceStub(channel, callOptions);
-        }
-      };
-    return LogoutServiceStub.newStub(factory, channel);
+    return new LogoutServiceStub(channel);
   }
 
   /**
@@ -34,14 +40,7 @@ public final class LogoutServiceGrpc {
    */
   public static LogoutServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LogoutServiceBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<LogoutServiceBlockingStub>() {
-        @java.lang.Override
-        public LogoutServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new LogoutServiceBlockingStub(channel, callOptions);
-        }
-      };
-    return LogoutServiceBlockingStub.newStub(factory, channel);
+    return new LogoutServiceBlockingStub(channel);
   }
 
   /**
@@ -49,79 +48,72 @@ public final class LogoutServiceGrpc {
    */
   public static LogoutServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LogoutServiceFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<LogoutServiceFutureStub>() {
-        @java.lang.Override
-        public LogoutServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new LogoutServiceFutureStub(channel, callOptions);
-        }
-      };
-    return LogoutServiceFutureStub.newStub(factory, channel);
+    return new LogoutServiceFutureStub(channel);
   }
 
   /**
    */
-  public interface AsyncService {
-  }
-
-  /**
-   * Base class for the server implementation of the service LogoutService.
-   */
-  public static abstract class LogoutServiceImplBase
-      implements io.grpc.BindableService, AsyncService {
+  public static abstract class LogoutServiceImplBase implements io.grpc.BindableService {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return LogoutServiceGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .build();
     }
   }
 
   /**
-   * A stub to allow clients to do asynchronous rpc calls to service LogoutService.
    */
-  public static final class LogoutServiceStub
-      extends io.grpc.stub.AbstractAsyncStub<LogoutServiceStub> {
-    private LogoutServiceStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class LogoutServiceStub extends io.grpc.stub.AbstractStub<LogoutServiceStub> {
+    private LogoutServiceStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private LogoutServiceStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected LogoutServiceStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected LogoutServiceStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new LogoutServiceStub(channel, callOptions);
     }
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service LogoutService.
    */
-  public static final class LogoutServiceBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<LogoutServiceBlockingStub> {
-    private LogoutServiceBlockingStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class LogoutServiceBlockingStub extends io.grpc.stub.AbstractStub<LogoutServiceBlockingStub> {
+    private LogoutServiceBlockingStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private LogoutServiceBlockingStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected LogoutServiceBlockingStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected LogoutServiceBlockingStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new LogoutServiceBlockingStub(channel, callOptions);
     }
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service LogoutService.
    */
-  public static final class LogoutServiceFutureStub
-      extends io.grpc.stub.AbstractFutureStub<LogoutServiceFutureStub> {
-    private LogoutServiceFutureStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class LogoutServiceFutureStub extends io.grpc.stub.AbstractStub<LogoutServiceFutureStub> {
+    private LogoutServiceFutureStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private LogoutServiceFutureStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected LogoutServiceFutureStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected LogoutServiceFutureStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new LogoutServiceFutureStub(channel, callOptions);
     }
   }
@@ -132,10 +124,10 @@ public final class LogoutServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AsyncService serviceImpl;
+    private final LogoutServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AsyncService serviceImpl, int methodId) {
+    MethodHandlers(LogoutServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -158,11 +150,6 @@ public final class LogoutServiceGrpc {
           throw new AssertionError();
       }
     }
-  }
-
-  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .build();
   }
 
   private static abstract class LogoutServiceBaseDescriptorSupplier
@@ -188,9 +175,9 @@ public final class LogoutServiceGrpc {
   private static final class LogoutServiceMethodDescriptorSupplier
       extends LogoutServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final java.lang.String methodName;
+    private final String methodName;
 
-    LogoutServiceMethodDescriptorSupplier(java.lang.String methodName) {
+    LogoutServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 

@@ -47,6 +47,12 @@
             <artifactId>protovalidate</artifactId>
             <version>0.5.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.archi</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
