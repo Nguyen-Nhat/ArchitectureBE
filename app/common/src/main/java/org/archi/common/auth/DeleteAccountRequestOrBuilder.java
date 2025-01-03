@@ -3,8 +3,8 @@
 
 package org.archi.common.auth;
 
-public interface GetUserInfoRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GetUserInfoRequest)
+public interface DeleteAccountRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:DeleteAccountRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

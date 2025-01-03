@@ -4,25 +4,25 @@
 package org.archi.common.auth;
 
 /**
- * Protobuf type {@code GetUserInfoRequest}
+ * Protobuf type {@code GetAccountInfoRequest}
  */
-public final class GetUserInfoRequest extends
+public final class GetAccountInfoRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetUserInfoRequest)
-    GetUserInfoRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:GetAccountInfoRequest)
+    GetAccountInfoRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetUserInfoRequest.newBuilder() to construct.
-  private GetUserInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetAccountInfoRequest.newBuilder() to construct.
+  private GetAccountInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetUserInfoRequest() {
+  private GetAccountInfoRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetUserInfoRequest();
+    return new GetAccountInfoRequest();
   }
 
   @java.lang.Override
@@ -30,59 +30,17 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetUserInfoRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8: {
-
-            id_ = input.readInt64();
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.auth.AuthProto.internal_static_GetUserInfoRequest_descriptor;
+    return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.auth.AuthProto.internal_static_GetUserInfoRequest_fieldAccessorTable
+    return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.auth.GetUserInfoRequest.class, org.archi.common.auth.GetUserInfoRequest.Builder.class);
+            org.archi.common.auth.GetAccountInfoRequest.class, org.archi.common.auth.GetAccountInfoRequest.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -113,7 +71,7 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -126,7 +84,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -136,14 +94,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.auth.GetUserInfoRequest)) {
+    if (!(obj instanceof org.archi.common.auth.GetAccountInfoRequest)) {
       return super.equals(obj);
     }
-    org.archi.common.auth.GetUserInfoRequest other = (org.archi.common.auth.GetUserInfoRequest) obj;
+    org.archi.common.auth.GetAccountInfoRequest other = (org.archi.common.auth.GetAccountInfoRequest) obj;
 
     if (getId()
         != other.getId()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -157,74 +115,74 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(byte[] data)
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(java.io.InputStream input)
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.auth.GetAccountInfoRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseDelimitedFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetUserInfoRequest parseFrom(
+  public static org.archi.common.auth.GetAccountInfoRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -237,7 +195,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.auth.GetUserInfoRequest prototype) {
+  public static Builder newBuilder(org.archi.common.auth.GetAccountInfoRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -253,39 +211,34 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetUserInfoRequest}
+   * Protobuf type {@code GetAccountInfoRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetUserInfoRequest)
-      org.archi.common.auth.GetUserInfoRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:GetAccountInfoRequest)
+      org.archi.common.auth.GetAccountInfoRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.auth.AuthProto.internal_static_GetUserInfoRequest_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.auth.AuthProto.internal_static_GetUserInfoRequest_fieldAccessorTable
+      return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.auth.GetUserInfoRequest.class, org.archi.common.auth.GetUserInfoRequest.Builder.class);
+              org.archi.common.auth.GetAccountInfoRequest.class, org.archi.common.auth.GetAccountInfoRequest.Builder.class);
     }
 
-    // Construct using org.archi.common.auth.GetUserInfoRequest.newBuilder()
+    // Construct using org.archi.common.auth.GetAccountInfoRequest.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -298,17 +251,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.auth.AuthProto.internal_static_GetUserInfoRequest_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_GetAccountInfoRequest_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetUserInfoRequest getDefaultInstanceForType() {
-      return org.archi.common.auth.GetUserInfoRequest.getDefaultInstance();
+    public org.archi.common.auth.GetAccountInfoRequest getDefaultInstanceForType() {
+      return org.archi.common.auth.GetAccountInfoRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetUserInfoRequest build() {
-      org.archi.common.auth.GetUserInfoRequest result = buildPartial();
+    public org.archi.common.auth.GetAccountInfoRequest build() {
+      org.archi.common.auth.GetAccountInfoRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -316,8 +269,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetUserInfoRequest buildPartial() {
-      org.archi.common.auth.GetUserInfoRequest result = new org.archi.common.auth.GetUserInfoRequest(this);
+    public org.archi.common.auth.GetAccountInfoRequest buildPartial() {
+      org.archi.common.auth.GetAccountInfoRequest result = new org.archi.common.auth.GetAccountInfoRequest(this);
       result.id_ = id_;
       onBuilt();
       return result;
@@ -357,20 +310,20 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.auth.GetUserInfoRequest) {
-        return mergeFrom((org.archi.common.auth.GetUserInfoRequest)other);
+      if (other instanceof org.archi.common.auth.GetAccountInfoRequest) {
+        return mergeFrom((org.archi.common.auth.GetAccountInfoRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.auth.GetUserInfoRequest other) {
-      if (other == org.archi.common.auth.GetUserInfoRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.archi.common.auth.GetAccountInfoRequest other) {
+      if (other == org.archi.common.auth.GetAccountInfoRequest.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -385,17 +338,35 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.archi.common.auth.GetUserInfoRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              id_ = input.readInt64();
+
+              break;
+            } // case 8
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.archi.common.auth.GetUserInfoRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -442,41 +413,52 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetUserInfoRequest)
+    // @@protoc_insertion_point(builder_scope:GetAccountInfoRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:GetUserInfoRequest)
-  private static final org.archi.common.auth.GetUserInfoRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:GetAccountInfoRequest)
+  private static final org.archi.common.auth.GetAccountInfoRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.auth.GetUserInfoRequest();
+    DEFAULT_INSTANCE = new org.archi.common.auth.GetAccountInfoRequest();
   }
 
-  public static org.archi.common.auth.GetUserInfoRequest getDefaultInstance() {
+  public static org.archi.common.auth.GetAccountInfoRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetUserInfoRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetUserInfoRequest>() {
+  private static final com.google.protobuf.Parser<GetAccountInfoRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetAccountInfoRequest>() {
     @java.lang.Override
-    public GetUserInfoRequest parsePartialFrom(
+    public GetAccountInfoRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetUserInfoRequest(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 
-  public static com.google.protobuf.Parser<GetUserInfoRequest> parser() {
+  public static com.google.protobuf.Parser<GetAccountInfoRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetUserInfoRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetAccountInfoRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.auth.GetUserInfoRequest getDefaultInstanceForType() {
+  public org.archi.common.auth.GetAccountInfoRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
