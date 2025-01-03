@@ -1,11 +1,10 @@
 package org.archi.bff.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.archi.bff.request.CreateCampaignRequest;
 import org.archi.bff.response.ResponseData;
 import org.archi.bff.service.CoreService;
-import org.archi.common.core.CreateVoucherTypeRequest;
-import org.archi.common.core.GenerateVoucherRequest;
-import org.archi.common.core.UpdateVoucherTypeReq;
+import org.archi.common.core.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.integration.IntegrationProperties;
@@ -79,4 +78,36 @@ public class CoreController {
         return coreService.searchVoucherType(term);
     }
 
+    @GetMapping("/campaigns")
+    public ResponseEntity<ResponseData> getCampaigns(@RequestParam String startDate, @RequestParam String endDate) {
+        return coreService.getCampaigns(startDate, endDate);
+    }
+
+    @GetMapping("/campaigns/search")
+    public ResponseEntity<ResponseData> searchCampaign(@RequestParam String term) {
+        return coreService.searchCampaign(term);
+    }
+
+    @PostMapping("/campaigns/create")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> createCampaign(@RequestBody CreateCampaignRequest request) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Long brandId = Long.parseLong(auth.getName());
+        return coreService.createCampaign(brandId, request);
+    }
+
+    @GetMapping("/campaigns/by-brand-id")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> getCampaignsByBrandId(@RequestParam Long id) {
+        GetCampaignsByBrandIdReq request = GetCampaignsByBrandIdReq.newBuilder()
+                .setBrandId(id)
+                .build();
+        return coreService.getCampaignsByBrandId(request);
+    }
+
+    @PutMapping("/campaigns")
+    @PreAuthorize("hasRole('BRAND')")
+    public UpdateCampaignRes updateCampaign(@RequestBody UpdateCampaignReq request) {
+        return coreService.updateCampaign(request);
+    }
 }

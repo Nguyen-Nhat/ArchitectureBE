@@ -106,4 +106,71 @@ public class CoreService {
             return ResponseEntity.internalServerError().body(errorResponse);
         }
     }
+
+    public ResponseEntity<ResponseData> getCampaigns(String startDate, String endDate) {
+        try {
+            GetCampaignsRequest request = GetCampaignsRequest.newBuilder()
+                    .setStartDate(startDate)
+                    .setEndDate(endDate)
+                    .build();
+            GetCampaignsResponse response = coreAdapter.getCampaigns(request);
+            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response);
+            return ResponseEntity.ok(responseData);
+        } catch (Exception e) {
+            ResponseData errorResponse = new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "error", e.getMessage());
+            return ResponseEntity.internalServerError().body(errorResponse);
+        }
+    }
+
+    public ResponseEntity<ResponseData> searchCampaign(String term) {
+        try {
+            SearchCampaignRequest request = SearchCampaignRequest.newBuilder()
+                    .setTerm(term).build();
+            SearchCampaignResponse response = coreAdapter.searchCampaign(request);
+            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response);
+            return ResponseEntity.ok(responseData);
+        } catch (Exception e) {
+            ResponseData errorResponse = new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "error", e.getMessage());
+            return ResponseEntity.internalServerError().body(errorResponse);
+        }
+    }
+    public ResponseEntity<ResponseData> createCampaign(
+            Long brandID,
+            org.archi.bff.request.CreateCampaignRequest requestDTO) {
+        try {
+            CreateCampaignRequest request = CreateCampaignRequest.newBuilder()
+                    .setBrandId(brandID)
+                    .setEndDate(requestDTO.getEndDate())
+                    .setStartDate(requestDTO.getStartDate())
+                    .setName(requestDTO.getName())
+                    .setImageUrl(requestDTO.getImageUrl())
+                    .build();
+            CreateCampaignResponse response = coreAdapter.createCampaign(request);
+            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response);
+            return ResponseEntity.ok(responseData);
+        } catch (Exception e) {
+            ResponseData errorResponse = new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "error", e.getMessage());
+            return ResponseEntity.internalServerError().body(errorResponse);
+        }
+    }
+    public ResponseEntity<ResponseData> getCampaignsByBrandId(GetCampaignsByBrandIdReq request) {
+        try {
+            GetCampaignsByBrandIdRes response = coreAdapter.getCampaignsByBrandIdRes(request);
+            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response);
+            return ResponseEntity.ok(responseData);
+        } catch (Exception e) {
+            ResponseData errorResponse = new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "error", e.getMessage());
+            return ResponseEntity.internalServerError().body(errorResponse);
+        }
+    }
+
+    public UpdateCampaignRes updateCampaign(UpdateCampaignReq request) {
+        try {
+            UpdateCampaignRes response = coreAdapter.updateCampaign(request);
+            return response;
+        } catch (Exception e) {
+            ResponseData errorResponse = new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "error", e.getMessage());
+            return null;
+        }
+    }
 }

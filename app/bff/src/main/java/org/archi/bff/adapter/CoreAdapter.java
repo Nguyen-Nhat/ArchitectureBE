@@ -34,4 +34,24 @@ public class CoreAdapter {
     public SearchVoucherTypeResponse searchVoucherType(SearchRequest request) {
         return client.searchVoucherType(request);
     }
+
+    public GetCampaignsResponse getCampaigns(GetCampaignsRequest request) {
+        return client.getCampaigns(request);
+    }
+
+    public SearchCampaignResponse searchCampaign(SearchCampaignRequest request) {
+        return client.searchCampaign(request);
+    }
+
+    public CreateCampaignResponse createCampaign(CreateCampaignRequest request) {
+        return client.createCampaign(request);
+    }
+    public GetCampaignsByBrandIdRes getCampaignsByBrandIdRes(GetCampaignsByBrandIdReq request) {
+        return client.getCampaignsByBrandId(request);
+    }
+
+    public UpdateCampaignRes updateCampaign(UpdateCampaignReq request) {
+        return client.updateCampaign(request);
+    }
+
 }
