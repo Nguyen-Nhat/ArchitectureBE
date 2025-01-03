@@ -1,17 +1,22 @@
 package org.archi.bff.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.archi.bff.response.ResponseData;
+import org.archi.bff.service.CoreService;
+import org.archi.common.core.CreateVoucherTypeRequest;
+import org.archi.common.core.GenerateVoucherRequest;
+import org.archi.common.core.UpdateVoucherTypeReq;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.integration.IntegrationProperties;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +25,58 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CoreController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CoreController.class);
+    private final CoreService coreService;
 
+    @GetMapping("/vouchers")
+    @PreAuthorize("hasRole('PLAYER')")
+    public ResponseEntity<ResponseData> getVouchers() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Long playerId = Long.parseLong(auth.getName());
+        return coreService.getVouchers(playerId);
+    }
+
+    @GetMapping("/voucher-types")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> getVoucherTypes() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Long playerId = Long.valueOf(authentication.getName());
+        return coreService.getVoucherTypes(playerId);
+    }
+
+    @PostMapping("/voucher-types/create")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> createVoucherType(@RequestBody CreateVoucherTypeRequest request) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return coreService.createVoucherType(request);
+    }
+
+    @PostMapping("/generate-voucher")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> generateVoucher(@RequestBody GenerateVoucherRequest request) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        long brandId = Long.parseLong(auth.getName());
+        if (brandId != request.getBrandId()) {
+            return coreService.generateVoucher(request);
+        } else {
+            throw new Error("The brand id does not match the brand id in the request");
+        }
+    }
+
+    @PutMapping("/voucher-types")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> updateVoucherType(@RequestBody UpdateVoucherTypeReq request) {
+        return coreService.updateVoucherType(request);
+    }
+
+    @GetMapping("/vouchers/search")
+    public ResponseEntity<ResponseData> searchVouchers(@RequestParam String term) {
+        return coreService.searchVoucher(term);
+    }
+
+    @GetMapping("/voucher-types/search")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> searchVoucherType(@RequestParam String term) {
+        return coreService.searchVoucherType(term);
+    }
 
 }

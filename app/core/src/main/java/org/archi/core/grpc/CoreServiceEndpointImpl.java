@@ -47,7 +47,24 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 
 	@Override
 	public void getVouchersType(GetVoucherTypesReq request, StreamObserver<GetVoucherTypesRes> responseObserver) {
+		try {
+			GetVoucherTypesRes response = voucherService.getVoucherTypes(request);
+			responseObserver.onNext(response);
+			responseObserver.onCompleted();
+		} catch (Exception ex) {
+			responseObserver.onError(ex);
+		}
+	}
 
+	@Override
+	public void updateVoucherType(UpdateVoucherTypeReq request, StreamObserver<UpdateVoucherTypeRes> responseObserver) {
+		try {
+			UpdateVoucherTypeRes response = voucherService.updateVoucherType(request);
+			responseObserver.onNext(response);
+			responseObserver.onCompleted();
+		} catch (Exception ex) {
+			responseObserver.onError(ex);
+		}
 	}
 
 	@Override
