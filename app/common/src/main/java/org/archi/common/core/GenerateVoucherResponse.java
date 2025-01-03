@@ -81,14 +81,17 @@ private static final long serialVersionUID = 0L;
             qRCode_ = s;
             break;
           }
-          case 48: {
+          case 50: {
+            org.archi.common.core.VoucherType.Builder subBuilder = null;
+            if (voucherType_ != null) {
+              subBuilder = voucherType_.toBuilder();
+            }
+            voucherType_ = input.readMessage(org.archi.common.core.VoucherType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(voucherType_);
+              voucherType_ = subBuilder.buildPartial();
+            }
 
-            brandId_ = input.readInt64();
-            break;
-          }
-          case 56: {
-
-            voucherType_ = input.readInt64();
             break;
           }
           default: {
@@ -286,26 +289,30 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BRANDID_FIELD_NUMBER = 6;
-  private long brandId_;
+  public static final int VOUCHERTYPE_FIELD_NUMBER = 6;
+  private org.archi.common.core.VoucherType voucherType_;
   /**
-   * <code>int64 brandId = 6;</code>
-   * @return The brandId.
+   * <code>.VoucherType voucherType = 6;</code>
+   * @return Whether the voucherType field is set.
    */
   @java.lang.Override
-  public long getBrandId() {
-    return brandId_;
+  public boolean hasVoucherType() {
+    return voucherType_ != null;
   }
-
-  public static final int VOUCHERTYPE_FIELD_NUMBER = 7;
-  private long voucherType_;
   /**
-   * <code>int64 voucherType = 7;</code>
+   * <code>.VoucherType voucherType = 6;</code>
    * @return The voucherType.
    */
   @java.lang.Override
-  public long getVoucherType() {
-    return voucherType_;
+  public org.archi.common.core.VoucherType getVoucherType() {
+    return voucherType_ == null ? org.archi.common.core.VoucherType.getDefaultInstance() : voucherType_;
+  }
+  /**
+   * <code>.VoucherType voucherType = 6;</code>
+   */
+  @java.lang.Override
+  public org.archi.common.core.VoucherTypeOrBuilder getVoucherTypeOrBuilder() {
+    return getVoucherType();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -337,11 +344,8 @@ private static final long serialVersionUID = 0L;
     if (!getQRCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, qRCode_);
     }
-    if (brandId_ != 0L) {
-      output.writeInt64(6, brandId_);
-    }
-    if (voucherType_ != 0L) {
-      output.writeInt64(7, voucherType_);
+    if (voucherType_ != null) {
+      output.writeMessage(6, getVoucherType());
     }
     unknownFields.writeTo(output);
   }
@@ -368,13 +372,9 @@ private static final long serialVersionUID = 0L;
     if (!getQRCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, qRCode_);
     }
-    if (brandId_ != 0L) {
+    if (voucherType_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, brandId_);
-    }
-    if (voucherType_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, voucherType_);
+        .computeMessageSize(6, getVoucherType());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -401,10 +401,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getStatus())) return false;
     if (!getQRCode()
         .equals(other.getQRCode())) return false;
-    if (getBrandId()
-        != other.getBrandId()) return false;
-    if (getVoucherType()
-        != other.getVoucherType()) return false;
+    if (hasVoucherType() != other.hasVoucherType()) return false;
+    if (hasVoucherType()) {
+      if (!getVoucherType()
+          .equals(other.getVoucherType())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -427,12 +428,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getStatus().hashCode();
     hash = (37 * hash) + QRCODE_FIELD_NUMBER;
     hash = (53 * hash) + getQRCode().hashCode();
-    hash = (37 * hash) + BRANDID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBrandId());
-    hash = (37 * hash) + VOUCHERTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getVoucherType());
+    if (hasVoucherType()) {
+      hash = (37 * hash) + VOUCHERTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getVoucherType().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -576,10 +575,12 @@ private static final long serialVersionUID = 0L;
 
       qRCode_ = "";
 
-      brandId_ = 0L;
-
-      voucherType_ = 0L;
-
+      if (voucherTypeBuilder_ == null) {
+        voucherType_ = null;
+      } else {
+        voucherType_ = null;
+        voucherTypeBuilder_ = null;
+      }
       return this;
     }
 
@@ -611,8 +612,11 @@ private static final long serialVersionUID = 0L;
       result.expiredDate_ = expiredDate_;
       result.status_ = status_;
       result.qRCode_ = qRCode_;
-      result.brandId_ = brandId_;
-      result.voucherType_ = voucherType_;
+      if (voucherTypeBuilder_ == null) {
+        result.voucherType_ = voucherType_;
+      } else {
+        result.voucherType_ = voucherTypeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -680,11 +684,8 @@ private static final long serialVersionUID = 0L;
         qRCode_ = other.qRCode_;
         onChanged();
       }
-      if (other.getBrandId() != 0L) {
-        setBrandId(other.getBrandId());
-      }
-      if (other.getVoucherType() != 0L) {
-        setVoucherType(other.getVoucherType());
+      if (other.hasVoucherType()) {
+        mergeVoucherType(other.getVoucherType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1050,66 +1051,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long brandId_ ;
+    private org.archi.common.core.VoucherType voucherType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.archi.common.core.VoucherType, org.archi.common.core.VoucherType.Builder, org.archi.common.core.VoucherTypeOrBuilder> voucherTypeBuilder_;
     /**
-     * <code>int64 brandId = 6;</code>
-     * @return The brandId.
+     * <code>.VoucherType voucherType = 6;</code>
+     * @return Whether the voucherType field is set.
      */
-    @java.lang.Override
-    public long getBrandId() {
-      return brandId_;
+    public boolean hasVoucherType() {
+      return voucherTypeBuilder_ != null || voucherType_ != null;
     }
     /**
-     * <code>int64 brandId = 6;</code>
-     * @param value The brandId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBrandId(long value) {
-      
-      brandId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 brandId = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBrandId() {
-      
-      brandId_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long voucherType_ ;
-    /**
-     * <code>int64 voucherType = 7;</code>
+     * <code>.VoucherType voucherType = 6;</code>
      * @return The voucherType.
      */
-    @java.lang.Override
-    public long getVoucherType() {
-      return voucherType_;
+    public org.archi.common.core.VoucherType getVoucherType() {
+      if (voucherTypeBuilder_ == null) {
+        return voucherType_ == null ? org.archi.common.core.VoucherType.getDefaultInstance() : voucherType_;
+      } else {
+        return voucherTypeBuilder_.getMessage();
+      }
     }
     /**
-     * <code>int64 voucherType = 7;</code>
-     * @param value The voucherType to set.
-     * @return This builder for chaining.
+     * <code>.VoucherType voucherType = 6;</code>
      */
-    public Builder setVoucherType(long value) {
-      
-      voucherType_ = value;
-      onChanged();
+    public Builder setVoucherType(org.archi.common.core.VoucherType value) {
+      if (voucherTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        voucherType_ = value;
+        onChanged();
+      } else {
+        voucherTypeBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 voucherType = 7;</code>
-     * @return This builder for chaining.
+     * <code>.VoucherType voucherType = 6;</code>
+     */
+    public Builder setVoucherType(
+        org.archi.common.core.VoucherType.Builder builderForValue) {
+      if (voucherTypeBuilder_ == null) {
+        voucherType_ = builderForValue.build();
+        onChanged();
+      } else {
+        voucherTypeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.VoucherType voucherType = 6;</code>
+     */
+    public Builder mergeVoucherType(org.archi.common.core.VoucherType value) {
+      if (voucherTypeBuilder_ == null) {
+        if (voucherType_ != null) {
+          voucherType_ =
+            org.archi.common.core.VoucherType.newBuilder(voucherType_).mergeFrom(value).buildPartial();
+        } else {
+          voucherType_ = value;
+        }
+        onChanged();
+      } else {
+        voucherTypeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.VoucherType voucherType = 6;</code>
      */
     public Builder clearVoucherType() {
-      
-      voucherType_ = 0L;
-      onChanged();
+      if (voucherTypeBuilder_ == null) {
+        voucherType_ = null;
+        onChanged();
+      } else {
+        voucherType_ = null;
+        voucherTypeBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.VoucherType voucherType = 6;</code>
+     */
+    public org.archi.common.core.VoucherType.Builder getVoucherTypeBuilder() {
+      
+      onChanged();
+      return getVoucherTypeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.VoucherType voucherType = 6;</code>
+     */
+    public org.archi.common.core.VoucherTypeOrBuilder getVoucherTypeOrBuilder() {
+      if (voucherTypeBuilder_ != null) {
+        return voucherTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return voucherType_ == null ?
+            org.archi.common.core.VoucherType.getDefaultInstance() : voucherType_;
+      }
+    }
+    /**
+     * <code>.VoucherType voucherType = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.archi.common.core.VoucherType, org.archi.common.core.VoucherType.Builder, org.archi.common.core.VoucherTypeOrBuilder> 
+        getVoucherTypeFieldBuilder() {
+      if (voucherTypeBuilder_ == null) {
+        voucherTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.archi.common.core.VoucherType, org.archi.common.core.VoucherType.Builder, org.archi.common.core.VoucherTypeOrBuilder>(
+                getVoucherType(),
+                getParentForChildren(),
+                isClean());
+        voucherType_ = null;
+      }
+      return voucherTypeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

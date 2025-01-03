@@ -3,8 +3,8 @@
 
 package org.archi.common.core;
 
-public interface GenerateVoucherResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GenerateVoucherResponse)
+public interface VoucherOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:Voucher)
     com.google.protobuf.MessageOrBuilder {
 
   /**

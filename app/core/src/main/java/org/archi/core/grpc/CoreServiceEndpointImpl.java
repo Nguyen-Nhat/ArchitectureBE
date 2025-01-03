@@ -17,17 +17,6 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 	private final CampaignService campaignService;
 	private final VoucherService voucherService;
 
-    @Override
-	public void getVouchers(GetVouchersRequest request, StreamObserver<GetVouchersResponse> responseObserver) {
-		long id = request.getId();
-
-		GetVouchersResponse response = GetVouchersResponse.newBuilder()
-				.setMessage(String.valueOf(id))
-				.build();
-		responseObserver.onNext(response);
-		responseObserver.onCompleted();
-	}
-
 	@Override
 	public void generateVoucher(GenerateVoucherRequest request, StreamObserver<GenerateVoucherResponse> responseObserver) {
 		GenerateVoucherResponse response = voucherService.generateVoucher(request);
@@ -42,6 +31,47 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 		responseObserver.onCompleted();
 	}
 
+	@Override
+	public void getVouchers(GetVouchersRequest request, StreamObserver<GetVouchersResponse> responseObserver) {
+		try {
+			// Call the service method
+			GetVouchersResponse response = voucherService.getVouchers(request);
+
+			// Return the response to the client
+			responseObserver.onNext(response);
+			responseObserver.onCompleted();
+		} catch (Exception ex) {
+			responseObserver.onError(ex);
+		}
+	}
+
+	@Override
+	public void getVouchersType(GetVoucherTypesReq request, StreamObserver<GetVoucherTypesRes> responseObserver) {
+
+	}
+
+	@Override
+	public void searchVoucher(SearchRequest request, StreamObserver<SearchVoucherResponse> responseObserver) {
+		try {
+			SearchVoucherResponse response = voucherService.searchVoucher(request);
+			responseObserver.onNext(response);
+			responseObserver.onCompleted();
+		} catch (Exception e) {
+			responseObserver.onError(e);
+		}
+	}
+
+	@Override
+	public void searchVoucherType(SearchRequest request, StreamObserver<SearchVoucherTypeResponse> responseObserver) {
+		try {
+			// Invoke service logic
+			SearchVoucherTypeResponse response = voucherService.searchVoucherType(request);
+			responseObserver.onNext(response);
+			responseObserver.onCompleted();
+		} catch (Exception e) {
+			responseObserver.onError(e);
+		}
+	}
 
 	@Override
 	public void getCampaigns(GetCampaignsRequest request, StreamObserver<GetCampaignsResponse> responseObserver) {
@@ -149,7 +179,7 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 			LocalDateTime endDate = request.getNewEndDate().isEmpty() ? null : LocalDateTime.parse(request.getNewEndDate());
 			String status = request.getNewStatus();
 
-			// Create a new Campaign with given informations
+			// Create a new Campaign with given information
 			org.archi.core.entity.Campaign campaignToUpdate = new org.archi.core.entity.Campaign();
 			campaignToUpdate.setName(name);
 			campaignToUpdate.setImageUrl(imageUrl);

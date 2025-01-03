@@ -22,7 +22,7 @@ public class Voucher {
     private String status;
     @Column(unique = true, nullable = true)
     private String QRCode;
-    private Long brandId;
+    private Long playerId;
     @ManyToOne
     @JoinColumn(name = "voucher_type_id", nullable = false)
     private VoucherType voucherType;

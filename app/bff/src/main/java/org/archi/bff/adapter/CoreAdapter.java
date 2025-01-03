@@ -1,6 +1,7 @@
 package org.archi.bff.adapter;
 
 import net.devh.boot.grpc.client.inject.GrpcClient;
+import org.archi.common.core.CoreServiceGrpc;
 import org.archi.common.core.GetVouchersRequest;
 import org.archi.common.core.GetVouchersResponse;
 import org.springframework.stereotype.Service;

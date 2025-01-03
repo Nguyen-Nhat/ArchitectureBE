@@ -5,9 +5,13 @@ option java_package = "org.archi.common.core";
 option java_outer_classname = "CoreProto";
 
 service CoreService {
-  rpc GetVouchers(GetVouchersRequest) returns(GetVouchersResponse);
   rpc GenerateVoucher(GenerateVoucherRequest) returns(GenerateVoucherResponse);
   rpc CreateVoucherType(CreateVoucherTypeRequest) returns(CreateVoucherTypeResponse);
+  rpc SearchVoucher(SearchRequest) returns(SearchVoucherResponse);
+  rpc SearchVoucherType(SearchRequest) returns(SearchVoucherTypeResponse);
+  rpc UpdateVoucherType(UpdateVoucherTypeReq) returns(UpdateVoucherTypeRes);
+  rpc GetVouchersType(GetVoucherTypesReq) returns(GetVoucherTypesRes); // brand's method
+  rpc GetVouchers(GetVouchersRequest) returns(GetVouchersResponse); // player's method
 
   rpc GetCampaigns(GetCampaignsRequest) returns(GetCampaignsResponse);
   rpc SearchCampaign(SearchCampaignRequest) returns(SearchCampaignResponse);
@@ -16,18 +20,59 @@ service CoreService {
   rpc UpdateCampaign(UpdateCampaignReq) returns(UpdateCampaignRes);
 }
 
+message GetVoucherTypesReq {
+  int64 brandId = 1;
+}
+message GetVoucherTypesRes {
+  repeated VoucherType voucherTypes = 1;
+}
+
 message GetVouchersRequest {
- int64 id = 1;
+  int64 playerId = 1;
 }
 
 message GetVouchersResponse {
-  string message = 1;
+  repeated Voucher vouchers = 1;
+}
+
+message SearchRequest {
+  string term = 1;
+}
+
+message SearchVoucherResponse {
+  repeated Voucher vouchers = 1;
+}
+
+message SearchVoucherTypeResponse {
+  repeated VoucherType voucherTypes = 1;
+}
+
+
+message Voucher {
+  int64 id = 1;
+  string issuedAt = 2;
+  string expiredDate = 3;
+  string status = 4;
+  string QRCode = 5;
+  VoucherType voucherType = 6;
+}
+message UpdateVoucherTypeReq {
+  string status = 1;
+  string description = 2;
+  string name = 3;
+  double value = 4;
+  int64 voucherId = 5;
+  int64 brandId = 6;
+}
+message UpdateVoucherTypeRes {
+  VoucherType updatedVoucherType = 1;
 }
 
 message GenerateVoucherRequest {
   int64 voucherTypeId = 1;
   string duration = 2; // minutes
   int64 brandId = 3;
+  int64 playerId = 4;
 }
 
 message GenerateVoucherResponse {
@@ -36,8 +81,7 @@ message GenerateVoucherResponse {
   string expiredDate = 3;
   string status = 4;
   string QRCode = 5;
-  int64 brandId = 6;
-  int64 voucherType = 7;
+  VoucherType voucherType = 6;
 }
 
 message CreateVoucherTypeRequest {

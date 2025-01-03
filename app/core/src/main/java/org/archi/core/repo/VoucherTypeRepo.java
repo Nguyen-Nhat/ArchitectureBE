@@ -8,13 +8,8 @@ import java.util.Optional;
 
 public interface VoucherTypeRepo extends JpaRepository<VoucherType, Long> {
     boolean existsByNameAndBrandId(String name, Long brandId);
-
-    // Fetch all voucher types by brand ID
     List<VoucherType> findAllByBrandId(Long brandId);
-
-    // Optional voucher type fetch for deletion validation
     Optional<VoucherType> findByIdAndBrandId(Long id, Long brandId);
-
-    // Delete voucher type by ID and brand ID
     void deleteByIdAndBrandId(Long id, Long brandId);
+    List<VoucherType> findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(String name, String description);
 }

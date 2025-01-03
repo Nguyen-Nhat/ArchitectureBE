@@ -38,4 +38,10 @@ public interface GenerateVoucherRequestOrBuilder extends
    * @return The brandId.
    */
   long getBrandId();
+
+  /**
+   * <code>int64 playerId = 4;</code>
+   * @return The playerId.
+   */
+  long getPlayerId();
 }

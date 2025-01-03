@@ -30,6 +30,48 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private GetVouchersRequest(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 8: {
+
+            playerId_ = input.readInt64();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.archi.common.core.CoreProto.internal_static_GetVouchersRequest_descriptor;
@@ -43,15 +85,15 @@ private static final long serialVersionUID = 0L;
             org.archi.common.core.GetVouchersRequest.class, org.archi.common.core.GetVouchersRequest.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private long id_;
+  public static final int PLAYERID_FIELD_NUMBER = 1;
+  private long playerId_;
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>int64 playerId = 1;</code>
+   * @return The playerId.
    */
   @java.lang.Override
-  public long getId() {
-    return id_;
+  public long getPlayerId() {
+    return playerId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -68,10 +110,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
-      output.writeInt64(1, id_);
+    if (playerId_ != 0L) {
+      output.writeInt64(1, playerId_);
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -80,11 +122,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (playerId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id_);
+        .computeInt64Size(1, playerId_);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -99,9 +141,9 @@ private static final long serialVersionUID = 0L;
     }
     org.archi.common.core.GetVouchersRequest other = (org.archi.common.core.GetVouchersRequest) obj;
 
-    if (getId()
-        != other.getId()) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (getPlayerId()
+        != other.getPlayerId()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -112,10 +154,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
-    hash = (29 * hash) + getUnknownFields().hashCode();
+        getPlayerId());
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -232,18 +274,23 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.archi.common.core.GetVouchersRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = 0L;
+      playerId_ = 0L;
 
       return this;
     }
@@ -271,7 +318,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.archi.common.core.GetVouchersRequest buildPartial() {
       org.archi.common.core.GetVouchersRequest result = new org.archi.common.core.GetVouchersRequest(this);
-      result.id_ = id_;
+      result.playerId_ = playerId_;
       onBuilt();
       return result;
     }
@@ -320,10 +367,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.archi.common.core.GetVouchersRequest other) {
       if (other == org.archi.common.core.GetVouchersRequest.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
+      if (other.getPlayerId() != 0L) {
+        setPlayerId(other.getPlayerId());
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -338,65 +385,47 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      org.archi.common.core.GetVouchersRequest parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              id_ = input.readInt64();
-
-              break;
-            } // case 8
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (org.archi.common.core.GetVouchersRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
 
-    private long id_ ;
+    private long playerId_ ;
     /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
+     * <code>int64 playerId = 1;</code>
+     * @return The playerId.
      */
     @java.lang.Override
-    public long getId() {
-      return id_;
+    public long getPlayerId() {
+      return playerId_;
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
+     * <code>int64 playerId = 1;</code>
+     * @param value The playerId to set.
      * @return This builder for chaining.
      */
-    public Builder setId(long value) {
+    public Builder setPlayerId(long value) {
       
-      id_ = value;
+      playerId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int64 playerId = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearPlayerId() {
       
-      id_ = 0L;
+      playerId_ = 0L;
       onChanged();
       return this;
     }
@@ -433,18 +462,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new GetVouchersRequest(input, extensionRegistry);
     }
   };
 

@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS voucher (
     expired_date TIMESTAMP NOT NULL,
     status VARCHAR(255),
     qr_code VARCHAR(255) UNIQUE,
-    brand_id BIGINT,
+    player_id BIGINT, --- owner of generated voucher ---
     voucher_type_id BIGINT NOT NULL,
     CONSTRAINT fk_voucher_type FOREIGN KEY (voucher_type_id) REFERENCES voucher_type (id)
 );

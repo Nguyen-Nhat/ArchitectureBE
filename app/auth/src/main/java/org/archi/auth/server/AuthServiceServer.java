@@ -212,7 +212,7 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
 
   @Override
   public void deleteAccount(DeleteAccountRequest request, StreamObserver<DeleteAccountResponse> responseObserver) {
-      DeleteAccountResponse response = authenticationService.deleteAccount(request);
+    DeleteAccountResponse response = authenticationService.deleteAccount(request);
     responseObserver.onNext(response);
     responseObserver.onCompleted(); }
 }

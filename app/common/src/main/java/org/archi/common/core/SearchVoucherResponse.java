@@ -4,18 +4,18 @@
 package org.archi.common.core;
 
 /**
- * Protobuf type {@code GetVouchersResponse}
+ * Protobuf type {@code SearchVoucherResponse}
  */
-public final class GetVouchersResponse extends
+public final class SearchVoucherResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetVouchersResponse)
-    GetVouchersResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:SearchVoucherResponse)
+    SearchVoucherResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetVouchersResponse.newBuilder() to construct.
-  private GetVouchersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SearchVoucherResponse.newBuilder() to construct.
+  private SearchVoucherResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetVouchersResponse() {
+  private SearchVoucherResponse() {
     vouchers_ = java.util.Collections.emptyList();
   }
 
@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetVouchersResponse();
+    return new SearchVoucherResponse();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetVouchersResponse(
+  private SearchVoucherResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -83,15 +83,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.core.CoreProto.internal_static_GetVouchersResponse_descriptor;
+    return org.archi.common.core.CoreProto.internal_static_SearchVoucherResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.core.CoreProto.internal_static_GetVouchersResponse_fieldAccessorTable
+    return org.archi.common.core.CoreProto.internal_static_SearchVoucherResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.core.GetVouchersResponse.class, org.archi.common.core.GetVouchersResponse.Builder.class);
+            org.archi.common.core.SearchVoucherResponse.class, org.archi.common.core.SearchVoucherResponse.Builder.class);
   }
 
   public static final int VOUCHERS_FIELD_NUMBER = 1;
@@ -174,10 +174,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.core.GetVouchersResponse)) {
+    if (!(obj instanceof org.archi.common.core.SearchVoucherResponse)) {
       return super.equals(obj);
     }
-    org.archi.common.core.GetVouchersResponse other = (org.archi.common.core.GetVouchersResponse) obj;
+    org.archi.common.core.SearchVoucherResponse other = (org.archi.common.core.SearchVoucherResponse) obj;
 
     if (!getVouchersList()
         .equals(other.getVouchersList())) return false;
@@ -201,69 +201,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static org.archi.common.core.GetVouchersResponse parseFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(byte[] data)
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(java.io.InputStream input)
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersResponse parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.core.SearchVoucherResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.archi.common.core.GetVouchersResponse parseDelimitedFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.core.GetVouchersResponse parseFrom(
+  public static org.archi.common.core.SearchVoucherResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.core.GetVouchersResponse prototype) {
+  public static Builder newBuilder(org.archi.common.core.SearchVoucherResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -292,26 +292,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetVouchersResponse}
+   * Protobuf type {@code SearchVoucherResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetVouchersResponse)
-      org.archi.common.core.GetVouchersResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:SearchVoucherResponse)
+      org.archi.common.core.SearchVoucherResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersResponse_descriptor;
+      return org.archi.common.core.CoreProto.internal_static_SearchVoucherResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersResponse_fieldAccessorTable
+      return org.archi.common.core.CoreProto.internal_static_SearchVoucherResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.core.GetVouchersResponse.class, org.archi.common.core.GetVouchersResponse.Builder.class);
+              org.archi.common.core.SearchVoucherResponse.class, org.archi.common.core.SearchVoucherResponse.Builder.class);
     }
 
-    // Construct using org.archi.common.core.GetVouchersResponse.newBuilder()
+    // Construct using org.archi.common.core.SearchVoucherResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -342,17 +342,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.core.CoreProto.internal_static_GetVouchersResponse_descriptor;
+      return org.archi.common.core.CoreProto.internal_static_SearchVoucherResponse_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersResponse getDefaultInstanceForType() {
-      return org.archi.common.core.GetVouchersResponse.getDefaultInstance();
+    public org.archi.common.core.SearchVoucherResponse getDefaultInstanceForType() {
+      return org.archi.common.core.SearchVoucherResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersResponse build() {
-      org.archi.common.core.GetVouchersResponse result = buildPartial();
+    public org.archi.common.core.SearchVoucherResponse build() {
+      org.archi.common.core.SearchVoucherResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -360,8 +360,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.core.GetVouchersResponse buildPartial() {
-      org.archi.common.core.GetVouchersResponse result = new org.archi.common.core.GetVouchersResponse(this);
+    public org.archi.common.core.SearchVoucherResponse buildPartial() {
+      org.archi.common.core.SearchVoucherResponse result = new org.archi.common.core.SearchVoucherResponse(this);
       int from_bitField0_ = bitField0_;
       if (vouchersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -410,16 +410,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.core.GetVouchersResponse) {
-        return mergeFrom((org.archi.common.core.GetVouchersResponse)other);
+      if (other instanceof org.archi.common.core.SearchVoucherResponse) {
+        return mergeFrom((org.archi.common.core.SearchVoucherResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.core.GetVouchersResponse other) {
-      if (other == org.archi.common.core.GetVouchersResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.archi.common.core.SearchVoucherResponse other) {
+      if (other == org.archi.common.core.SearchVoucherResponse.getDefaultInstance()) return this;
       if (vouchersBuilder_ == null) {
         if (!other.vouchers_.isEmpty()) {
           if (vouchers_.isEmpty()) {
@@ -461,11 +461,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.archi.common.core.GetVouchersResponse parsedMessage = null;
+      org.archi.common.core.SearchVoucherResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.archi.common.core.GetVouchersResponse) e.getUnfinishedMessage();
+        parsedMessage = (org.archi.common.core.SearchVoucherResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -728,41 +728,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetVouchersResponse)
+    // @@protoc_insertion_point(builder_scope:SearchVoucherResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:GetVouchersResponse)
-  private static final org.archi.common.core.GetVouchersResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:SearchVoucherResponse)
+  private static final org.archi.common.core.SearchVoucherResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.core.GetVouchersResponse();
+    DEFAULT_INSTANCE = new org.archi.common.core.SearchVoucherResponse();
   }
 
-  public static org.archi.common.core.GetVouchersResponse getDefaultInstance() {
+  public static org.archi.common.core.SearchVoucherResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetVouchersResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetVouchersResponse>() {
+  private static final com.google.protobuf.Parser<SearchVoucherResponse>
+      PARSER = new com.google.protobuf.AbstractParser<SearchVoucherResponse>() {
     @java.lang.Override
-    public GetVouchersResponse parsePartialFrom(
+    public SearchVoucherResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetVouchersResponse(input, extensionRegistry);
+      return new SearchVoucherResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetVouchersResponse> parser() {
+  public static com.google.protobuf.Parser<SearchVoucherResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetVouchersResponse> getParserForType() {
+  public com.google.protobuf.Parser<SearchVoucherResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.core.GetVouchersResponse getDefaultInstanceForType() {
+  public org.archi.common.core.SearchVoucherResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

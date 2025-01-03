@@ -16,15 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/core")
+@RequestMapping("/api/core")
 @RequiredArgsConstructor
 public class CoreController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CoreController.class);
 
-    @GetMapping("/todo")
-    public ResponseEntity<String> getTodo() {
-        // TODO: test otel, delete it
-        LOGGER.info("nhat.ntm");
-        return ResponseEntity.ok("hello");
-    }
+
 }

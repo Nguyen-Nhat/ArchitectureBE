@@ -8,8 +8,8 @@ public interface GetVouchersRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>int64 playerId = 1;</code>
+   * @return The playerId.
    */
-  long getId();
+  long getPlayerId();
 }

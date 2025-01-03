@@ -65,6 +65,11 @@ private static final long serialVersionUID = 0L;
             brandId_ = input.readInt64();
             break;
           }
+          case 32: {
+
+            playerId_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -165,6 +170,17 @@ private static final long serialVersionUID = 0L;
     return brandId_;
   }
 
+  public static final int PLAYERID_FIELD_NUMBER = 4;
+  private long playerId_;
+  /**
+   * <code>int64 playerId = 4;</code>
+   * @return The playerId.
+   */
+  @java.lang.Override
+  public long getPlayerId() {
+    return playerId_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -188,6 +204,9 @@ private static final long serialVersionUID = 0L;
     if (brandId_ != 0L) {
       output.writeInt64(3, brandId_);
     }
+    if (playerId_ != 0L) {
+      output.writeInt64(4, playerId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -207,6 +226,10 @@ private static final long serialVersionUID = 0L;
     if (brandId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, brandId_);
+    }
+    if (playerId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, playerId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -229,6 +252,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDuration())) return false;
     if (getBrandId()
         != other.getBrandId()) return false;
+    if (getPlayerId()
+        != other.getPlayerId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -248,6 +273,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BRANDID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getBrandId());
+    hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getPlayerId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -387,6 +415,8 @@ private static final long serialVersionUID = 0L;
 
       brandId_ = 0L;
 
+      playerId_ = 0L;
+
       return this;
     }
 
@@ -416,6 +446,7 @@ private static final long serialVersionUID = 0L;
       result.voucherTypeId_ = voucherTypeId_;
       result.duration_ = duration_;
       result.brandId_ = brandId_;
+      result.playerId_ = playerId_;
       onBuilt();
       return result;
     }
@@ -473,6 +504,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBrandId() != 0L) {
         setBrandId(other.getBrandId());
+      }
+      if (other.getPlayerId() != 0L) {
+        setPlayerId(other.getPlayerId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -657,6 +691,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearBrandId() {
       
       brandId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long playerId_ ;
+    /**
+     * <code>int64 playerId = 4;</code>
+     * @return The playerId.
+     */
+    @java.lang.Override
+    public long getPlayerId() {
+      return playerId_;
+    }
+    /**
+     * <code>int64 playerId = 4;</code>
+     * @param value The playerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlayerId(long value) {
+      
+      playerId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 playerId = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPlayerId() {
+      
+      playerId_ = 0L;
       onChanged();
       return this;
     }
