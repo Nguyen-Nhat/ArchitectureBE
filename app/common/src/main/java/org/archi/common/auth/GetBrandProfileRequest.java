@@ -4,25 +4,25 @@
 package org.archi.common.auth;
 
 /**
- * Protobuf type {@code GetBrandInfoRequest}
+ * Protobuf type {@code GetBrandProfileRequest}
  */
-public final class GetBrandInfoRequest extends
+public final class GetBrandProfileRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetBrandInfoRequest)
-    GetBrandInfoRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:GetBrandProfileRequest)
+    GetBrandProfileRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetBrandInfoRequest.newBuilder() to construct.
-  private GetBrandInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetBrandProfileRequest.newBuilder() to construct.
+  private GetBrandProfileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetBrandInfoRequest() {
+  private GetBrandProfileRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetBrandInfoRequest();
+    return new GetBrandProfileRequest();
   }
 
   @java.lang.Override
@@ -32,22 +32,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_descriptor;
+    return org.archi.common.auth.AuthProto.internal_static_GetBrandProfileRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_fieldAccessorTable
+    return org.archi.common.auth.AuthProto.internal_static_GetBrandProfileRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.auth.GetBrandInfoRequest.class, org.archi.common.auth.GetBrandInfoRequest.Builder.class);
+            org.archi.common.auth.GetBrandProfileRequest.class, org.archi.common.auth.GetBrandProfileRequest.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
    * <pre>
-   *Brand ID
+   * Account ID.
    * </pre>
    *
    * <code>int64 id = 1;</code>
@@ -98,10 +98,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.auth.GetBrandInfoRequest)) {
+    if (!(obj instanceof org.archi.common.auth.GetBrandProfileRequest)) {
       return super.equals(obj);
     }
-    org.archi.common.auth.GetBrandInfoRequest other = (org.archi.common.auth.GetBrandInfoRequest) obj;
+    org.archi.common.auth.GetBrandProfileRequest other = (org.archi.common.auth.GetBrandProfileRequest) obj;
 
     if (getId()
         != other.getId()) return false;
@@ -124,69 +124,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(byte[] data)
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(java.io.InputStream input)
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.auth.GetBrandProfileRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseDelimitedFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.GetBrandProfileRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -199,7 +199,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.auth.GetBrandInfoRequest prototype) {
+  public static Builder newBuilder(org.archi.common.auth.GetBrandProfileRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -215,26 +215,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetBrandInfoRequest}
+   * Protobuf type {@code GetBrandProfileRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetBrandInfoRequest)
-      org.archi.common.auth.GetBrandInfoRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:GetBrandProfileRequest)
+      org.archi.common.auth.GetBrandProfileRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_GetBrandProfileRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_fieldAccessorTable
+      return org.archi.common.auth.AuthProto.internal_static_GetBrandProfileRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.auth.GetBrandInfoRequest.class, org.archi.common.auth.GetBrandInfoRequest.Builder.class);
+              org.archi.common.auth.GetBrandProfileRequest.class, org.archi.common.auth.GetBrandProfileRequest.Builder.class);
     }
 
-    // Construct using org.archi.common.auth.GetBrandInfoRequest.newBuilder()
+    // Construct using org.archi.common.auth.GetBrandProfileRequest.newBuilder()
     private Builder() {
 
     }
@@ -255,17 +255,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_GetBrandProfileRequest_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetBrandInfoRequest getDefaultInstanceForType() {
-      return org.archi.common.auth.GetBrandInfoRequest.getDefaultInstance();
+    public org.archi.common.auth.GetBrandProfileRequest getDefaultInstanceForType() {
+      return org.archi.common.auth.GetBrandProfileRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetBrandInfoRequest build() {
-      org.archi.common.auth.GetBrandInfoRequest result = buildPartial();
+    public org.archi.common.auth.GetBrandProfileRequest build() {
+      org.archi.common.auth.GetBrandProfileRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -273,8 +273,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetBrandInfoRequest buildPartial() {
-      org.archi.common.auth.GetBrandInfoRequest result = new org.archi.common.auth.GetBrandInfoRequest(this);
+    public org.archi.common.auth.GetBrandProfileRequest buildPartial() {
+      org.archi.common.auth.GetBrandProfileRequest result = new org.archi.common.auth.GetBrandProfileRequest(this);
       result.id_ = id_;
       onBuilt();
       return result;
@@ -314,16 +314,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.auth.GetBrandInfoRequest) {
-        return mergeFrom((org.archi.common.auth.GetBrandInfoRequest)other);
+      if (other instanceof org.archi.common.auth.GetBrandProfileRequest) {
+        return mergeFrom((org.archi.common.auth.GetBrandProfileRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.auth.GetBrandInfoRequest other) {
-      if (other == org.archi.common.auth.GetBrandInfoRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.archi.common.auth.GetBrandProfileRequest other) {
+      if (other == org.archi.common.auth.GetBrandProfileRequest.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -377,7 +377,7 @@ private static final long serialVersionUID = 0L;
     private long id_ ;
     /**
      * <pre>
-     *Brand ID
+     * Account ID.
      * </pre>
      *
      * <code>int64 id = 1;</code>
@@ -389,7 +389,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Brand ID
+     * Account ID.
      * </pre>
      *
      * <code>int64 id = 1;</code>
@@ -404,7 +404,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Brand ID
+     * Account ID.
      * </pre>
      *
      * <code>int64 id = 1;</code>
@@ -429,23 +429,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetBrandInfoRequest)
+    // @@protoc_insertion_point(builder_scope:GetBrandProfileRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:GetBrandInfoRequest)
-  private static final org.archi.common.auth.GetBrandInfoRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:GetBrandProfileRequest)
+  private static final org.archi.common.auth.GetBrandProfileRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.auth.GetBrandInfoRequest();
+    DEFAULT_INSTANCE = new org.archi.common.auth.GetBrandProfileRequest();
   }
 
-  public static org.archi.common.auth.GetBrandInfoRequest getDefaultInstance() {
+  public static org.archi.common.auth.GetBrandProfileRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetBrandInfoRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetBrandInfoRequest>() {
+  private static final com.google.protobuf.Parser<GetBrandProfileRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetBrandProfileRequest>() {
     @java.lang.Override
-    public GetBrandInfoRequest parsePartialFrom(
+    public GetBrandProfileRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -464,17 +464,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetBrandInfoRequest> parser() {
+  public static com.google.protobuf.Parser<GetBrandProfileRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetBrandInfoRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetBrandProfileRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.auth.GetBrandInfoRequest getDefaultInstanceForType() {
+  public org.archi.common.auth.GetBrandProfileRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

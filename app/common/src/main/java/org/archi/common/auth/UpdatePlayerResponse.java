@@ -4,25 +4,26 @@
 package org.archi.common.auth;
 
 /**
- * Protobuf type {@code GetBrandInfoRequest}
+ * Protobuf type {@code UpdatePlayerResponse}
  */
-public final class GetBrandInfoRequest extends
+public final class UpdatePlayerResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetBrandInfoRequest)
-    GetBrandInfoRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:UpdatePlayerResponse)
+    UpdatePlayerResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetBrandInfoRequest.newBuilder() to construct.
-  private GetBrandInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdatePlayerResponse.newBuilder() to construct.
+  private UpdatePlayerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetBrandInfoRequest() {
+  private UpdatePlayerResponse() {
+    message_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetBrandInfoRequest();
+    return new UpdatePlayerResponse();
   }
 
   @java.lang.Override
@@ -32,30 +33,64 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_descriptor;
+    return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_fieldAccessorTable
+    return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.auth.GetBrandInfoRequest.class, org.archi.common.auth.GetBrandInfoRequest.Builder.class);
+            org.archi.common.auth.UpdatePlayerResponse.class, org.archi.common.auth.UpdatePlayerResponse.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private long id_;
+  public static final int STATUS_FIELD_NUMBER = 1;
+  private long status_;
   /**
-   * <pre>
-   *Brand ID
-   * </pre>
-   *
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>int64 status = 1;</code>
+   * @return The status.
    */
   @java.lang.Override
-  public long getId() {
-    return id_;
+  public long getStatus() {
+    return status_;
+  }
+
+  public static final int MESSAGE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object message_;
+  /**
+   * <code>string message = 2;</code>
+   * @return The message.
+   */
+  @java.lang.Override
+  public java.lang.String getMessage() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      message_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string message = 2;</code>
+   * @return The bytes for message.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMessageBytes() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      message_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -72,8 +107,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
-      output.writeInt64(1, id_);
+    if (status_ != 0L) {
+      output.writeInt64(1, status_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -84,9 +122,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (status_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id_);
+        .computeInt64Size(1, status_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -98,13 +139,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.auth.GetBrandInfoRequest)) {
+    if (!(obj instanceof org.archi.common.auth.UpdatePlayerResponse)) {
       return super.equals(obj);
     }
-    org.archi.common.auth.GetBrandInfoRequest other = (org.archi.common.auth.GetBrandInfoRequest) obj;
+    org.archi.common.auth.UpdatePlayerResponse other = (org.archi.common.auth.UpdatePlayerResponse) obj;
 
-    if (getId()
-        != other.getId()) return false;
+    if (getStatus()
+        != other.getStatus()) return false;
+    if (!getMessage()
+        .equals(other.getMessage())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -116,77 +159,79 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
+        getStatus());
+    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(byte[] data)
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(java.io.InputStream input)
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.auth.UpdatePlayerResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseDelimitedFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetBrandInfoRequest parseFrom(
+  public static org.archi.common.auth.UpdatePlayerResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -199,7 +244,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.auth.GetBrandInfoRequest prototype) {
+  public static Builder newBuilder(org.archi.common.auth.UpdatePlayerResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -215,26 +260,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetBrandInfoRequest}
+   * Protobuf type {@code UpdatePlayerResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetBrandInfoRequest)
-      org.archi.common.auth.GetBrandInfoRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:UpdatePlayerResponse)
+      org.archi.common.auth.UpdatePlayerResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_fieldAccessorTable
+      return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.auth.GetBrandInfoRequest.class, org.archi.common.auth.GetBrandInfoRequest.Builder.class);
+              org.archi.common.auth.UpdatePlayerResponse.class, org.archi.common.auth.UpdatePlayerResponse.Builder.class);
     }
 
-    // Construct using org.archi.common.auth.GetBrandInfoRequest.newBuilder()
+    // Construct using org.archi.common.auth.UpdatePlayerResponse.newBuilder()
     private Builder() {
 
     }
@@ -247,7 +292,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = 0L;
+      status_ = 0L;
+
+      message_ = "";
 
       return this;
     }
@@ -255,17 +302,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.auth.AuthProto.internal_static_GetBrandInfoRequest_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerResponse_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetBrandInfoRequest getDefaultInstanceForType() {
-      return org.archi.common.auth.GetBrandInfoRequest.getDefaultInstance();
+    public org.archi.common.auth.UpdatePlayerResponse getDefaultInstanceForType() {
+      return org.archi.common.auth.UpdatePlayerResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetBrandInfoRequest build() {
-      org.archi.common.auth.GetBrandInfoRequest result = buildPartial();
+    public org.archi.common.auth.UpdatePlayerResponse build() {
+      org.archi.common.auth.UpdatePlayerResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -273,9 +320,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetBrandInfoRequest buildPartial() {
-      org.archi.common.auth.GetBrandInfoRequest result = new org.archi.common.auth.GetBrandInfoRequest(this);
-      result.id_ = id_;
+    public org.archi.common.auth.UpdatePlayerResponse buildPartial() {
+      org.archi.common.auth.UpdatePlayerResponse result = new org.archi.common.auth.UpdatePlayerResponse(this);
+      result.status_ = status_;
+      result.message_ = message_;
       onBuilt();
       return result;
     }
@@ -314,18 +362,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.auth.GetBrandInfoRequest) {
-        return mergeFrom((org.archi.common.auth.GetBrandInfoRequest)other);
+      if (other instanceof org.archi.common.auth.UpdatePlayerResponse) {
+        return mergeFrom((org.archi.common.auth.UpdatePlayerResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.auth.GetBrandInfoRequest other) {
-      if (other == org.archi.common.auth.GetBrandInfoRequest.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
+    public Builder mergeFrom(org.archi.common.auth.UpdatePlayerResponse other) {
+      if (other == org.archi.common.auth.UpdatePlayerResponse.getDefaultInstance()) return this;
+      if (other.getStatus() != 0L) {
+        setStatus(other.getStatus());
+      }
+      if (!other.getMessage().isEmpty()) {
+        message_ = other.message_;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -354,10 +406,15 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 8: {
-              id_ = input.readInt64();
+              status_ = input.readInt64();
 
               break;
             } // case 8
+            case 18: {
+              message_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -374,45 +431,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id_ ;
+    private long status_ ;
     /**
-     * <pre>
-     *Brand ID
-     * </pre>
-     *
-     * <code>int64 id = 1;</code>
-     * @return The id.
+     * <code>int64 status = 1;</code>
+     * @return The status.
      */
     @java.lang.Override
-    public long getId() {
-      return id_;
+    public long getStatus() {
+      return status_;
     }
     /**
-     * <pre>
-     *Brand ID
-     * </pre>
-     *
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
+     * <code>int64 status = 1;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setId(long value) {
+    public Builder setStatus(long value) {
       
-      id_ = value;
+      status_ = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     *Brand ID
-     * </pre>
-     *
-     * <code>int64 id = 1;</code>
+     * <code>int64 status = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearStatus() {
       
-      id_ = 0L;
+      status_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object message_ = "";
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      message_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMessage() {
+      
+      message_ = getDefaultInstance().getMessage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      message_ = value;
       onChanged();
       return this;
     }
@@ -429,23 +550,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetBrandInfoRequest)
+    // @@protoc_insertion_point(builder_scope:UpdatePlayerResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:GetBrandInfoRequest)
-  private static final org.archi.common.auth.GetBrandInfoRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:UpdatePlayerResponse)
+  private static final org.archi.common.auth.UpdatePlayerResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.auth.GetBrandInfoRequest();
+    DEFAULT_INSTANCE = new org.archi.common.auth.UpdatePlayerResponse();
   }
 
-  public static org.archi.common.auth.GetBrandInfoRequest getDefaultInstance() {
+  public static org.archi.common.auth.UpdatePlayerResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetBrandInfoRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetBrandInfoRequest>() {
+  private static final com.google.protobuf.Parser<UpdatePlayerResponse>
+      PARSER = new com.google.protobuf.AbstractParser<UpdatePlayerResponse>() {
     @java.lang.Override
-    public GetBrandInfoRequest parsePartialFrom(
+    public UpdatePlayerResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -464,17 +585,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetBrandInfoRequest> parser() {
+  public static com.google.protobuf.Parser<UpdatePlayerResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetBrandInfoRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdatePlayerResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.auth.GetBrandInfoRequest getDefaultInstanceForType() {
+  public org.archi.common.auth.UpdatePlayerResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

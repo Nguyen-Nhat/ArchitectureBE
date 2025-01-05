@@ -4,31 +4,29 @@
 package org.archi.common.auth;
 
 /**
- * Protobuf type {@code GetPlayerInfoResponse}
+ * Protobuf type {@code Brand}
  */
-public final class GetPlayerInfoResponse extends
+public final class Brand extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetPlayerInfoResponse)
-    GetPlayerInfoResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:Brand)
+    BrandOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetPlayerInfoResponse.newBuilder() to construct.
-  private GetPlayerInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Brand.newBuilder() to construct.
+  private Brand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetPlayerInfoResponse() {
-    message_ = "";
+  private Brand() {
     name_ = "";
-    avatar_ = "";
-    birthDate_ = "";
-    gender_ = "";
-    facebook_ = "";
+    field_ = "";
+    address_ = "";
+    gps_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetPlayerInfoResponse();
+    return new Brand();
   }
 
   @java.lang.Override
@@ -38,70 +36,25 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+    return org.archi.common.auth.AuthProto.internal_static_Brand_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_fieldAccessorTable
+    return org.archi.common.auth.AuthProto.internal_static_Brand_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.auth.GetPlayerInfoResponse.class, org.archi.common.auth.GetPlayerInfoResponse.Builder.class);
+            org.archi.common.auth.Brand.class, org.archi.common.auth.Brand.Builder.class);
   }
 
-  public static final int STATUS_FIELD_NUMBER = 1;
-  private long status_;
-  /**
-   * <code>int64 status = 1;</code>
-   * @return The status.
-   */
-  @java.lang.Override
-  public long getStatus() {
-    return status_;
-  }
-
-  public static final int MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object message_;
-  /**
-   * <code>string message = 2;</code>
-   * @return The message.
-   */
-  @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      message_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string message = 2;</code>
-   * @return The bytes for message.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      message_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ID_FIELD_NUMBER = 3;
+  public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
-   * <code>int64 id = 3;</code>
+   * <pre>
+   * brand id.
+   * </pre>
+   *
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
@@ -109,10 +62,10 @@ private static final long serialVersionUID = 0L;
     return id_;
   }
 
-  public static final int NAME_FIELD_NUMBER = 4;
+  public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
-   * <code>string name = 4;</code>
+   * <code>string name = 2;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -129,7 +82,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 4;</code>
+   * <code>string name = 2;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -147,156 +100,129 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int AVATAR_FIELD_NUMBER = 5;
-  private volatile java.lang.Object avatar_;
+  public static final int FIELD_FIELD_NUMBER = 3;
+  private volatile java.lang.Object field_;
   /**
-   * <code>string avatar = 5;</code>
-   * @return The avatar.
+   * <code>string field = 3;</code>
+   * @return The field.
    */
   @java.lang.Override
-  public java.lang.String getAvatar() {
-    java.lang.Object ref = avatar_;
+  public java.lang.String getField() {
+    java.lang.Object ref = field_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      avatar_ = s;
+      field_ = s;
       return s;
     }
   }
   /**
-   * <code>string avatar = 5;</code>
-   * @return The bytes for avatar.
+   * <code>string field = 3;</code>
+   * @return The bytes for field.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getAvatarBytes() {
-    java.lang.Object ref = avatar_;
+      getFieldBytes() {
+    java.lang.Object ref = field_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      avatar_ = b;
+      field_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int BIRTHDATE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object birthDate_;
+  public static final int ADDRESS_FIELD_NUMBER = 4;
+  private volatile java.lang.Object address_;
   /**
-   * <code>string birthDate = 6;</code>
-   * @return The birthDate.
+   * <code>string address = 4;</code>
+   * @return The address.
    */
   @java.lang.Override
-  public java.lang.String getBirthDate() {
-    java.lang.Object ref = birthDate_;
+  public java.lang.String getAddress() {
+    java.lang.Object ref = address_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      birthDate_ = s;
+      address_ = s;
       return s;
     }
   }
   /**
-   * <code>string birthDate = 6;</code>
-   * @return The bytes for birthDate.
+   * <code>string address = 4;</code>
+   * @return The bytes for address.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getBirthDateBytes() {
-    java.lang.Object ref = birthDate_;
+      getAddressBytes() {
+    java.lang.Object ref = address_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      birthDate_ = b;
+      address_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int GENDER_FIELD_NUMBER = 7;
-  private volatile java.lang.Object gender_;
+  public static final int GPS_FIELD_NUMBER = 5;
+  private volatile java.lang.Object gps_;
   /**
-   * <code>string gender = 7;</code>
-   * @return The gender.
+   * <code>string gps = 5;</code>
+   * @return The gps.
    */
   @java.lang.Override
-  public java.lang.String getGender() {
-    java.lang.Object ref = gender_;
+  public java.lang.String getGps() {
+    java.lang.Object ref = gps_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      gender_ = s;
+      gps_ = s;
       return s;
     }
   }
   /**
-   * <code>string gender = 7;</code>
-   * @return The bytes for gender.
+   * <code>string gps = 5;</code>
+   * @return The bytes for gps.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getGenderBytes() {
-    java.lang.Object ref = gender_;
+      getGpsBytes() {
+    java.lang.Object ref = gps_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      gender_ = b;
+      gps_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int FACEBOOK_FIELD_NUMBER = 8;
-  private volatile java.lang.Object facebook_;
+  public static final int ISENABLE_FIELD_NUMBER = 6;
+  private boolean isEnable_;
   /**
-   * <code>string facebook = 8;</code>
-   * @return The facebook.
+   * <code>bool isEnable = 6;</code>
+   * @return The isEnable.
    */
   @java.lang.Override
-  public java.lang.String getFacebook() {
-    java.lang.Object ref = facebook_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      facebook_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string facebook = 8;</code>
-   * @return The bytes for facebook.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFacebookBytes() {
-    java.lang.Object ref = facebook_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      facebook_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public boolean getIsEnable() {
+    return isEnable_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,29 +239,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (status_ != 0L) {
-      output.writeInt64(1, status_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-    }
     if (id_ != 0L) {
-      output.writeInt64(3, id_);
+      output.writeInt64(1, id_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatar_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, avatar_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, field_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(birthDate_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, birthDate_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, address_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, gender_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gps_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, gps_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(facebook_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, facebook_);
+    if (isEnable_ != false) {
+      output.writeBool(6, isEnable_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -346,31 +266,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (status_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, status_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-    }
     if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, id_);
+        .computeInt64Size(1, id_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatar_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, avatar_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, field_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(birthDate_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, birthDate_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, address_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, gender_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gps_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, gps_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(facebook_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, facebook_);
+    if (isEnable_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, isEnable_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -382,27 +296,23 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.auth.GetPlayerInfoResponse)) {
+    if (!(obj instanceof org.archi.common.auth.Brand)) {
       return super.equals(obj);
     }
-    org.archi.common.auth.GetPlayerInfoResponse other = (org.archi.common.auth.GetPlayerInfoResponse) obj;
+    org.archi.common.auth.Brand other = (org.archi.common.auth.Brand) obj;
 
-    if (getStatus()
-        != other.getStatus()) return false;
-    if (!getMessage()
-        .equals(other.getMessage())) return false;
     if (getId()
         != other.getId()) return false;
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getAvatar()
-        .equals(other.getAvatar())) return false;
-    if (!getBirthDate()
-        .equals(other.getBirthDate())) return false;
-    if (!getGender()
-        .equals(other.getGender())) return false;
-    if (!getFacebook()
-        .equals(other.getFacebook())) return false;
+    if (!getField()
+        .equals(other.getField())) return false;
+    if (!getAddress()
+        .equals(other.getAddress())) return false;
+    if (!getGps()
+        .equals(other.getGps())) return false;
+    if (getIsEnable()
+        != other.getIsEnable()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -414,92 +324,88 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getStatus());
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + AVATAR_FIELD_NUMBER;
-    hash = (53 * hash) + getAvatar().hashCode();
-    hash = (37 * hash) + BIRTHDATE_FIELD_NUMBER;
-    hash = (53 * hash) + getBirthDate().hashCode();
-    hash = (37 * hash) + GENDER_FIELD_NUMBER;
-    hash = (53 * hash) + getGender().hashCode();
-    hash = (37 * hash) + FACEBOOK_FIELD_NUMBER;
-    hash = (53 * hash) + getFacebook().hashCode();
+    hash = (37 * hash) + FIELD_FIELD_NUMBER;
+    hash = (53 * hash) + getField().hashCode();
+    hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getAddress().hashCode();
+    hash = (37 * hash) + GPS_FIELD_NUMBER;
+    hash = (53 * hash) + getGps().hashCode();
+    hash = (37 * hash) + ISENABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsEnable());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.Brand parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.Brand parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.Brand parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.Brand parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(byte[] data)
+  public static org.archi.common.auth.Brand parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.Brand parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(java.io.InputStream input)
+  public static org.archi.common.auth.Brand parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.Brand parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.auth.Brand parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseDelimitedFrom(
+  public static org.archi.common.auth.Brand parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.Brand parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.Brand parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -512,7 +418,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.auth.GetPlayerInfoResponse prototype) {
+  public static Builder newBuilder(org.archi.common.auth.Brand prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -528,26 +434,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetPlayerInfoResponse}
+   * Protobuf type {@code Brand}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetPlayerInfoResponse)
-      org.archi.common.auth.GetPlayerInfoResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:Brand)
+      org.archi.common.auth.BrandOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_Brand_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_fieldAccessorTable
+      return org.archi.common.auth.AuthProto.internal_static_Brand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.auth.GetPlayerInfoResponse.class, org.archi.common.auth.GetPlayerInfoResponse.Builder.class);
+              org.archi.common.auth.Brand.class, org.archi.common.auth.Brand.Builder.class);
     }
 
-    // Construct using org.archi.common.auth.GetPlayerInfoResponse.newBuilder()
+    // Construct using org.archi.common.auth.Brand.newBuilder()
     private Builder() {
 
     }
@@ -560,21 +466,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      status_ = 0L;
-
-      message_ = "";
-
       id_ = 0L;
 
       name_ = "";
 
-      avatar_ = "";
+      field_ = "";
 
-      birthDate_ = "";
+      address_ = "";
 
-      gender_ = "";
+      gps_ = "";
 
-      facebook_ = "";
+      isEnable_ = false;
 
       return this;
     }
@@ -582,17 +484,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_Brand_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse getDefaultInstanceForType() {
-      return org.archi.common.auth.GetPlayerInfoResponse.getDefaultInstance();
+    public org.archi.common.auth.Brand getDefaultInstanceForType() {
+      return org.archi.common.auth.Brand.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse build() {
-      org.archi.common.auth.GetPlayerInfoResponse result = buildPartial();
+    public org.archi.common.auth.Brand build() {
+      org.archi.common.auth.Brand result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -600,16 +502,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse buildPartial() {
-      org.archi.common.auth.GetPlayerInfoResponse result = new org.archi.common.auth.GetPlayerInfoResponse(this);
-      result.status_ = status_;
-      result.message_ = message_;
+    public org.archi.common.auth.Brand buildPartial() {
+      org.archi.common.auth.Brand result = new org.archi.common.auth.Brand(this);
       result.id_ = id_;
       result.name_ = name_;
-      result.avatar_ = avatar_;
-      result.birthDate_ = birthDate_;
-      result.gender_ = gender_;
-      result.facebook_ = facebook_;
+      result.field_ = field_;
+      result.address_ = address_;
+      result.gps_ = gps_;
+      result.isEnable_ = isEnable_;
       onBuilt();
       return result;
     }
@@ -648,23 +548,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.auth.GetPlayerInfoResponse) {
-        return mergeFrom((org.archi.common.auth.GetPlayerInfoResponse)other);
+      if (other instanceof org.archi.common.auth.Brand) {
+        return mergeFrom((org.archi.common.auth.Brand)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.auth.GetPlayerInfoResponse other) {
-      if (other == org.archi.common.auth.GetPlayerInfoResponse.getDefaultInstance()) return this;
-      if (other.getStatus() != 0L) {
-        setStatus(other.getStatus());
-      }
-      if (!other.getMessage().isEmpty()) {
-        message_ = other.message_;
-        onChanged();
-      }
+    public Builder mergeFrom(org.archi.common.auth.Brand other) {
+      if (other == org.archi.common.auth.Brand.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -672,21 +565,20 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getAvatar().isEmpty()) {
-        avatar_ = other.avatar_;
+      if (!other.getField().isEmpty()) {
+        field_ = other.field_;
         onChanged();
       }
-      if (!other.getBirthDate().isEmpty()) {
-        birthDate_ = other.birthDate_;
+      if (!other.getAddress().isEmpty()) {
+        address_ = other.address_;
         onChanged();
       }
-      if (!other.getGender().isEmpty()) {
-        gender_ = other.gender_;
+      if (!other.getGps().isEmpty()) {
+        gps_ = other.gps_;
         onChanged();
       }
-      if (!other.getFacebook().isEmpty()) {
-        facebook_ = other.facebook_;
-        onChanged();
+      if (other.getIsEnable() != false) {
+        setIsEnable(other.getIsEnable());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -715,45 +607,35 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 8: {
-              status_ = input.readInt64();
+              id_ = input.readInt64();
 
               break;
             } // case 8
             case 18: {
-              message_ = input.readStringRequireUtf8();
+              name_ = input.readStringRequireUtf8();
 
               break;
             } // case 18
-            case 24: {
-              id_ = input.readInt64();
+            case 26: {
+              field_ = input.readStringRequireUtf8();
 
               break;
-            } // case 24
+            } // case 26
             case 34: {
-              name_ = input.readStringRequireUtf8();
+              address_ = input.readStringRequireUtf8();
 
               break;
             } // case 34
             case 42: {
-              avatar_ = input.readStringRequireUtf8();
+              gps_ = input.readStringRequireUtf8();
 
               break;
             } // case 42
-            case 50: {
-              birthDate_ = input.readStringRequireUtf8();
+            case 48: {
+              isEnable_ = input.readBool();
 
               break;
-            } // case 50
-            case 58: {
-              gender_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 58
-            case 66: {
-              facebook_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 66
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -770,116 +652,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long status_ ;
-    /**
-     * <code>int64 status = 1;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public long getStatus() {
-      return status_;
-    }
-    /**
-     * <code>int64 status = 1;</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(long value) {
-      
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 status = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      
-      status_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object message_ = "";
-    /**
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @param value The message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @param value The bytes for message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value;
-      onChanged();
-      return this;
-    }
-
     private long id_ ;
     /**
-     * <code>int64 id = 3;</code>
+     * <pre>
+     * brand id.
+     * </pre>
+     *
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -887,7 +666,11 @@ private static final long serialVersionUID = 0L;
       return id_;
     }
     /**
-     * <code>int64 id = 3;</code>
+     * <pre>
+     * brand id.
+     * </pre>
+     *
+     * <code>int64 id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -898,7 +681,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 id = 3;</code>
+     * <pre>
+     * brand id.
+     * </pre>
+     *
+     * <code>int64 id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -910,7 +697,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 4;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -926,7 +713,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -943,7 +730,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>string name = 2;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -958,7 +745,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>string name = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -968,7 +755,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>string name = 2;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -984,306 +771,261 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object avatar_ = "";
+    private java.lang.Object field_ = "";
     /**
-     * <code>string avatar = 5;</code>
-     * @return The avatar.
+     * <code>string field = 3;</code>
+     * @return The field.
      */
-    public java.lang.String getAvatar() {
-      java.lang.Object ref = avatar_;
+    public java.lang.String getField() {
+      java.lang.Object ref = field_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        avatar_ = s;
+        field_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string avatar = 5;</code>
-     * @return The bytes for avatar.
+     * <code>string field = 3;</code>
+     * @return The bytes for field.
      */
     public com.google.protobuf.ByteString
-        getAvatarBytes() {
-      java.lang.Object ref = avatar_;
+        getFieldBytes() {
+      java.lang.Object ref = field_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        avatar_ = b;
+        field_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string avatar = 5;</code>
-     * @param value The avatar to set.
+     * <code>string field = 3;</code>
+     * @param value The field to set.
      * @return This builder for chaining.
      */
-    public Builder setAvatar(
+    public Builder setField(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      avatar_ = value;
+      field_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string avatar = 5;</code>
+     * <code>string field = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAvatar() {
+    public Builder clearField() {
       
-      avatar_ = getDefaultInstance().getAvatar();
+      field_ = getDefaultInstance().getField();
       onChanged();
       return this;
     }
     /**
-     * <code>string avatar = 5;</code>
-     * @param value The bytes for avatar to set.
+     * <code>string field = 3;</code>
+     * @param value The bytes for field to set.
      * @return This builder for chaining.
      */
-    public Builder setAvatarBytes(
+    public Builder setFieldBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      avatar_ = value;
+      field_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object birthDate_ = "";
+    private java.lang.Object address_ = "";
     /**
-     * <code>string birthDate = 6;</code>
-     * @return The birthDate.
+     * <code>string address = 4;</code>
+     * @return The address.
      */
-    public java.lang.String getBirthDate() {
-      java.lang.Object ref = birthDate_;
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        birthDate_ = s;
+        address_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string birthDate = 6;</code>
-     * @return The bytes for birthDate.
+     * <code>string address = 4;</code>
+     * @return The bytes for address.
      */
     public com.google.protobuf.ByteString
-        getBirthDateBytes() {
-      java.lang.Object ref = birthDate_;
+        getAddressBytes() {
+      java.lang.Object ref = address_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        birthDate_ = b;
+        address_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string birthDate = 6;</code>
-     * @param value The birthDate to set.
+     * <code>string address = 4;</code>
+     * @param value The address to set.
      * @return This builder for chaining.
      */
-    public Builder setBirthDate(
+    public Builder setAddress(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      birthDate_ = value;
+      address_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string birthDate = 6;</code>
+     * <code>string address = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearBirthDate() {
+    public Builder clearAddress() {
       
-      birthDate_ = getDefaultInstance().getBirthDate();
+      address_ = getDefaultInstance().getAddress();
       onChanged();
       return this;
     }
     /**
-     * <code>string birthDate = 6;</code>
-     * @param value The bytes for birthDate to set.
+     * <code>string address = 4;</code>
+     * @param value The bytes for address to set.
      * @return This builder for chaining.
      */
-    public Builder setBirthDateBytes(
+    public Builder setAddressBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      birthDate_ = value;
+      address_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object gender_ = "";
+    private java.lang.Object gps_ = "";
     /**
-     * <code>string gender = 7;</code>
-     * @return The gender.
+     * <code>string gps = 5;</code>
+     * @return The gps.
      */
-    public java.lang.String getGender() {
-      java.lang.Object ref = gender_;
+    public java.lang.String getGps() {
+      java.lang.Object ref = gps_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        gender_ = s;
+        gps_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string gender = 7;</code>
-     * @return The bytes for gender.
+     * <code>string gps = 5;</code>
+     * @return The bytes for gps.
      */
     public com.google.protobuf.ByteString
-        getGenderBytes() {
-      java.lang.Object ref = gender_;
+        getGpsBytes() {
+      java.lang.Object ref = gps_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        gender_ = b;
+        gps_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string gender = 7;</code>
-     * @param value The gender to set.
+     * <code>string gps = 5;</code>
+     * @param value The gps to set.
      * @return This builder for chaining.
      */
-    public Builder setGender(
+    public Builder setGps(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      gender_ = value;
+      gps_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string gender = 7;</code>
+     * <code>string gps = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearGender() {
+    public Builder clearGps() {
       
-      gender_ = getDefaultInstance().getGender();
+      gps_ = getDefaultInstance().getGps();
       onChanged();
       return this;
     }
     /**
-     * <code>string gender = 7;</code>
-     * @param value The bytes for gender to set.
+     * <code>string gps = 5;</code>
+     * @param value The bytes for gps to set.
      * @return This builder for chaining.
      */
-    public Builder setGenderBytes(
+    public Builder setGpsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      gender_ = value;
+      gps_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object facebook_ = "";
+    private boolean isEnable_ ;
     /**
-     * <code>string facebook = 8;</code>
-     * @return The facebook.
+     * <code>bool isEnable = 6;</code>
+     * @return The isEnable.
      */
-    public java.lang.String getFacebook() {
-      java.lang.Object ref = facebook_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        facebook_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean getIsEnable() {
+      return isEnable_;
     }
     /**
-     * <code>string facebook = 8;</code>
-     * @return The bytes for facebook.
-     */
-    public com.google.protobuf.ByteString
-        getFacebookBytes() {
-      java.lang.Object ref = facebook_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        facebook_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string facebook = 8;</code>
-     * @param value The facebook to set.
+     * <code>bool isEnable = 6;</code>
+     * @param value The isEnable to set.
      * @return This builder for chaining.
      */
-    public Builder setFacebook(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      facebook_ = value;
+    public Builder setIsEnable(boolean value) {
+      
+      isEnable_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string facebook = 8;</code>
+     * <code>bool isEnable = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearFacebook() {
+    public Builder clearIsEnable() {
       
-      facebook_ = getDefaultInstance().getFacebook();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string facebook = 8;</code>
-     * @param value The bytes for facebook to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFacebookBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      facebook_ = value;
+      isEnable_ = false;
       onChanged();
       return this;
     }
@@ -1300,23 +1042,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetPlayerInfoResponse)
+    // @@protoc_insertion_point(builder_scope:Brand)
   }
 
-  // @@protoc_insertion_point(class_scope:GetPlayerInfoResponse)
-  private static final org.archi.common.auth.GetPlayerInfoResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:Brand)
+  private static final org.archi.common.auth.Brand DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.auth.GetPlayerInfoResponse();
+    DEFAULT_INSTANCE = new org.archi.common.auth.Brand();
   }
 
-  public static org.archi.common.auth.GetPlayerInfoResponse getDefaultInstance() {
+  public static org.archi.common.auth.Brand getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetPlayerInfoResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetPlayerInfoResponse>() {
+  private static final com.google.protobuf.Parser<Brand>
+      PARSER = new com.google.protobuf.AbstractParser<Brand>() {
     @java.lang.Override
-    public GetPlayerInfoResponse parsePartialFrom(
+    public Brand parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1335,17 +1077,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetPlayerInfoResponse> parser() {
+  public static com.google.protobuf.Parser<Brand> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetPlayerInfoResponse> getParserForType() {
+  public com.google.protobuf.Parser<Brand> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.auth.GetPlayerInfoResponse getDefaultInstanceForType() {
+  public org.archi.common.auth.Brand getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

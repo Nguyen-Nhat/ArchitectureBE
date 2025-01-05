@@ -3,13 +3,13 @@
 
 package org.archi.common.auth;
 
-public interface GetBrandInfoRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GetBrandInfoRequest)
+public interface PlayerProfileRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:PlayerProfileRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
-   *Brand ID
+   * Account ID.
    * </pre>
    *
    * <code>int64 id = 1;</code>

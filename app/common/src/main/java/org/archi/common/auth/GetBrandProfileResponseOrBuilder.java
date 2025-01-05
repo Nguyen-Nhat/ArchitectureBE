@@ -3,8 +3,8 @@
 
 package org.archi.common.auth;
 
-public interface GetPlayerInfoResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GetPlayerInfoResponse)
+public interface GetBrandProfileResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:GetBrandProfileResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -44,50 +44,44 @@ public interface GetPlayerInfoResponseOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string avatar = 5;</code>
-   * @return The avatar.
+   * <code>string field = 5;</code>
+   * @return The field.
    */
-  java.lang.String getAvatar();
+  java.lang.String getField();
   /**
-   * <code>string avatar = 5;</code>
-   * @return The bytes for avatar.
+   * <code>string field = 5;</code>
+   * @return The bytes for field.
    */
   com.google.protobuf.ByteString
-      getAvatarBytes();
+      getFieldBytes();
 
   /**
-   * <code>string birthDate = 6;</code>
-   * @return The birthDate.
+   * <code>string address = 6;</code>
+   * @return The address.
    */
-  java.lang.String getBirthDate();
+  java.lang.String getAddress();
   /**
-   * <code>string birthDate = 6;</code>
-   * @return The bytes for birthDate.
+   * <code>string address = 6;</code>
+   * @return The bytes for address.
    */
   com.google.protobuf.ByteString
-      getBirthDateBytes();
+      getAddressBytes();
 
   /**
-   * <code>string gender = 7;</code>
-   * @return The gender.
+   * <code>string gps = 7;</code>
+   * @return The gps.
    */
-  java.lang.String getGender();
+  java.lang.String getGps();
   /**
-   * <code>string gender = 7;</code>
-   * @return The bytes for gender.
+   * <code>string gps = 7;</code>
+   * @return The bytes for gps.
    */
   com.google.protobuf.ByteString
-      getGenderBytes();
+      getGpsBytes();
 
   /**
-   * <code>string facebook = 8;</code>
-   * @return The facebook.
+   * <code>bool isEnable = 8;</code>
+   * @return The isEnable.
    */
-  java.lang.String getFacebook();
-  /**
-   * <code>string facebook = 8;</code>
-   * @return The bytes for facebook.
-   */
-  com.google.protobuf.ByteString
-      getFacebookBytes();
+  boolean getIsEnable();
 }

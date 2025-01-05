@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import org.archi.auth.model.Account;
 import org.archi.auth.model.Brand;
 import org.archi.auth.repo.BrandRepo;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -26,5 +29,9 @@ public class BrandService {
 
   public void deleteBrandByAccount(Account account) {
     brandRepo.deleteBrandByAccount(account);
+  }
+
+  public Page<Brand> findAll(Specification<Brand> specs, Pageable pageable) {
+    return brandRepo.findAll(specs, pageable);
   }
 }

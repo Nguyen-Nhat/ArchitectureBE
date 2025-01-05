@@ -17,6 +17,152 @@ service AuthService {
   rpc PostCreateAccount(PostCreateAccountRequest) returns(PostCreateAccountResponse);
   rpc DeleteAccount(DeleteAccountRequest) returns(DeleteAccountResponse);
   rpc PutUpdateAccount(PutUpdateAccountRequest) returns(PutUpdateAccountResponse);
+  rpc GetBrandProfile(GetBrandProfileRequest) returns(GetBrandProfileResponse);
+  rpc UpdateBrand(UpdateBrandRequest) returns(UpdateBrandResponse);
+  rpc GetPlayerProfile(PlayerProfileRequest) returns(PlayerProfileResponse);
+  rpc UpdatePlayer(UpdatePlayerRequest) returns(UpdatePlayerResponse);
+  rpc GetAccounts(GetAccountsRequest) returns(GetAccountsResponse);
+  rpc GetBrands(GetBrandsRequest) returns(GetBrandsResponse);
+  rpc GetPlayers(GetPlayersRequest) returns(GetPlayersResponse);
+}
+
+message GetPlayersRequest {
+  int32 page = 1;
+  int32 size = 2;
+  optional string sort = 3;
+  optional string name = 4;
+}
+message Player {
+  int64 id = 1; // player id.
+  string name = 2;
+  string avatar = 3;
+  string birthDate = 4;
+  string facebook = 5;
+}
+message GetPlayersResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 totalPage = 3;
+  int64 totalElement = 4;
+  int64 page = 5;
+  int64 size = 6;
+  repeated Player players = 7;
+}
+
+message GetBrandsRequest {
+  int32 page = 1;
+  int32 size = 2;
+  optional string sort = 3;
+  optional string name = 4;
+}
+message Brand {
+  int64 id = 1; // brand id.
+  string name = 2;
+  string field = 3;
+  string address = 4;
+  string gps = 5;
+  bool isEnable = 6;
+}
+message GetBrandsResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 totalPage = 3;
+  int64 totalElement = 4;
+  int64 page = 5;
+  int64 size = 6;
+  repeated Brand brands = 7;
+}
+
+
+message GetAccountsRequest {
+  int32 page = 1;
+  int32 size = 2;
+  optional string sort = 3;
+  optional string username = 4;
+}
+message Account {
+  int64 id = 1; // account id.
+  string username = 2;
+  string email = 3;
+  string phoneNumber = 4;
+  string role = 5;
+  bool isActive = 6;
+}
+message GetAccountsResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 totalPage = 3;
+  int64 totalElement = 4;
+  int64 page = 5;
+  int64 size = 6;
+  repeated Account accounts = 7;
+}
+
+message UpdatePlayerRequest {
+  int64 id = 1; // player id.
+  optional string name = 2;
+  optional string avatar = 3;
+  optional string birthDate = 4;
+  optional string gender = 5;
+  optional string facebook = 6;
+}
+message UpdatePlayerResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+
+message PlayerProfileRequest {
+  int64 id = 1; // Account ID.
+}
+message PlayerProfileResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string name = 4;
+  string avatar = 5;
+  string birthDate = 6;
+  string gender = 7;
+  string facebook = 8;
+}
+
+message UpdateBrandRequest {
+  int64 id = 1; // brand id.
+  optional string name = 2;
+  optional string field = 3;
+  optional string address = 4;
+  optional string gps = 5;
+}
+message UpdateBrandResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message GetBrandProfileRequest {
+  int64 id = 1; // Account ID.
+}
+message GetBrandProfileResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string name = 4;
+  string field = 5;
+  string address = 6;
+  string gps = 7;
+  bool isEnable = 8;
+}
+message GetBrandInfoRequest {
+  int64 id = 1; /*Brand ID*/
+}
+message GetBrandInfoResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 id = 3;
+  string name = 4;
+  string field = 5;
+  string address = 6;
+  string gps = 7;
+  bool isEnable = 8;
 }
 
 message PostCreateAccountRequest {
@@ -122,19 +268,6 @@ message PostVerifyTokenResponse {
   int64 id = 3; // account id.
   string role = 4;
 }
-message GetBrandInfoRequest {
-  int64 id = 1; /*Account ID*/
-}
-message GetBrandInfoResponse {
-  int64 status = 1;
-  string message = 2;
-  int64 id = 3;
-  string name = 4;
-  string field = 5;
-  string address = 6;
-  string gps = 7;
-  bool isEnable = 8;
-}
 message GetPlayerInfoRequest {
   int64 id = 1; /*Account ID*/
 }
@@ -144,7 +277,7 @@ message GetPlayerInfoResponse {
   int64 id = 3;
   string name = 4;
   string avatar = 5;
-  int64 birthDate = 6;
+  string birthDate = 6;
   string gender = 7;
   string facebook = 8;
 }
