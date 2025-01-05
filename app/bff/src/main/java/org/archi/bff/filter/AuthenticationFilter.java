@@ -51,6 +51,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
     String path = request.getServletPath();
-    return (path.startsWith("/api/v1/auth"));
+    System.out.println(path);
+    return (path.contains("api/v1/auth") || path.contains("swagger-ui") || path.contains("v3/api-docs"));
   }
 }

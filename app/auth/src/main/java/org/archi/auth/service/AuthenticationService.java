@@ -6,8 +6,20 @@ import org.archi.auth.enums.GENDER;
 import org.archi.auth.enums.ROLE;
 import org.archi.auth.exceptions.ResourceNotFoundException;
 import org.archi.auth.model.*;
+import org.archi.auth.model.Account;
+import org.archi.auth.model.Brand;
+import org.archi.auth.model.Player;
 import org.archi.auth.repo.AccessTokenRepo;
+import org.archi.auth.repo.AccountRepo;
+import org.archi.auth.specification.AccountSpecs;
+import org.archi.auth.specification.BrandSpecs;
+import org.archi.auth.specification.PlayerSpecs;
 import org.archi.common.auth.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,8 +29,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -34,6 +50,7 @@ public class AuthenticationService {
   private final PlayerService playerService;
   private final BrandService brandService;
   private final EmailService emailService;
+  private final AccountRepo accountRepo;
 
 
   /// done
@@ -368,6 +385,7 @@ public class AuthenticationService {
     return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.OK.value()).setMessage("Success").build();
   }
 
+  /// done
   public GetAccountInfoResponse getAccountInfo(GetAccountInfoRequest request) {
     Account account = accountService.findById(request.getId());
     if (account == null || account.getId() <= 0) {
@@ -385,6 +403,7 @@ public class AuthenticationService {
             .build();
   }
 
+  /// done
   public DeleteAccountResponse deleteAccount(DeleteAccountRequest request) {
     Account account = accountService.findById(request.getId());
     if (account == null || account.getId() <= 0) {
@@ -406,5 +425,315 @@ public class AuthenticationService {
     }
     accountService.delete(account);
     return DeleteAccountResponse.newBuilder().setStatus(HttpStatus.OK.value()).setMessage("Success").build();
+  }
+
+  /// done
+  public GetBrandInfoResponse getBrandInfo(GetBrandInfoRequest request) {
+    long brandId = request.getId();
+    Brand brand = brandService.findById(brandId);
+    if (brand == null || brand.getId() <= 0) {
+      return GetBrandInfoResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Brand not found")
+              .build();
+    }
+    return GetBrandInfoResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .setId(brand.getId())
+            .setName(brand.getName())
+            .setField(brand.getField())
+            .setAddress(brand.getAddress())
+            .setGps(brand.getGps())
+            .setIsEnable(brand.getIsEnable())
+            .build();
+  }
+
+  public GetBrandProfileResponse getBrandProfile(GetBrandProfileRequest request) {
+    long accountId = request.getId();
+    Account account = accountService.findById(accountId);
+    if (account == null || account.getId() <= 0) {
+      return GetBrandProfileResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Account not found")
+              .build();
+    }
+    Brand brand = brandService.findByAccount(account);
+    if (brand == null || brand.getId() <= 0) {
+      return GetBrandProfileResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Brand not found")
+              .build();
+    }
+    return GetBrandProfileResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .setId(brand.getId())
+            .setName(brand.getName())
+            .setField(brand.getField())
+            .setAddress(brand.getAddress())
+            .setGps(brand.getGps())
+            .setIsEnable(brand.getIsEnable())
+            .build();
+  }
+
+  public UpdateBrandResponse updateBrand(UpdateBrandRequest request) {
+    long brandId = request.getId();
+    Brand brand = brandService.findById(brandId);
+    if (brand == null || brand.getId() <= 0) {
+      return UpdateBrandResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Brand not found")
+              .build();
+    }
+    if (StringUtils.hasText(request.getName())) {
+      brand.setName(request.getName());
+    }
+    if (StringUtils.hasText(request.getField())) {
+      brand.setField(request.getField());
+    }
+    if (StringUtils.hasText(request.getAddress())) {
+      brand.setAddress(request.getAddress());
+    }
+    if (StringUtils.hasText(request.getGps())) {
+      brand.setGps(request.getGps());
+    }
+    if (StringUtils.hasText(brand.getName())) {
+      brand.setIsEnable(true);
+    }
+    brandService.save(brand);
+    return UpdateBrandResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .build();
+  }
+
+  public PlayerProfileResponse getPlayerProfile(PlayerProfileRequest request) {
+    long accountId = request.getId();
+    Account account = accountService.findById(accountId);
+    if (account == null || account.getId() <= 0) {
+      return PlayerProfileResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Account not found")
+              .build();
+    }
+    Player player = playerService.findByAccount(account);
+    if (player == null || player.getId() <= 0) {
+      return PlayerProfileResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Player not found")
+              .build();
+    }
+    return PlayerProfileResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .setId(player.getId())
+            .setName(player.getName())
+            .setAvatar(player.getAvatar())
+            .setBirthDate(player.getBirthDate().toString())
+            .setGender(player.getGender().name())
+            .setFacebook(player.getFacebook())
+            .build();
+  }
+
+  public GetPlayerInfoResponse getPlayerInfo(GetPlayerInfoRequest request) {
+    long playerId = request.getId();
+    Player player = playerService.findById(playerId);
+    if (player == null || player.getId() <= 0) {
+      return GetPlayerInfoResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Player not found")
+              .build();
+    }
+    return GetPlayerInfoResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .setId(player.getId())
+            .setName(player.getName())
+            .setAvatar(player.getAvatar())
+            .setBirthDate(player.getBirthDate().toString())
+            .setGender(player.getGender().name())
+            .setFacebook(player.getFacebook())
+            .build();
+  }
+
+  public UpdatePlayerResponse updatePlayer(UpdatePlayerRequest request) {
+    long playerId = request.getId();
+    Player player = playerService.findById(playerId);
+    if (player == null || player.getId() <= 0) {
+      return UpdatePlayerResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Player not found")
+              .build();
+    }
+    if (StringUtils.hasText(request.getName())) {
+      player.setName(request.getName());
+    }
+    if (StringUtils.hasText(request.getAvatar())) {
+      player.setAvatar(request.getAvatar());
+    }
+    if (StringUtils.hasText(request.getBirthDate())) {
+      java.sql.Date birthDate = java.sql.Date.valueOf(request.getBirthDate());
+      player.setBirthDate(birthDate);
+    }
+
+    if (StringUtils.hasText(request.getFacebook())) {
+      player.setFacebook(request.getFacebook());
+    }
+    if (StringUtils.hasText(request.getGender())) {
+      GENDER gender = GENDER.valueOf(request.getGender().toUpperCase(Locale.ROOT));
+      player.setGender(gender);
+    }
+    playerService.save(player);
+    return UpdatePlayerResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .build();
+  }
+
+  public GetAccountsResponse getAccounts(GetAccountsRequest request) {
+    int page = request.getPage();
+    int size = request.getSize();
+    String sort = request.getSort();
+    String username = request.getUsername();
+
+    Pageable pageable = null;
+    if (StringUtils.hasText(sort)) {
+      List<Sort.Order> orders = new ArrayList<>();
+      String[] list = sort.split(",");
+      for (String element : list) {
+        orders.add(new Sort.Order(Sort.Direction.fromString(element.split(":")[1].toUpperCase()), element.split(":")[0]));
+      }
+      pageable = PageRequest.of(page, size, Sort.by(orders));
+    } else pageable = PageRequest.of(page, size);
+    Page<Account> accounts = null;
+
+    Specification<Account> specs = Specification.where(null);
+    if (StringUtils.hasText(username)) {
+      System.out.println(username);
+      specs = specs.and(AccountSpecs.containsUsername(username));
+    }
+    try {
+      accounts = accountService.findAll(specs, pageable);
+    } catch (RuntimeException e) {
+      return GetAccountsResponse.newBuilder()
+              .setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value())
+              .setMessage("Failed to get accounts")
+              .build();
+    }
+
+    return GetAccountsResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .addAllAccounts(accounts.stream().map(account -> org.archi.common.auth.Account.newBuilder()
+                    .setId(account.getId())
+                    .setUsername(account.getUsername())
+                    .setEmail(account.getEmail())
+                    .setPhoneNumber(account.getPhoneNumber())
+                    .setIsActive(account.getIsActive())
+                    .setRole(account.getRole().getName().toString())
+                    .build()).collect(Collectors.toList()))
+            .setTotalElement(accounts.getTotalElements())
+            .setTotalPage(accounts.getTotalPages())
+            .setPage(accounts.getNumber())
+            .setSize(accounts.getSize())
+            .build();
+  }
+
+  public GetBrandsResponse getBrands(GetBrandsRequest request) {
+    int page = request.getPage();
+    int size = request.getSize();
+    String sort = request.getSort();
+    String name = request.getName();
+
+    Pageable pageable = null;
+    if (StringUtils.hasText(sort)) {
+      List<Sort.Order> orders = new ArrayList<>();
+      String[] list = sort.split(",");
+      for (String element : list) {
+        orders.add(new Sort.Order(Sort.Direction.fromString(element.split(":")[1].toUpperCase()), element.split(":")[0]));
+      }
+      pageable = PageRequest.of(page, size, Sort.by(orders));
+    } else pageable = PageRequest.of(page, size);
+    Specification<Brand> specs = null;
+    if (StringUtils.hasText(name)) {
+      specs = BrandSpecs.containsName(name);
+    }
+
+    Page<Brand> brands = null;
+    try {
+      brands = brandService.findAll(specs, pageable);
+    } catch (RuntimeException e) {
+      return GetBrandsResponse.newBuilder()
+              .setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value())
+              .setMessage("Failed to get accounts")
+              .build();
+    }
+
+    return GetBrandsResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .addAllBrands(brands.stream().map(account -> org.archi.common.auth.Brand.newBuilder()
+                    .setId(account.getId())
+                    .setName(account.getName())
+                    .setField(account.getField())
+                    .setAddress(account.getAddress())
+                    .setGps(account.getGps())
+                    .setIsEnable(account.getIsEnable())
+                    .build()).collect(Collectors.toList()))
+            .setTotalElement(brands.getTotalElements())
+            .setTotalPage(brands.getTotalPages())
+            .setPage(brands.getNumber())
+            .setSize(brands.getSize())
+            .build();
+  }
+
+  public GetPlayersResponse getPlayers(GetPlayersRequest request) {
+    int page = request.getPage();
+    int size = request.getSize();
+    String sort = request.getSort();
+    String name = request.getName();
+
+    Pageable pageable = null;
+    if (StringUtils.hasText(sort)) {
+      List<Sort.Order> orders = new ArrayList<>();
+      String[] list = sort.split(",");
+      for (String element : list) {
+        orders.add(new Sort.Order(Sort.Direction.fromString(element.split(":")[1].toUpperCase()), element.split(":")[0]));
+      }
+      pageable = PageRequest.of(page, size, Sort.by(orders));
+    } else pageable = PageRequest.of(page, size);
+
+    Specification<Player> specs = null;
+    if (StringUtils.hasText(name)) {
+      specs = PlayerSpecs.containsName(name);
+    }
+
+
+    Page<Player> players = null;
+    try {
+      players = playerService.findAll(specs, pageable);
+    } catch (RuntimeException e) {
+      return GetPlayersResponse.newBuilder()
+              .setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value())
+              .setMessage("Failed to get accounts")
+              .build();
+    }
+
+    return GetPlayersResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .addAllPlayers(players.stream().map(account -> org.archi.common.auth.Player.newBuilder()
+                    .setId(account.getId())
+                    .setName(account.getName())
+                    .setAvatar(account.getAvatar())
+                    .setFacebook(account.getFacebook())
+                    .setBirthDate(account.getBirthDate().toString())
+                    .build()).collect(Collectors.toList()))
+            .setTotalElement(players.getTotalElements())
+            .setTotalPage(players.getTotalPages())
+            .setPage(players.getNumber())
+            .setSize(players.getSize())
+            .build();
   }
 }

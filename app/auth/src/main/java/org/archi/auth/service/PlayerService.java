@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import org.archi.auth.model.Account;
 import org.archi.auth.model.Player;
 import org.archi.auth.repo.PlayerRepo;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -31,5 +34,9 @@ public class PlayerService {
     } catch (RuntimeException e) {
       throw new RuntimeException("Error: " + e.getMessage());
     }
+  }
+
+  public Page<Player> findAll(Specification<Player> specs, Pageable pageable) {
+    return playerRepo.findAll(specs, pageable);
   }
 }

@@ -4,18 +4,18 @@
 package org.archi.common.auth;
 
 /**
- * Protobuf type {@code GetPlayerInfoResponse}
+ * Protobuf type {@code PlayerProfileResponse}
  */
-public final class GetPlayerInfoResponse extends
+public final class PlayerProfileResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetPlayerInfoResponse)
-    GetPlayerInfoResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:PlayerProfileResponse)
+    PlayerProfileResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetPlayerInfoResponse.newBuilder() to construct.
-  private GetPlayerInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PlayerProfileResponse.newBuilder() to construct.
+  private PlayerProfileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetPlayerInfoResponse() {
+  private PlayerProfileResponse() {
     message_ = "";
     name_ = "";
     avatar_ = "";
@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetPlayerInfoResponse();
+    return new PlayerProfileResponse();
   }
 
   @java.lang.Override
@@ -38,15 +38,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+    return org.archi.common.auth.AuthProto.internal_static_PlayerProfileResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_fieldAccessorTable
+    return org.archi.common.auth.AuthProto.internal_static_PlayerProfileResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.auth.GetPlayerInfoResponse.class, org.archi.common.auth.GetPlayerInfoResponse.Builder.class);
+            org.archi.common.auth.PlayerProfileResponse.class, org.archi.common.auth.PlayerProfileResponse.Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -382,10 +382,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.auth.GetPlayerInfoResponse)) {
+    if (!(obj instanceof org.archi.common.auth.PlayerProfileResponse)) {
       return super.equals(obj);
     }
-    org.archi.common.auth.GetPlayerInfoResponse other = (org.archi.common.auth.GetPlayerInfoResponse) obj;
+    org.archi.common.auth.PlayerProfileResponse other = (org.archi.common.auth.PlayerProfileResponse) obj;
 
     if (getStatus()
         != other.getStatus()) return false;
@@ -437,69 +437,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(byte[] data)
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(java.io.InputStream input)
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.auth.PlayerProfileResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseDelimitedFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.PlayerProfileResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -512,7 +512,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.auth.GetPlayerInfoResponse prototype) {
+  public static Builder newBuilder(org.archi.common.auth.PlayerProfileResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -528,26 +528,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetPlayerInfoResponse}
+   * Protobuf type {@code PlayerProfileResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetPlayerInfoResponse)
-      org.archi.common.auth.GetPlayerInfoResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:PlayerProfileResponse)
+      org.archi.common.auth.PlayerProfileResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_PlayerProfileResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_fieldAccessorTable
+      return org.archi.common.auth.AuthProto.internal_static_PlayerProfileResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.auth.GetPlayerInfoResponse.class, org.archi.common.auth.GetPlayerInfoResponse.Builder.class);
+              org.archi.common.auth.PlayerProfileResponse.class, org.archi.common.auth.PlayerProfileResponse.Builder.class);
     }
 
-    // Construct using org.archi.common.auth.GetPlayerInfoResponse.newBuilder()
+    // Construct using org.archi.common.auth.PlayerProfileResponse.newBuilder()
     private Builder() {
 
     }
@@ -582,17 +582,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_PlayerProfileResponse_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse getDefaultInstanceForType() {
-      return org.archi.common.auth.GetPlayerInfoResponse.getDefaultInstance();
+    public org.archi.common.auth.PlayerProfileResponse getDefaultInstanceForType() {
+      return org.archi.common.auth.PlayerProfileResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse build() {
-      org.archi.common.auth.GetPlayerInfoResponse result = buildPartial();
+    public org.archi.common.auth.PlayerProfileResponse build() {
+      org.archi.common.auth.PlayerProfileResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -600,8 +600,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse buildPartial() {
-      org.archi.common.auth.GetPlayerInfoResponse result = new org.archi.common.auth.GetPlayerInfoResponse(this);
+    public org.archi.common.auth.PlayerProfileResponse buildPartial() {
+      org.archi.common.auth.PlayerProfileResponse result = new org.archi.common.auth.PlayerProfileResponse(this);
       result.status_ = status_;
       result.message_ = message_;
       result.id_ = id_;
@@ -648,16 +648,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.auth.GetPlayerInfoResponse) {
-        return mergeFrom((org.archi.common.auth.GetPlayerInfoResponse)other);
+      if (other instanceof org.archi.common.auth.PlayerProfileResponse) {
+        return mergeFrom((org.archi.common.auth.PlayerProfileResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.auth.GetPlayerInfoResponse other) {
-      if (other == org.archi.common.auth.GetPlayerInfoResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.archi.common.auth.PlayerProfileResponse other) {
+      if (other == org.archi.common.auth.PlayerProfileResponse.getDefaultInstance()) return this;
       if (other.getStatus() != 0L) {
         setStatus(other.getStatus());
       }
@@ -1300,23 +1300,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetPlayerInfoResponse)
+    // @@protoc_insertion_point(builder_scope:PlayerProfileResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:GetPlayerInfoResponse)
-  private static final org.archi.common.auth.GetPlayerInfoResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:PlayerProfileResponse)
+  private static final org.archi.common.auth.PlayerProfileResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.auth.GetPlayerInfoResponse();
+    DEFAULT_INSTANCE = new org.archi.common.auth.PlayerProfileResponse();
   }
 
-  public static org.archi.common.auth.GetPlayerInfoResponse getDefaultInstance() {
+  public static org.archi.common.auth.PlayerProfileResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetPlayerInfoResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetPlayerInfoResponse>() {
+  private static final com.google.protobuf.Parser<PlayerProfileResponse>
+      PARSER = new com.google.protobuf.AbstractParser<PlayerProfileResponse>() {
     @java.lang.Override
-    public GetPlayerInfoResponse parsePartialFrom(
+    public PlayerProfileResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1335,17 +1335,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetPlayerInfoResponse> parser() {
+  public static com.google.protobuf.Parser<PlayerProfileResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetPlayerInfoResponse> getParserForType() {
+  public com.google.protobuf.Parser<PlayerProfileResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.auth.GetPlayerInfoResponse getDefaultInstanceForType() {
+  public org.archi.common.auth.PlayerProfileResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

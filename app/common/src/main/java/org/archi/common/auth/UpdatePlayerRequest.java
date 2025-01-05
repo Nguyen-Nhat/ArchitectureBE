@@ -4,19 +4,18 @@
 package org.archi.common.auth;
 
 /**
- * Protobuf type {@code GetPlayerInfoResponse}
+ * Protobuf type {@code UpdatePlayerRequest}
  */
-public final class GetPlayerInfoResponse extends
+public final class UpdatePlayerRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetPlayerInfoResponse)
-    GetPlayerInfoResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:UpdatePlayerRequest)
+    UpdatePlayerRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetPlayerInfoResponse.newBuilder() to construct.
-  private GetPlayerInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdatePlayerRequest.newBuilder() to construct.
+  private UpdatePlayerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetPlayerInfoResponse() {
-    message_ = "";
+  private UpdatePlayerRequest() {
     name_ = "";
     avatar_ = "";
     birthDate_ = "";
@@ -28,7 +27,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetPlayerInfoResponse();
+    return new UpdatePlayerRequest();
   }
 
   @java.lang.Override
@@ -38,70 +37,26 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+    return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_fieldAccessorTable
+    return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.archi.common.auth.GetPlayerInfoResponse.class, org.archi.common.auth.GetPlayerInfoResponse.Builder.class);
+            org.archi.common.auth.UpdatePlayerRequest.class, org.archi.common.auth.UpdatePlayerRequest.Builder.class);
   }
 
-  public static final int STATUS_FIELD_NUMBER = 1;
-  private long status_;
-  /**
-   * <code>int64 status = 1;</code>
-   * @return The status.
-   */
-  @java.lang.Override
-  public long getStatus() {
-    return status_;
-  }
-
-  public static final int MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object message_;
-  /**
-   * <code>string message = 2;</code>
-   * @return The message.
-   */
-  @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      message_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string message = 2;</code>
-   * @return The bytes for message.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      message_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ID_FIELD_NUMBER = 3;
+  private int bitField0_;
+  public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
-   * <code>int64 id = 3;</code>
+   * <pre>
+   * player id.
+   * </pre>
+   *
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
@@ -109,10 +64,18 @@ private static final long serialVersionUID = 0L;
     return id_;
   }
 
-  public static final int NAME_FIELD_NUMBER = 4;
+  public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
-   * <code>string name = 4;</code>
+   * <code>optional string name = 2;</code>
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string name = 2;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -129,7 +92,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 4;</code>
+   * <code>optional string name = 2;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -147,10 +110,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int AVATAR_FIELD_NUMBER = 5;
+  public static final int AVATAR_FIELD_NUMBER = 3;
   private volatile java.lang.Object avatar_;
   /**
-   * <code>string avatar = 5;</code>
+   * <code>optional string avatar = 3;</code>
+   * @return Whether the avatar field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvatar() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string avatar = 3;</code>
    * @return The avatar.
    */
   @java.lang.Override
@@ -167,7 +138,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string avatar = 5;</code>
+   * <code>optional string avatar = 3;</code>
    * @return The bytes for avatar.
    */
   @java.lang.Override
@@ -185,10 +156,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BIRTHDATE_FIELD_NUMBER = 6;
+  public static final int BIRTHDATE_FIELD_NUMBER = 4;
   private volatile java.lang.Object birthDate_;
   /**
-   * <code>string birthDate = 6;</code>
+   * <code>optional string birthDate = 4;</code>
+   * @return Whether the birthDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasBirthDate() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional string birthDate = 4;</code>
    * @return The birthDate.
    */
   @java.lang.Override
@@ -205,7 +184,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string birthDate = 6;</code>
+   * <code>optional string birthDate = 4;</code>
    * @return The bytes for birthDate.
    */
   @java.lang.Override
@@ -223,10 +202,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int GENDER_FIELD_NUMBER = 7;
+  public static final int GENDER_FIELD_NUMBER = 5;
   private volatile java.lang.Object gender_;
   /**
-   * <code>string gender = 7;</code>
+   * <code>optional string gender = 5;</code>
+   * @return Whether the gender field is set.
+   */
+  @java.lang.Override
+  public boolean hasGender() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional string gender = 5;</code>
    * @return The gender.
    */
   @java.lang.Override
@@ -243,7 +230,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string gender = 7;</code>
+   * <code>optional string gender = 5;</code>
    * @return The bytes for gender.
    */
   @java.lang.Override
@@ -261,10 +248,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FACEBOOK_FIELD_NUMBER = 8;
+  public static final int FACEBOOK_FIELD_NUMBER = 6;
   private volatile java.lang.Object facebook_;
   /**
-   * <code>string facebook = 8;</code>
+   * <code>optional string facebook = 6;</code>
+   * @return Whether the facebook field is set.
+   */
+  @java.lang.Override
+  public boolean hasFacebook() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional string facebook = 6;</code>
    * @return The facebook.
    */
   @java.lang.Override
@@ -281,7 +276,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string facebook = 8;</code>
+   * <code>optional string facebook = 6;</code>
    * @return The bytes for facebook.
    */
   @java.lang.Override
@@ -313,29 +308,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (status_ != 0L) {
-      output.writeInt64(1, status_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-    }
     if (id_ != 0L) {
-      output.writeInt64(3, id_);
+      output.writeInt64(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatar_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, avatar_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatar_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(birthDate_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, birthDate_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, birthDate_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, gender_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, gender_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(facebook_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, facebook_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, facebook_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -346,31 +335,24 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (status_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, status_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-    }
     if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, id_);
+        .computeInt64Size(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatar_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, avatar_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatar_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(birthDate_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, birthDate_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, birthDate_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, gender_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, gender_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(facebook_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, facebook_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, facebook_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -382,27 +364,38 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.archi.common.auth.GetPlayerInfoResponse)) {
+    if (!(obj instanceof org.archi.common.auth.UpdatePlayerRequest)) {
       return super.equals(obj);
     }
-    org.archi.common.auth.GetPlayerInfoResponse other = (org.archi.common.auth.GetPlayerInfoResponse) obj;
+    org.archi.common.auth.UpdatePlayerRequest other = (org.archi.common.auth.UpdatePlayerRequest) obj;
 
-    if (getStatus()
-        != other.getStatus()) return false;
-    if (!getMessage()
-        .equals(other.getMessage())) return false;
     if (getId()
         != other.getId()) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getAvatar()
-        .equals(other.getAvatar())) return false;
-    if (!getBirthDate()
-        .equals(other.getBirthDate())) return false;
-    if (!getGender()
-        .equals(other.getGender())) return false;
-    if (!getFacebook()
-        .equals(other.getFacebook())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName()
+          .equals(other.getName())) return false;
+    }
+    if (hasAvatar() != other.hasAvatar()) return false;
+    if (hasAvatar()) {
+      if (!getAvatar()
+          .equals(other.getAvatar())) return false;
+    }
+    if (hasBirthDate() != other.hasBirthDate()) return false;
+    if (hasBirthDate()) {
+      if (!getBirthDate()
+          .equals(other.getBirthDate())) return false;
+    }
+    if (hasGender() != other.hasGender()) return false;
+    if (hasGender()) {
+      if (!getGender()
+          .equals(other.getGender())) return false;
+    }
+    if (hasFacebook() != other.hasFacebook()) return false;
+    if (hasFacebook()) {
+      if (!getFacebook()
+          .equals(other.getFacebook())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -414,92 +407,97 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getStatus());
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + AVATAR_FIELD_NUMBER;
-    hash = (53 * hash) + getAvatar().hashCode();
-    hash = (37 * hash) + BIRTHDATE_FIELD_NUMBER;
-    hash = (53 * hash) + getBirthDate().hashCode();
-    hash = (37 * hash) + GENDER_FIELD_NUMBER;
-    hash = (53 * hash) + getGender().hashCode();
-    hash = (37 * hash) + FACEBOOK_FIELD_NUMBER;
-    hash = (53 * hash) + getFacebook().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasAvatar()) {
+      hash = (37 * hash) + AVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatar().hashCode();
+    }
+    if (hasBirthDate()) {
+      hash = (37 * hash) + BIRTHDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getBirthDate().hashCode();
+    }
+    if (hasGender()) {
+      hash = (37 * hash) + GENDER_FIELD_NUMBER;
+      hash = (53 * hash) + getGender().hashCode();
+    }
+    if (hasFacebook()) {
+      hash = (37 * hash) + FACEBOOK_FIELD_NUMBER;
+      hash = (53 * hash) + getFacebook().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(byte[] data)
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(java.io.InputStream input)
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseDelimitedFrom(java.io.InputStream input)
+  public static org.archi.common.auth.UpdatePlayerRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseDelimitedFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.archi.common.auth.GetPlayerInfoResponse parseFrom(
+  public static org.archi.common.auth.UpdatePlayerRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -512,7 +510,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.archi.common.auth.GetPlayerInfoResponse prototype) {
+  public static Builder newBuilder(org.archi.common.auth.UpdatePlayerRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -528,26 +526,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetPlayerInfoResponse}
+   * Protobuf type {@code UpdatePlayerRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetPlayerInfoResponse)
-      org.archi.common.auth.GetPlayerInfoResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:UpdatePlayerRequest)
+      org.archi.common.auth.UpdatePlayerRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_fieldAccessorTable
+      return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.archi.common.auth.GetPlayerInfoResponse.class, org.archi.common.auth.GetPlayerInfoResponse.Builder.class);
+              org.archi.common.auth.UpdatePlayerRequest.class, org.archi.common.auth.UpdatePlayerRequest.Builder.class);
     }
 
-    // Construct using org.archi.common.auth.GetPlayerInfoResponse.newBuilder()
+    // Construct using org.archi.common.auth.UpdatePlayerRequest.newBuilder()
     private Builder() {
 
     }
@@ -560,39 +558,35 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      status_ = 0L;
-
-      message_ = "";
-
       id_ = 0L;
 
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       avatar_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       birthDate_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       gender_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       facebook_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
+      return org.archi.common.auth.AuthProto.internal_static_UpdatePlayerRequest_descriptor;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse getDefaultInstanceForType() {
-      return org.archi.common.auth.GetPlayerInfoResponse.getDefaultInstance();
+    public org.archi.common.auth.UpdatePlayerRequest getDefaultInstanceForType() {
+      return org.archi.common.auth.UpdatePlayerRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse build() {
-      org.archi.common.auth.GetPlayerInfoResponse result = buildPartial();
+    public org.archi.common.auth.UpdatePlayerRequest build() {
+      org.archi.common.auth.UpdatePlayerRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -600,16 +594,32 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.archi.common.auth.GetPlayerInfoResponse buildPartial() {
-      org.archi.common.auth.GetPlayerInfoResponse result = new org.archi.common.auth.GetPlayerInfoResponse(this);
-      result.status_ = status_;
-      result.message_ = message_;
+    public org.archi.common.auth.UpdatePlayerRequest buildPartial() {
+      org.archi.common.auth.UpdatePlayerRequest result = new org.archi.common.auth.UpdatePlayerRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.avatar_ = avatar_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.birthDate_ = birthDate_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.gender_ = gender_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.facebook_ = facebook_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -648,43 +658,41 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.archi.common.auth.GetPlayerInfoResponse) {
-        return mergeFrom((org.archi.common.auth.GetPlayerInfoResponse)other);
+      if (other instanceof org.archi.common.auth.UpdatePlayerRequest) {
+        return mergeFrom((org.archi.common.auth.UpdatePlayerRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.archi.common.auth.GetPlayerInfoResponse other) {
-      if (other == org.archi.common.auth.GetPlayerInfoResponse.getDefaultInstance()) return this;
-      if (other.getStatus() != 0L) {
-        setStatus(other.getStatus());
-      }
-      if (!other.getMessage().isEmpty()) {
-        message_ = other.message_;
-        onChanged();
-      }
+    public Builder mergeFrom(org.archi.common.auth.UpdatePlayerRequest other) {
+      if (other == org.archi.common.auth.UpdatePlayerRequest.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000001;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getAvatar().isEmpty()) {
+      if (other.hasAvatar()) {
+        bitField0_ |= 0x00000002;
         avatar_ = other.avatar_;
         onChanged();
       }
-      if (!other.getBirthDate().isEmpty()) {
+      if (other.hasBirthDate()) {
+        bitField0_ |= 0x00000004;
         birthDate_ = other.birthDate_;
         onChanged();
       }
-      if (!other.getGender().isEmpty()) {
+      if (other.hasGender()) {
+        bitField0_ |= 0x00000008;
         gender_ = other.gender_;
         onChanged();
       }
-      if (!other.getFacebook().isEmpty()) {
+      if (other.hasFacebook()) {
+        bitField0_ |= 0x00000010;
         facebook_ = other.facebook_;
         onChanged();
       }
@@ -715,45 +723,35 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 8: {
-              status_ = input.readInt64();
+              id_ = input.readInt64();
 
               break;
             } // case 8
             case 18: {
-              message_ = input.readStringRequireUtf8();
-
+              name_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
               break;
             } // case 18
-            case 24: {
-              id_ = input.readInt64();
-
+            case 26: {
+              avatar_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
               break;
-            } // case 24
+            } // case 26
             case 34: {
-              name_ = input.readStringRequireUtf8();
-
+              birthDate_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
               break;
             } // case 34
             case 42: {
-              avatar_ = input.readStringRequireUtf8();
-
+              gender_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
               break;
             } // case 42
             case 50: {
-              birthDate_ = input.readStringRequireUtf8();
-
+              facebook_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
               break;
             } // case 50
-            case 58: {
-              gender_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 58
-            case 66: {
-              facebook_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -769,117 +767,15 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
-
-    private long status_ ;
-    /**
-     * <code>int64 status = 1;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public long getStatus() {
-      return status_;
-    }
-    /**
-     * <code>int64 status = 1;</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(long value) {
-      
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 status = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      
-      status_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object message_ = "";
-    /**
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @param value The message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @param value The bytes for message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value;
-      onChanged();
-      return this;
-    }
+    private int bitField0_;
 
     private long id_ ;
     /**
-     * <code>int64 id = 3;</code>
+     * <pre>
+     * player id.
+     * </pre>
+     *
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -887,7 +783,11 @@ private static final long serialVersionUID = 0L;
       return id_;
     }
     /**
-     * <code>int64 id = 3;</code>
+     * <pre>
+     * player id.
+     * </pre>
+     *
+     * <code>int64 id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -898,7 +798,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 id = 3;</code>
+     * <pre>
+     * player id.
+     * </pre>
+     *
+     * <code>int64 id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -910,7 +814,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 4;</code>
+     * <code>optional string name = 2;</code>
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string name = 2;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -926,7 +837,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>optional string name = 2;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -943,7 +854,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>optional string name = 2;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -952,23 +863,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>optional string name = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 4;</code>
+     * <code>optional string name = 2;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -978,7 +889,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
@@ -986,7 +897,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object avatar_ = "";
     /**
-     * <code>string avatar = 5;</code>
+     * <code>optional string avatar = 3;</code>
+     * @return Whether the avatar field is set.
+     */
+    public boolean hasAvatar() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional string avatar = 3;</code>
      * @return The avatar.
      */
     public java.lang.String getAvatar() {
@@ -1002,7 +920,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string avatar = 5;</code>
+     * <code>optional string avatar = 3;</code>
      * @return The bytes for avatar.
      */
     public com.google.protobuf.ByteString
@@ -1019,7 +937,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string avatar = 5;</code>
+     * <code>optional string avatar = 3;</code>
      * @param value The avatar to set.
      * @return This builder for chaining.
      */
@@ -1028,23 +946,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000002;
       avatar_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string avatar = 5;</code>
+     * <code>optional string avatar = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearAvatar() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       avatar_ = getDefaultInstance().getAvatar();
       onChanged();
       return this;
     }
     /**
-     * <code>string avatar = 5;</code>
+     * <code>optional string avatar = 3;</code>
      * @param value The bytes for avatar to set.
      * @return This builder for chaining.
      */
@@ -1054,7 +972,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+      bitField0_ |= 0x00000002;
       avatar_ = value;
       onChanged();
       return this;
@@ -1062,7 +980,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object birthDate_ = "";
     /**
-     * <code>string birthDate = 6;</code>
+     * <code>optional string birthDate = 4;</code>
+     * @return Whether the birthDate field is set.
+     */
+    public boolean hasBirthDate() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string birthDate = 4;</code>
      * @return The birthDate.
      */
     public java.lang.String getBirthDate() {
@@ -1078,7 +1003,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string birthDate = 6;</code>
+     * <code>optional string birthDate = 4;</code>
      * @return The bytes for birthDate.
      */
     public com.google.protobuf.ByteString
@@ -1095,7 +1020,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string birthDate = 6;</code>
+     * <code>optional string birthDate = 4;</code>
      * @param value The birthDate to set.
      * @return This builder for chaining.
      */
@@ -1104,23 +1029,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000004;
       birthDate_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string birthDate = 6;</code>
+     * <code>optional string birthDate = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearBirthDate() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       birthDate_ = getDefaultInstance().getBirthDate();
       onChanged();
       return this;
     }
     /**
-     * <code>string birthDate = 6;</code>
+     * <code>optional string birthDate = 4;</code>
      * @param value The bytes for birthDate to set.
      * @return This builder for chaining.
      */
@@ -1130,7 +1055,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+      bitField0_ |= 0x00000004;
       birthDate_ = value;
       onChanged();
       return this;
@@ -1138,7 +1063,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object gender_ = "";
     /**
-     * <code>string gender = 7;</code>
+     * <code>optional string gender = 5;</code>
+     * @return Whether the gender field is set.
+     */
+    public boolean hasGender() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string gender = 5;</code>
      * @return The gender.
      */
     public java.lang.String getGender() {
@@ -1154,7 +1086,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string gender = 7;</code>
+     * <code>optional string gender = 5;</code>
      * @return The bytes for gender.
      */
     public com.google.protobuf.ByteString
@@ -1171,7 +1103,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string gender = 7;</code>
+     * <code>optional string gender = 5;</code>
      * @param value The gender to set.
      * @return This builder for chaining.
      */
@@ -1180,23 +1112,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000008;
       gender_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string gender = 7;</code>
+     * <code>optional string gender = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearGender() {
-      
+      bitField0_ = (bitField0_ & ~0x00000008);
       gender_ = getDefaultInstance().getGender();
       onChanged();
       return this;
     }
     /**
-     * <code>string gender = 7;</code>
+     * <code>optional string gender = 5;</code>
      * @param value The bytes for gender to set.
      * @return This builder for chaining.
      */
@@ -1206,7 +1138,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+      bitField0_ |= 0x00000008;
       gender_ = value;
       onChanged();
       return this;
@@ -1214,7 +1146,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object facebook_ = "";
     /**
-     * <code>string facebook = 8;</code>
+     * <code>optional string facebook = 6;</code>
+     * @return Whether the facebook field is set.
+     */
+    public boolean hasFacebook() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional string facebook = 6;</code>
      * @return The facebook.
      */
     public java.lang.String getFacebook() {
@@ -1230,7 +1169,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string facebook = 8;</code>
+     * <code>optional string facebook = 6;</code>
      * @return The bytes for facebook.
      */
     public com.google.protobuf.ByteString
@@ -1247,7 +1186,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string facebook = 8;</code>
+     * <code>optional string facebook = 6;</code>
      * @param value The facebook to set.
      * @return This builder for chaining.
      */
@@ -1256,23 +1195,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000010;
       facebook_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string facebook = 8;</code>
+     * <code>optional string facebook = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearFacebook() {
-      
+      bitField0_ = (bitField0_ & ~0x00000010);
       facebook_ = getDefaultInstance().getFacebook();
       onChanged();
       return this;
     }
     /**
-     * <code>string facebook = 8;</code>
+     * <code>optional string facebook = 6;</code>
      * @param value The bytes for facebook to set.
      * @return This builder for chaining.
      */
@@ -1282,7 +1221,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+      bitField0_ |= 0x00000010;
       facebook_ = value;
       onChanged();
       return this;
@@ -1300,23 +1239,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetPlayerInfoResponse)
+    // @@protoc_insertion_point(builder_scope:UpdatePlayerRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:GetPlayerInfoResponse)
-  private static final org.archi.common.auth.GetPlayerInfoResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:UpdatePlayerRequest)
+  private static final org.archi.common.auth.UpdatePlayerRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.archi.common.auth.GetPlayerInfoResponse();
+    DEFAULT_INSTANCE = new org.archi.common.auth.UpdatePlayerRequest();
   }
 
-  public static org.archi.common.auth.GetPlayerInfoResponse getDefaultInstance() {
+  public static org.archi.common.auth.UpdatePlayerRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetPlayerInfoResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetPlayerInfoResponse>() {
+  private static final com.google.protobuf.Parser<UpdatePlayerRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdatePlayerRequest>() {
     @java.lang.Override
-    public GetPlayerInfoResponse parsePartialFrom(
+    public UpdatePlayerRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1335,17 +1274,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetPlayerInfoResponse> parser() {
+  public static com.google.protobuf.Parser<UpdatePlayerRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetPlayerInfoResponse> getParserForType() {
+  public com.google.protobuf.Parser<UpdatePlayerRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.archi.common.auth.GetPlayerInfoResponse getDefaultInstanceForType() {
+  public org.archi.common.auth.UpdatePlayerRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

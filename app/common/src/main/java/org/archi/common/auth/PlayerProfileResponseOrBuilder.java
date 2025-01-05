@@ -3,8 +3,8 @@
 
 package org.archi.common.auth;
 
-public interface GetPlayerInfoResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GetPlayerInfoResponse)
+public interface PlayerProfileResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:PlayerProfileResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

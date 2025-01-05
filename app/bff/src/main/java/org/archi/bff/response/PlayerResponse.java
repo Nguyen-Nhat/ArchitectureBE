@@ -9,13 +9,10 @@ import java.sql.Date;
 @Getter
 @Setter
 @Builder
-public class PlayerInfo {
-  private long status;
-  private String message;
+public class PlayerResponse {
   private long id;
   private String name;
   private String avatar;
   private Date birthDate;
-  private String gender;
   private String facebook;
 }
