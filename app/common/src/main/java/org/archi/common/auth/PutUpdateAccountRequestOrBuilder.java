@@ -14,46 +14,43 @@ public interface PutUpdateAccountRequestOrBuilder extends
   long getId();
 
   /**
-   * <code>optional string email = 2;</code>
-   * @return Whether the email field is set.
-   */
-  boolean hasEmail();
-  /**
-   * <code>optional string email = 2;</code>
+   * <pre>
+   *  optional string email = 2;
+   *  optional string phoneNumber = 3;
+   *  optional bool isActive = 5;
+   * </pre>
+   *
+   * <code>string email = 2;</code>
    * @return The email.
    */
   java.lang.String getEmail();
   /**
-   * <code>optional string email = 2;</code>
+   * <pre>
+   *  optional string email = 2;
+   *  optional string phoneNumber = 3;
+   *  optional bool isActive = 5;
+   * </pre>
+   *
+   * <code>string email = 2;</code>
    * @return The bytes for email.
    */
   com.google.protobuf.ByteString
       getEmailBytes();
 
   /**
-   * <code>optional string phoneNumber = 3;</code>
-   * @return Whether the phoneNumber field is set.
-   */
-  boolean hasPhoneNumber();
-  /**
-   * <code>optional string phoneNumber = 3;</code>
+   * <code>string phoneNumber = 3;</code>
    * @return The phoneNumber.
    */
   java.lang.String getPhoneNumber();
   /**
-   * <code>optional string phoneNumber = 3;</code>
+   * <code>string phoneNumber = 3;</code>
    * @return The bytes for phoneNumber.
    */
   com.google.protobuf.ByteString
       getPhoneNumberBytes();
 
   /**
-   * <code>optional bool isActive = 5;</code>
-   * @return Whether the isActive field is set.
-   */
-  boolean hasIsActive();
-  /**
-   * <code>optional bool isActive = 5;</code>
+   * <code>bool isActive = 5;</code>
    * @return The isActive.
    */
   boolean getIsActive();

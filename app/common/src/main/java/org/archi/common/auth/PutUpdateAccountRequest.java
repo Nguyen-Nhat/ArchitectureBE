@@ -32,6 +32,65 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private PutUpdateAccountRequest(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 8: {
+
+            id_ = input.readInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            email_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            phoneNumber_ = s;
+            break;
+          }
+          case 40: {
+
+            isActive_ = input.readBool();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.archi.common.auth.AuthProto.internal_static_PutUpdateAccountRequest_descriptor;
@@ -45,7 +104,6 @@ private static final long serialVersionUID = 0L;
             org.archi.common.auth.PutUpdateAccountRequest.class, org.archi.common.auth.PutUpdateAccountRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
@@ -60,15 +118,13 @@ private static final long serialVersionUID = 0L;
   public static final int EMAIL_FIELD_NUMBER = 2;
   private volatile java.lang.Object email_;
   /**
-   * <code>optional string email = 2;</code>
-   * @return Whether the email field is set.
-   */
-  @java.lang.Override
-  public boolean hasEmail() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>optional string email = 2;</code>
+   * <pre>
+   *  optional string email = 2;
+   *  optional string phoneNumber = 3;
+   *  optional bool isActive = 5;
+   * </pre>
+   *
+   * <code>string email = 2;</code>
    * @return The email.
    */
   @java.lang.Override
@@ -85,7 +141,13 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string email = 2;</code>
+   * <pre>
+   *  optional string email = 2;
+   *  optional string phoneNumber = 3;
+   *  optional bool isActive = 5;
+   * </pre>
+   *
+   * <code>string email = 2;</code>
    * @return The bytes for email.
    */
   @java.lang.Override
@@ -106,15 +168,7 @@ private static final long serialVersionUID = 0L;
   public static final int PHONENUMBER_FIELD_NUMBER = 3;
   private volatile java.lang.Object phoneNumber_;
   /**
-   * <code>optional string phoneNumber = 3;</code>
-   * @return Whether the phoneNumber field is set.
-   */
-  @java.lang.Override
-  public boolean hasPhoneNumber() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>optional string phoneNumber = 3;</code>
+   * <code>string phoneNumber = 3;</code>
    * @return The phoneNumber.
    */
   @java.lang.Override
@@ -131,7 +185,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string phoneNumber = 3;</code>
+   * <code>string phoneNumber = 3;</code>
    * @return The bytes for phoneNumber.
    */
   @java.lang.Override
@@ -152,15 +206,7 @@ private static final long serialVersionUID = 0L;
   public static final int ISACTIVE_FIELD_NUMBER = 5;
   private boolean isActive_;
   /**
-   * <code>optional bool isActive = 5;</code>
-   * @return Whether the isActive field is set.
-   */
-  @java.lang.Override
-  public boolean hasIsActive() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <code>optional bool isActive = 5;</code>
+   * <code>bool isActive = 5;</code>
    * @return The isActive.
    */
   @java.lang.Override
@@ -185,16 +231,16 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (!getEmailBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getPhoneNumberBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, phoneNumber_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (isActive_ != false) {
       output.writeBool(5, isActive_);
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -207,17 +253,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (!getEmailBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getPhoneNumberBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, phoneNumber_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (isActive_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, isActive_);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -234,22 +280,13 @@ private static final long serialVersionUID = 0L;
 
     if (getId()
         != other.getId()) return false;
-    if (hasEmail() != other.hasEmail()) return false;
-    if (hasEmail()) {
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
-    }
-    if (hasPhoneNumber() != other.hasPhoneNumber()) return false;
-    if (hasPhoneNumber()) {
-      if (!getPhoneNumber()
-          .equals(other.getPhoneNumber())) return false;
-    }
-    if (hasIsActive() != other.hasIsActive()) return false;
-    if (hasIsActive()) {
-      if (getIsActive()
-          != other.getIsActive()) return false;
-    }
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!getEmail()
+        .equals(other.getEmail())) return false;
+    if (!getPhoneNumber()
+        .equals(other.getPhoneNumber())) return false;
+    if (getIsActive()
+        != other.getIsActive()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -263,20 +300,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
-    if (hasEmail()) {
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
-    }
-    if (hasPhoneNumber()) {
-      hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneNumber().hashCode();
-    }
-    if (hasIsActive()) {
-      hash = (37 * hash) + ISACTIVE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsActive());
-    }
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getEmail().hashCode();
+    hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
+    hash = (53 * hash) + getPhoneNumber().hashCode();
+    hash = (37 * hash) + ISACTIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsActive());
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -393,13 +424,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.archi.common.auth.PutUpdateAccountRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -407,11 +443,11 @@ private static final long serialVersionUID = 0L;
       id_ = 0L;
 
       email_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       phoneNumber_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       isActive_ = false;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       return this;
     }
 
@@ -438,22 +474,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.archi.common.auth.PutUpdateAccountRequest buildPartial() {
       org.archi.common.auth.PutUpdateAccountRequest result = new org.archi.common.auth.PutUpdateAccountRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.email_ = email_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.phoneNumber_ = phoneNumber_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.isActive_ = isActive_;
-        to_bitField0_ |= 0x00000004;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.isActive_ = isActive_;
       onBuilt();
       return result;
     }
@@ -505,20 +529,18 @@ private static final long serialVersionUID = 0L;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
-      if (other.hasEmail()) {
-        bitField0_ |= 0x00000001;
+      if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
         onChanged();
       }
-      if (other.hasPhoneNumber()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getPhoneNumber().isEmpty()) {
         phoneNumber_ = other.phoneNumber_;
         onChanged();
       }
-      if (other.hasIsActive()) {
+      if (other.getIsActive() != false) {
         setIsActive(other.getIsActive());
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -533,53 +555,19 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      org.archi.common.auth.PutUpdateAccountRequest parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              id_ = input.readInt64();
-
-              break;
-            } // case 8
-            case 18: {
-              email_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 18
-            case 26: {
-              phoneNumber_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 26
-            case 40: {
-              isActive_ = input.readBool();
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 40
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (org.archi.common.auth.PutUpdateAccountRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
-    private int bitField0_;
 
     private long id_ ;
     /**
@@ -614,14 +602,13 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object email_ = "";
     /**
-     * <code>optional string email = 2;</code>
-     * @return Whether the email field is set.
-     */
-    public boolean hasEmail() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string email = 2;</code>
+     * <pre>
+     *  optional string email = 2;
+     *  optional string phoneNumber = 3;
+     *  optional bool isActive = 5;
+     * </pre>
+     *
+     * <code>string email = 2;</code>
      * @return The email.
      */
     public java.lang.String getEmail() {
@@ -637,7 +624,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string email = 2;</code>
+     * <pre>
+     *  optional string email = 2;
+     *  optional string phoneNumber = 3;
+     *  optional bool isActive = 5;
+     * </pre>
+     *
+     * <code>string email = 2;</code>
      * @return The bytes for email.
      */
     public com.google.protobuf.ByteString
@@ -654,7 +647,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string email = 2;</code>
+     * <pre>
+     *  optional string email = 2;
+     *  optional string phoneNumber = 3;
+     *  optional bool isActive = 5;
+     * </pre>
+     *
+     * <code>string email = 2;</code>
      * @param value The email to set.
      * @return This builder for chaining.
      */
@@ -663,23 +662,35 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
       email_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string email = 2;</code>
+     * <pre>
+     *  optional string email = 2;
+     *  optional string phoneNumber = 3;
+     *  optional bool isActive = 5;
+     * </pre>
+     *
+     * <code>string email = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       email_ = getDefaultInstance().getEmail();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string email = 2;</code>
+     * <pre>
+     *  optional string email = 2;
+     *  optional string phoneNumber = 3;
+     *  optional bool isActive = 5;
+     * </pre>
+     *
+     * <code>string email = 2;</code>
      * @param value The bytes for email to set.
      * @return This builder for chaining.
      */
@@ -689,7 +700,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+      
       email_ = value;
       onChanged();
       return this;
@@ -697,14 +708,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object phoneNumber_ = "";
     /**
-     * <code>optional string phoneNumber = 3;</code>
-     * @return Whether the phoneNumber field is set.
-     */
-    public boolean hasPhoneNumber() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional string phoneNumber = 3;</code>
+     * <code>string phoneNumber = 3;</code>
      * @return The phoneNumber.
      */
     public java.lang.String getPhoneNumber() {
@@ -720,7 +724,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string phoneNumber = 3;</code>
+     * <code>string phoneNumber = 3;</code>
      * @return The bytes for phoneNumber.
      */
     public com.google.protobuf.ByteString
@@ -737,7 +741,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string phoneNumber = 3;</code>
+     * <code>string phoneNumber = 3;</code>
      * @param value The phoneNumber to set.
      * @return This builder for chaining.
      */
@@ -746,23 +750,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       phoneNumber_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string phoneNumber = 3;</code>
+     * <code>string phoneNumber = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPhoneNumber() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       phoneNumber_ = getDefaultInstance().getPhoneNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string phoneNumber = 3;</code>
+     * <code>string phoneNumber = 3;</code>
      * @param value The bytes for phoneNumber to set.
      * @return This builder for chaining.
      */
@@ -772,7 +776,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      
       phoneNumber_ = value;
       onChanged();
       return this;
@@ -780,15 +784,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean isActive_ ;
     /**
-     * <code>optional bool isActive = 5;</code>
-     * @return Whether the isActive field is set.
-     */
-    @java.lang.Override
-    public boolean hasIsActive() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional bool isActive = 5;</code>
+     * <code>bool isActive = 5;</code>
      * @return The isActive.
      */
     @java.lang.Override
@@ -796,22 +792,22 @@ private static final long serialVersionUID = 0L;
       return isActive_;
     }
     /**
-     * <code>optional bool isActive = 5;</code>
+     * <code>bool isActive = 5;</code>
      * @param value The isActive to set.
      * @return This builder for chaining.
      */
     public Builder setIsActive(boolean value) {
-      bitField0_ |= 0x00000004;
+      
       isActive_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional bool isActive = 5;</code>
+     * <code>bool isActive = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsActive() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       isActive_ = false;
       onChanged();
       return this;
@@ -849,18 +845,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new PutUpdateAccountRequest(input, extensionRegistry);
     }
   };
 

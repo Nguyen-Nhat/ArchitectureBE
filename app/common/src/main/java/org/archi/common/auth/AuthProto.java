@@ -147,72 +147,70 @@ public final class AuthProto {
       "\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\r\n\005" +
       "email\030\003 \001(\t\022\023\n\013phoneNumber\030\004 \001(\t\022\014\n\004role" +
       "\030\005 \001(\t\"<\n\031PostCreateAccountResponse\022\016\n\006s" +
-      "tatus\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"\221\001\n\027PutUpda" +
-      "teAccountRequest\022\n\n\002id\030\001 \001(\003\022\022\n\005email\030\002 " +
-      "\001(\tH\000\210\001\001\022\030\n\013phoneNumber\030\003 \001(\tH\001\210\001\001\022\025\n\010is" +
-      "Active\030\005 \001(\010H\002\210\001\001B\010\n\006_emailB\016\n\014_phoneNum" +
-      "berB\013\n\t_isActive\";\n\030PutUpdateAccountResp" +
-      "onse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"\"\n" +
-      "\024DeleteAccountRequest\022\n\n\002id\030\001 \001(\003\"8\n\025Del" +
-      "eteAccountResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007me" +
-      "ssage\030\002 \001(\t\"#\n\025GetAccountInfoRequest\022\n\n\002" +
-      "id\030\001 \001(\003\"\233\001\n\026GetAccountInfoResponse\022\016\n\006s" +
-      "tatus\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\n\n\002id\030\003 \001(\003" +
-      "\022\020\n\010username\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\022\023\n\013pho" +
-      "neNumber\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022\020\n\010isActive" +
-      "\030\010 \001(\010\"k\n\023PostRegisterRequest\022\020\n\010usernam" +
-      "e\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\022\r\n\005email\030\004 \001(\t" +
-      "\022\023\n\013phoneNumber\030\005 \001(\t\022\014\n\004role\030\006 \001(\t\"7\n\024P" +
-      "ostRegisterResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007m" +
-      "essage\030\002 \001(\t\"6\n\020PostLoginRequest\022\020\n\010user" +
-      "name\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"\205\001\n\021PostLog" +
-      "inResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 " +
-      "\001(\t\022\023\n\013accessToken\030\003 \001(\t\022\024\n\014refreshToken" +
-      "\030\004 \001(\t\022\021\n\ttokenType\030\005 \001(\t\022\021\n\texpiresIn\030\006" +
-      " \001(\003\"(\n\021PostLogoutRequest\022\023\n\013accessToken" +
-      "\030\001 \001(\t\"5\n\022PostLogoutResponse\022\016\n\006status\030\001" +
-      " \001(\003\022\017\n\007message\030\002 \001(\t\"/\n\027PostRefreshToke" +
-      "nRequest\022\024\n\014refreshToken\030\001 \001(\t\"v\n\030PostRe" +
-      "freshTokenResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007me" +
-      "ssage\030\002 \001(\t\022\023\n\013accessToken\030\003 \001(\t\022\021\n\texpi" +
-      "resIn\030\004 \001(\003\022\021\n\ttokenType\030\005 \001(\t\"&\n\025GetVer" +
-      "ifyEmailRequest\022\r\n\005token\030\001 \001(\t\"9\n\026GetVer" +
-      "ifyEmailResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007mess" +
-      "age\030\002 \001(\t\"\'\n\026PostVerifyTokenRequest\022\r\n\005t" +
-      "oken\030\001 \001(\t\"T\n\027PostVerifyTokenResponse\022\016\n" +
-      "\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\n\n\002id\030\003 \001" +
-      "(\003\022\014\n\004role\030\004 \001(\t\"!\n\023GetBrandInfoRequest\022" +
-      "\n\n\002id\030\001 \001(\003\"\220\001\n\024GetBrandInfoResponse\022\016\n\006" +
-      "status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\n\n\002id\030\003 \001(" +
-      "\003\022\014\n\004name\030\004 \001(\t\022\r\n\005field\030\005 \001(\t\022\017\n\007addres" +
-      "s\030\006 \001(\t\022\013\n\003gps\030\007 \001(\t\022\020\n\010isEnable\030\010 \001(\010\"\"" +
-      "\n\024GetPlayerInfoRequest\022\n\n\002id\030\001 \001(\003\"\227\001\n\025G" +
-      "etPlayerInfoResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007" +
-      "message\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022" +
-      "\016\n\006avatar\030\005 \001(\t\022\021\n\tbirthDate\030\006 \001(\003\022\016\n\006ge" +
-      "nder\030\007 \001(\t\022\020\n\010facebook\030\010 \001(\t2\234\006\n\013AuthSer" +
-      "vice\022;\n\014PostRegister\022\024.PostRegisterReque" +
-      "st\032\025.PostRegisterResponse\0222\n\tPostLogin\022\021" +
-      ".PostLoginRequest\032\022.PostLoginResponse\0225\n" +
-      "\nPostLogout\022\022.PostLogoutRequest\032\023.PostLo" +
-      "goutResponse\022G\n\020PostRefreshToken\022\030.PostR" +
-      "efreshTokenRequest\032\031.PostRefreshTokenRes" +
-      "ponse\022A\n\016GetVerifyEmail\022\026.GetVerifyEmail" +
-      "Request\032\027.GetVerifyEmailResponse\022D\n\017Post" +
-      "VerifyToken\022\027.PostVerifyTokenRequest\032\030.P" +
-      "ostVerifyTokenResponse\022;\n\014GetBrandInfo\022\024" +
-      ".GetBrandInfoRequest\032\025.GetBrandInfoRespo" +
-      "nse\022>\n\rGetPlayerInfo\022\025.GetPlayerInfoRequ" +
-      "est\032\026.GetPlayerInfoResponse\022A\n\016GetAccoun" +
-      "tInfo\022\026.GetAccountInfoRequest\032\027.GetAccou" +
-      "ntInfoResponse\022J\n\021PostCreateAccount\022\031.Po" +
-      "stCreateAccountRequest\032\032.PostCreateAccou" +
-      "ntResponse\022>\n\rDeleteAccount\022\025.DeleteAcco" +
-      "untRequest\032\026.DeleteAccountResponse\022G\n\020Pu" +
-      "tUpdateAccount\022\030.PutUpdateAccountRequest" +
-      "\032\031.PutUpdateAccountResponse2\017\n\rLogoutSer" +
-      "viceB$\n\025org.archi.common.authB\tAuthProto" +
-      "P\001b\006proto3"
+      "tatus\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"[\n\027PutUpdat" +
+      "eAccountRequest\022\n\n\002id\030\001 \001(\003\022\r\n\005email\030\002 \001" +
+      "(\t\022\023\n\013phoneNumber\030\003 \001(\t\022\020\n\010isActive\030\005 \001(" +
+      "\010\";\n\030PutUpdateAccountResponse\022\016\n\006status\030" +
+      "\001 \001(\003\022\017\n\007message\030\002 \001(\t\"\"\n\024DeleteAccountR" +
+      "equest\022\n\n\002id\030\001 \001(\003\"8\n\025DeleteAccountRespo" +
+      "nse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"#\n\025" +
+      "GetAccountInfoRequest\022\n\n\002id\030\001 \001(\003\"\233\001\n\026Ge" +
+      "tAccountInfoResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007" +
+      "message\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\020\n\010username\030\004 " +
+      "\001(\t\022\r\n\005email\030\005 \001(\t\022\023\n\013phoneNumber\030\006 \001(\t\022" +
+      "\014\n\004role\030\007 \001(\t\022\020\n\010isActive\030\010 \001(\010\"k\n\023PostR" +
+      "egisterRequest\022\020\n\010username\030\002 \001(\t\022\020\n\010pass" +
+      "word\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\023\n\013phoneNumber" +
+      "\030\005 \001(\t\022\014\n\004role\030\006 \001(\t\"7\n\024PostRegisterResp" +
+      "onse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"6\n" +
+      "\020PostLoginRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010p" +
+      "assword\030\002 \001(\t\"\205\001\n\021PostLoginResponse\022\016\n\006s" +
+      "tatus\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\023\n\013accessTo" +
+      "ken\030\003 \001(\t\022\024\n\014refreshToken\030\004 \001(\t\022\021\n\ttoken" +
+      "Type\030\005 \001(\t\022\021\n\texpiresIn\030\006 \001(\003\"(\n\021PostLog" +
+      "outRequest\022\023\n\013accessToken\030\001 \001(\t\"5\n\022PostL" +
+      "ogoutResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007message" +
+      "\030\002 \001(\t\"/\n\027PostRefreshTokenRequest\022\024\n\014ref" +
+      "reshToken\030\001 \001(\t\"v\n\030PostRefreshTokenRespo" +
+      "nse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\023\n\013" +
+      "accessToken\030\003 \001(\t\022\021\n\texpiresIn\030\004 \001(\003\022\021\n\t" +
+      "tokenType\030\005 \001(\t\"&\n\025GetVerifyEmailRequest" +
+      "\022\r\n\005token\030\001 \001(\t\"9\n\026GetVerifyEmailRespons" +
+      "e\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"\'\n\026Po" +
+      "stVerifyTokenRequest\022\r\n\005token\030\001 \001(\t\"T\n\027P" +
+      "ostVerifyTokenResponse\022\016\n\006status\030\001 \001(\003\022\017" +
+      "\n\007message\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\014\n\004role\030\004 \001(" +
+      "\t\"!\n\023GetBrandInfoRequest\022\n\n\002id\030\001 \001(\003\"\220\001\n" +
+      "\024GetBrandInfoResponse\022\016\n\006status\030\001 \001(\003\022\017\n" +
+      "\007message\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\014\n\004name\030\004 \001(\t" +
+      "\022\r\n\005field\030\005 \001(\t\022\017\n\007address\030\006 \001(\t\022\013\n\003gps\030" +
+      "\007 \001(\t\022\020\n\010isEnable\030\010 \001(\010\"\"\n\024GetPlayerInfo" +
+      "Request\022\n\n\002id\030\001 \001(\003\"\227\001\n\025GetPlayerInfoRes" +
+      "ponse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\n" +
+      "\n\002id\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\016\n\006avatar\030\005 \001(\t" +
+      "\022\021\n\tbirthDate\030\006 \001(\003\022\016\n\006gender\030\007 \001(\t\022\020\n\010f" +
+      "acebook\030\010 \001(\t2\234\006\n\013AuthService\022;\n\014PostReg" +
+      "ister\022\024.PostRegisterRequest\032\025.PostRegist" +
+      "erResponse\0222\n\tPostLogin\022\021.PostLoginReque" +
+      "st\032\022.PostLoginResponse\0225\n\nPostLogout\022\022.P" +
+      "ostLogoutRequest\032\023.PostLogoutResponse\022G\n" +
+      "\020PostRefreshToken\022\030.PostRefreshTokenRequ" +
+      "est\032\031.PostRefreshTokenResponse\022A\n\016GetVer" +
+      "ifyEmail\022\026.GetVerifyEmailRequest\032\027.GetVe" +
+      "rifyEmailResponse\022D\n\017PostVerifyToken\022\027.P" +
+      "ostVerifyTokenRequest\032\030.PostVerifyTokenR" +
+      "esponse\022;\n\014GetBrandInfo\022\024.GetBrandInfoRe" +
+      "quest\032\025.GetBrandInfoResponse\022>\n\rGetPlaye" +
+      "rInfo\022\025.GetPlayerInfoRequest\032\026.GetPlayer" +
+      "InfoResponse\022A\n\016GetAccountInfo\022\026.GetAcco" +
+      "untInfoRequest\032\027.GetAccountInfoResponse\022" +
+      "J\n\021PostCreateAccount\022\031.PostCreateAccount" +
+      "Request\032\032.PostCreateAccountResponse\022>\n\rD" +
+      "eleteAccount\022\025.DeleteAccountRequest\032\026.De" +
+      "leteAccountResponse\022G\n\020PutUpdateAccount\022" +
+      "\030.PutUpdateAccountRequest\032\031.PutUpdateAcc" +
+      "ountResponse2\017\n\rLogoutServiceB$\n\025org.arc" +
+      "hi.common.authB\tAuthProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -235,7 +233,7 @@ public final class AuthProto {
     internal_static_PutUpdateAccountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PutUpdateAccountRequest_descriptor,
-        new java.lang.String[] { "Id", "Email", "PhoneNumber", "IsActive", "Email", "PhoneNumber", "IsActive", });
+        new java.lang.String[] { "Id", "Email", "PhoneNumber", "IsActive", });
     internal_static_PutUpdateAccountResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_PutUpdateAccountResponse_fieldAccessorTable = new
