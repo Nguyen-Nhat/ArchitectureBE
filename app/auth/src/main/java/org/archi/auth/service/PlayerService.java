@@ -24,4 +24,12 @@ public class PlayerService {
   public Player findByAccount(Account account) {
     return playerRepo.findByAccount(account).orElse(null);
   }
+
+  public void deletePlayerByAccount(Account account) {
+    try {
+      playerRepo.deleteByAccount(account);
+    } catch (RuntimeException e) {
+      throw new RuntimeException("Error: " + e.getMessage());
+    }
+  }
 }

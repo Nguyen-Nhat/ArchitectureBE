@@ -16,10 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PutUpdateAccountRequest() {
-    username_ = "";
     email_ = "";
     phoneNumber_ = "";
-    role_ = "";
   }
 
   @java.lang.Override
@@ -34,72 +32,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private PutUpdateAccountRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            username_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            email_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            phoneNumber_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            role_ = s;
-            break;
-          }
-          case 40: {
-
-            isActive_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.archi.common.auth.AuthProto.internal_static_PutUpdateAccountRequest_descriptor;
@@ -113,48 +45,30 @@ private static final long serialVersionUID = 0L;
             org.archi.common.auth.PutUpdateAccountRequest.class, org.archi.common.auth.PutUpdateAccountRequest.Builder.class);
   }
 
-  public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+  private int bitField0_;
+  public static final int ID_FIELD_NUMBER = 1;
+  private long id_;
   /**
-   * <code>string username = 1;</code>
-   * @return The username.
+   * <code>int64 id = 1;</code>
+   * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getUsername() {
-    java.lang.Object ref = username_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      username_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string username = 1;</code>
-   * @return The bytes for username.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUsernameBytes() {
-    java.lang.Object ref = username_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      username_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getId() {
+    return id_;
   }
 
   public static final int EMAIL_FIELD_NUMBER = 2;
   private volatile java.lang.Object email_;
   /**
-   * <code>string email = 2;</code>
+   * <code>optional string email = 2;</code>
+   * @return Whether the email field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmail() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string email = 2;</code>
    * @return The email.
    */
   @java.lang.Override
@@ -171,7 +85,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string email = 2;</code>
+   * <code>optional string email = 2;</code>
    * @return The bytes for email.
    */
   @java.lang.Override
@@ -192,7 +106,15 @@ private static final long serialVersionUID = 0L;
   public static final int PHONENUMBER_FIELD_NUMBER = 3;
   private volatile java.lang.Object phoneNumber_;
   /**
-   * <code>string phoneNumber = 3;</code>
+   * <code>optional string phoneNumber = 3;</code>
+   * @return Whether the phoneNumber field is set.
+   */
+  @java.lang.Override
+  public boolean hasPhoneNumber() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string phoneNumber = 3;</code>
    * @return The phoneNumber.
    */
   @java.lang.Override
@@ -209,7 +131,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string phoneNumber = 3;</code>
+   * <code>optional string phoneNumber = 3;</code>
    * @return The bytes for phoneNumber.
    */
   @java.lang.Override
@@ -227,48 +149,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ROLE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object role_;
-  /**
-   * <code>string role = 4;</code>
-   * @return The role.
-   */
-  @java.lang.Override
-  public java.lang.String getRole() {
-    java.lang.Object ref = role_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      role_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string role = 4;</code>
-   * @return The bytes for role.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRoleBytes() {
-    java.lang.Object ref = role_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      role_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int ISACTIVE_FIELD_NUMBER = 5;
   private boolean isActive_;
   /**
-   * <code>bool isActive = 5;</code>
+   * <code>optional bool isActive = 5;</code>
+   * @return Whether the isActive field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsActive() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional bool isActive = 5;</code>
    * @return The isActive.
    */
   @java.lang.Override
@@ -290,22 +182,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUsernameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+    if (id_ != 0L) {
+      output.writeInt64(1, id_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
     }
-    if (!getPhoneNumberBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, phoneNumber_);
     }
-    if (!getRoleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, role_);
-    }
-    if (isActive_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(5, isActive_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -314,23 +203,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUsernameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+    if (id_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(1, id_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
     }
-    if (!getPhoneNumberBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, phoneNumber_);
     }
-    if (!getRoleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, role_);
-    }
-    if (isActive_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, isActive_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -345,17 +232,24 @@ private static final long serialVersionUID = 0L;
     }
     org.archi.common.auth.PutUpdateAccountRequest other = (org.archi.common.auth.PutUpdateAccountRequest) obj;
 
-    if (!getUsername()
-        .equals(other.getUsername())) return false;
-    if (!getEmail()
-        .equals(other.getEmail())) return false;
-    if (!getPhoneNumber()
-        .equals(other.getPhoneNumber())) return false;
-    if (!getRole()
-        .equals(other.getRole())) return false;
-    if (getIsActive()
-        != other.getIsActive()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (getId()
+        != other.getId()) return false;
+    if (hasEmail() != other.hasEmail()) return false;
+    if (hasEmail()) {
+      if (!getEmail()
+          .equals(other.getEmail())) return false;
+    }
+    if (hasPhoneNumber() != other.hasPhoneNumber()) return false;
+    if (hasPhoneNumber()) {
+      if (!getPhoneNumber()
+          .equals(other.getPhoneNumber())) return false;
+    }
+    if (hasIsActive() != other.hasIsActive()) return false;
+    if (hasIsActive()) {
+      if (getIsActive()
+          != other.getIsActive()) return false;
+    }
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -366,18 +260,23 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getUsername().hashCode();
-    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getEmail().hashCode();
-    hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getPhoneNumber().hashCode();
-    hash = (37 * hash) + ROLE_FIELD_NUMBER;
-    hash = (53 * hash) + getRole().hashCode();
-    hash = (37 * hash) + ISACTIVE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsActive());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getId());
+    if (hasEmail()) {
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+    }
+    if (hasPhoneNumber()) {
+      hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneNumber().hashCode();
+    }
+    if (hasIsActive()) {
+      hash = (37 * hash) + ISACTIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsActive());
+    }
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -494,32 +393,25 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.archi.common.auth.PutUpdateAccountRequest.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      username_ = "";
+      id_ = 0L;
 
       email_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       phoneNumber_ = "";
-
-      role_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       isActive_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -546,11 +438,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.archi.common.auth.PutUpdateAccountRequest buildPartial() {
       org.archi.common.auth.PutUpdateAccountRequest result = new org.archi.common.auth.PutUpdateAccountRequest(this);
-      result.username_ = username_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      result.id_ = id_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.email_ = email_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.phoneNumber_ = phoneNumber_;
-      result.role_ = role_;
-      result.isActive_ = isActive_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.isActive_ = isActive_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -599,26 +502,23 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.archi.common.auth.PutUpdateAccountRequest other) {
       if (other == org.archi.common.auth.PutUpdateAccountRequest.getDefaultInstance()) return this;
-      if (!other.getUsername().isEmpty()) {
-        username_ = other.username_;
-        onChanged();
+      if (other.getId() != 0L) {
+        setId(other.getId());
       }
-      if (!other.getEmail().isEmpty()) {
+      if (other.hasEmail()) {
+        bitField0_ |= 0x00000001;
         email_ = other.email_;
         onChanged();
       }
-      if (!other.getPhoneNumber().isEmpty()) {
+      if (other.hasPhoneNumber()) {
+        bitField0_ |= 0x00000002;
         phoneNumber_ = other.phoneNumber_;
         onChanged();
       }
-      if (!other.getRole().isEmpty()) {
-        role_ = other.role_;
-        onChanged();
-      }
-      if (other.getIsActive() != false) {
+      if (other.hasIsActive()) {
         setIsActive(other.getIsActive());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -633,99 +533,95 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.archi.common.auth.PutUpdateAccountRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              id_ = input.readInt64();
+
+              break;
+            } // case 8
+            case 18: {
+              email_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 18
+            case 26: {
+              phoneNumber_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 26
+            case 40: {
+              isActive_ = input.readBool();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 40
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.archi.common.auth.PutUpdateAccountRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+    private int bitField0_;
 
-    private java.lang.Object username_ = "";
+    private long id_ ;
     /**
-     * <code>string username = 1;</code>
-     * @return The username.
+     * <code>int64 id = 1;</code>
+     * @return The id.
      */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        username_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
     /**
-     * <code>string username = 1;</code>
-     * @return The bytes for username.
-     */
-    public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        username_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string username = 1;</code>
-     * @param value The username to set.
+     * <code>int64 id = 1;</code>
+     * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setUsername(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      username_ = value;
+    public Builder setId(long value) {
+      
+      id_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string username = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearUsername() {
+    public Builder clearId() {
       
-      username_ = getDefaultInstance().getUsername();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string username = 1;</code>
-     * @param value The bytes for username to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUsernameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      username_ = value;
+      id_ = 0L;
       onChanged();
       return this;
     }
 
     private java.lang.Object email_ = "";
     /**
-     * <code>string email = 2;</code>
+     * <code>optional string email = 2;</code>
+     * @return Whether the email field is set.
+     */
+    public boolean hasEmail() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string email = 2;</code>
      * @return The email.
      */
     public java.lang.String getEmail() {
@@ -741,7 +637,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string email = 2;</code>
+     * <code>optional string email = 2;</code>
      * @return The bytes for email.
      */
     public com.google.protobuf.ByteString
@@ -758,7 +654,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string email = 2;</code>
+     * <code>optional string email = 2;</code>
      * @param value The email to set.
      * @return This builder for chaining.
      */
@@ -767,23 +663,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
       email_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string email = 2;</code>
+     * <code>optional string email = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       email_ = getDefaultInstance().getEmail();
       onChanged();
       return this;
     }
     /**
-     * <code>string email = 2;</code>
+     * <code>optional string email = 2;</code>
      * @param value The bytes for email to set.
      * @return This builder for chaining.
      */
@@ -793,7 +689,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+      bitField0_ |= 0x00000001;
       email_ = value;
       onChanged();
       return this;
@@ -801,7 +697,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object phoneNumber_ = "";
     /**
-     * <code>string phoneNumber = 3;</code>
+     * <code>optional string phoneNumber = 3;</code>
+     * @return Whether the phoneNumber field is set.
+     */
+    public boolean hasPhoneNumber() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional string phoneNumber = 3;</code>
      * @return The phoneNumber.
      */
     public java.lang.String getPhoneNumber() {
@@ -817,7 +720,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string phoneNumber = 3;</code>
+     * <code>optional string phoneNumber = 3;</code>
      * @return The bytes for phoneNumber.
      */
     public com.google.protobuf.ByteString
@@ -834,7 +737,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string phoneNumber = 3;</code>
+     * <code>optional string phoneNumber = 3;</code>
      * @param value The phoneNumber to set.
      * @return This builder for chaining.
      */
@@ -843,23 +746,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000002;
       phoneNumber_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string phoneNumber = 3;</code>
+     * <code>optional string phoneNumber = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPhoneNumber() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       phoneNumber_ = getDefaultInstance().getPhoneNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>string phoneNumber = 3;</code>
+     * <code>optional string phoneNumber = 3;</code>
      * @param value The bytes for phoneNumber to set.
      * @return This builder for chaining.
      */
@@ -869,91 +772,23 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+      bitField0_ |= 0x00000002;
       phoneNumber_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object role_ = "";
-    /**
-     * <code>string role = 4;</code>
-     * @return The role.
-     */
-    public java.lang.String getRole() {
-      java.lang.Object ref = role_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        role_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string role = 4;</code>
-     * @return The bytes for role.
-     */
-    public com.google.protobuf.ByteString
-        getRoleBytes() {
-      java.lang.Object ref = role_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        role_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string role = 4;</code>
-     * @param value The role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRole(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      role_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string role = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRole() {
-      
-      role_ = getDefaultInstance().getRole();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string role = 4;</code>
-     * @param value The bytes for role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRoleBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      role_ = value;
       onChanged();
       return this;
     }
 
     private boolean isActive_ ;
     /**
-     * <code>bool isActive = 5;</code>
+     * <code>optional bool isActive = 5;</code>
+     * @return Whether the isActive field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsActive() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional bool isActive = 5;</code>
      * @return The isActive.
      */
     @java.lang.Override
@@ -961,22 +796,22 @@ private static final long serialVersionUID = 0L;
       return isActive_;
     }
     /**
-     * <code>bool isActive = 5;</code>
+     * <code>optional bool isActive = 5;</code>
      * @param value The isActive to set.
      * @return This builder for chaining.
      */
     public Builder setIsActive(boolean value) {
-      
+      bitField0_ |= 0x00000004;
       isActive_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool isActive = 5;</code>
+     * <code>optional bool isActive = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsActive() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       isActive_ = false;
       onChanged();
       return this;
@@ -1014,7 +849,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PutUpdateAccountRequest(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

@@ -6,6 +6,7 @@ import org.archi.bff.adapter.AuthAdapter;
 import org.archi.bff.request.LoginRequest;
 import org.archi.bff.request.RefreshRequest;
 import org.archi.bff.request.RegisterRequest;
+import org.archi.bff.request.UpdatedAccount;
 import org.archi.bff.response.*;
 import org.archi.common.auth.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -32,6 +34,7 @@ public class AuthService {
             .setUsername(request.getUsername())
             .setPassword(request.getPassword())
             .setEmail(request.getEmail())
+            .setPhoneNumber(request.getPhoneNumber())
             .setRole(request.getRole())
             .build();
     PostRegisterResponse response = adapter.postRegister(postRequest);
@@ -137,13 +140,14 @@ public class AuthService {
   }
 
   public ResponseData createAccount(RegisterRequest request) {
-    PostRegisterRequest postRequest = PostRegisterRequest.newBuilder()
+    PostCreateAccountRequest postRequest = PostCreateAccountRequest.newBuilder()
             .setUsername(request.getUsername())
             .setPassword(request.getPassword())
             .setEmail(request.getEmail())
+            .setPhoneNumber(request.getPhoneNumber())
             .setRole(request.getRole())
             .build();
-    PostRegisterResponse response = adapter.postRegister(postRequest);
+    PostCreateAccountResponse response = adapter.postCreateAccount(postRequest);
     return new ResponseData(response.getStatus(), response.getMessage(), null);
   }
 
@@ -152,6 +156,23 @@ public class AuthService {
             .setId(accountId)
             .build();
     DeleteAccountResponse response = adapter.deleteAccount(request);
+    return new ResponseData(response.getStatus(), response.getMessage(), null);
+  }
+
+  public ResponseData updateAccount(long l, UpdatedAccount request) {
+    PutUpdateAccountRequest.Builder requestBuilder = PutUpdateAccountRequest.newBuilder();
+    if (StringUtils.hasText(request.getEmail())) {
+      requestBuilder.setEmail(request.getEmail());
+    }
+    if (StringUtils.hasText(request.getPhoneNumber())) {
+      requestBuilder.setPhoneNumber(request.getPhoneNumber());
+    }
+    if (request.getIsActive() != null) {
+      requestBuilder.setIsActive(request.getIsActive());
+    }
+    requestBuilder.setId(l);
+    PutUpdateAccountRequest putRequest = requestBuilder.build();
+    PutUpdateAccountResponse response = adapter.putUpdateAccount(putRequest);
     return new ResponseData(response.getStatus(), response.getMessage(), null);
   }
 }

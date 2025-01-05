@@ -1,11 +1,7 @@
 package org.archi.auth.service;
 
-import com.google.api.Http;
-import io.grpc.Status;
-import io.netty.util.internal.StringUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.archi.auth.enums.GENDER;
 import org.archi.auth.enums.ROLE;
 import org.archi.auth.exceptions.ResourceNotFoundException;
@@ -19,6 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.Locale;
@@ -39,6 +36,7 @@ public class AuthenticationService {
   private final EmailService emailService;
 
 
+  /// done
   @Transactional(rollbackFor = {ResourceNotFoundException.class, RuntimeException.class})
   public PostRegisterResponse register(PostRegisterRequest request) {
     ROLE name = ROLE.valueOf(request.getRole().toUpperCase(Locale.ROOT));
@@ -111,6 +109,7 @@ public class AuthenticationService {
     return PostRegisterResponse.newBuilder().setStatus(HttpStatus.CREATED.value()).setMessage("Success").build();
   }
 
+  /// done
   public PostLoginResponse login(PostLoginRequest request) {
     Authentication authentication = UsernamePasswordAuthenticationToken.unauthenticated(request.getUsername(), request.getPassword());
     Authentication response = authenticationManager.authenticate(authentication); // Thực hiện authenticate bằng cách dùng @Bean Manager đã tạo trong ProjectConfigSecurity để xác thực.
@@ -152,6 +151,7 @@ public class AuthenticationService {
             .build();
   }
 
+  /// done
   public PostRefreshTokenResponse refreshToken(PostRefreshTokenRequest request) {
     // Hàm thực hiện refresh token.
     if (!jwtService.isValid(request.getRefreshToken())) {
@@ -193,6 +193,7 @@ public class AuthenticationService {
     }
   }
 
+  /// done
   public void revokeAllAccessToken(Account account) {
     // Xóa tất cả access token của account.
     var validUserTokens = accessTokenRepo.findAllValidTokenByUser(account.getId());
@@ -205,6 +206,7 @@ public class AuthenticationService {
     accessTokenRepo.saveAll(validUserTokens);
   }
 
+  /// done
   public AccessToken saveAccessToken(String token, Account account) {
     // Lưu access token vào database.
     AccessToken accessToken = AccessToken.builder()
@@ -216,6 +218,7 @@ public class AuthenticationService {
     return accessTokenService.saveAccessToken(accessToken);
   }
 
+  /// done
   public PostLogoutResponse logout(PostLogoutRequest request) {
     // Hàm thực hiện logout.
 
@@ -247,6 +250,7 @@ public class AuthenticationService {
     }
   }
 
+  /// done
   public GetVerifyEmailResponse verifyEmail(GetVerifyEmailRequest request) {
     if (jwtService.isValid(request.getToken())) {
       // Cập nhật trạng thái của email đã được xác thực
@@ -265,6 +269,7 @@ public class AuthenticationService {
     return GetVerifyEmailResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Invalid token").build();
   }
 
+  ///  done
   @Transactional(rollbackFor = {ResourceNotFoundException.class, RuntimeException.class})
   public PostCreateAccountResponse createAccount(PostCreateAccountRequest request) {
     ROLE name = ROLE.valueOf(request.getRole().toUpperCase(Locale.ROOT));
@@ -280,6 +285,7 @@ public class AuthenticationService {
     if (accountService.findByUsername(username) != null || accountService.findByEmail(email) != null || accountService.findByPhoneNumber(phoneNumber) != null) {
       return PostCreateAccountResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Account already exists").build();
     }
+
 
     Account account = Account.builder()
             .username(username)
@@ -334,11 +340,69 @@ public class AuthenticationService {
     return PostCreateAccountResponse.newBuilder().setStatus(HttpStatus.CREATED.value()).setMessage("Success").build();
   }
 
+  /// done
+  public PutUpdateAccountResponse updateAccount(PutUpdateAccountRequest request) {
+    Account account = accountService.findById(request.getId());
+    if (account == null || account.getId() <= 0) {
+      return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.NOT_FOUND.value()).setMessage("Account not found").build();
+    }
+    if (StringUtils.hasText(request.getEmail()) && !request.getEmail().equals(account.getEmail())) {
+      Account existed = accountService.findByEmail(request.getEmail());
+      if (existed != null && existed.getId() >= 0) {
+        return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Email already exists").build();
+      }
+      account.setEmail(request.getEmail());
+    }
+    if (StringUtils.hasText(request.getPhoneNumber()) && !request.getPhoneNumber().equals(account.getPhoneNumber())) {
+      account.setPhoneNumber(request.getPhoneNumber());
+      Account existed = accountService.findByPhoneNumber(request.getPhoneNumber());
+      if (existed != null && existed.getId() >= 0) {
+        return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Phone number already exists").build();
+      }
+    }
+    Boolean isActive = request.getIsActive();
+    if (isActive != null && isActive != account.getIsActive()) {
+      account.setIsActive(isActive);
+    }
+    accountService.save(account);
+    return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.OK.value()).setMessage("Success").build();
+  }
+
+  public GetAccountInfoResponse getAccountInfo(GetAccountInfoRequest request) {
+    Account account = accountService.findById(request.getId());
+    if (account == null || account.getId() <= 0) {
+      return GetAccountInfoResponse.newBuilder().setStatus(HttpStatus.NOT_FOUND.value()).setMessage("Account not found").build();
+    }
+    return GetAccountInfoResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .setId(account.getId())
+            .setUsername(account.getUsername())
+            .setEmail(account.getEmail())
+            .setPhoneNumber(account.getPhoneNumber())
+            .setIsActive(account.getIsActive())
+            .setRole(account.getRole().getName().toString())
+            .build();
+  }
 
   public DeleteAccountResponse deleteAccount(DeleteAccountRequest request) {
     Account account = accountService.findById(request.getId());
     if (account == null || account.getId() <= 0) {
       return DeleteAccountResponse.newBuilder().setStatus(HttpStatus.NOT_FOUND.value()).setMessage("Account not found").build();
+    }
+    try {
+      accessTokenService.deleteAccessTokenByAccount(account); // Xóa tất cả access token của account.
+    } catch (RuntimeException e) {
+      return DeleteAccountResponse.newBuilder().setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value()).setMessage("Failed to delete access token").build();
+    }
+    try {
+      if (account.getRole().getName().equals(ROLE.PLAYER)) {
+        playerService.deletePlayerByAccount(account);
+      } else if (account.getRole().getName().equals(ROLE.BRAND)) {
+        brandService.deleteBrandByAccount(account);
+      }
+    } catch (RuntimeException e) {
+      return DeleteAccountResponse.newBuilder().setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value()).setMessage("Failed to delete account").build();
     }
     accountService.delete(account);
     return DeleteAccountResponse.newBuilder().setStatus(HttpStatus.OK.value()).setMessage("Success").build();

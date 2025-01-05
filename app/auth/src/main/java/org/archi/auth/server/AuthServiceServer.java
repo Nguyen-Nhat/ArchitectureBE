@@ -44,7 +44,7 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     };
   }
 
-
+  /// done.
   @Override
   public void postRegister(PostRegisterRequest request, StreamObserver<PostRegisterResponse> streamObserver) { /// done
     PostRegisterResponse response = authenticationService.register(request);
@@ -52,6 +52,8 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     streamObserver.onCompleted();
   }
 
+
+  /// done
   @Override
   public void postLogin(PostLoginRequest request, StreamObserver<PostLoginResponse> responseObserver) { /// done
     PostLoginResponse response = authenticationService.login(request);
@@ -59,6 +61,7 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+  /// done
   @Override
   public void postLogout(PostLogoutRequest request, StreamObserver<PostLogoutResponse> responseObserver) { /// done
     PostLogoutResponse response = authenticationService.logout(request);
@@ -66,6 +69,8 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+
+  /// done
   @Override
   public void postRefreshToken(PostRefreshTokenRequest request, StreamObserver<PostRefreshTokenResponse> responseObserver) { /// done
     PostRefreshTokenResponse response = authenticationService.refreshToken(request);
@@ -73,6 +78,7 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+  /// done
   @Override
   public void getVerifyEmail(GetVerifyEmailRequest request, StreamObserver<GetVerifyEmailResponse> responseObserver) { /// done
     GetVerifyEmailResponse response = authenticationService.verifyEmail(request);
@@ -80,6 +86,8 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+
+  /// done
   @Override
   public void postVerifyToken(PostVerifyTokenRequest request, StreamObserver<PostVerifyTokenResponse> responseObserver) {
     String token = request.getToken();
@@ -115,27 +123,36 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+  /// done
   @Override
   public void getAccountInfo(GetAccountInfoRequest request, StreamObserver<GetAccountInfoResponse> responseObserver) {
-    long id = request.getId();
-    Account account = accountService.findById(id);
-    if (account == null || account.getId() <= 0) {
-      responseObserver.onNext(GetAccountInfoResponse.newBuilder()
-              .setStatus(HttpStatus.NOT_FOUND.value())
-              .setMessage("Account not found")
-              .build());
-    } else {
-      responseObserver.onNext(GetAccountInfoResponse.newBuilder()
-              .setStatus(HttpStatus.OK.value())
-              .setMessage("Success")
-              .setId(account.getId())
-              .setUsername(account.getUsername())
-              .setEmail(account.getEmail())
-              .setPhoneNumber(account.getPhoneNumber())
-              .setIsActive(account.getIsActive())
-              .setRole(account.getRole().getName().toString())
-              .build());
-    }
+    GetAccountInfoResponse response = authenticationService.getAccountInfo(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  /// done
+  @Override
+  public void postCreateAccount(PostCreateAccountRequest request, StreamObserver<PostCreateAccountResponse> responseObserver) { /// done
+    PostCreateAccountResponse response = authenticationService.createAccount(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  /// done
+  @Override
+  public void putUpdateAccount(PutUpdateAccountRequest request, StreamObserver<PutUpdateAccountResponse> responseObserver) {
+    PutUpdateAccountResponse response = authenticationService.updateAccount(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+
+  /// done
+  @Override
+  public void deleteAccount(DeleteAccountRequest request, StreamObserver<DeleteAccountResponse> responseObserver) {
+    DeleteAccountResponse response = authenticationService.deleteAccount(request);
+    responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
 
@@ -203,16 +220,9 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
-  @Override
-  public void postCreateAccount(PostCreateAccountRequest request, StreamObserver<PostCreateAccountResponse> responseObserver) {
-    PostCreateAccountResponse response = authenticationService.createAccount(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
-  }
 
-  @Override
-  public void deleteAccount(DeleteAccountRequest request, StreamObserver<DeleteAccountResponse> responseObserver) {
-    DeleteAccountResponse response = authenticationService.deleteAccount(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted(); }
+
+
+
+
 }

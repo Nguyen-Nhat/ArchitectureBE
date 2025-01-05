@@ -1,422 +1,404 @@
 package org.archi.common.core;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.9.1)",
+    value = "by gRPC proto compiler (version 1.69.0)",
     comments = "Source: core.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CoreServiceGrpc {
 
   private CoreServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "CoreService";
+  public static final java.lang.String SERVICE_NAME = "CoreService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGenerateVoucherMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.GenerateVoucherRequest,
-      org.archi.common.core.GenerateVoucherResponse> METHOD_GENERATE_VOUCHER = getGenerateVoucherMethod();
-
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GenerateVoucherRequest,
       org.archi.common.core.GenerateVoucherResponse> getGenerateVoucherMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateVoucher",
+      requestType = org.archi.common.core.GenerateVoucherRequest.class,
+      responseType = org.archi.common.core.GenerateVoucherResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.GenerateVoucherRequest,
       org.archi.common.core.GenerateVoucherResponse> getGenerateVoucherMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.GenerateVoucherRequest, org.archi.common.core.GenerateVoucherResponse> getGenerateVoucherMethod;
     if ((getGenerateVoucherMethod = CoreServiceGrpc.getGenerateVoucherMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getGenerateVoucherMethod = CoreServiceGrpc.getGenerateVoucherMethod) == null) {
-          CoreServiceGrpc.getGenerateVoucherMethod = getGenerateVoucherMethod = 
+          CoreServiceGrpc.getGenerateVoucherMethod = getGenerateVoucherMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.GenerateVoucherRequest, org.archi.common.core.GenerateVoucherResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "GenerateVoucher"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GenerateVoucher"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GenerateVoucherRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GenerateVoucherResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GenerateVoucher"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GenerateVoucher"))
+              .build();
         }
-     }
-     return getGenerateVoucherMethod;
+      }
+    }
+    return getGenerateVoucherMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateVoucherTypeMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.CreateVoucherTypeRequest,
-      org.archi.common.core.CreateVoucherTypeResponse> METHOD_CREATE_VOUCHER_TYPE = getCreateVoucherTypeMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.CreateVoucherTypeRequest,
       org.archi.common.core.CreateVoucherTypeResponse> getCreateVoucherTypeMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateVoucherType",
+      requestType = org.archi.common.core.CreateVoucherTypeRequest.class,
+      responseType = org.archi.common.core.CreateVoucherTypeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.CreateVoucherTypeRequest,
       org.archi.common.core.CreateVoucherTypeResponse> getCreateVoucherTypeMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.CreateVoucherTypeRequest, org.archi.common.core.CreateVoucherTypeResponse> getCreateVoucherTypeMethod;
     if ((getCreateVoucherTypeMethod = CoreServiceGrpc.getCreateVoucherTypeMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getCreateVoucherTypeMethod = CoreServiceGrpc.getCreateVoucherTypeMethod) == null) {
-          CoreServiceGrpc.getCreateVoucherTypeMethod = getCreateVoucherTypeMethod = 
+          CoreServiceGrpc.getCreateVoucherTypeMethod = getCreateVoucherTypeMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.CreateVoucherTypeRequest, org.archi.common.core.CreateVoucherTypeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "CreateVoucherType"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateVoucherType"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.CreateVoucherTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.CreateVoucherTypeResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("CreateVoucherType"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("CreateVoucherType"))
+              .build();
         }
-     }
-     return getCreateVoucherTypeMethod;
+      }
+    }
+    return getCreateVoucherTypeMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchVoucherMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.SearchRequest,
-      org.archi.common.core.SearchVoucherResponse> METHOD_SEARCH_VOUCHER = getSearchVoucherMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.SearchRequest,
       org.archi.common.core.SearchVoucherResponse> getSearchVoucherMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchVoucher",
+      requestType = org.archi.common.core.SearchRequest.class,
+      responseType = org.archi.common.core.SearchVoucherResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.SearchRequest,
       org.archi.common.core.SearchVoucherResponse> getSearchVoucherMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.SearchRequest, org.archi.common.core.SearchVoucherResponse> getSearchVoucherMethod;
     if ((getSearchVoucherMethod = CoreServiceGrpc.getSearchVoucherMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getSearchVoucherMethod = CoreServiceGrpc.getSearchVoucherMethod) == null) {
-          CoreServiceGrpc.getSearchVoucherMethod = getSearchVoucherMethod = 
+          CoreServiceGrpc.getSearchVoucherMethod = getSearchVoucherMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.SearchRequest, org.archi.common.core.SearchVoucherResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "SearchVoucher"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchVoucher"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.SearchRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.SearchVoucherResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("SearchVoucher"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("SearchVoucher"))
+              .build();
         }
-     }
-     return getSearchVoucherMethod;
+      }
+    }
+    return getSearchVoucherMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchVoucherTypeMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.SearchRequest,
-      org.archi.common.core.SearchVoucherTypeResponse> METHOD_SEARCH_VOUCHER_TYPE = getSearchVoucherTypeMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.SearchRequest,
       org.archi.common.core.SearchVoucherTypeResponse> getSearchVoucherTypeMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchVoucherType",
+      requestType = org.archi.common.core.SearchRequest.class,
+      responseType = org.archi.common.core.SearchVoucherTypeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.SearchRequest,
       org.archi.common.core.SearchVoucherTypeResponse> getSearchVoucherTypeMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.SearchRequest, org.archi.common.core.SearchVoucherTypeResponse> getSearchVoucherTypeMethod;
     if ((getSearchVoucherTypeMethod = CoreServiceGrpc.getSearchVoucherTypeMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getSearchVoucherTypeMethod = CoreServiceGrpc.getSearchVoucherTypeMethod) == null) {
-          CoreServiceGrpc.getSearchVoucherTypeMethod = getSearchVoucherTypeMethod = 
+          CoreServiceGrpc.getSearchVoucherTypeMethod = getSearchVoucherTypeMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.SearchRequest, org.archi.common.core.SearchVoucherTypeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "SearchVoucherType"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchVoucherType"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.SearchRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.SearchVoucherTypeResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("SearchVoucherType"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("SearchVoucherType"))
+              .build();
         }
-     }
-     return getSearchVoucherTypeMethod;
+      }
+    }
+    return getSearchVoucherTypeMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateVoucherTypeMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.UpdateVoucherTypeReq,
-      org.archi.common.core.UpdateVoucherTypeRes> METHOD_UPDATE_VOUCHER_TYPE = getUpdateVoucherTypeMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.UpdateVoucherTypeReq,
       org.archi.common.core.UpdateVoucherTypeRes> getUpdateVoucherTypeMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVoucherType",
+      requestType = org.archi.common.core.UpdateVoucherTypeReq.class,
+      responseType = org.archi.common.core.UpdateVoucherTypeRes.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.UpdateVoucherTypeReq,
       org.archi.common.core.UpdateVoucherTypeRes> getUpdateVoucherTypeMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.UpdateVoucherTypeReq, org.archi.common.core.UpdateVoucherTypeRes> getUpdateVoucherTypeMethod;
     if ((getUpdateVoucherTypeMethod = CoreServiceGrpc.getUpdateVoucherTypeMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getUpdateVoucherTypeMethod = CoreServiceGrpc.getUpdateVoucherTypeMethod) == null) {
-          CoreServiceGrpc.getUpdateVoucherTypeMethod = getUpdateVoucherTypeMethod = 
+          CoreServiceGrpc.getUpdateVoucherTypeMethod = getUpdateVoucherTypeMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.UpdateVoucherTypeReq, org.archi.common.core.UpdateVoucherTypeRes>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "UpdateVoucherType"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVoucherType"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.UpdateVoucherTypeReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.UpdateVoucherTypeRes.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("UpdateVoucherType"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("UpdateVoucherType"))
+              .build();
         }
-     }
-     return getUpdateVoucherTypeMethod;
+      }
+    }
+    return getUpdateVoucherTypeMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetVouchersTypeMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.GetVoucherTypesReq,
-      org.archi.common.core.GetVoucherTypesRes> METHOD_GET_VOUCHERS_TYPE = getGetVouchersTypeMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetVoucherTypesReq,
       org.archi.common.core.GetVoucherTypesRes> getGetVouchersTypeMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVouchersType",
+      requestType = org.archi.common.core.GetVoucherTypesReq.class,
+      responseType = org.archi.common.core.GetVoucherTypesRes.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.GetVoucherTypesReq,
       org.archi.common.core.GetVoucherTypesRes> getGetVouchersTypeMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.GetVoucherTypesReq, org.archi.common.core.GetVoucherTypesRes> getGetVouchersTypeMethod;
     if ((getGetVouchersTypeMethod = CoreServiceGrpc.getGetVouchersTypeMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getGetVouchersTypeMethod = CoreServiceGrpc.getGetVouchersTypeMethod) == null) {
-          CoreServiceGrpc.getGetVouchersTypeMethod = getGetVouchersTypeMethod = 
+          CoreServiceGrpc.getGetVouchersTypeMethod = getGetVouchersTypeMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.GetVoucherTypesReq, org.archi.common.core.GetVoucherTypesRes>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "GetVouchersType"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVouchersType"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GetVoucherTypesReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GetVoucherTypesRes.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetVouchersType"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetVouchersType"))
+              .build();
         }
-     }
-     return getGetVouchersTypeMethod;
+      }
+    }
+    return getGetVouchersTypeMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetVouchersMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.GetVouchersRequest,
-      org.archi.common.core.GetVouchersResponse> METHOD_GET_VOUCHERS = getGetVouchersMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetVouchersRequest,
       org.archi.common.core.GetVouchersResponse> getGetVouchersMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVouchers",
+      requestType = org.archi.common.core.GetVouchersRequest.class,
+      responseType = org.archi.common.core.GetVouchersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.GetVouchersRequest,
       org.archi.common.core.GetVouchersResponse> getGetVouchersMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.GetVouchersRequest, org.archi.common.core.GetVouchersResponse> getGetVouchersMethod;
     if ((getGetVouchersMethod = CoreServiceGrpc.getGetVouchersMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getGetVouchersMethod = CoreServiceGrpc.getGetVouchersMethod) == null) {
-          CoreServiceGrpc.getGetVouchersMethod = getGetVouchersMethod = 
+          CoreServiceGrpc.getGetVouchersMethod = getGetVouchersMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.GetVouchersRequest, org.archi.common.core.GetVouchersResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "GetVouchers"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVouchers"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GetVouchersRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GetVouchersResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetVouchers"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetVouchers"))
+              .build();
         }
-     }
-     return getGetVouchersMethod;
+      }
+    }
+    return getGetVouchersMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetCampaignsMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.GetCampaignsRequest,
-      org.archi.common.core.GetCampaignsResponse> METHOD_GET_CAMPAIGNS = getGetCampaignsMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetCampaignsRequest,
       org.archi.common.core.GetCampaignsResponse> getGetCampaignsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCampaigns",
+      requestType = org.archi.common.core.GetCampaignsRequest.class,
+      responseType = org.archi.common.core.GetCampaignsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.GetCampaignsRequest,
       org.archi.common.core.GetCampaignsResponse> getGetCampaignsMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.GetCampaignsRequest, org.archi.common.core.GetCampaignsResponse> getGetCampaignsMethod;
     if ((getGetCampaignsMethod = CoreServiceGrpc.getGetCampaignsMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getGetCampaignsMethod = CoreServiceGrpc.getGetCampaignsMethod) == null) {
-          CoreServiceGrpc.getGetCampaignsMethod = getGetCampaignsMethod = 
+          CoreServiceGrpc.getGetCampaignsMethod = getGetCampaignsMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.GetCampaignsRequest, org.archi.common.core.GetCampaignsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "GetCampaigns"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCampaigns"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GetCampaignsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GetCampaignsResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetCampaigns"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetCampaigns"))
+              .build();
         }
-     }
-     return getGetCampaignsMethod;
+      }
+    }
+    return getGetCampaignsMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchCampaignMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.SearchCampaignRequest,
-      org.archi.common.core.SearchCampaignResponse> METHOD_SEARCH_CAMPAIGN = getSearchCampaignMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.SearchCampaignRequest,
       org.archi.common.core.SearchCampaignResponse> getSearchCampaignMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchCampaign",
+      requestType = org.archi.common.core.SearchCampaignRequest.class,
+      responseType = org.archi.common.core.SearchCampaignResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.SearchCampaignRequest,
       org.archi.common.core.SearchCampaignResponse> getSearchCampaignMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.SearchCampaignRequest, org.archi.common.core.SearchCampaignResponse> getSearchCampaignMethod;
     if ((getSearchCampaignMethod = CoreServiceGrpc.getSearchCampaignMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getSearchCampaignMethod = CoreServiceGrpc.getSearchCampaignMethod) == null) {
-          CoreServiceGrpc.getSearchCampaignMethod = getSearchCampaignMethod = 
+          CoreServiceGrpc.getSearchCampaignMethod = getSearchCampaignMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.SearchCampaignRequest, org.archi.common.core.SearchCampaignResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "SearchCampaign"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchCampaign"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.SearchCampaignRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.SearchCampaignResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("SearchCampaign"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("SearchCampaign"))
+              .build();
         }
-     }
-     return getSearchCampaignMethod;
+      }
+    }
+    return getSearchCampaignMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateCampaignMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.CreateCampaignRequest,
-      org.archi.common.core.CreateCampaignResponse> METHOD_CREATE_CAMPAIGN = getCreateCampaignMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.CreateCampaignRequest,
       org.archi.common.core.CreateCampaignResponse> getCreateCampaignMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCampaign",
+      requestType = org.archi.common.core.CreateCampaignRequest.class,
+      responseType = org.archi.common.core.CreateCampaignResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.CreateCampaignRequest,
       org.archi.common.core.CreateCampaignResponse> getCreateCampaignMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.CreateCampaignRequest, org.archi.common.core.CreateCampaignResponse> getCreateCampaignMethod;
     if ((getCreateCampaignMethod = CoreServiceGrpc.getCreateCampaignMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getCreateCampaignMethod = CoreServiceGrpc.getCreateCampaignMethod) == null) {
-          CoreServiceGrpc.getCreateCampaignMethod = getCreateCampaignMethod = 
+          CoreServiceGrpc.getCreateCampaignMethod = getCreateCampaignMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.CreateCampaignRequest, org.archi.common.core.CreateCampaignResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "CreateCampaign"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCampaign"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.CreateCampaignRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.CreateCampaignResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("CreateCampaign"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("CreateCampaign"))
+              .build();
         }
-     }
-     return getCreateCampaignMethod;
+      }
+    }
+    return getCreateCampaignMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetCampaignsByBrandIdMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.GetCampaignsByBrandIdReq,
-      org.archi.common.core.GetCampaignsByBrandIdRes> METHOD_GET_CAMPAIGNS_BY_BRAND_ID = getGetCampaignsByBrandIdMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetCampaignsByBrandIdReq,
       org.archi.common.core.GetCampaignsByBrandIdRes> getGetCampaignsByBrandIdMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCampaignsByBrandId",
+      requestType = org.archi.common.core.GetCampaignsByBrandIdReq.class,
+      responseType = org.archi.common.core.GetCampaignsByBrandIdRes.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.GetCampaignsByBrandIdReq,
       org.archi.common.core.GetCampaignsByBrandIdRes> getGetCampaignsByBrandIdMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.GetCampaignsByBrandIdReq, org.archi.common.core.GetCampaignsByBrandIdRes> getGetCampaignsByBrandIdMethod;
     if ((getGetCampaignsByBrandIdMethod = CoreServiceGrpc.getGetCampaignsByBrandIdMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getGetCampaignsByBrandIdMethod = CoreServiceGrpc.getGetCampaignsByBrandIdMethod) == null) {
-          CoreServiceGrpc.getGetCampaignsByBrandIdMethod = getGetCampaignsByBrandIdMethod = 
+          CoreServiceGrpc.getGetCampaignsByBrandIdMethod = getGetCampaignsByBrandIdMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.GetCampaignsByBrandIdReq, org.archi.common.core.GetCampaignsByBrandIdRes>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "GetCampaignsByBrandId"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCampaignsByBrandId"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GetCampaignsByBrandIdReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.GetCampaignsByBrandIdRes.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetCampaignsByBrandId"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetCampaignsByBrandId"))
+              .build();
         }
-     }
-     return getGetCampaignsByBrandIdMethod;
+      }
+    }
+    return getGetCampaignsByBrandIdMethod;
   }
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateCampaignMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<org.archi.common.core.UpdateCampaignReq,
-      org.archi.common.core.UpdateCampaignRes> METHOD_UPDATE_CAMPAIGN = getUpdateCampaignMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.core.UpdateCampaignReq,
       org.archi.common.core.UpdateCampaignRes> getUpdateCampaignMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCampaign",
+      requestType = org.archi.common.core.UpdateCampaignReq.class,
+      responseType = org.archi.common.core.UpdateCampaignRes.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.archi.common.core.UpdateCampaignReq,
       org.archi.common.core.UpdateCampaignRes> getUpdateCampaignMethod() {
     io.grpc.MethodDescriptor<org.archi.common.core.UpdateCampaignReq, org.archi.common.core.UpdateCampaignRes> getUpdateCampaignMethod;
     if ((getUpdateCampaignMethod = CoreServiceGrpc.getUpdateCampaignMethod) == null) {
       synchronized (CoreServiceGrpc.class) {
         if ((getUpdateCampaignMethod = CoreServiceGrpc.getUpdateCampaignMethod) == null) {
-          CoreServiceGrpc.getUpdateCampaignMethod = getUpdateCampaignMethod = 
+          CoreServiceGrpc.getUpdateCampaignMethod = getUpdateCampaignMethod =
               io.grpc.MethodDescriptor.<org.archi.common.core.UpdateCampaignReq, org.archi.common.core.UpdateCampaignRes>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "CoreService", "UpdateCampaign"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCampaign"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.UpdateCampaignReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.core.UpdateCampaignRes.getDefaultInstance()))
-                  .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("UpdateCampaign"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("UpdateCampaign"))
+              .build();
         }
-     }
-     return getUpdateCampaignMethod;
+      }
+    }
+    return getUpdateCampaignMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static CoreServiceStub newStub(io.grpc.Channel channel) {
-    return new CoreServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CoreServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CoreServiceStub>() {
+        @java.lang.Override
+        public CoreServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CoreServiceStub(channel, callOptions);
+        }
+      };
+    return CoreServiceStub.newStub(factory, channel);
   }
 
   /**
@@ -424,7 +406,14 @@ public final class CoreServiceGrpc {
    */
   public static CoreServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new CoreServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CoreServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CoreServiceBlockingStub>() {
+        @java.lang.Override
+        public CoreServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CoreServiceBlockingStub(channel, callOptions);
+        }
+      };
+    return CoreServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -432,46 +421,53 @@ public final class CoreServiceGrpc {
    */
   public static CoreServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new CoreServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CoreServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CoreServiceFutureStub>() {
+        @java.lang.Override
+        public CoreServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CoreServiceFutureStub(channel, callOptions);
+        }
+      };
+    return CoreServiceFutureStub.newStub(factory, channel);
   }
 
   /**
    */
-  public static abstract class CoreServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      */
-    public void generateVoucher(org.archi.common.core.GenerateVoucherRequest request,
+    default void generateVoucher(org.archi.common.core.GenerateVoucherRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GenerateVoucherResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateVoucherMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateVoucherMethod(), responseObserver);
     }
 
     /**
      */
-    public void createVoucherType(org.archi.common.core.CreateVoucherTypeRequest request,
+    default void createVoucherType(org.archi.common.core.CreateVoucherTypeRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.CreateVoucherTypeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateVoucherTypeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateVoucherTypeMethod(), responseObserver);
     }
 
     /**
      */
-    public void searchVoucher(org.archi.common.core.SearchRequest request,
+    default void searchVoucher(org.archi.common.core.SearchRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.SearchVoucherResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchVoucherMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchVoucherMethod(), responseObserver);
     }
 
     /**
      */
-    public void searchVoucherType(org.archi.common.core.SearchRequest request,
+    default void searchVoucherType(org.archi.common.core.SearchRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.SearchVoucherTypeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchVoucherTypeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchVoucherTypeMethod(), responseObserver);
     }
 
     /**
      */
-    public void updateVoucherType(org.archi.common.core.UpdateVoucherTypeReq request,
+    default void updateVoucherType(org.archi.common.core.UpdateVoucherTypeReq request,
         io.grpc.stub.StreamObserver<org.archi.common.core.UpdateVoucherTypeRes> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateVoucherTypeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateVoucherTypeMethod(), responseObserver);
     }
 
     /**
@@ -479,9 +475,9 @@ public final class CoreServiceGrpc {
      * brand's method
      * </pre>
      */
-    public void getVouchersType(org.archi.common.core.GetVoucherTypesReq request,
+    default void getVouchersType(org.archi.common.core.GetVoucherTypesReq request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GetVoucherTypesRes> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetVouchersTypeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVouchersTypeMethod(), responseObserver);
     }
 
     /**
@@ -489,151 +485,71 @@ public final class CoreServiceGrpc {
      * player's method
      * </pre>
      */
-    public void getVouchers(org.archi.common.core.GetVouchersRequest request,
+    default void getVouchers(org.archi.common.core.GetVouchersRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GetVouchersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetVouchersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVouchersMethod(), responseObserver);
     }
 
     /**
      */
-    public void getCampaigns(org.archi.common.core.GetCampaignsRequest request,
+    default void getCampaigns(org.archi.common.core.GetCampaignsRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GetCampaignsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCampaignsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCampaignsMethod(), responseObserver);
     }
 
     /**
      */
-    public void searchCampaign(org.archi.common.core.SearchCampaignRequest request,
+    default void searchCampaign(org.archi.common.core.SearchCampaignRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.SearchCampaignResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchCampaignMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchCampaignMethod(), responseObserver);
     }
 
     /**
      */
-    public void createCampaign(org.archi.common.core.CreateCampaignRequest request,
+    default void createCampaign(org.archi.common.core.CreateCampaignRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.CreateCampaignResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCampaignMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCampaignMethod(), responseObserver);
     }
 
     /**
      */
-    public void getCampaignsByBrandId(org.archi.common.core.GetCampaignsByBrandIdReq request,
+    default void getCampaignsByBrandId(org.archi.common.core.GetCampaignsByBrandIdReq request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GetCampaignsByBrandIdRes> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCampaignsByBrandIdMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCampaignsByBrandIdMethod(), responseObserver);
     }
 
     /**
      */
-    public void updateCampaign(org.archi.common.core.UpdateCampaignReq request,
+    default void updateCampaign(org.archi.common.core.UpdateCampaignReq request,
         io.grpc.stub.StreamObserver<org.archi.common.core.UpdateCampaignRes> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCampaignMethod(), responseObserver);
-    }
-
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getGenerateVoucherMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.GenerateVoucherRequest,
-                org.archi.common.core.GenerateVoucherResponse>(
-                  this, METHODID_GENERATE_VOUCHER)))
-          .addMethod(
-            getCreateVoucherTypeMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.CreateVoucherTypeRequest,
-                org.archi.common.core.CreateVoucherTypeResponse>(
-                  this, METHODID_CREATE_VOUCHER_TYPE)))
-          .addMethod(
-            getSearchVoucherMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.SearchRequest,
-                org.archi.common.core.SearchVoucherResponse>(
-                  this, METHODID_SEARCH_VOUCHER)))
-          .addMethod(
-            getSearchVoucherTypeMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.SearchRequest,
-                org.archi.common.core.SearchVoucherTypeResponse>(
-                  this, METHODID_SEARCH_VOUCHER_TYPE)))
-          .addMethod(
-            getUpdateVoucherTypeMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.UpdateVoucherTypeReq,
-                org.archi.common.core.UpdateVoucherTypeRes>(
-                  this, METHODID_UPDATE_VOUCHER_TYPE)))
-          .addMethod(
-            getGetVouchersTypeMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.GetVoucherTypesReq,
-                org.archi.common.core.GetVoucherTypesRes>(
-                  this, METHODID_GET_VOUCHERS_TYPE)))
-          .addMethod(
-            getGetVouchersMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.GetVouchersRequest,
-                org.archi.common.core.GetVouchersResponse>(
-                  this, METHODID_GET_VOUCHERS)))
-          .addMethod(
-            getGetCampaignsMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.GetCampaignsRequest,
-                org.archi.common.core.GetCampaignsResponse>(
-                  this, METHODID_GET_CAMPAIGNS)))
-          .addMethod(
-            getSearchCampaignMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.SearchCampaignRequest,
-                org.archi.common.core.SearchCampaignResponse>(
-                  this, METHODID_SEARCH_CAMPAIGN)))
-          .addMethod(
-            getCreateCampaignMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.CreateCampaignRequest,
-                org.archi.common.core.CreateCampaignResponse>(
-                  this, METHODID_CREATE_CAMPAIGN)))
-          .addMethod(
-            getGetCampaignsByBrandIdMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.GetCampaignsByBrandIdReq,
-                org.archi.common.core.GetCampaignsByBrandIdRes>(
-                  this, METHODID_GET_CAMPAIGNS_BY_BRAND_ID)))
-          .addMethod(
-            getUpdateCampaignMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.archi.common.core.UpdateCampaignReq,
-                org.archi.common.core.UpdateCampaignRes>(
-                  this, METHODID_UPDATE_CAMPAIGN)))
-          .build();
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCampaignMethod(), responseObserver);
     }
   }
 
   /**
+   * Base class for the server implementation of the service CoreService.
    */
-  public static final class CoreServiceStub extends io.grpc.stub.AbstractStub<CoreServiceStub> {
-    private CoreServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
+  public static abstract class CoreServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
-    private CoreServiceStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return CoreServiceGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service CoreService.
+   */
+  public static final class CoreServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<CoreServiceStub> {
+    private CoreServiceStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CoreServiceStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected CoreServiceStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CoreServiceStub(channel, callOptions);
     }
 
@@ -641,7 +557,7 @@ public final class CoreServiceGrpc {
      */
     public void generateVoucher(org.archi.common.core.GenerateVoucherRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GenerateVoucherResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateVoucherMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -649,7 +565,7 @@ public final class CoreServiceGrpc {
      */
     public void createVoucherType(org.archi.common.core.CreateVoucherTypeRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.CreateVoucherTypeResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateVoucherTypeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -657,7 +573,7 @@ public final class CoreServiceGrpc {
      */
     public void searchVoucher(org.archi.common.core.SearchRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.SearchVoucherResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchVoucherMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -665,7 +581,7 @@ public final class CoreServiceGrpc {
      */
     public void searchVoucherType(org.archi.common.core.SearchRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.SearchVoucherTypeResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchVoucherTypeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -673,7 +589,7 @@ public final class CoreServiceGrpc {
      */
     public void updateVoucherType(org.archi.common.core.UpdateVoucherTypeReq request,
         io.grpc.stub.StreamObserver<org.archi.common.core.UpdateVoucherTypeRes> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateVoucherTypeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -684,7 +600,7 @@ public final class CoreServiceGrpc {
      */
     public void getVouchersType(org.archi.common.core.GetVoucherTypesReq request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GetVoucherTypesRes> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetVouchersTypeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -695,7 +611,7 @@ public final class CoreServiceGrpc {
      */
     public void getVouchers(org.archi.common.core.GetVouchersRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GetVouchersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetVouchersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -703,7 +619,7 @@ public final class CoreServiceGrpc {
      */
     public void getCampaigns(org.archi.common.core.GetCampaignsRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GetCampaignsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCampaignsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -711,7 +627,7 @@ public final class CoreServiceGrpc {
      */
     public void searchCampaign(org.archi.common.core.SearchCampaignRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.SearchCampaignResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchCampaignMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -719,7 +635,7 @@ public final class CoreServiceGrpc {
      */
     public void createCampaign(org.archi.common.core.CreateCampaignRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.core.CreateCampaignResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCampaignMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -727,7 +643,7 @@ public final class CoreServiceGrpc {
      */
     public void getCampaignsByBrandId(org.archi.common.core.GetCampaignsByBrandIdReq request,
         io.grpc.stub.StreamObserver<org.archi.common.core.GetCampaignsByBrandIdRes> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCampaignsByBrandIdMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -735,61 +651,59 @@ public final class CoreServiceGrpc {
      */
     public void updateCampaign(org.archi.common.core.UpdateCampaignReq request,
         io.grpc.stub.StreamObserver<org.archi.common.core.UpdateCampaignRes> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCampaignMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
+   * A stub to allow clients to do synchronous rpc calls to service CoreService.
    */
-  public static final class CoreServiceBlockingStub extends io.grpc.stub.AbstractStub<CoreServiceBlockingStub> {
-    private CoreServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private CoreServiceBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class CoreServiceBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<CoreServiceBlockingStub> {
+    private CoreServiceBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CoreServiceBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected CoreServiceBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CoreServiceBlockingStub(channel, callOptions);
     }
 
     /**
      */
     public org.archi.common.core.GenerateVoucherResponse generateVoucher(org.archi.common.core.GenerateVoucherRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateVoucherMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.CreateVoucherTypeResponse createVoucherType(org.archi.common.core.CreateVoucherTypeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateVoucherTypeMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.SearchVoucherResponse searchVoucher(org.archi.common.core.SearchRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchVoucherMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.SearchVoucherTypeResponse searchVoucherType(org.archi.common.core.SearchRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchVoucherTypeMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.UpdateVoucherTypeRes updateVoucherType(org.archi.common.core.UpdateVoucherTypeReq request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateVoucherTypeMethod(), getCallOptions(), request);
     }
 
@@ -799,7 +713,7 @@ public final class CoreServiceGrpc {
      * </pre>
      */
     public org.archi.common.core.GetVoucherTypesRes getVouchersType(org.archi.common.core.GetVoucherTypesReq request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetVouchersTypeMethod(), getCallOptions(), request);
     }
 
@@ -809,61 +723,59 @@ public final class CoreServiceGrpc {
      * </pre>
      */
     public org.archi.common.core.GetVouchersResponse getVouchers(org.archi.common.core.GetVouchersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetVouchersMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.GetCampaignsResponse getCampaigns(org.archi.common.core.GetCampaignsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCampaignsMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.SearchCampaignResponse searchCampaign(org.archi.common.core.SearchCampaignRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchCampaignMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.CreateCampaignResponse createCampaign(org.archi.common.core.CreateCampaignRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCampaignMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.GetCampaignsByBrandIdRes getCampaignsByBrandId(org.archi.common.core.GetCampaignsByBrandIdReq request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCampaignsByBrandIdMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.core.UpdateCampaignRes updateCampaign(org.archi.common.core.UpdateCampaignReq request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCampaignMethod(), getCallOptions(), request);
     }
   }
 
   /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CoreService.
    */
-  public static final class CoreServiceFutureStub extends io.grpc.stub.AbstractStub<CoreServiceFutureStub> {
-    private CoreServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private CoreServiceFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class CoreServiceFutureStub
+      extends io.grpc.stub.AbstractFutureStub<CoreServiceFutureStub> {
+    private CoreServiceFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CoreServiceFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected CoreServiceFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CoreServiceFutureStub(channel, callOptions);
     }
 
@@ -871,7 +783,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GenerateVoucherResponse> generateVoucher(
         org.archi.common.core.GenerateVoucherRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateVoucherMethod(), getCallOptions()), request);
     }
 
@@ -879,7 +791,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.CreateVoucherTypeResponse> createVoucherType(
         org.archi.common.core.CreateVoucherTypeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateVoucherTypeMethod(), getCallOptions()), request);
     }
 
@@ -887,7 +799,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.SearchVoucherResponse> searchVoucher(
         org.archi.common.core.SearchRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchVoucherMethod(), getCallOptions()), request);
     }
 
@@ -895,7 +807,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.SearchVoucherTypeResponse> searchVoucherType(
         org.archi.common.core.SearchRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchVoucherTypeMethod(), getCallOptions()), request);
     }
 
@@ -903,7 +815,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.UpdateVoucherTypeRes> updateVoucherType(
         org.archi.common.core.UpdateVoucherTypeReq request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateVoucherTypeMethod(), getCallOptions()), request);
     }
 
@@ -914,7 +826,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetVoucherTypesRes> getVouchersType(
         org.archi.common.core.GetVoucherTypesReq request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetVouchersTypeMethod(), getCallOptions()), request);
     }
 
@@ -925,7 +837,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetVouchersResponse> getVouchers(
         org.archi.common.core.GetVouchersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetVouchersMethod(), getCallOptions()), request);
     }
 
@@ -933,7 +845,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetCampaignsResponse> getCampaigns(
         org.archi.common.core.GetCampaignsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCampaignsMethod(), getCallOptions()), request);
     }
 
@@ -941,7 +853,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.SearchCampaignResponse> searchCampaign(
         org.archi.common.core.SearchCampaignRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchCampaignMethod(), getCallOptions()), request);
     }
 
@@ -949,7 +861,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.CreateCampaignResponse> createCampaign(
         org.archi.common.core.CreateCampaignRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCampaignMethod(), getCallOptions()), request);
     }
 
@@ -957,7 +869,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetCampaignsByBrandIdRes> getCampaignsByBrandId(
         org.archi.common.core.GetCampaignsByBrandIdReq request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCampaignsByBrandIdMethod(), getCallOptions()), request);
     }
 
@@ -965,7 +877,7 @@ public final class CoreServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.UpdateCampaignRes> updateCampaign(
         org.archi.common.core.UpdateCampaignReq request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCampaignMethod(), getCallOptions()), request);
     }
   }
@@ -988,10 +900,10 @@ public final class CoreServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CoreServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CoreServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1064,6 +976,95 @@ public final class CoreServiceGrpc {
     }
   }
 
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+          getGenerateVoucherMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GenerateVoucherRequest,
+              org.archi.common.core.GenerateVoucherResponse>(
+                service, METHODID_GENERATE_VOUCHER)))
+        .addMethod(
+          getCreateVoucherTypeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.CreateVoucherTypeRequest,
+              org.archi.common.core.CreateVoucherTypeResponse>(
+                service, METHODID_CREATE_VOUCHER_TYPE)))
+        .addMethod(
+          getSearchVoucherMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.SearchRequest,
+              org.archi.common.core.SearchVoucherResponse>(
+                service, METHODID_SEARCH_VOUCHER)))
+        .addMethod(
+          getSearchVoucherTypeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.SearchRequest,
+              org.archi.common.core.SearchVoucherTypeResponse>(
+                service, METHODID_SEARCH_VOUCHER_TYPE)))
+        .addMethod(
+          getUpdateVoucherTypeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.UpdateVoucherTypeReq,
+              org.archi.common.core.UpdateVoucherTypeRes>(
+                service, METHODID_UPDATE_VOUCHER_TYPE)))
+        .addMethod(
+          getGetVouchersTypeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetVoucherTypesReq,
+              org.archi.common.core.GetVoucherTypesRes>(
+                service, METHODID_GET_VOUCHERS_TYPE)))
+        .addMethod(
+          getGetVouchersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetVouchersRequest,
+              org.archi.common.core.GetVouchersResponse>(
+                service, METHODID_GET_VOUCHERS)))
+        .addMethod(
+          getGetCampaignsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetCampaignsRequest,
+              org.archi.common.core.GetCampaignsResponse>(
+                service, METHODID_GET_CAMPAIGNS)))
+        .addMethod(
+          getSearchCampaignMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.SearchCampaignRequest,
+              org.archi.common.core.SearchCampaignResponse>(
+                service, METHODID_SEARCH_CAMPAIGN)))
+        .addMethod(
+          getCreateCampaignMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.CreateCampaignRequest,
+              org.archi.common.core.CreateCampaignResponse>(
+                service, METHODID_CREATE_CAMPAIGN)))
+        .addMethod(
+          getGetCampaignsByBrandIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetCampaignsByBrandIdReq,
+              org.archi.common.core.GetCampaignsByBrandIdRes>(
+                service, METHODID_GET_CAMPAIGNS_BY_BRAND_ID)))
+        .addMethod(
+          getUpdateCampaignMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.UpdateCampaignReq,
+              org.archi.common.core.UpdateCampaignRes>(
+                service, METHODID_UPDATE_CAMPAIGN)))
+        .build();
+  }
+
   private static abstract class CoreServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     CoreServiceBaseDescriptorSupplier() {}
@@ -1087,9 +1088,9 @@ public final class CoreServiceGrpc {
   private static final class CoreServiceMethodDescriptorSupplier
       extends CoreServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CoreServiceMethodDescriptorSupplier(String methodName) {
+    CoreServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -16,7 +16,6 @@ import java.io.IOException;
 public class AuthenticationFilter extends OncePerRequestFilter {
   private final AuthService authService;
 
-
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
           throws ServletException, IOException {
     String token = resolveToken(request);
@@ -33,7 +32,6 @@ public class AuthenticationFilter extends OncePerRequestFilter {
           return;
         }
       } catch (Exception e) {
-        e.printStackTrace();
         SecurityContextHolder.clearContext();
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid token");
         return;

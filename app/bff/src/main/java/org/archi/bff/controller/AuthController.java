@@ -76,43 +76,45 @@ public class AuthController {
     return ResponseEntity.ok(responseData);
   }
 
-  @GetMapping(value = "/account-info")
-  public ResponseEntity<ResponseData> getAccountInfo() {
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    long accountId = Long.parseLong(auth.getName());
-    System.out.println("Account ID: " + accountId);
-    ResponseData response = authService.getAccountInfo(accountId);
-    return ResponseEntity.ok(response);
-  }
-
-  @PreAuthorize("hasRole('BRAND')")
-  @GetMapping(value = "/brand-info")
   /// done
-  public ResponseEntity<ResponseData> getBrandInfo() {
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    long accountId = Long.parseLong(auth.getName());
-    ResponseData response = authService.getBrandInfo(accountId);
-    return ResponseEntity.ok(response);
-  }
-
-  @PreAuthorize("hasRole('PLAYER')")
-  @GetMapping(value = "/player-info")
-  ///  done
-  public ResponseEntity<ResponseData> getPlayerInfo() {
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    long accountId = Long.parseLong(auth.getName());
-    ResponseData response = authService.getPlayerInfo(accountId);
-    return ResponseEntity.ok(response);
+  @GetMapping(value = "/accounts/profile")
+  public ResponseEntity<ResponseData> getProfile() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String accountId = authentication.getName();
+    ResponseData responseData = authService.getAccountInfo(Long.parseLong(accountId));
+    return ResponseEntity.ok(responseData);
   }
 
 
+  /// done
   @PreAuthorize("hasRole('ADMIN')")
   @PostMapping(value = "/accounts")
-  public ResponseEntity<ResponseData> createAccount(@RequestBody RegisterRequest request) {
+  public ResponseEntity<ResponseData> createAccount(@RequestBody RegisterRequest request) { /// done
     ResponseData responseData = authService.createAccount(request);
     return ResponseEntity.ok(responseData);
   }
 
+  /// done
+  @PreAuthorize("hasRole('ADMIN')")
+  @PatchMapping(value = "/accounts/{accountId}", consumes = "application/json") /// done
+  public ResponseEntity<ResponseData> updateAccount(@PathVariable String accountId, @RequestBody UpdatedAccount request) {
+    ResponseData responseData = authService.updateAccount(Long.parseLong(accountId), request);
+    return ResponseEntity.ok(responseData);
+  }
+
+
+
+  /// done
+  @PreAuthorize("hasRole('ADMIN')")
+  @GetMapping(value = "/accounts/{accountId}")
+  public ResponseEntity<ResponseData> getAccountInfo(@PathVariable String accountId) {
+    ResponseData responseData = authService.getAccountInfo(Long.parseLong(accountId));
+    return ResponseEntity.ok(responseData);
+  }
+
+
+
+  /// done
   @PreAuthorize("hasRole('ADMIN')")
   @DeleteMapping(value = "/accounts/{accountId}")
   public ResponseEntity<ResponseData> deleteAccount(@PathVariable String accountId) {

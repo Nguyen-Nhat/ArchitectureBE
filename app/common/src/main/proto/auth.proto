@@ -16,6 +16,7 @@ service AuthService {
   rpc GetAccountInfo(GetAccountInfoRequest) returns(GetAccountInfoResponse);
   rpc PostCreateAccount(PostCreateAccountRequest) returns(PostCreateAccountResponse);
   rpc DeleteAccount(DeleteAccountRequest) returns(DeleteAccountResponse);
+  rpc PutUpdateAccount(PutUpdateAccountRequest) returns(PutUpdateAccountResponse);
 }
 
 message PostCreateAccountRequest {
@@ -31,11 +32,10 @@ message PostCreateAccountResponse {
 }
 
 message PutUpdateAccountRequest {
-  string username = 1;
-  string email = 2;
-  string phoneNumber = 3;
-  string role = 4;
-  bool isActive = 5;
+  int64 id = 1;
+  optional string email = 2;
+  optional string phoneNumber = 3;
+  optional bool isActive = 5;
 }
 message PutUpdateAccountResponse {
   int64 status = 1;
