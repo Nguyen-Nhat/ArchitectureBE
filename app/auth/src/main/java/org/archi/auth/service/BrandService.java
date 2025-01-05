@@ -23,4 +23,8 @@ public class BrandService {
   public Brand findByAccount(Account account) {
     return brandRepo.findByAccount(account).orElse(null);
   }
+
+  public void deleteBrandByAccount(Account account) {
+    brandRepo.deleteBrandByAccount(account);
+  }
 }

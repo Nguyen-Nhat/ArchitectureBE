@@ -49,4 +49,12 @@ public class AuthAdapter {
   public DeleteAccountResponse deleteAccount(DeleteAccountRequest request) {
     return authServiceClient.deleteAccount(request);
   }
+
+  public PostCreateAccountResponse postCreateAccount(PostCreateAccountRequest postRequest) {
+    return authServiceClient.postCreateAccount(postRequest);
+  }
+
+  public PutUpdateAccountResponse putUpdateAccount(PutUpdateAccountRequest putRequest) {
+    return authServiceClient.putUpdateAccount(putRequest);
+  }
 }
