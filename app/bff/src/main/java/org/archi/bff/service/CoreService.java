@@ -1,8 +1,13 @@
 package org.archi.bff.service;
 
 import lombok.RequiredArgsConstructor;
+import org.archi.bff.adapter.AuthAdapter;
 import org.archi.bff.adapter.CoreAdapter;
 import org.archi.bff.response.ResponseData;
+import org.archi.common.auth.GetBrandInfoRequest;
+import org.archi.common.auth.GetBrandInfoResponse;
+import org.archi.common.auth.GetBrandProfileRequest;
+import org.archi.common.auth.GetBrandProfileResponse;
 import org.archi.common.core.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +17,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CoreService {
     private final CoreAdapter coreAdapter;
+    private final AuthAdapter authAdapter;
 
     public ResponseEntity<ResponseData> getVouchers(Long playerId) {
         try {
@@ -135,15 +141,23 @@ public class CoreService {
         }
     }
     public ResponseEntity<ResponseData> createCampaign(
-            Long brandID,
+            long accountId,
             org.archi.bff.request.CreateCampaignRequest requestDTO) {
         try {
+            GetBrandProfileRequest getBrandInfoReq = GetBrandProfileRequest.newBuilder()
+                    .setId(accountId)
+                    .build();
+            GetBrandProfileResponse getBrandInfoRes = authAdapter.getBrandProfile(getBrandInfoReq);
+            long brandId = getBrandInfoRes.getId();
+
             CreateCampaignRequest request = CreateCampaignRequest.newBuilder()
-                    .setBrandId(brandID)
+                    .setBrandId(brandId)
                     .setEndDate(requestDTO.getEndDate())
                     .setStartDate(requestDTO.getStartDate())
                     .setName(requestDTO.getName())
                     .setImageUrl(requestDTO.getImageUrl())
+                    .setDescription(requestDTO.getDescription())
+                    .setStatus(requestDTO.getStatus())
                     .build();
             CreateCampaignResponse response = coreAdapter.createCampaign(request);
             ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response);

@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS campaign (
     description VARCHAR(255),
     start_date VARCHAR(255),
     end_date VARCHAR(255),
-    status VARCHAR(255)
+    status VARCHAR(255),
+    brand_id BIGINT
 );
 
 --- Voucher Type ---

@@ -20,7 +20,7 @@ public class Voucher {
     @Column(nullable = false, updatable = false)
     private LocalDateTime expiredDate;
     private String status;
-    @Column(unique = true, nullable = true)
+    @Column(unique = true, nullable = true, name = "qr_code")
     private String QRCode;
     private Long playerId;
     @ManyToOne

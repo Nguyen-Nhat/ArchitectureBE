@@ -137,6 +137,7 @@ message CreateCampaignRequest {
   string endDate = 4;
   string status = 5;
   int64 brandId = 6;
+  string description = 7;
 }
 
 message CreateCampaignResponse {
@@ -156,6 +157,7 @@ message UpdateCampaignReq {
   string newStartDate = 4;
   string newEndDate = 5;
   string newStatus = 6;
+  string newDescription = 7;
 }
 message UpdateCampaignRes {
   Campaign campaign = 1;

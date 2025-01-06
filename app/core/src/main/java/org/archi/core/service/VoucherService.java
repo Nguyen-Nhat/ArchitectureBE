@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.archi.common.core.*;
 import org.archi.core.entity.Voucher;
 import org.archi.core.entity.VoucherType;
+import org.archi.core.exception.InvalidArgumentException;
 import org.archi.core.repo.VoucherRepo;
 import org.archi.core.repo.VoucherTypeRepo;
 import org.springframework.stereotype.Service;
@@ -59,6 +60,7 @@ public class VoucherService {
                 .build();
     }
 
+    // OK
     public CreateVoucherTypeResponse createVoucherType(CreateVoucherTypeRequest requestDTO) {
         // Check if a voucher type with the same name already exists for the brand
         if (voucherTypeRepo.existsByNameAndBrandId(requestDTO.getName(), requestDTO.getBrandId())) {
@@ -118,6 +120,7 @@ public class VoucherService {
                 .build();
     }
 
+    // OK
     public SearchVoucherTypeResponse searchVoucherType(SearchRequest request) {
         String term = request.getTerm();
 
@@ -140,22 +143,24 @@ public class VoucherService {
                 .build();
     }
 
+    // OK
     public UpdateVoucherTypeRes updateVoucherType(UpdateVoucherTypeReq request) {
         VoucherType voucherType = voucherTypeRepo.findById(request.getVoucherId())
-                .orElseThrow(() -> new IllegalArgumentException("Voucher type not found for ID: " + request.getVoucherId()));
+                .orElseThrow(() -> new InvalidArgumentException("Voucher type not found for ID: " + request.getVoucherId()));
 
         // Verify that the brand ID matches
         if (!voucherType.getBrandId().equals(request.getBrandId())) {
-            throw new IllegalArgumentException("Brand does not own this voucher type.");
+            throw new InvalidArgumentException("Brand does not own this voucher type.");
         }
 
         if (request.getName() != null && !request.getName().isBlank()) {
             voucherType.setName(request.getName());
         }
-        if (request.getDescription() != null) {
+        request.getDescription();
+        if (!request.getDescription().isEmpty()) {
             voucherType.setDescription(request.getDescription());
         }
-        if (request.getValue() != 0) {
+        if (request.getValue() > 0) {
             voucherType.setValue(request.getValue());
         }
 

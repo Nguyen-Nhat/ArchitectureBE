@@ -1,13 +1,17 @@
 package org.archi.core.grpc;
 
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.archi.common.core.*;
+import org.archi.core.exception.InvalidArgumentException;
+import org.archi.core.exception.ResourceNotFoundException;
 import org.archi.core.service.CampaignService;
 import org.archi.core.service.VoucherService;
 
 import java.time.LocalDateTime;
+import java.util.Formatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -62,6 +66,11 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 			UpdateVoucherTypeRes response = voucherService.updateVoucherType(request);
 			responseObserver.onNext(response);
 			responseObserver.onCompleted();
+		} catch (InvalidArgumentException ex) {
+			responseObserver.onError(Status.INVALID_ARGUMENT
+					.withDescription(ex.getMessage())
+					.withCause(ex)
+					.asRuntimeException());
 		} catch (Exception ex) {
 			responseObserver.onError(ex);
 		}
@@ -94,8 +103,8 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 	public void getCampaigns(GetCampaignsRequest request, StreamObserver<GetCampaignsResponse> responseObserver) {
 		try {
 			// Parse startDate and endDate from the request
-			LocalDateTime startDate = LocalDateTime.parse(request.getStartDate());
-			LocalDateTime endDate = LocalDateTime.parse(request.getEndDate());
+			LocalDateTime startDate = LocalDateTime.parse(request.getStartDate() + "T00:00:00");
+			LocalDateTime endDate = LocalDateTime.parse(request.getEndDate() + "T00:00:00");
 
 			// Fetch campaigns from the service
 			List<org.archi.core.entity.Campaign> campaigns = campaignService.getCampaignsByDateRange(startDate, endDate);
@@ -109,6 +118,7 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 							.setStartDate(campaign.getStartDate().toString())
 							.setEndDate(campaign.getEndDate() != null ? campaign.getEndDate().toString() : "")
 							.setStatus(campaign.getStatus() != null ? campaign.getStatus() : "")
+							.setDescription(campaign.getDescription() != null ? campaign.getDescription() : "")
 							.build()
 			).collect(Collectors.toList());
 
@@ -125,17 +135,31 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 
 	@Override
 	public void searchCampaign(SearchCampaignRequest request, StreamObserver<SearchCampaignResponse> responseObserver) {
-		List<Campaign> campaigns = campaignService.searchCampaigns(request.getTerm());
-		responseObserver.onNext(campaigns.isEmpty() ? SearchCampaignResponse.getDefaultInstance() : SearchCampaignResponse.newBuilder().addAllCampaigns(campaigns).build());
-		responseObserver.onCompleted();
+		try {
+			List<org.archi.common.core.Campaign> campaigns = campaignService.searchCampaigns(request.getTerm());
+
+			if (campaigns.isEmpty()) {
+				System.out.println("No campaigns found for term: " + request.getTerm());
+			}
+
+			responseObserver.onNext(campaigns.isEmpty()
+					? SearchCampaignResponse.getDefaultInstance()
+					: SearchCampaignResponse.newBuilder()
+						.addAllCampaigns(campaigns)
+						.build());
+			responseObserver.onCompleted();
+		} catch (Exception e) {
+			responseObserver.onError(Status.INTERNAL
+					.withDescription("An error occurred while searching for campaigns.")
+					.withCause(e)
+					.asRuntimeException());
+		}
 	}
 
 	@Override
 	public void createCampaign(CreateCampaignRequest request, StreamObserver<CreateCampaignResponse> responseObserver) {
 		try {
 			Campaign c = campaignService.createCampaign(request);
-
-            c.getImageUrl();
             CreateCampaignResponse response = CreateCampaignResponse.newBuilder()
 					.setCampaign(Campaign.newBuilder()
 							.setId(c.getId())
@@ -144,13 +168,30 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 							.setStartDate(c.getStartDate())
 							.setEndDate( c.getEndDate())
 							.setStatus(c.getStatus())
+							.setDescription(c.getDescription())
 							.build())
 					.build();
 
 			responseObserver.onNext(response);
 			responseObserver.onCompleted();
+		}  catch (InvalidArgumentException e) {
+			// Example of specific error handling
+			responseObserver.onError(Status.INVALID_ARGUMENT
+					.withDescription("Invalid input provided: " + e.getMessage())
+					.withCause(e)
+					.asRuntimeException());
+		} catch (ResourceNotFoundException e) {
+			// Resource not found error
+			responseObserver.onError(Status.NOT_FOUND
+					.withDescription("Campaign resource not found: " + e.getMessage())
+					.withCause(e)
+					.asRuntimeException());
 		} catch (Exception e) {
-			responseObserver.onError(e);
+			// General error handling
+			responseObserver.onError(Status.UNKNOWN
+					.withDescription("An unexpected error occurred: " + e.getMessage())
+					.withCause(e)
+					.asRuntimeException());
 		}
 	}
 
@@ -188,44 +229,56 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 	@Override
 	public void updateCampaign(UpdateCampaignReq request, StreamObserver<UpdateCampaignRes> responseObserver) {
 		try {
-			// Extract campaign details from the request
 			long campaignId = request.getCampaignId();
-			String name = request.getNewName();
-			String imageUrl = request.getNewImageUrl();
-			LocalDateTime startDate = LocalDateTime.parse(request.getNewStartDate());
+			String name = request.getNewName().isEmpty()? null : request.getNewName();
+			String imageUrl = request.getNewImageUrl().isEmpty()? null : request.getNewImageUrl();
+			LocalDateTime startDate = request.getNewStartDate().isEmpty()? null: LocalDateTime.parse(request.getNewStartDate());
 			LocalDateTime endDate = request.getNewEndDate().isEmpty() ? null : LocalDateTime.parse(request.getNewEndDate());
-			String status = request.getNewStatus();
+			String status = request.getNewStatus().isEmpty()? null : request.getNewStatus();
+			String description = request.getNewDescription().isEmpty()? null : request.getNewDescription();
 
-			// Create a new Campaign with given information
+			// Validate that the start date is not after the end date
+			if (endDate != null && startDate != null && startDate.isAfter(endDate)) {
+				responseObserver.onError(Status.INVALID_ARGUMENT
+						.withDescription("Start date cannot be after end date.")
+						.asRuntimeException());
+				return;
+			}
+
 			org.archi.core.entity.Campaign campaignToUpdate = new org.archi.core.entity.Campaign();
 			campaignToUpdate.setName(name);
 			campaignToUpdate.setImageUrl(imageUrl);
 			campaignToUpdate.setStartDate(startDate);
 			campaignToUpdate.setEndDate(endDate);
 			campaignToUpdate.setStatus(status);
-			if (endDate != null && startDate.isAfter(endDate)) {
-				responseObserver.onError(new IllegalArgumentException("Start date cannot be after end date."));
-			}
+			campaignToUpdate.setDescription(description);
 
-			// Call the service to update the campaign
 			org.archi.core.entity.Campaign updatedCampaign = campaignService.updateCampaign(campaignId, campaignToUpdate);
 
-			// Build and send the response
 			UpdateCampaignRes response = UpdateCampaignRes.newBuilder()
 					.setCampaign(Campaign.newBuilder()
 							.setId(updatedCampaign.getId())
 							.setName(updatedCampaign.getName())
 							.setImageUrl(updatedCampaign.getImageUrl() != null ? updatedCampaign.getImageUrl() : "")
-							.setStartDate(updatedCampaign.getStartDate().toString())
+							.setStartDate(updatedCampaign.getStartDate() != null? updatedCampaign.getStartDate().toString(): "")
 							.setEndDate(updatedCampaign.getEndDate() != null ? updatedCampaign.getEndDate().toString() : "")
 							.setStatus(updatedCampaign.getStatus() != null ? updatedCampaign.getStatus() : "")
+							.setDescription(updatedCampaign.getDescription() != null ? updatedCampaign.getDescription(): "")
 							.build())
 					.build();
 
 			responseObserver.onNext(response);
 			responseObserver.onCompleted();
+		} catch (InvalidArgumentException e) {
+			responseObserver.onError(Status.INVALID_ARGUMENT
+					.withDescription("Invalid input provided: " + e.getMessage())
+					.withCause(e)
+					.asRuntimeException());
 		} catch (Exception e) {
-			responseObserver.onError(e);
+			responseObserver.onError(Status.INTERNAL
+					.withDescription("An unexpected error occurred: " + e.getMessage())
+					.withCause(e)
+					.asRuntimeException());
 		}
 	}
 

@@ -18,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/core")
@@ -88,12 +89,36 @@ public class CoreController {
         return coreService.searchCampaign(term);
     }
 
-    @PostMapping("/campaigns/create")
+    /*
+        API to create a new campaign
+        Request body:
+        {
+            "name": "Campaign 1"
+            "imageUrl": "campaign.url"
+            "description": "c des"
+            "startDate": "2025-01-01T12:30:00"
+            "endDate": "2025-01-30T12:30:00"
+            "status": "On going"
+        }
+    * */
     @PreAuthorize("hasRole('BRAND')")
+    @PostMapping("/campaigns/create")
     public ResponseEntity<ResponseData> createCampaign(@RequestBody CreateCampaignRequest request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Long brandId = Long.parseLong(auth.getName());
-        return coreService.createCampaign(brandId, request);
+        long accountId = Long.parseLong(auth.getName());
+        return coreService.createCampaign(accountId, request);
+    }
+
+    @PreAuthorize("hasRole('BRAND')")
+    @PostMapping("/test")
+    public ResponseEntity<ResponseData> testController() {
+        return ResponseEntity.ok(new ResponseData(200, "ok", "none"));
+    }
+
+    @PreAuthorize("hasRole('BRAND')")
+    @GetMapping("/test")
+    public ResponseEntity<ResponseData> testController2() {
+        return ResponseEntity.ok(new ResponseData(200, "ok", "none"));
     }
 
     @GetMapping("/campaigns/by-brand-id")

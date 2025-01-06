@@ -1,4 +1,4 @@
-package org.archi.auth.aspect;
+package org.archi.core.aspect;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,12 +17,9 @@ import java.time.Instant;
 @Aspect
 @Component
 public class LoggerAspect {
-
-  // Một @Pointcut thực hiện việc gom các nhóm lại với nhau. Advice sẽ làm việc với các nhóm đã match với @Pointcut này.
-  @Pointcut("execution(* org.archi.auth..*.*(..))")
+  @Pointcut("execution(* org.archi.core..*.*(..))")
   public void springBeanPointCut() {
   }
-
 
   @Around(value = "springBeanPointCut()")
   public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
@@ -36,7 +33,6 @@ public class LoggerAspect {
     return returnObj;
   }
 
-  // Phương thức này giúp Developer nắm rõ hơn về lỗi đã được throw ra trước đó. Chỉ có tác dụng với Dev, User không nhận được thông báo này.
   @AfterThrowing(value = "springBeanPointCut()", throwing = "e")
   public void logException(JoinPoint joinPoint, Exception e) {
     e.printStackTrace();
