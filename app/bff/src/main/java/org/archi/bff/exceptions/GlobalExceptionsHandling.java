@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionsHandling {
   @ExceptionHandler({NestedRuntimeException.class})
   public ResponseEntity<ExceptionResponse> handleNestedRuntimeException(NestedRuntimeException exception) {
-    return ResponseEntity.ok().body(new ExceptionResponse(HttpStatus.BAD_REQUEST.value(), "Invalid input params", null));
+    return ResponseEntity.ok().body(new ExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),  "Invalid input params", null));
   }
 
 
   @ExceptionHandler({RuntimeException.class})
   public ResponseEntity<ExceptionResponse> handleRuntimeException(RuntimeException exception) {
-    return ResponseEntity.ok().body(new ExceptionResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage(),null));
+    return ResponseEntity.ok().body(new ExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),  exception.getMessage(),null));
   }
 }

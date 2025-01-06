@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import org.archi.auth.exceptions.ResourceNotFoundException;
 import org.archi.auth.model.Account;
 import org.archi.auth.repo.AccountRepo;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -46,5 +49,13 @@ public class AccountService {
 
   public void delete(Account account) {
     accountRepo.delete(account);
+  }
+
+  public Page<Account> findAll(Specification<Account> specification, Pageable pageable) {
+    try {
+      return accountRepo.findAll(specification, pageable);
+    } catch (Exception e) {
+      throw new RuntimeException("Error while fetching accounts");
+    }
   }
 }

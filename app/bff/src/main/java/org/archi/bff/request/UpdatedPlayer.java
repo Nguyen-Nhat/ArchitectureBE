@@ -1,6 +1,5 @@
-package org.archi.bff.response;
+package org.archi.bff.request;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,14 +7,10 @@ import java.sql.Date;
 
 @Getter
 @Setter
-@Builder
-public class PlayerInfo {
-  private long status;
-  private String message;
-  private long id;
+public class UpdatedPlayer {
   private String name;
   private String avatar;
-  private Date birthDate;
+  private String birthDate;
   private String gender;
   private String facebook;
 }
