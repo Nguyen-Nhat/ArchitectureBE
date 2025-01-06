@@ -16,8 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetAccountsRequest() {
-    sort_ = "";
-    username_ = "";
   }
 
   @java.lang.Override
@@ -45,7 +43,6 @@ private static final long serialVersionUID = 0L;
             org.archi.common.auth.GetAccountsRequest.class, org.archi.common.auth.GetAccountsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PAGE_FIELD_NUMBER = 1;
   private int page_;
   /**
@@ -69,95 +66,55 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SORT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sort_;
+  private com.google.protobuf.StringValue sort_;
   /**
-   * <code>optional string sort = 3;</code>
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    * @return Whether the sort field is set.
    */
   @java.lang.Override
   public boolean hasSort() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return sort_ != null;
   }
   /**
-   * <code>optional string sort = 3;</code>
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    * @return The sort.
    */
   @java.lang.Override
-  public java.lang.String getSort() {
-    java.lang.Object ref = sort_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sort_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getSort() {
+    return sort_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : sort_;
   }
   /**
-   * <code>optional string sort = 3;</code>
-   * @return The bytes for sort.
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSortBytes() {
-    java.lang.Object ref = sort_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      sort_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getSortOrBuilder() {
+    return getSort();
   }
 
   public static final int USERNAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object username_;
+  private com.google.protobuf.StringValue username_;
   /**
-   * <code>optional string username = 4;</code>
+   * <code>.google.protobuf.StringValue username = 4;</code>
    * @return Whether the username field is set.
    */
   @java.lang.Override
   public boolean hasUsername() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return username_ != null;
   }
   /**
-   * <code>optional string username = 4;</code>
+   * <code>.google.protobuf.StringValue username = 4;</code>
    * @return The username.
    */
   @java.lang.Override
-  public java.lang.String getUsername() {
-    java.lang.Object ref = username_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      username_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getUsername() {
+    return username_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : username_;
   }
   /**
-   * <code>optional string username = 4;</code>
-   * @return The bytes for username.
+   * <code>.google.protobuf.StringValue username = 4;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUsernameBytes() {
-    java.lang.Object ref = username_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      username_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getUsernameOrBuilder() {
+    return getUsername();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -180,11 +137,11 @@ private static final long serialVersionUID = 0L;
     if (size_ != 0) {
       output.writeInt32(2, size_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sort_);
+    if (sort_ != null) {
+      output.writeMessage(3, getSort());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, username_);
+    if (username_ != null) {
+      output.writeMessage(4, getUsername());
     }
     getUnknownFields().writeTo(output);
   }
@@ -203,11 +160,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, size_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sort_);
+    if (sort_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getSort());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, username_);
+    if (username_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getUsername());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -393,10 +352,18 @@ private static final long serialVersionUID = 0L;
 
       size_ = 0;
 
-      sort_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      username_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+      if (sortBuilder_ == null) {
+        sort_ = null;
+      } else {
+        sort_ = null;
+        sortBuilder_ = null;
+      }
+      if (usernameBuilder_ == null) {
+        username_ = null;
+      } else {
+        username_ = null;
+        usernameBuilder_ = null;
+      }
       return this;
     }
 
@@ -423,19 +390,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.archi.common.auth.GetAccountsRequest buildPartial() {
       org.archi.common.auth.GetAccountsRequest result = new org.archi.common.auth.GetAccountsRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.page_ = page_;
       result.size_ = size_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (sortBuilder_ == null) {
+        result.sort_ = sort_;
+      } else {
+        result.sort_ = sortBuilder_.build();
       }
-      result.sort_ = sort_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
+      if (usernameBuilder_ == null) {
+        result.username_ = username_;
+      } else {
+        result.username_ = usernameBuilder_.build();
       }
-      result.username_ = username_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -491,14 +457,10 @@ private static final long serialVersionUID = 0L;
         setSize(other.getSize());
       }
       if (other.hasSort()) {
-        bitField0_ |= 0x00000001;
-        sort_ = other.sort_;
-        onChanged();
+        mergeSort(other.getSort());
       }
       if (other.hasUsername()) {
-        bitField0_ |= 0x00000002;
-        username_ = other.username_;
-        onChanged();
+        mergeUsername(other.getUsername());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -537,13 +499,17 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 16
             case 26: {
-              sort_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              input.readMessage(
+                  getSortFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
               break;
             } // case 26
             case 34: {
-              username_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              input.readMessage(
+                  getUsernameFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
               break;
             } // case 34
             default: {
@@ -561,7 +527,6 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
-    private int bitField0_;
 
     private int page_ ;
     /**
@@ -625,170 +590,242 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object sort_ = "";
+    private com.google.protobuf.StringValue sort_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> sortBuilder_;
     /**
-     * <code>optional string sort = 3;</code>
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      * @return Whether the sort field is set.
      */
     public boolean hasSort() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return sortBuilder_ != null || sort_ != null;
     }
     /**
-     * <code>optional string sort = 3;</code>
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      * @return The sort.
      */
-    public java.lang.String getSort() {
-      java.lang.Object ref = sort_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sort_ = s;
-        return s;
+    public com.google.protobuf.StringValue getSort() {
+      if (sortBuilder_ == null) {
+        return sort_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : sort_;
       } else {
-        return (java.lang.String) ref;
+        return sortBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string sort = 3;</code>
-     * @return The bytes for sort.
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getSortBytes() {
-      java.lang.Object ref = sort_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sort_ = b;
-        return b;
+    public Builder setSort(com.google.protobuf.StringValue value) {
+      if (sortBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sort_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        sortBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string sort = 3;</code>
-     * @param value The sort to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      */
     public Builder setSort(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-      sort_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (sortBuilder_ == null) {
+        sort_ = builderForValue.build();
+        onChanged();
+      } else {
+        sortBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string sort = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue sort = 3;</code>
+     */
+    public Builder mergeSort(com.google.protobuf.StringValue value) {
+      if (sortBuilder_ == null) {
+        if (sort_ != null) {
+          sort_ =
+            com.google.protobuf.StringValue.newBuilder(sort_).mergeFrom(value).buildPartial();
+        } else {
+          sort_ = value;
+        }
+        onChanged();
+      } else {
+        sortBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      */
     public Builder clearSort() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      sort_ = getDefaultInstance().getSort();
-      onChanged();
+      if (sortBuilder_ == null) {
+        sort_ = null;
+        onChanged();
+      } else {
+        sort_ = null;
+        sortBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string sort = 3;</code>
-     * @param value The bytes for sort to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      */
-    public Builder setSortBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      sort_ = value;
+    public com.google.protobuf.StringValue.Builder getSortBuilder() {
+      
       onChanged();
-      return this;
+      return getSortFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue sort = 3;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getSortOrBuilder() {
+      if (sortBuilder_ != null) {
+        return sortBuilder_.getMessageOrBuilder();
+      } else {
+        return sort_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : sort_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sort = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getSortFieldBuilder() {
+      if (sortBuilder_ == null) {
+        sortBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getSort(),
+                getParentForChildren(),
+                isClean());
+        sort_ = null;
+      }
+      return sortBuilder_;
     }
 
-    private java.lang.Object username_ = "";
+    private com.google.protobuf.StringValue username_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> usernameBuilder_;
     /**
-     * <code>optional string username = 4;</code>
+     * <code>.google.protobuf.StringValue username = 4;</code>
      * @return Whether the username field is set.
      */
     public boolean hasUsername() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return usernameBuilder_ != null || username_ != null;
     }
     /**
-     * <code>optional string username = 4;</code>
+     * <code>.google.protobuf.StringValue username = 4;</code>
      * @return The username.
      */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        username_ = s;
-        return s;
+    public com.google.protobuf.StringValue getUsername() {
+      if (usernameBuilder_ == null) {
+        return username_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : username_;
       } else {
-        return (java.lang.String) ref;
+        return usernameBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string username = 4;</code>
-     * @return The bytes for username.
+     * <code>.google.protobuf.StringValue username = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        username_ = b;
-        return b;
+    public Builder setUsername(com.google.protobuf.StringValue value) {
+      if (usernameBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        username_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        usernameBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string username = 4;</code>
-     * @param value The username to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue username = 4;</code>
      */
     public Builder setUsername(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-      username_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (usernameBuilder_ == null) {
+        username_ = builderForValue.build();
+        onChanged();
+      } else {
+        usernameBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string username = 4;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue username = 4;</code>
+     */
+    public Builder mergeUsername(com.google.protobuf.StringValue value) {
+      if (usernameBuilder_ == null) {
+        if (username_ != null) {
+          username_ =
+            com.google.protobuf.StringValue.newBuilder(username_).mergeFrom(value).buildPartial();
+        } else {
+          username_ = value;
+        }
+        onChanged();
+      } else {
+        usernameBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue username = 4;</code>
      */
     public Builder clearUsername() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      username_ = getDefaultInstance().getUsername();
-      onChanged();
+      if (usernameBuilder_ == null) {
+        username_ = null;
+        onChanged();
+      } else {
+        username_ = null;
+        usernameBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string username = 4;</code>
-     * @param value The bytes for username to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue username = 4;</code>
      */
-    public Builder setUsernameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
-      username_ = value;
+    public com.google.protobuf.StringValue.Builder getUsernameBuilder() {
+      
       onChanged();
-      return this;
+      return getUsernameFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue username = 4;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getUsernameOrBuilder() {
+      if (usernameBuilder_ != null) {
+        return usernameBuilder_.getMessageOrBuilder();
+      } else {
+        return username_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : username_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue username = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getUsernameFieldBuilder() {
+      if (usernameBuilder_ == null) {
+        usernameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getUsername(),
+                getParentForChildren(),
+                isClean());
+        username_ = null;
+      }
+      return usernameBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
