@@ -18,70 +18,62 @@ public interface UpdateBrandRequestOrBuilder extends
   long getId();
 
   /**
-   * <code>optional string name = 2;</code>
+   * <code>.google.protobuf.StringValue name = 2;</code>
    * @return Whether the name field is set.
    */
   boolean hasName();
   /**
-   * <code>optional string name = 2;</code>
+   * <code>.google.protobuf.StringValue name = 2;</code>
    * @return The name.
    */
-  java.lang.String getName();
+  com.google.protobuf.StringValue getName();
   /**
-   * <code>optional string name = 2;</code>
-   * @return The bytes for name.
+   * <code>.google.protobuf.StringValue name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.StringValueOrBuilder getNameOrBuilder();
 
   /**
-   * <code>optional string field = 3;</code>
+   * <code>.google.protobuf.StringValue field = 3;</code>
    * @return Whether the field field is set.
    */
   boolean hasField();
   /**
-   * <code>optional string field = 3;</code>
+   * <code>.google.protobuf.StringValue field = 3;</code>
    * @return The field.
    */
-  java.lang.String getField();
+  com.google.protobuf.StringValue getField();
   /**
-   * <code>optional string field = 3;</code>
-   * @return The bytes for field.
+   * <code>.google.protobuf.StringValue field = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getFieldBytes();
+  com.google.protobuf.StringValueOrBuilder getFieldOrBuilder();
 
   /**
-   * <code>optional string address = 4;</code>
+   * <code>.google.protobuf.StringValue address = 4;</code>
    * @return Whether the address field is set.
    */
   boolean hasAddress();
   /**
-   * <code>optional string address = 4;</code>
+   * <code>.google.protobuf.StringValue address = 4;</code>
    * @return The address.
    */
-  java.lang.String getAddress();
+  com.google.protobuf.StringValue getAddress();
   /**
-   * <code>optional string address = 4;</code>
-   * @return The bytes for address.
+   * <code>.google.protobuf.StringValue address = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getAddressBytes();
+  com.google.protobuf.StringValueOrBuilder getAddressOrBuilder();
 
   /**
-   * <code>optional string gps = 5;</code>
+   * <code>.google.protobuf.StringValue gps = 5;</code>
    * @return Whether the gps field is set.
    */
   boolean hasGps();
   /**
-   * <code>optional string gps = 5;</code>
+   * <code>.google.protobuf.StringValue gps = 5;</code>
    * @return The gps.
    */
-  java.lang.String getGps();
+  com.google.protobuf.StringValue getGps();
   /**
-   * <code>optional string gps = 5;</code>
-   * @return The bytes for gps.
+   * <code>.google.protobuf.StringValue gps = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getGpsBytes();
+  com.google.protobuf.StringValueOrBuilder getGpsOrBuilder();
 }

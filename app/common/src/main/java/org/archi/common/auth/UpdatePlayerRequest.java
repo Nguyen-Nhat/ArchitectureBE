@@ -16,11 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdatePlayerRequest() {
-    name_ = "";
-    avatar_ = "";
-    birthDate_ = "";
-    gender_ = "";
-    facebook_ = "";
   }
 
   @java.lang.Override
@@ -48,7 +43,6 @@ private static final long serialVersionUID = 0L;
             org.archi.common.auth.UpdatePlayerRequest.class, org.archi.common.auth.UpdatePlayerRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
@@ -65,233 +59,133 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+  private com.google.protobuf.StringValue name_;
   /**
-   * <code>optional string name = 2;</code>
+   * <code>.google.protobuf.StringValue name = 2;</code>
    * @return Whether the name field is set.
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return name_ != null;
   }
   /**
-   * <code>optional string name = 2;</code>
+   * <code>.google.protobuf.StringValue name = 2;</code>
    * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getName() {
+    return name_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : name_;
   }
   /**
-   * <code>optional string name = 2;</code>
-   * @return The bytes for name.
+   * <code>.google.protobuf.StringValue name = 2;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getNameOrBuilder() {
+    return getName();
   }
 
   public static final int AVATAR_FIELD_NUMBER = 3;
-  private volatile java.lang.Object avatar_;
+  private com.google.protobuf.StringValue avatar_;
   /**
-   * <code>optional string avatar = 3;</code>
+   * <code>.google.protobuf.StringValue avatar = 3;</code>
    * @return Whether the avatar field is set.
    */
   @java.lang.Override
   public boolean hasAvatar() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return avatar_ != null;
   }
   /**
-   * <code>optional string avatar = 3;</code>
+   * <code>.google.protobuf.StringValue avatar = 3;</code>
    * @return The avatar.
    */
   @java.lang.Override
-  public java.lang.String getAvatar() {
-    java.lang.Object ref = avatar_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      avatar_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getAvatar() {
+    return avatar_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : avatar_;
   }
   /**
-   * <code>optional string avatar = 3;</code>
-   * @return The bytes for avatar.
+   * <code>.google.protobuf.StringValue avatar = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getAvatarBytes() {
-    java.lang.Object ref = avatar_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      avatar_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getAvatarOrBuilder() {
+    return getAvatar();
   }
 
   public static final int BIRTHDATE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object birthDate_;
+  private com.google.protobuf.StringValue birthDate_;
   /**
-   * <code>optional string birthDate = 4;</code>
+   * <code>.google.protobuf.StringValue birthDate = 4;</code>
    * @return Whether the birthDate field is set.
    */
   @java.lang.Override
   public boolean hasBirthDate() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return birthDate_ != null;
   }
   /**
-   * <code>optional string birthDate = 4;</code>
+   * <code>.google.protobuf.StringValue birthDate = 4;</code>
    * @return The birthDate.
    */
   @java.lang.Override
-  public java.lang.String getBirthDate() {
-    java.lang.Object ref = birthDate_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      birthDate_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getBirthDate() {
+    return birthDate_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : birthDate_;
   }
   /**
-   * <code>optional string birthDate = 4;</code>
-   * @return The bytes for birthDate.
+   * <code>.google.protobuf.StringValue birthDate = 4;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBirthDateBytes() {
-    java.lang.Object ref = birthDate_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      birthDate_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getBirthDateOrBuilder() {
+    return getBirthDate();
   }
 
   public static final int GENDER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object gender_;
+  private com.google.protobuf.StringValue gender_;
   /**
-   * <code>optional string gender = 5;</code>
+   * <code>.google.protobuf.StringValue gender = 5;</code>
    * @return Whether the gender field is set.
    */
   @java.lang.Override
   public boolean hasGender() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return gender_ != null;
   }
   /**
-   * <code>optional string gender = 5;</code>
+   * <code>.google.protobuf.StringValue gender = 5;</code>
    * @return The gender.
    */
   @java.lang.Override
-  public java.lang.String getGender() {
-    java.lang.Object ref = gender_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      gender_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getGender() {
+    return gender_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : gender_;
   }
   /**
-   * <code>optional string gender = 5;</code>
-   * @return The bytes for gender.
+   * <code>.google.protobuf.StringValue gender = 5;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getGenderBytes() {
-    java.lang.Object ref = gender_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      gender_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getGenderOrBuilder() {
+    return getGender();
   }
 
   public static final int FACEBOOK_FIELD_NUMBER = 6;
-  private volatile java.lang.Object facebook_;
+  private com.google.protobuf.StringValue facebook_;
   /**
-   * <code>optional string facebook = 6;</code>
+   * <code>.google.protobuf.StringValue facebook = 6;</code>
    * @return Whether the facebook field is set.
    */
   @java.lang.Override
   public boolean hasFacebook() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return facebook_ != null;
   }
   /**
-   * <code>optional string facebook = 6;</code>
+   * <code>.google.protobuf.StringValue facebook = 6;</code>
    * @return The facebook.
    */
   @java.lang.Override
-  public java.lang.String getFacebook() {
-    java.lang.Object ref = facebook_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      facebook_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getFacebook() {
+    return facebook_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : facebook_;
   }
   /**
-   * <code>optional string facebook = 6;</code>
-   * @return The bytes for facebook.
+   * <code>.google.protobuf.StringValue facebook = 6;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFacebookBytes() {
-    java.lang.Object ref = facebook_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      facebook_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getFacebookOrBuilder() {
+    return getFacebook();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -311,20 +205,20 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+    if (name_ != null) {
+      output.writeMessage(2, getName());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatar_);
+    if (avatar_ != null) {
+      output.writeMessage(3, getAvatar());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, birthDate_);
+    if (birthDate_ != null) {
+      output.writeMessage(4, getBirthDate());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, gender_);
+    if (gender_ != null) {
+      output.writeMessage(5, getGender());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, facebook_);
+    if (facebook_ != null) {
+      output.writeMessage(6, getFacebook());
     }
     getUnknownFields().writeTo(output);
   }
@@ -339,20 +233,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+    if (name_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getName());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatar_);
+    if (avatar_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getAvatar());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, birthDate_);
+    if (birthDate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getBirthDate());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, gender_);
+    if (gender_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getGender());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, facebook_);
+    if (facebook_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getFacebook());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -560,16 +459,36 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = 0L;
 
-      name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      avatar_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      birthDate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      gender_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
-      facebook_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
+      if (nameBuilder_ == null) {
+        name_ = null;
+      } else {
+        name_ = null;
+        nameBuilder_ = null;
+      }
+      if (avatarBuilder_ == null) {
+        avatar_ = null;
+      } else {
+        avatar_ = null;
+        avatarBuilder_ = null;
+      }
+      if (birthDateBuilder_ == null) {
+        birthDate_ = null;
+      } else {
+        birthDate_ = null;
+        birthDateBuilder_ = null;
+      }
+      if (genderBuilder_ == null) {
+        gender_ = null;
+      } else {
+        gender_ = null;
+        genderBuilder_ = null;
+      }
+      if (facebookBuilder_ == null) {
+        facebook_ = null;
+      } else {
+        facebook_ = null;
+        facebookBuilder_ = null;
+      }
       return this;
     }
 
@@ -596,30 +515,32 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.archi.common.auth.UpdatePlayerRequest buildPartial() {
       org.archi.common.auth.UpdatePlayerRequest result = new org.archi.common.auth.UpdatePlayerRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (nameBuilder_ == null) {
+        result.name_ = name_;
+      } else {
+        result.name_ = nameBuilder_.build();
       }
-      result.name_ = name_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
+      if (avatarBuilder_ == null) {
+        result.avatar_ = avatar_;
+      } else {
+        result.avatar_ = avatarBuilder_.build();
       }
-      result.avatar_ = avatar_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
+      if (birthDateBuilder_ == null) {
+        result.birthDate_ = birthDate_;
+      } else {
+        result.birthDate_ = birthDateBuilder_.build();
       }
-      result.birthDate_ = birthDate_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
+      if (genderBuilder_ == null) {
+        result.gender_ = gender_;
+      } else {
+        result.gender_ = genderBuilder_.build();
       }
-      result.gender_ = gender_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000010;
+      if (facebookBuilder_ == null) {
+        result.facebook_ = facebook_;
+      } else {
+        result.facebook_ = facebookBuilder_.build();
       }
-      result.facebook_ = facebook_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -672,29 +593,19 @@ private static final long serialVersionUID = 0L;
         setId(other.getId());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000001;
-        name_ = other.name_;
-        onChanged();
+        mergeName(other.getName());
       }
       if (other.hasAvatar()) {
-        bitField0_ |= 0x00000002;
-        avatar_ = other.avatar_;
-        onChanged();
+        mergeAvatar(other.getAvatar());
       }
       if (other.hasBirthDate()) {
-        bitField0_ |= 0x00000004;
-        birthDate_ = other.birthDate_;
-        onChanged();
+        mergeBirthDate(other.getBirthDate());
       }
       if (other.hasGender()) {
-        bitField0_ |= 0x00000008;
-        gender_ = other.gender_;
-        onChanged();
+        mergeGender(other.getGender());
       }
       if (other.hasFacebook()) {
-        bitField0_ |= 0x00000010;
-        facebook_ = other.facebook_;
-        onChanged();
+        mergeFacebook(other.getFacebook());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -728,28 +639,38 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 8
             case 18: {
-              name_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              input.readMessage(
+                  getNameFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
               break;
             } // case 18
             case 26: {
-              avatar_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              input.readMessage(
+                  getAvatarFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
               break;
             } // case 26
             case 34: {
-              birthDate_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              input.readMessage(
+                  getBirthDateFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
               break;
             } // case 34
             case 42: {
-              gender_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              input.readMessage(
+                  getGenderFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
               break;
             } // case 42
             case 50: {
-              facebook_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              input.readMessage(
+                  getFacebookFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
               break;
             } // case 50
             default: {
@@ -767,7 +688,6 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
-    private int bitField0_;
 
     private long id_ ;
     /**
@@ -812,419 +732,599 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private com.google.protobuf.StringValue name_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> nameBuilder_;
     /**
-     * <code>optional string name = 2;</code>
+     * <code>.google.protobuf.StringValue name = 2;</code>
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return nameBuilder_ != null || name_ != null;
     }
     /**
-     * <code>optional string name = 2;</code>
+     * <code>.google.protobuf.StringValue name = 2;</code>
      * @return The name.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
+    public com.google.protobuf.StringValue getName() {
+      if (nameBuilder_ == null) {
+        return name_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : name_;
       } else {
-        return (java.lang.String) ref;
+        return nameBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string name = 2;</code>
-     * @return The bytes for name.
+     * <code>.google.protobuf.StringValue name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
+    public Builder setName(com.google.protobuf.StringValue value) {
+      if (nameBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        nameBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string name = 2;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue name = 2;</code>
      */
     public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-      name_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (nameBuilder_ == null) {
+        name_ = builderForValue.build();
+        onChanged();
+      } else {
+        nameBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string name = 2;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue name = 2;</code>
+     */
+    public Builder mergeName(com.google.protobuf.StringValue value) {
+      if (nameBuilder_ == null) {
+        if (name_ != null) {
+          name_ =
+            com.google.protobuf.StringValue.newBuilder(name_).mergeFrom(value).buildPartial();
+        } else {
+          name_ = value;
+        }
+        onChanged();
+      } else {
+        nameBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue name = 2;</code>
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      name_ = getDefaultInstance().getName();
-      onChanged();
+      if (nameBuilder_ == null) {
+        name_ = null;
+        onChanged();
+      } else {
+        name_ = null;
+        nameBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string name = 2;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue name = 2;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      name_ = value;
+    public com.google.protobuf.StringValue.Builder getNameBuilder() {
+      
       onChanged();
-      return this;
+      return getNameFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue name = 2;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getNameOrBuilder() {
+      if (nameBuilder_ != null) {
+        return nameBuilder_.getMessageOrBuilder();
+      } else {
+        return name_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : name_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue name = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getNameFieldBuilder() {
+      if (nameBuilder_ == null) {
+        nameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getName(),
+                getParentForChildren(),
+                isClean());
+        name_ = null;
+      }
+      return nameBuilder_;
     }
 
-    private java.lang.Object avatar_ = "";
+    private com.google.protobuf.StringValue avatar_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> avatarBuilder_;
     /**
-     * <code>optional string avatar = 3;</code>
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
      * @return Whether the avatar field is set.
      */
     public boolean hasAvatar() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return avatarBuilder_ != null || avatar_ != null;
     }
     /**
-     * <code>optional string avatar = 3;</code>
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
      * @return The avatar.
      */
-    public java.lang.String getAvatar() {
-      java.lang.Object ref = avatar_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        avatar_ = s;
-        return s;
+    public com.google.protobuf.StringValue getAvatar() {
+      if (avatarBuilder_ == null) {
+        return avatar_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : avatar_;
       } else {
-        return (java.lang.String) ref;
+        return avatarBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string avatar = 3;</code>
-     * @return The bytes for avatar.
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getAvatarBytes() {
-      java.lang.Object ref = avatar_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        avatar_ = b;
-        return b;
+    public Builder setAvatar(com.google.protobuf.StringValue value) {
+      if (avatarBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        avatar_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        avatarBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string avatar = 3;</code>
-     * @param value The avatar to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
      */
     public Builder setAvatar(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-      avatar_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (avatarBuilder_ == null) {
+        avatar_ = builderForValue.build();
+        onChanged();
+      } else {
+        avatarBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string avatar = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
+     */
+    public Builder mergeAvatar(com.google.protobuf.StringValue value) {
+      if (avatarBuilder_ == null) {
+        if (avatar_ != null) {
+          avatar_ =
+            com.google.protobuf.StringValue.newBuilder(avatar_).mergeFrom(value).buildPartial();
+        } else {
+          avatar_ = value;
+        }
+        onChanged();
+      } else {
+        avatarBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
      */
     public Builder clearAvatar() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      avatar_ = getDefaultInstance().getAvatar();
-      onChanged();
+      if (avatarBuilder_ == null) {
+        avatar_ = null;
+        onChanged();
+      } else {
+        avatar_ = null;
+        avatarBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string avatar = 3;</code>
-     * @param value The bytes for avatar to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
      */
-    public Builder setAvatarBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
-      avatar_ = value;
+    public com.google.protobuf.StringValue.Builder getAvatarBuilder() {
+      
       onChanged();
-      return this;
+      return getAvatarFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getAvatarOrBuilder() {
+      if (avatarBuilder_ != null) {
+        return avatarBuilder_.getMessageOrBuilder();
+      } else {
+        return avatar_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : avatar_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue avatar = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getAvatarFieldBuilder() {
+      if (avatarBuilder_ == null) {
+        avatarBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getAvatar(),
+                getParentForChildren(),
+                isClean());
+        avatar_ = null;
+      }
+      return avatarBuilder_;
     }
 
-    private java.lang.Object birthDate_ = "";
+    private com.google.protobuf.StringValue birthDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> birthDateBuilder_;
     /**
-     * <code>optional string birthDate = 4;</code>
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
      * @return Whether the birthDate field is set.
      */
     public boolean hasBirthDate() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return birthDateBuilder_ != null || birthDate_ != null;
     }
     /**
-     * <code>optional string birthDate = 4;</code>
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
      * @return The birthDate.
      */
-    public java.lang.String getBirthDate() {
-      java.lang.Object ref = birthDate_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        birthDate_ = s;
-        return s;
+    public com.google.protobuf.StringValue getBirthDate() {
+      if (birthDateBuilder_ == null) {
+        return birthDate_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : birthDate_;
       } else {
-        return (java.lang.String) ref;
+        return birthDateBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string birthDate = 4;</code>
-     * @return The bytes for birthDate.
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getBirthDateBytes() {
-      java.lang.Object ref = birthDate_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        birthDate_ = b;
-        return b;
+    public Builder setBirthDate(com.google.protobuf.StringValue value) {
+      if (birthDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        birthDate_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        birthDateBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string birthDate = 4;</code>
-     * @param value The birthDate to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
      */
     public Builder setBirthDate(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-      birthDate_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (birthDateBuilder_ == null) {
+        birthDate_ = builderForValue.build();
+        onChanged();
+      } else {
+        birthDateBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string birthDate = 4;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
+     */
+    public Builder mergeBirthDate(com.google.protobuf.StringValue value) {
+      if (birthDateBuilder_ == null) {
+        if (birthDate_ != null) {
+          birthDate_ =
+            com.google.protobuf.StringValue.newBuilder(birthDate_).mergeFrom(value).buildPartial();
+        } else {
+          birthDate_ = value;
+        }
+        onChanged();
+      } else {
+        birthDateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
      */
     public Builder clearBirthDate() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      birthDate_ = getDefaultInstance().getBirthDate();
-      onChanged();
+      if (birthDateBuilder_ == null) {
+        birthDate_ = null;
+        onChanged();
+      } else {
+        birthDate_ = null;
+        birthDateBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string birthDate = 4;</code>
-     * @param value The bytes for birthDate to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
      */
-    public Builder setBirthDateBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
-      birthDate_ = value;
+    public com.google.protobuf.StringValue.Builder getBirthDateBuilder() {
+      
       onChanged();
-      return this;
+      return getBirthDateFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getBirthDateOrBuilder() {
+      if (birthDateBuilder_ != null) {
+        return birthDateBuilder_.getMessageOrBuilder();
+      } else {
+        return birthDate_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : birthDate_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue birthDate = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getBirthDateFieldBuilder() {
+      if (birthDateBuilder_ == null) {
+        birthDateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getBirthDate(),
+                getParentForChildren(),
+                isClean());
+        birthDate_ = null;
+      }
+      return birthDateBuilder_;
     }
 
-    private java.lang.Object gender_ = "";
+    private com.google.protobuf.StringValue gender_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> genderBuilder_;
     /**
-     * <code>optional string gender = 5;</code>
+     * <code>.google.protobuf.StringValue gender = 5;</code>
      * @return Whether the gender field is set.
      */
     public boolean hasGender() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return genderBuilder_ != null || gender_ != null;
     }
     /**
-     * <code>optional string gender = 5;</code>
+     * <code>.google.protobuf.StringValue gender = 5;</code>
      * @return The gender.
      */
-    public java.lang.String getGender() {
-      java.lang.Object ref = gender_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        gender_ = s;
-        return s;
+    public com.google.protobuf.StringValue getGender() {
+      if (genderBuilder_ == null) {
+        return gender_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : gender_;
       } else {
-        return (java.lang.String) ref;
+        return genderBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string gender = 5;</code>
-     * @return The bytes for gender.
+     * <code>.google.protobuf.StringValue gender = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getGenderBytes() {
-      java.lang.Object ref = gender_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        gender_ = b;
-        return b;
+    public Builder setGender(com.google.protobuf.StringValue value) {
+      if (genderBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gender_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        genderBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string gender = 5;</code>
-     * @param value The gender to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue gender = 5;</code>
      */
     public Builder setGender(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-      gender_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (genderBuilder_ == null) {
+        gender_ = builderForValue.build();
+        onChanged();
+      } else {
+        genderBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string gender = 5;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue gender = 5;</code>
+     */
+    public Builder mergeGender(com.google.protobuf.StringValue value) {
+      if (genderBuilder_ == null) {
+        if (gender_ != null) {
+          gender_ =
+            com.google.protobuf.StringValue.newBuilder(gender_).mergeFrom(value).buildPartial();
+        } else {
+          gender_ = value;
+        }
+        onChanged();
+      } else {
+        genderBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue gender = 5;</code>
      */
     public Builder clearGender() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      gender_ = getDefaultInstance().getGender();
-      onChanged();
+      if (genderBuilder_ == null) {
+        gender_ = null;
+        onChanged();
+      } else {
+        gender_ = null;
+        genderBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string gender = 5;</code>
-     * @param value The bytes for gender to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue gender = 5;</code>
      */
-    public Builder setGenderBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
-      gender_ = value;
+    public com.google.protobuf.StringValue.Builder getGenderBuilder() {
+      
       onChanged();
-      return this;
+      return getGenderFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue gender = 5;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getGenderOrBuilder() {
+      if (genderBuilder_ != null) {
+        return genderBuilder_.getMessageOrBuilder();
+      } else {
+        return gender_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : gender_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue gender = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getGenderFieldBuilder() {
+      if (genderBuilder_ == null) {
+        genderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getGender(),
+                getParentForChildren(),
+                isClean());
+        gender_ = null;
+      }
+      return genderBuilder_;
     }
 
-    private java.lang.Object facebook_ = "";
+    private com.google.protobuf.StringValue facebook_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> facebookBuilder_;
     /**
-     * <code>optional string facebook = 6;</code>
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
      * @return Whether the facebook field is set.
      */
     public boolean hasFacebook() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return facebookBuilder_ != null || facebook_ != null;
     }
     /**
-     * <code>optional string facebook = 6;</code>
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
      * @return The facebook.
      */
-    public java.lang.String getFacebook() {
-      java.lang.Object ref = facebook_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        facebook_ = s;
-        return s;
+    public com.google.protobuf.StringValue getFacebook() {
+      if (facebookBuilder_ == null) {
+        return facebook_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : facebook_;
       } else {
-        return (java.lang.String) ref;
+        return facebookBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string facebook = 6;</code>
-     * @return The bytes for facebook.
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getFacebookBytes() {
-      java.lang.Object ref = facebook_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        facebook_ = b;
-        return b;
+    public Builder setFacebook(com.google.protobuf.StringValue value) {
+      if (facebookBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        facebook_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        facebookBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string facebook = 6;</code>
-     * @param value The facebook to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
      */
     public Builder setFacebook(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-      facebook_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (facebookBuilder_ == null) {
+        facebook_ = builderForValue.build();
+        onChanged();
+      } else {
+        facebookBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string facebook = 6;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
+     */
+    public Builder mergeFacebook(com.google.protobuf.StringValue value) {
+      if (facebookBuilder_ == null) {
+        if (facebook_ != null) {
+          facebook_ =
+            com.google.protobuf.StringValue.newBuilder(facebook_).mergeFrom(value).buildPartial();
+        } else {
+          facebook_ = value;
+        }
+        onChanged();
+      } else {
+        facebookBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
      */
     public Builder clearFacebook() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      facebook_ = getDefaultInstance().getFacebook();
-      onChanged();
+      if (facebookBuilder_ == null) {
+        facebook_ = null;
+        onChanged();
+      } else {
+        facebook_ = null;
+        facebookBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string facebook = 6;</code>
-     * @param value The bytes for facebook to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
      */
-    public Builder setFacebookBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
-      facebook_ = value;
+    public com.google.protobuf.StringValue.Builder getFacebookBuilder() {
+      
       onChanged();
-      return this;
+      return getFacebookFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getFacebookOrBuilder() {
+      if (facebookBuilder_ != null) {
+        return facebookBuilder_.getMessageOrBuilder();
+      } else {
+        return facebook_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : facebook_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue facebook = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getFacebookFieldBuilder() {
+      if (facebookBuilder_ == null) {
+        facebookBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getFacebook(),
+                getParentForChildren(),
+                isClean());
+        facebook_ = null;
+      }
+      return facebookBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

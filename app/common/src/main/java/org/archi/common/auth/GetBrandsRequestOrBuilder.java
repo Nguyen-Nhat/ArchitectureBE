@@ -20,36 +20,32 @@ public interface GetBrandsRequestOrBuilder extends
   int getSize();
 
   /**
-   * <code>optional string sort = 3;</code>
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    * @return Whether the sort field is set.
    */
   boolean hasSort();
   /**
-   * <code>optional string sort = 3;</code>
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    * @return The sort.
    */
-  java.lang.String getSort();
+  com.google.protobuf.StringValue getSort();
   /**
-   * <code>optional string sort = 3;</code>
-   * @return The bytes for sort.
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getSortBytes();
+  com.google.protobuf.StringValueOrBuilder getSortOrBuilder();
 
   /**
-   * <code>optional string name = 4;</code>
+   * <code>.google.protobuf.StringValue name = 4;</code>
    * @return Whether the name field is set.
    */
   boolean hasName();
   /**
-   * <code>optional string name = 4;</code>
+   * <code>.google.protobuf.StringValue name = 4;</code>
    * @return The name.
    */
-  java.lang.String getName();
+  com.google.protobuf.StringValue getName();
   /**
-   * <code>optional string name = 4;</code>
-   * @return The bytes for name.
+   * <code>.google.protobuf.StringValue name = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.StringValueOrBuilder getNameOrBuilder();
 }

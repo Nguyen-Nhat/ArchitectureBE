@@ -174,14 +174,13 @@ public class AuthController {
   @PreAuthorize("hasRole('ADMIN')")
   @GetMapping(value = "/accounts")
   public ResponseEntity<ResponseData> getAccounts(@RequestParam(name = "page", defaultValue = "1") Integer page,
-                                                  @RequestParam(name = "size", defaultValue = "10") Integer size, @RequestParam(value = "sort", required = false) String sort, @RequestParam(name = "username", defaultValue = "") String username) {
+                                                  @RequestParam(name = "size", defaultValue = "10") Integer size,
+                                                  @RequestParam(value = "sort", required = false) String sort,
+                                                  @RequestParam(name = "username", required = false) String username) {
 
     /// GET /api/auth/accounts?page=1&size=10&sort=id:desc,username:asc
-    int pageNumber = (page == null || page <= 0) ? 0 : page - 1;
-    int pageSize = (size == null || size <= 0) ? 10 : size;
-    if (sort == null) sort = "";
-    if (username == null) username = "";
-    ResponseData responseData = authService.getAccounts(pageNumber, pageSize, sort, username);
+    page = page - 1;
+    ResponseData responseData = authService.getAccounts(page, size, sort, username);
     return ResponseEntity.ok(responseData);
   }
 
@@ -190,14 +189,13 @@ public class AuthController {
   @PreAuthorize("hasRole('ADMIN')")
   @GetMapping(value = "/brands")
   public ResponseEntity<ResponseData> getBrands(@RequestParam(name = "page", defaultValue = "1") Integer page,
-                                                @RequestParam(name = "size", defaultValue = "10") Integer size, @RequestParam(value = "sort", required = false) String sort, @RequestParam(name = "name", defaultValue = "") String name) {
+                                                @RequestParam(name = "size", defaultValue = "10") Integer size,
+                                                @RequestParam(value = "sort", required = false) String sort,
+                                                @RequestParam(name = "name", required = false) String name) {
 
     /// GET /api/auth/brands?page=1&size=10&sort=id:desc,username:asc
-    int pageNumber = (page == null || page <= 0) ? 0 : page - 1;
-    int pageSize = (size == null || size <= 0) ? 10 : size;
-    if (name == null) name = "";
-    if (sort == null) sort = "";
-    ResponseData responseData = authService.getBrands(pageNumber, pageSize, sort, name);
+    page = page - 1;
+    ResponseData responseData = authService.getBrands(page, size, sort, name);
     return ResponseEntity.ok(responseData);
   }
 
@@ -207,14 +205,11 @@ public class AuthController {
   public ResponseEntity<ResponseData> getPlayers(@RequestParam(name = "page", defaultValue = "1") Integer page,
                                                  @RequestParam(name = "size", defaultValue = "10") Integer size,
                                                  @RequestParam(value = "sort", required = false) String sort,
-                                                 @RequestParam(name = "name", defaultValue = "") String name) {
+                                                 @RequestParam(name = "name", required = false) String name) {
 
     /// GET /api/auth/players?page=1&size=10&sort=id:desc,username:asc
-    int pageNumber = (page == null || page <= 0) ? 0 : page - 1;
-    int pageSize = (size == null || size <= 0) ? 10 : size;
-    if (name == null) name = "";
-    if (sort == null) sort = "";
-    ResponseData responseData = authService.getPlayers(pageNumber, pageSize, sort, name);
+    page = page - 1;
+    ResponseData responseData = authService.getPlayers(page, size, sort, name);
     return ResponseEntity.ok(responseData);
   }
 }
