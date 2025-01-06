@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "google/protobuf/wrappers.proto";
 option java_multiple_files = true;
 option java_package = "org.archi.common.auth";
 option java_outer_classname = "AuthProto";
@@ -29,8 +30,8 @@ service AuthService {
 message GetPlayersRequest {
   int32 page = 1;
   int32 size = 2;
-  optional string sort = 3;
-  optional string name = 4;
+  google.protobuf.StringValue sort = 3;
+  google.protobuf.StringValue name = 4;
 }
 message Player {
   int64 id = 1; // player id.
@@ -52,8 +53,8 @@ message GetPlayersResponse {
 message GetBrandsRequest {
   int32 page = 1;
   int32 size = 2;
-  optional string sort = 3;
-  optional string name = 4;
+  google.protobuf.StringValue sort = 3;
+  google.protobuf.StringValue name = 4;
 }
 message Brand {
   int64 id = 1; // brand id.
@@ -77,8 +78,8 @@ message GetBrandsResponse {
 message GetAccountsRequest {
   int32 page = 1;
   int32 size = 2;
-  optional string sort = 3;
-  optional string username = 4;
+  google.protobuf.StringValue sort = 3;
+  google.protobuf.StringValue username = 4;
 }
 message Account {
   int64 id = 1; // account id.
@@ -100,11 +101,11 @@ message GetAccountsResponse {
 
 message UpdatePlayerRequest {
   int64 id = 1; // player id.
-  optional string name = 2;
-  optional string avatar = 3;
-  optional string birthDate = 4;
-  optional string gender = 5;
-  optional string facebook = 6;
+  google.protobuf.StringValue name = 2;
+  google.protobuf.StringValue avatar = 3;
+  google.protobuf.StringValue birthDate = 4;
+  google.protobuf.StringValue gender = 5;
+  google.protobuf.StringValue facebook = 6;
 }
 message UpdatePlayerResponse {
   int64 status = 1;
@@ -128,10 +129,10 @@ message PlayerProfileResponse {
 
 message UpdateBrandRequest {
   int64 id = 1; // brand id.
-  optional string name = 2;
-  optional string field = 3;
-  optional string address = 4;
-  optional string gps = 5;
+  google.protobuf.StringValue name = 2;
+  google.protobuf.StringValue field = 3;
+  google.protobuf.StringValue address = 4;
+  google.protobuf.StringValue gps = 5;
 }
 message UpdateBrandResponse {
   int64 status = 1;
@@ -179,9 +180,9 @@ message PostCreateAccountResponse {
 
 message PutUpdateAccountRequest {
   int64 id = 1;
-  optional string email = 2;
-  optional string phoneNumber = 3;
-  optional bool isActive = 5;
+  google.protobuf.StringValue email = 2;
+  google.protobuf.StringValue phoneNumber = 3;
+  google.protobuf.BoolValue isActive = 4;
 }
 message PutUpdateAccountResponse {
   int64 status = 1;
