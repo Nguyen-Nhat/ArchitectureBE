@@ -44,7 +44,7 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     };
   }
 
-
+  /// done.
   @Override
   public void postRegister(PostRegisterRequest request, StreamObserver<PostRegisterResponse> streamObserver) { /// done
     PostRegisterResponse response = authenticationService.register(request);
@@ -52,6 +52,8 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     streamObserver.onCompleted();
   }
 
+
+  /// done
   @Override
   public void postLogin(PostLoginRequest request, StreamObserver<PostLoginResponse> responseObserver) { /// done
     PostLoginResponse response = authenticationService.login(request);
@@ -59,6 +61,7 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+  /// done
   @Override
   public void postLogout(PostLogoutRequest request, StreamObserver<PostLogoutResponse> responseObserver) { /// done
     PostLogoutResponse response = authenticationService.logout(request);
@@ -66,6 +69,8 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+
+  /// done
   @Override
   public void postRefreshToken(PostRefreshTokenRequest request, StreamObserver<PostRefreshTokenResponse> responseObserver) { /// done
     PostRefreshTokenResponse response = authenticationService.refreshToken(request);
@@ -73,6 +78,7 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+  /// done
   @Override
   public void getVerifyEmail(GetVerifyEmailRequest request, StreamObserver<GetVerifyEmailResponse> responseObserver) { /// done
     GetVerifyEmailResponse response = authenticationService.verifyEmail(request);
@@ -80,6 +86,8 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+
+  /// done
   @Override
   public void postVerifyToken(PostVerifyTokenRequest request, StreamObserver<PostVerifyTokenResponse> responseObserver) {
     String token = request.getToken();
@@ -115,104 +123,107 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onCompleted();
   }
 
+  /// done
   @Override
   public void getAccountInfo(GetAccountInfoRequest request, StreamObserver<GetAccountInfoResponse> responseObserver) {
-    long id = request.getId();
-    Account account = accountService.findById(id);
-    if (account == null || account.getId() <= 0) {
-      responseObserver.onNext(GetAccountInfoResponse.newBuilder()
-              .setStatus(HttpStatus.NOT_FOUND.value())
-              .setMessage("Account not found")
-              .build());
-    } else {
-      responseObserver.onNext(GetAccountInfoResponse.newBuilder()
-              .setStatus(HttpStatus.OK.value())
-              .setMessage("Success")
-              .setId(account.getId())
-              .setUsername(account.getUsername())
-              .setEmail(account.getEmail())
-              .setPhoneNumber(account.getPhoneNumber())
-              .setIsActive(account.getIsActive())
-              .setRole(account.getRole().getName().toString())
-              .build());
-    }
+    GetAccountInfoResponse response = authenticationService.getAccountInfo(request);
+    responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
 
+  /// done
   @Override
-  public void getBrandInfo(GetBrandInfoRequest request, StreamObserver<GetBrandInfoResponse> responseObserver) {
-    long accountId = request.getId();
-    Account account = accountService.findById(accountId);
-    if (account == null || account.getId() <= 0) {
-      responseObserver.onNext(GetBrandInfoResponse.newBuilder()
-              .setStatus(HttpStatus.NOT_FOUND.value())
-              .setMessage("Account not found")
-              .build());
-    } else {
-      Brand brand = brandService.findByAccount(account);
-      if (brand == null || brand.getId() <= 0) {
-        responseObserver.onNext(GetBrandInfoResponse.newBuilder()
-                .setStatus(HttpStatus.NOT_FOUND.value())
-                .setMessage("Brand not found")
-                .build());
-      } else {
-        responseObserver.onNext(GetBrandInfoResponse.newBuilder()
-                .setStatus(HttpStatus.OK.value())
-                .setMessage("Success")
-                .setId(brand.getId())
-                .setName(brand.getName())
-                .setField(brand.getField())
-                .setAddress(brand.getAddress())
-                .setGps(brand.getGps())
-                .setIsEnable(brand.getIsEnable())
-                .build());
-      }
-    }
-    responseObserver.onCompleted();
-  }
-
-  @Override
-  public void getPlayerInfo(GetPlayerInfoRequest request, StreamObserver<GetPlayerInfoResponse> responseObserver) {
-    long accountId = request.getId();
-    Account account = accountService.findById(accountId);
-    if (account == null || account.getId() <= 0) {
-      responseObserver.onNext(GetPlayerInfoResponse.newBuilder()
-              .setStatus(HttpStatus.NOT_FOUND.value())
-              .setMessage("Account not found")
-              .build());
-    } else {
-      Player player = playerService.findByAccount(account);
-      if (player == null || player.getId() <= 0) {
-        responseObserver.onNext(GetPlayerInfoResponse.newBuilder()
-                .setStatus(HttpStatus.NOT_FOUND.value())
-                .setMessage("Player not found")
-                .build());
-      } else {
-        responseObserver.onNext(GetPlayerInfoResponse.newBuilder()
-                .setStatus(HttpStatus.OK.value())
-                .setMessage("Success")
-                .setId(player.getId())
-                .setName(player.getName())
-                .setAvatar(player.getAvatar())
-                .setBirthDate(player.getBirthDate().getTime())
-                .setGender(player.getGender().name())
-                .setFacebook(player.getFacebook())
-                .build());
-      }
-    }
-    responseObserver.onCompleted();
-  }
-
-  @Override
-  public void postCreateAccount(PostCreateAccountRequest request, StreamObserver<PostCreateAccountResponse> responseObserver) {
+  public void postCreateAccount(PostCreateAccountRequest request, StreamObserver<PostCreateAccountResponse> responseObserver) { /// done
     PostCreateAccountResponse response = authenticationService.createAccount(request);
     responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
 
+  /// done
+  @Override
+  public void putUpdateAccount(PutUpdateAccountRequest request, StreamObserver<PutUpdateAccountResponse> responseObserver) {
+    PutUpdateAccountResponse response = authenticationService.updateAccount(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+
+  /// done
   @Override
   public void deleteAccount(DeleteAccountRequest request, StreamObserver<DeleteAccountResponse> responseObserver) {
     DeleteAccountResponse response = authenticationService.deleteAccount(request);
     responseObserver.onNext(response);
-    responseObserver.onCompleted(); }
+    responseObserver.onCompleted();
+  }
+
+
+  /// done
+  @Override
+  public void getBrandInfo(GetBrandInfoRequest request, StreamObserver<GetBrandInfoResponse> responseObserver) {
+    GetBrandInfoResponse response = authenticationService.getBrandInfo(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  /// done
+  @Override
+  public void getBrandProfile(GetBrandProfileRequest request, StreamObserver<GetBrandProfileResponse> responseObserver) {
+    GetBrandProfileResponse response = authenticationService.getBrandProfile(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  /// done
+  @Override
+  public void updateBrand(UpdateBrandRequest request, StreamObserver<UpdateBrandResponse> responseObserver) {
+    UpdateBrandResponse response = authenticationService.updateBrand(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  /// done
+  @Override
+  public void getPlayerInfo(GetPlayerInfoRequest request, StreamObserver<GetPlayerInfoResponse> responseObserver) {
+    GetPlayerInfoResponse response = authenticationService.getPlayerInfo(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  /// done
+  @Override
+  public void getPlayerProfile(PlayerProfileRequest request, StreamObserver<PlayerProfileResponse> responseObserver) {
+    PlayerProfileResponse response = authenticationService.getPlayerProfile(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  /// done
+  @Override
+  public void updatePlayer(UpdatePlayerRequest request, StreamObserver<UpdatePlayerResponse> responseObserver) {
+    UpdatePlayerResponse response = authenticationService.updatePlayer(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+
+  @Override
+  public void getAccounts(GetAccountsRequest request, StreamObserver<GetAccountsResponse> responseObserver) {
+    GetAccountsResponse response = authenticationService.getAccounts(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  @Override
+  public void getBrands(GetBrandsRequest request, StreamObserver<GetBrandsResponse> responseObserver) {
+    GetBrandsResponse response = authenticationService.getBrands(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  @Override
+  public void getPlayers(GetPlayersRequest request, StreamObserver<GetPlayersResponse> responseObserver) {
+    GetPlayersResponse response = authenticationService.getPlayers(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
 }

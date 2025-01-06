@@ -4,6 +4,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Date;
+
 @Getter
 @Setter
 @Builder
@@ -13,7 +15,7 @@ public class PlayerInfo {
   private long id;
   private String name;
   private String avatar;
-  private long birthDate;
+  private Date birthDate;
   private String gender;
   private String facebook;
 }

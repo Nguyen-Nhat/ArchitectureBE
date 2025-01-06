@@ -42,11 +42,46 @@ public class AuthAdapter {
   public GetBrandInfoResponse getBrandInfo(GetBrandInfoRequest request) {
     return authServiceClient.getBrandInfo(request);
   }
+  public GetBrandProfileResponse getBrandProfile(GetBrandProfileRequest request) {
+    return authServiceClient.getBrandProfile(request);
+  }
   public GetPlayerInfoResponse getPlayerInfo(GetPlayerInfoRequest request) {
     return authServiceClient.getPlayerInfo(request);
   }
 
   public DeleteAccountResponse deleteAccount(DeleteAccountRequest request) {
     return authServiceClient.deleteAccount(request);
+  }
+
+  public PostCreateAccountResponse postCreateAccount(PostCreateAccountRequest postRequest) {
+    return authServiceClient.postCreateAccount(postRequest);
+  }
+
+  public PutUpdateAccountResponse putUpdateAccount(PutUpdateAccountRequest putRequest) {
+    return authServiceClient.putUpdateAccount(putRequest);
+  }
+
+  public UpdateBrandResponse updateBrand(UpdateBrandRequest request) {
+    return authServiceClient.updateBrand(request);
+  }
+
+  public PlayerProfileResponse getPlayerProfile(PlayerProfileRequest request) {
+    return authServiceClient.getPlayerProfile(request);
+  }
+
+  public UpdatePlayerResponse updatePlayer(UpdatePlayerRequest request) {
+    return authServiceClient.updatePlayer(request);
+  }
+
+  public GetAccountsResponse getAccounts(GetAccountsRequest request) {
+    return authServiceClient.getAccounts(request);
+  }
+
+  public GetBrandsResponse getBrands(GetBrandsRequest request) {
+    return authServiceClient.getBrands(request);
+  }
+
+  public GetPlayersResponse getPlayers(GetPlayersRequest request) {
+    return authServiceClient.getPlayers(request);
   }
 }

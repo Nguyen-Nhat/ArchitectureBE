@@ -56,10 +56,16 @@ public interface GetPlayerInfoResponseOrBuilder extends
       getAvatarBytes();
 
   /**
-   * <code>int64 birthDate = 6;</code>
+   * <code>string birthDate = 6;</code>
    * @return The birthDate.
    */
-  long getBirthDate();
+  java.lang.String getBirthDate();
+  /**
+   * <code>string birthDate = 6;</code>
+   * @return The bytes for birthDate.
+   */
+  com.google.protobuf.ByteString
+      getBirthDateBytes();
 
   /**
    * <code>string gender = 7;</code>

@@ -1,6 +1,5 @@
 package org.archi.bff.controller;
 
-
 import lombok.AllArgsConstructor;
 import org.archi.bff.request.*;
 import org.archi.bff.response.ResponseData;
@@ -76,47 +75,146 @@ public class AuthController {
     return ResponseEntity.ok(responseData);
   }
 
-  @GetMapping(value = "/account-info")
-  public ResponseEntity<ResponseData> getAccountInfo() {
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    long accountId = Long.parseLong(auth.getName());
-    System.out.println("Account ID: " + accountId);
-    ResponseData response = authService.getAccountInfo(accountId);
-    return ResponseEntity.ok(response);
-  }
 
-  @PreAuthorize("hasRole('BRAND')")
-  @GetMapping(value = "/brand-info")
   /// done
-  public ResponseEntity<ResponseData> getBrandInfo() {
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    long accountId = Long.parseLong(auth.getName());
-    ResponseData response = authService.getBrandInfo(accountId);
-    return ResponseEntity.ok(response);
+  @GetMapping(value = "/accounts/profile")
+  public ResponseEntity<ResponseData> getProfile() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String accountId = authentication.getName();
+    ResponseData responseData = authService.getAccountInfo(Long.parseLong(accountId));
+    return ResponseEntity.ok(responseData);
   }
 
-  @PreAuthorize("hasRole('PLAYER')")
-  @GetMapping(value = "/player-info")
-  ///  done
-  public ResponseEntity<ResponseData> getPlayerInfo() {
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    long accountId = Long.parseLong(auth.getName());
-    ResponseData response = authService.getPlayerInfo(accountId);
-    return ResponseEntity.ok(response);
+  /// done
+  @PreAuthorize("hasRole('ADMIN')")
+  @GetMapping(value = "/accounts/{accountId}")
+  public ResponseEntity<ResponseData> getAccountInfo(@PathVariable String accountId) {
+    ResponseData responseData = authService.getAccountInfo(Long.parseLong(accountId));
+    return ResponseEntity.ok(responseData);
   }
 
 
+  /// done
   @PreAuthorize("hasRole('ADMIN')")
   @PostMapping(value = "/accounts")
-  public ResponseEntity<ResponseData> createAccount(@RequestBody RegisterRequest request) {
+  public ResponseEntity<ResponseData> createAccount(@RequestBody RegisterRequest request) { /// done
     ResponseData responseData = authService.createAccount(request);
     return ResponseEntity.ok(responseData);
   }
 
+  /// done
+  @PreAuthorize("hasRole('ADMIN')")
+  @PatchMapping(value = "/accounts/{accountId}", consumes = "application/json")
+  /// done
+  public ResponseEntity<ResponseData> updateAccount(@PathVariable String accountId, @RequestBody UpdatedAccount request) {
+    ResponseData responseData = authService.updateAccount(Long.parseLong(accountId), request);
+    return ResponseEntity.ok(responseData);
+  }
+
+  /// done
   @PreAuthorize("hasRole('ADMIN')")
   @DeleteMapping(value = "/accounts/{accountId}")
   public ResponseEntity<ResponseData> deleteAccount(@PathVariable String accountId) {
     ResponseData responseData = authService.deleteAccount(Long.parseLong(accountId));
+    return ResponseEntity.ok(responseData);
+  }
+
+
+  /// done
+  @GetMapping(value = "/brands/profile")
+  public ResponseEntity<ResponseData> getBrandProfile() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String accountId = authentication.getName();
+    ResponseData responseData = authService.getBrandProfile(Long.parseLong(accountId));
+    return ResponseEntity.ok(responseData);
+  }
+
+  /// done
+  @PreAuthorize("hasRole('ADMIN')")
+  @GetMapping(value = "/brands/{brandId}")
+  public ResponseEntity<ResponseData> getBrandInfo(@PathVariable String brandId) {
+    ResponseData responseData = authService.getBrandInfo(Long.parseLong(brandId));
+    return ResponseEntity.ok(responseData);
+  }
+
+  /// done
+  @PatchMapping(value = "/brands/{brandId}", consumes = "application/json")
+  public ResponseEntity<ResponseData> updateBrand(@PathVariable String brandId, @RequestBody UpdatedBrand request) {
+    ResponseData responseData = authService.updateBrand(Long.parseLong(brandId), request);
+    return ResponseEntity.ok(responseData);
+  }
+
+
+  /// done.
+  @GetMapping(value = "/players/profile")
+  public ResponseEntity<ResponseData> getPlayerProfile() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String accountId = authentication.getName();
+    ResponseData responseData = authService.getPlayerProfile(Long.parseLong(accountId));
+    return ResponseEntity.ok(responseData);
+  }
+
+  /// done
+  @PreAuthorize("hasRole('ADMIN')")
+  @GetMapping(value = "/players/{playerId}")
+  public ResponseEntity<ResponseData> getPlayerInfo(@PathVariable String playerId) {
+    ResponseData responseData = authService.getPlayerInfo(Long.parseLong(playerId));
+    return ResponseEntity.ok(responseData);
+  }
+
+  /// done
+  @PatchMapping(value = "/players/{playerId}", consumes = "application/json")
+  public ResponseEntity<ResponseData> updatePlayer(@PathVariable String playerId, @RequestBody UpdatedPlayer request) {
+    ResponseData responseData = authService.updatePlayer(Long.parseLong(playerId), request);
+    return ResponseEntity.ok(responseData);
+  }
+
+
+  /// done
+  @PreAuthorize("hasRole('ADMIN')")
+  @GetMapping(value = "/accounts")
+  public ResponseEntity<ResponseData> getAccounts(@RequestParam(name = "page", defaultValue = "1") Integer page,
+                                                  @RequestParam(name = "size", defaultValue = "10") Integer size, @RequestParam(value = "sort", required = false) String sort, @RequestParam(name = "username", defaultValue = "") String username) {
+
+    /// GET /api/auth/accounts?page=1&size=10&sort=id:desc,username:asc
+    int pageNumber = (page == null || page <= 0) ? 0 : page - 1;
+    int pageSize = (size == null || size <= 0) ? 10 : size;
+    if (sort == null) sort = "";
+    if (username == null) username = "";
+    ResponseData responseData = authService.getAccounts(pageNumber, pageSize, sort, username);
+    return ResponseEntity.ok(responseData);
+  }
+
+
+  /// done
+  @PreAuthorize("hasRole('ADMIN')")
+  @GetMapping(value = "/brands")
+  public ResponseEntity<ResponseData> getBrands(@RequestParam(name = "page", defaultValue = "1") Integer page,
+                                                @RequestParam(name = "size", defaultValue = "10") Integer size, @RequestParam(value = "sort", required = false) String sort, @RequestParam(name = "name", defaultValue = "") String name) {
+
+    /// GET /api/auth/brands?page=1&size=10&sort=id:desc,username:asc
+    int pageNumber = (page == null || page <= 0) ? 0 : page - 1;
+    int pageSize = (size == null || size <= 0) ? 10 : size;
+    if (name == null) name = "";
+    if (sort == null) sort = "";
+    ResponseData responseData = authService.getBrands(pageNumber, pageSize, sort, name);
+    return ResponseEntity.ok(responseData);
+  }
+
+
+  @PreAuthorize("hasRole('ADMIN')")
+  @GetMapping(value = "/players")
+  public ResponseEntity<ResponseData> getPlayers(@RequestParam(name = "page", defaultValue = "1") Integer page,
+                                                 @RequestParam(name = "size", defaultValue = "10") Integer size,
+                                                 @RequestParam(value = "sort", required = false) String sort,
+                                                 @RequestParam(name = "name", defaultValue = "") String name) {
+
+    /// GET /api/auth/players?page=1&size=10&sort=id:desc,username:asc
+    int pageNumber = (page == null || page <= 0) ? 0 : page - 1;
+    int pageSize = (size == null || size <= 0) ? 10 : size;
+    if (name == null) name = "";
+    if (sort == null) sort = "";
+    ResponseData responseData = authService.getPlayers(pageNumber, pageSize, sort, name);
     return ResponseEntity.ok(responseData);
   }
 }

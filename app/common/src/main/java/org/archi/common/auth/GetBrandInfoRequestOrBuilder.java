@@ -9,7 +9,7 @@ public interface GetBrandInfoRequestOrBuilder extends
 
   /**
    * <pre>
-   *Account ID
+   *Brand ID
    * </pre>
    *
    * <code>int64 id = 1;</code>

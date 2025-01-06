@@ -1,15 +1,15 @@
 package org.archi.bff.service;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.archi.bff.adapter.AuthAdapter;
-import org.archi.bff.request.LoginRequest;
-import org.archi.bff.request.RefreshRequest;
-import org.archi.bff.request.RegisterRequest;
+import org.archi.bff.request.*;
 import org.archi.bff.response.*;
 import org.archi.common.auth.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,9 +17,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -32,6 +35,7 @@ public class AuthService {
             .setUsername(request.getUsername())
             .setPassword(request.getPassword())
             .setEmail(request.getEmail())
+            .setPhoneNumber(request.getPhoneNumber())
             .setRole(request.getRole())
             .build();
     PostRegisterResponse response = adapter.postRegister(postRequest);
@@ -119,9 +123,9 @@ public class AuthService {
             .build());
   }
 
-  public ResponseData getPlayerInfo(long accountId) {
+  public ResponseData getPlayerInfo(long playerId) {
     GetPlayerInfoRequest request = GetPlayerInfoRequest.newBuilder()
-            .setId(accountId)
+            .setId(playerId)
             .build();
     GetPlayerInfoResponse response = adapter.getPlayerInfo(request);
     return new ResponseData(response.getStatus(), response.getMessage(), PlayerInfo.builder()
@@ -130,20 +134,20 @@ public class AuthService {
             .id(response.getId())
             .name(response.getName())
             .avatar(response.getAvatar())
-            .birthDate(response.getBirthDate())
             .gender(response.getGender())
             .facebook(response.getFacebook())
             .build());
   }
 
   public ResponseData createAccount(RegisterRequest request) {
-    PostRegisterRequest postRequest = PostRegisterRequest.newBuilder()
+    PostCreateAccountRequest postRequest = PostCreateAccountRequest.newBuilder()
             .setUsername(request.getUsername())
             .setPassword(request.getPassword())
             .setEmail(request.getEmail())
+            .setPhoneNumber(request.getPhoneNumber())
             .setRole(request.getRole())
             .build();
-    PostRegisterResponse response = adapter.postRegister(postRequest);
+    PostCreateAccountResponse response = adapter.postCreateAccount(postRequest);
     return new ResponseData(response.getStatus(), response.getMessage(), null);
   }
 
@@ -154,4 +158,154 @@ public class AuthService {
     DeleteAccountResponse response = adapter.deleteAccount(request);
     return new ResponseData(response.getStatus(), response.getMessage(), null);
   }
+
+  public ResponseData updateAccount(long l, UpdatedAccount request) {
+    PutUpdateAccountRequest.Builder requestBuilder = PutUpdateAccountRequest.newBuilder();
+    if (StringUtils.hasText(request.getEmail())) {
+      requestBuilder.setEmail(request.getEmail());
+    }
+    if (StringUtils.hasText(request.getPhoneNumber())) {
+      requestBuilder.setPhoneNumber(request.getPhoneNumber());
+    }
+    if (request.getIsActive() != null) {
+      requestBuilder.setIsActive(request.getIsActive());
+    }
+    requestBuilder.setId(l);
+    PutUpdateAccountRequest putRequest = requestBuilder.build();
+    PutUpdateAccountResponse response = adapter.putUpdateAccount(putRequest);
+    return new ResponseData(response.getStatus(), response.getMessage(), null);
+  }
+
+  public ResponseData getBrandProfile(long l) {
+    GetBrandProfileRequest request = GetBrandProfileRequest.newBuilder()
+            .setId(l)
+            .build();
+    GetBrandProfileResponse response = adapter.getBrandProfile(request);
+    return new ResponseData(response.getStatus(), response.getMessage(), BrandInfo.builder()
+            .status(response.getStatus())
+            .message(response.getMessage())
+            .id(response.getId())
+            .name(response.getName())
+            .field(response.getField())
+            .address(response.getAddress())
+            .gps(response.getGps())
+            .isEnable(response.getIsEnable())
+            .build());
+  }
+
+  public ResponseData updateBrand(long l, UpdatedBrand brand) {
+    UpdateBrandRequest.Builder builder = UpdateBrandRequest.newBuilder();
+    builder.setId(l);
+    if (StringUtils.hasText(brand.getName())) {
+      builder.setName(brand.getName());
+    }
+    if (StringUtils.hasText(brand.getField())) {
+      builder.setField(brand.getField());
+    }
+    if (StringUtils.hasText(brand.getAddress())) {
+      builder.setAddress(brand.getAddress());
+    }
+    if (StringUtils.hasText(brand.getGps())) {
+      builder.setGps(brand.getGps());
+    }
+    UpdateBrandResponse response = adapter.updateBrand(builder.build());
+    return new ResponseData(response.getStatus(), response.getMessage(), null);
+  }
+
+  public ResponseData getPlayerProfile(long l) {
+    PlayerProfileRequest request = PlayerProfileRequest.newBuilder()
+            .setId(l) // account id.
+            .build();
+    PlayerProfileResponse response = adapter.getPlayerProfile(request);
+    return new ResponseData(response.getStatus(), response.getMessage(), PlayerInfo.builder()
+            .status(response.getStatus())
+            .message(response.getMessage())
+            .id(response.getId())
+            .name(response.getName())
+            .avatar(response.getAvatar())
+            .birthDate(Date.valueOf(response.getBirthDate()))
+            .gender(response.getGender())
+            .facebook(response.getFacebook())
+            .build());
+  }
+
+  public ResponseData updatePlayer(long l, UpdatedPlayer request) {
+    UpdatePlayerRequest.Builder builder = UpdatePlayerRequest.newBuilder();
+    builder.setId(l);
+    if (StringUtils.hasText(request.getName())) {
+      builder.setName(request.getName());
+    }
+    if (StringUtils.hasText(request.getBirthDate())) {
+      builder.setBirthDate(request.getBirthDate());
+    }
+    if (StringUtils.hasText(request.getGender())) {
+      builder.setGender(request.getGender());
+    }
+    if (StringUtils.hasText(request.getFacebook())) {
+      builder.setFacebook(request.getFacebook());
+    }
+    if (StringUtils.hasText(request.getAvatar())) {
+      builder.setAvatar(request.getAvatar());
+    }
+    UpdatePlayerResponse response = adapter.updatePlayer(builder.build());
+    return new ResponseData(response.getStatus(), response.getMessage(), null);
+  }
+
+  public ResponseData getAccounts(int pageNumber, int pageSize, String sort, String username) {
+    GetAccountsRequest request = GetAccountsRequest.newBuilder()
+            .setPage(pageNumber)
+            .setSize(pageSize)
+            .setUsername(username)
+            .setSort(sort)
+            .build();
+    GetAccountsResponse response = adapter.getAccounts(request);
+    List<AccountResponse> accounts = response.getAccountsList().stream().map(account -> AccountResponse.builder()
+            .id(account.getId())
+            .username(account.getUsername())
+            .email(account.getEmail())
+            .phoneNumber(account.getPhoneNumber())
+            .role(account.getRole())
+            .isActive(account.getIsActive())
+            .build()).toList();
+
+    return new ResponseData(response.getStatus(), response.getMessage(), Map.of("accounts", accounts, "totalPage", response.getTotalPage(), "totalElement", response.getTotalElement(), "page", response.getPage() + 1, "size", response.getSize()));
+  }
+
+  public ResponseData getBrands(int pageNumber, int pageSize, String sort, String name) {
+    GetBrandsRequest request = GetBrandsRequest.newBuilder()
+            .setPage(pageNumber)
+            .setSize(pageSize)
+            .setName(name)
+            .setSort(sort)
+            .build();
+    GetBrandsResponse response = adapter.getBrands(request);
+    List<BrandResponse> brands = response.getBrandsList().stream().map(brand -> BrandResponse.builder()
+            .id(brand.getId())
+            .name(brand.getName())
+            .field(brand.getField())
+            .address(brand.getAddress())
+            .gps(brand.getGps())
+            .isEnable(brand.getIsEnable())
+            .build()).toList();
+    return new ResponseData(response.getStatus(), response.getMessage(), Map.of("brands", brands, "totalPage", response.getTotalPage(), "totalElement", response.getTotalElement(), "page", response.getPage() + 1, "size", response.getSize()));
+  }
+
+  public ResponseData getPlayers(int pageNumber, int pageSize, String sort, String name) {
+    GetPlayersRequest request = GetPlayersRequest.newBuilder()
+            .setPage(pageNumber)
+            .setSize(pageSize)
+            .setName(name)
+            .setSort(sort)
+            .build();
+    GetPlayersResponse response = adapter.getPlayers(request);
+    List<PlayerResponse> players = response.getPlayersList().stream().map(player -> PlayerResponse.builder()
+            .id(player.getId())
+            .name(player.getName())
+            .avatar(player.getAvatar())
+            .birthDate(Date.valueOf(player.getBirthDate()))
+            .facebook(player.getFacebook())
+            .build()).toList();
+    return new ResponseData(response.getStatus(), response.getMessage(), Map.of("players", players, "totalPage", response.getTotalPage(), "totalElement", response.getTotalElement(), "page", response.getPage() + 1, "size", response.getSize()));
+  }
+
 }
