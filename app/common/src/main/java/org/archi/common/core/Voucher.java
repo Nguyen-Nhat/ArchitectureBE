@@ -34,6 +34,85 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private Voucher(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 8: {
+
+            id_ = input.readInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            issuedAt_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            expiredDate_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            qRCode_ = s;
+            break;
+          }
+          case 50: {
+            org.archi.common.core.VoucherType.Builder subBuilder = null;
+            if (voucherType_ != null) {
+              subBuilder = voucherType_.toBuilder();
+            }
+            voucherType_ = input.readMessage(org.archi.common.core.VoucherType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(voucherType_);
+              voucherType_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.archi.common.core.CoreProto.internal_static_Voucher_descriptor;
@@ -253,22 +332,22 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuedAt_)) {
+    if (!getIssuedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, issuedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expiredDate_)) {
+    if (!getExpiredDateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, expiredDate_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+    if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(qRCode_)) {
+    if (!getQRCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, qRCode_);
     }
     if (voucherType_ != null) {
       output.writeMessage(6, getVoucherType());
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -281,23 +360,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuedAt_)) {
+    if (!getIssuedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, issuedAt_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expiredDate_)) {
+    if (!getExpiredDateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, expiredDate_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+    if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(qRCode_)) {
+    if (!getQRCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, qRCode_);
     }
     if (voucherType_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getVoucherType());
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -327,7 +406,7 @@ private static final long serialVersionUID = 0L;
       if (!getVoucherType()
           .equals(other.getVoucherType())) return false;
     }
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -353,7 +432,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + VOUCHERTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getVoucherType().hashCode();
     }
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -470,13 +549,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.archi.common.core.Voucher.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -603,7 +687,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasVoucherType()) {
         mergeVoucherType(other.getVoucherType());
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -618,62 +702,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      org.archi.common.core.Voucher parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              id_ = input.readInt64();
-
-              break;
-            } // case 8
-            case 18: {
-              issuedAt_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 18
-            case 26: {
-              expiredDate_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 26
-            case 34: {
-              status_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 34
-            case 42: {
-              qRCode_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 42
-            case 50: {
-              input.readMessage(
-                  getVoucherTypeFieldBuilder().getBuilder(),
-                  extensionRegistry);
-
-              break;
-            } // case 50
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (org.archi.common.core.Voucher) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
 
@@ -1163,18 +1202,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new Voucher(input, extensionRegistry);
     }
   };
 
