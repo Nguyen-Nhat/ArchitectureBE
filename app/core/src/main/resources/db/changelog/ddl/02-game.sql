@@ -6,23 +6,6 @@ CREATE TABLE piece (
     image_url TEXT NOT NULL
 );
 
-INSERT INTO campaign (name)
-VALUES
-    ('Campaign name 01'),
-    ('Campaign name 02'),
-    ('Campaign name 03');
-
-INSERT INTO voucher_type (name, value, image, description, brand_id)
-VALUES
-    ('voucher_type_1', 50, 'image1', 'description1',3),
-    ('voucher_type_2', 20, 'image2', 'description2', 1);
-
-INSERT INTO voucher (issued_at, expired_date, status, qr_code, player_id, voucher_type_id)
-VALUES
-    ('2025-01-01 18:00:00', '2025-01-01 18:00:00', 'status1', 'qr_code1', 32, 2),
-    ('2025-01-01 18:00:00','2025-01-01 18:00:00', 'status2', 'qr_code2', 19, 2),
-    ('2025-01-01 18:00:00','2025-01-01 18:00:00', 'status3', 'qr_code3', 32,1);
-
 INSERT INTO piece (image_url)
 VALUES
     ('/piece01image.png'),
@@ -95,11 +78,11 @@ VALUES
 -- 4. just for testing, delete later --
 INSERT INTO game (start_at, type_id, campaign_id)
 VALUES
-    ('2025-01-01 18:00:00', 1, 1),
-    (NULL, 2, 1),
-    (NULL, 2, 2),
-    ('2025-01-01 18:01:00', 1, 2),
-    ('2025-01-01 18:02:00', 1, 3);
+    ('2025-01-01 18:00:00', 1, 10),
+    (NULL, 2, 10),
+    (NULL, 2, 11),
+    ('2025-01-01 18:01:00', 1, 11),
+    ('2025-01-01 18:02:00', 1, 12);
 
 INSERT INTO quiz_question (game_id, question_number, question_title, question_content, answer_a, answer_b, answer_c, answer_d, correct_answer, answer_explanation)
 VALUES

@@ -146,7 +146,7 @@ public class CoreController {
             "allowPiecesExchange": true,
             "startAt": "2025-01-30 14:03:24",
             "gameTypeId": 1,
-            "campaignId": 3
+            "campaignId": 10
           }
         */
         return coreService.addGame(request);
@@ -161,7 +161,7 @@ public class CoreController {
             "allowPiecesExchange": false,
             "startAt": "2025-01-25 20:03:24",
             "gameTypeId": 2,
-            "campaignId": 1
+            "campaignId": 10
           }
         */
         return coreService.updateGame(request);
@@ -202,7 +202,7 @@ public class CoreController {
     public ResponseEntity<ResponseData> addQuizQuestion(@RequestBody AddQuizQuestionRequest request) {
         /*
          {
-            "gameId": "4",
+            "gameId": 4,
             "questionNumber": 9,
             "questionTitle": "hi",
             "questionContent": "hi",
@@ -223,7 +223,7 @@ public class CoreController {
         /*
           {
             "id": 11,
-            "gameId": "4",
+            "gameId": 4,
             "questionNumber": 10,
             "questionTitle": "he",
             "questionContent": "hi",
