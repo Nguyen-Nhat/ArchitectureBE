@@ -39,7 +39,7 @@ public class CampaignService {
     }
 
     // OK
-    public org.archi.common.core.Campaign createCampaign(CreateCampaignRequest campaignRequest) {
+    public Campaign createCampaign(CreateCampaignRequest campaignRequest) {
 
         // Validate campaign request fields
         if (campaignRequest.getName() == null || campaignRequest.getName().isEmpty()) {
@@ -75,21 +75,9 @@ public class CampaignService {
         campaign.setBrandId(campaignRequest.getBrandId());
         campaign.setDescription(campaignRequest.getDescription());
 
-        System.out.println(campaign);
-
-        // Save the campaign and map it to the response object
         Campaign savedCampaign = campaignRepo.save(campaign);
 
-        String description = savedCampaign.getDescription();
-        return org.archi.common.core.Campaign.newBuilder()
-                .setId(savedCampaign.getId())
-                .setName(savedCampaign.getName())
-                .setImageUrl(savedCampaign.getImageUrl())
-                .setDescription(description == null ? "" : description)
-                .setStartDate(savedCampaign.getStartDate().toString())
-                .setEndDate(savedCampaign.getEndDate().toString())
-                .setStatus(savedCampaign.getStatus())
-                .build();
+        return savedCampaign;
 
     }
 

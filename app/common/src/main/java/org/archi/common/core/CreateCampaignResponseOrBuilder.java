@@ -8,17 +8,86 @@ public interface CreateCampaignResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.Campaign campaign = 1;</code>
-   * @return Whether the campaign field is set.
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  boolean hasCampaign();
+  java.lang.String getName();
   /**
-   * <code>.Campaign campaign = 1;</code>
-   * @return The campaign.
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
-  org.archi.common.core.Campaign getCampaign();
+  com.google.protobuf.ByteString
+      getNameBytes();
+
   /**
-   * <code>.Campaign campaign = 1;</code>
+   * <code>string imageUrl = 2;</code>
+   * @return The imageUrl.
    */
-  org.archi.common.core.CampaignOrBuilder getCampaignOrBuilder();
+  java.lang.String getImageUrl();
+  /**
+   * <code>string imageUrl = 2;</code>
+   * @return The bytes for imageUrl.
+   */
+  com.google.protobuf.ByteString
+      getImageUrlBytes();
+
+  /**
+   * <code>string startDate = 3;</code>
+   * @return The startDate.
+   */
+  java.lang.String getStartDate();
+  /**
+   * <code>string startDate = 3;</code>
+   * @return The bytes for startDate.
+   */
+  com.google.protobuf.ByteString
+      getStartDateBytes();
+
+  /**
+   * <code>string endDate = 4;</code>
+   * @return The endDate.
+   */
+  java.lang.String getEndDate();
+  /**
+   * <code>string endDate = 4;</code>
+   * @return The bytes for endDate.
+   */
+  com.google.protobuf.ByteString
+      getEndDateBytes();
+
+  /**
+   * <code>string status = 5;</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 5;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
+
+  /**
+   * <code>int64 brandId = 6;</code>
+   * @return The brandId.
+   */
+  long getBrandId();
+
+  /**
+   * <code>string description = 7;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <code>string description = 7;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
+
+  /**
+   * <code>int64 id = 8;</code>
+   * @return The id.
+   */
+  long getId();
 }

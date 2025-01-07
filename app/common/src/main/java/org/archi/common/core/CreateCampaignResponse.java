@@ -16,6 +16,12 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateCampaignResponse() {
+    name_ = "";
+    imageUrl_ = "";
+    startDate_ = "";
+    endDate_ = "";
+    status_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +55,49 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            org.archi.common.core.Campaign.Builder subBuilder = null;
-            if (campaign_ != null) {
-              subBuilder = campaign_.toBuilder();
-            }
-            campaign_ = input.readMessage(org.archi.common.core.Campaign.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(campaign_);
-              campaign_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            name_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            imageUrl_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            startDate_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            endDate_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status_ = s;
+            break;
+          }
+          case 48: {
+
+            brandId_ = input.readInt64();
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
+            break;
+          }
+          case 64: {
+
+            id_ = input.readInt64();
             break;
           }
           default: {
@@ -93,30 +132,254 @@ private static final long serialVersionUID = 0L;
             org.archi.common.core.CreateCampaignResponse.class, org.archi.common.core.CreateCampaignResponse.Builder.class);
   }
 
-  public static final int CAMPAIGN_FIELD_NUMBER = 1;
-  private org.archi.common.core.Campaign campaign_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>.Campaign campaign = 1;</code>
-   * @return Whether the campaign field is set.
+   * <code>string name = 1;</code>
+   * @return The name.
    */
   @java.lang.Override
-  public boolean hasCampaign() {
-    return campaign_ != null;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.Campaign campaign = 1;</code>
-   * @return The campaign.
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public org.archi.common.core.Campaign getCampaign() {
-    return campaign_ == null ? org.archi.common.core.Campaign.getDefaultInstance() : campaign_;
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IMAGEURL_FIELD_NUMBER = 2;
+  private volatile java.lang.Object imageUrl_;
+  /**
+   * <code>string imageUrl = 2;</code>
+   * @return The imageUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getImageUrl() {
+    java.lang.Object ref = imageUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imageUrl_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.Campaign campaign = 1;</code>
+   * <code>string imageUrl = 2;</code>
+   * @return The bytes for imageUrl.
    */
   @java.lang.Override
-  public org.archi.common.core.CampaignOrBuilder getCampaignOrBuilder() {
-    return getCampaign();
+  public com.google.protobuf.ByteString
+      getImageUrlBytes() {
+    java.lang.Object ref = imageUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      imageUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STARTDATE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object startDate_;
+  /**
+   * <code>string startDate = 3;</code>
+   * @return The startDate.
+   */
+  @java.lang.Override
+  public java.lang.String getStartDate() {
+    java.lang.Object ref = startDate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      startDate_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string startDate = 3;</code>
+   * @return The bytes for startDate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStartDateBytes() {
+    java.lang.Object ref = startDate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      startDate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENDDATE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object endDate_;
+  /**
+   * <code>string endDate = 4;</code>
+   * @return The endDate.
+   */
+  @java.lang.Override
+  public java.lang.String getEndDate() {
+    java.lang.Object ref = endDate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      endDate_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string endDate = 4;</code>
+   * @return The bytes for endDate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEndDateBytes() {
+    java.lang.Object ref = endDate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      endDate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 5;
+  private volatile java.lang.Object status_;
+  /**
+   * <code>string status = 5;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 5;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BRANDID_FIELD_NUMBER = 6;
+  private long brandId_;
+  /**
+   * <code>int64 brandId = 6;</code>
+   * @return The brandId.
+   */
+  @java.lang.Override
+  public long getBrandId() {
+    return brandId_;
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 7;
+  private volatile java.lang.Object description_;
+  /**
+   * <code>string description = 7;</code>
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string description = 7;</code>
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ID_FIELD_NUMBER = 8;
+  private long id_;
+  /**
+   * <code>int64 id = 8;</code>
+   * @return The id.
+   */
+  @java.lang.Override
+  public long getId() {
+    return id_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +396,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (campaign_ != null) {
-      output.writeMessage(1, getCampaign());
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
+    if (!getImageUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageUrl_);
+    }
+    if (!getStartDateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, startDate_);
+    }
+    if (!getEndDateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, endDate_);
+    }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
+    }
+    if (brandId_ != 0L) {
+      output.writeInt64(6, brandId_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+    }
+    if (id_ != 0L) {
+      output.writeInt64(8, id_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +429,31 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (campaign_ != null) {
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!getImageUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageUrl_);
+    }
+    if (!getStartDateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, startDate_);
+    }
+    if (!getEndDateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, endDate_);
+    }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
+    }
+    if (brandId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getCampaign());
+        .computeInt64Size(6, brandId_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+    }
+    if (id_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(8, id_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +470,22 @@ private static final long serialVersionUID = 0L;
     }
     org.archi.common.core.CreateCampaignResponse other = (org.archi.common.core.CreateCampaignResponse) obj;
 
-    if (hasCampaign() != other.hasCampaign()) return false;
-    if (hasCampaign()) {
-      if (!getCampaign()
-          .equals(other.getCampaign())) return false;
-    }
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getImageUrl()
+        .equals(other.getImageUrl())) return false;
+    if (!getStartDate()
+        .equals(other.getStartDate())) return false;
+    if (!getEndDate()
+        .equals(other.getEndDate())) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
+    if (getBrandId()
+        != other.getBrandId()) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (getId()
+        != other.getId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +497,24 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasCampaign()) {
-      hash = (37 * hash) + CAMPAIGN_FIELD_NUMBER;
-      hash = (53 * hash) + getCampaign().hashCode();
-    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + IMAGEURL_FIELD_NUMBER;
+    hash = (53 * hash) + getImageUrl().hashCode();
+    hash = (37 * hash) + STARTDATE_FIELD_NUMBER;
+    hash = (53 * hash) + getStartDate().hashCode();
+    hash = (37 * hash) + ENDDATE_FIELD_NUMBER;
+    hash = (53 * hash) + getEndDate().hashCode();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + BRANDID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getBrandId());
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +648,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (campaignBuilder_ == null) {
-        campaign_ = null;
-      } else {
-        campaign_ = null;
-        campaignBuilder_ = null;
-      }
+      name_ = "";
+
+      imageUrl_ = "";
+
+      startDate_ = "";
+
+      endDate_ = "";
+
+      status_ = "";
+
+      brandId_ = 0L;
+
+      description_ = "";
+
+      id_ = 0L;
+
       return this;
     }
 
@@ -349,11 +690,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.archi.common.core.CreateCampaignResponse buildPartial() {
       org.archi.common.core.CreateCampaignResponse result = new org.archi.common.core.CreateCampaignResponse(this);
-      if (campaignBuilder_ == null) {
-        result.campaign_ = campaign_;
-      } else {
-        result.campaign_ = campaignBuilder_.build();
-      }
+      result.name_ = name_;
+      result.imageUrl_ = imageUrl_;
+      result.startDate_ = startDate_;
+      result.endDate_ = endDate_;
+      result.status_ = status_;
+      result.brandId_ = brandId_;
+      result.description_ = description_;
+      result.id_ = id_;
       onBuilt();
       return result;
     }
@@ -402,8 +746,35 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.archi.common.core.CreateCampaignResponse other) {
       if (other == org.archi.common.core.CreateCampaignResponse.getDefaultInstance()) return this;
-      if (other.hasCampaign()) {
-        mergeCampaign(other.getCampaign());
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getImageUrl().isEmpty()) {
+        imageUrl_ = other.imageUrl_;
+        onChanged();
+      }
+      if (!other.getStartDate().isEmpty()) {
+        startDate_ = other.startDate_;
+        onChanged();
+      }
+      if (!other.getEndDate().isEmpty()) {
+        endDate_ = other.endDate_;
+        onChanged();
+      }
+      if (!other.getStatus().isEmpty()) {
+        status_ = other.status_;
+        onChanged();
+      }
+      if (other.getBrandId() != 0L) {
+        setBrandId(other.getBrandId());
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
+      if (other.getId() != 0L) {
+        setId(other.getId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +805,522 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.archi.common.core.Campaign campaign_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.archi.common.core.Campaign, org.archi.common.core.Campaign.Builder, org.archi.common.core.CampaignOrBuilder> campaignBuilder_;
+    private java.lang.Object name_ = "";
     /**
-     * <code>.Campaign campaign = 1;</code>
-     * @return Whether the campaign field is set.
+     * <code>string name = 1;</code>
+     * @return The name.
      */
-    public boolean hasCampaign() {
-      return campaignBuilder_ != null || campaign_ != null;
-    }
-    /**
-     * <code>.Campaign campaign = 1;</code>
-     * @return The campaign.
-     */
-    public org.archi.common.core.Campaign getCampaign() {
-      if (campaignBuilder_ == null) {
-        return campaign_ == null ? org.archi.common.core.Campaign.getDefaultInstance() : campaign_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
       } else {
-        return campaignBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.Campaign campaign = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
-    public Builder setCampaign(org.archi.common.core.Campaign value) {
-      if (campaignBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        campaign_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
       } else {
-        campaignBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.Campaign campaign = 1;</code>
+     * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
-    public Builder setCampaign(
-        org.archi.common.core.Campaign.Builder builderForValue) {
-      if (campaignBuilder_ == null) {
-        campaign_ = builderForValue.build();
-        onChanged();
-      } else {
-        campaignBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.Campaign campaign = 1;</code>
-     */
-    public Builder mergeCampaign(org.archi.common.core.Campaign value) {
-      if (campaignBuilder_ == null) {
-        if (campaign_ != null) {
-          campaign_ =
-            org.archi.common.core.Campaign.newBuilder(campaign_).mergeFrom(value).buildPartial();
-        } else {
-          campaign_ = value;
-        }
-        onChanged();
-      } else {
-        campaignBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.Campaign campaign = 1;</code>
-     */
-    public Builder clearCampaign() {
-      if (campaignBuilder_ == null) {
-        campaign_ = null;
-        onChanged();
-      } else {
-        campaign_ = null;
-        campaignBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.Campaign campaign = 1;</code>
-     */
-    public org.archi.common.core.Campaign.Builder getCampaignBuilder() {
-      
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
       onChanged();
-      return getCampaignFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.Campaign campaign = 1;</code>
+     * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
-    public org.archi.common.core.CampaignOrBuilder getCampaignOrBuilder() {
-      if (campaignBuilder_ != null) {
-        return campaignBuilder_.getMessageOrBuilder();
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object imageUrl_ = "";
+    /**
+     * <code>string imageUrl = 2;</code>
+     * @return The imageUrl.
+     */
+    public java.lang.String getImageUrl() {
+      java.lang.Object ref = imageUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageUrl_ = s;
+        return s;
       } else {
-        return campaign_ == null ?
-            org.archi.common.core.Campaign.getDefaultInstance() : campaign_;
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.Campaign campaign = 1;</code>
+     * <code>string imageUrl = 2;</code>
+     * @return The bytes for imageUrl.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.archi.common.core.Campaign, org.archi.common.core.Campaign.Builder, org.archi.common.core.CampaignOrBuilder> 
-        getCampaignFieldBuilder() {
-      if (campaignBuilder_ == null) {
-        campaignBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.archi.common.core.Campaign, org.archi.common.core.Campaign.Builder, org.archi.common.core.CampaignOrBuilder>(
-                getCampaign(),
-                getParentForChildren(),
-                isClean());
-        campaign_ = null;
+    public com.google.protobuf.ByteString
+        getImageUrlBytes() {
+      java.lang.Object ref = imageUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        imageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return campaignBuilder_;
+    }
+    /**
+     * <code>string imageUrl = 2;</code>
+     * @param value The imageUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      imageUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string imageUrl = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearImageUrl() {
+      
+      imageUrl_ = getDefaultInstance().getImageUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string imageUrl = 2;</code>
+     * @param value The bytes for imageUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      imageUrl_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object startDate_ = "";
+    /**
+     * <code>string startDate = 3;</code>
+     * @return The startDate.
+     */
+    public java.lang.String getStartDate() {
+      java.lang.Object ref = startDate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startDate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string startDate = 3;</code>
+     * @return The bytes for startDate.
+     */
+    public com.google.protobuf.ByteString
+        getStartDateBytes() {
+      java.lang.Object ref = startDate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startDate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string startDate = 3;</code>
+     * @param value The startDate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartDate(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      startDate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string startDate = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStartDate() {
+      
+      startDate_ = getDefaultInstance().getStartDate();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string startDate = 3;</code>
+     * @param value The bytes for startDate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartDateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      startDate_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object endDate_ = "";
+    /**
+     * <code>string endDate = 4;</code>
+     * @return The endDate.
+     */
+    public java.lang.String getEndDate() {
+      java.lang.Object ref = endDate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endDate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string endDate = 4;</code>
+     * @return The bytes for endDate.
+     */
+    public com.google.protobuf.ByteString
+        getEndDateBytes() {
+      java.lang.Object ref = endDate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endDate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string endDate = 4;</code>
+     * @param value The endDate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndDate(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      endDate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string endDate = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndDate() {
+      
+      endDate_ = getDefaultInstance().getEndDate();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string endDate = 4;</code>
+     * @param value The bytes for endDate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndDateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      endDate_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object status_ = "";
+    /**
+     * <code>string status = 5;</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 5;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 5;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status_ = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 5;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long brandId_ ;
+    /**
+     * <code>int64 brandId = 6;</code>
+     * @return The brandId.
+     */
+    @java.lang.Override
+    public long getBrandId() {
+      return brandId_;
+    }
+    /**
+     * <code>int64 brandId = 6;</code>
+     * @param value The brandId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrandId(long value) {
+      
+      brandId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 brandId = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBrandId() {
+      
+      brandId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <code>string description = 7;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string description = 7;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string description = 7;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 7;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long id_ ;
+    /**
+     * <code>int64 id = 8;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+    /**
+     * <code>int64 id = 8;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(long value) {
+      
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 id = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

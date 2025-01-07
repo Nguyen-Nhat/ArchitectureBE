@@ -159,19 +159,15 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 	@Override
 	public void createCampaign(CreateCampaignRequest request, StreamObserver<CreateCampaignResponse> responseObserver) {
 		try {
-			Campaign c = campaignService.createCampaign(request);
+			org.archi.core.entity.Campaign c = campaignService.createCampaign(request);
             CreateCampaignResponse response = CreateCampaignResponse.newBuilder()
-					.setCampaign(Campaign.newBuilder()
-							.setId(c.getId())
-							.setName(c.getName())
-							.setImageUrl(c.getImageUrl())
-							.setStartDate(c.getStartDate())
-							.setEndDate( c.getEndDate())
-							.setStatus(c.getStatus())
-							.setDescription(c.getDescription())
-							.build())
-					.build();
-
+					.setId(c.getId())
+					.setName(c.getName())
+					.setStartDate(c.getStartDate().toString())
+					.setDescription(c.getDescription())
+					.setEndDate(c.getEndDate().toString())
+					.setBrandId(c.getBrandId())
+					.setImageUrl(c.getImageUrl()).build();
 			responseObserver.onNext(response);
 			responseObserver.onCompleted();
 		}  catch (InvalidArgumentException e) {
@@ -199,8 +195,10 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 	public void getCampaignsByBrandId(GetCampaignsByBrandIdReq request, StreamObserver<GetCampaignsByBrandIdRes> responseObserver) {
 		try {
 			long brandId = request.getBrandId();
-
 			List<org.archi.core.entity.Campaign> campaigns = campaignService.getCampaignsByBrandId(brandId);
+			if (campaigns.isEmpty()) {
+				throw new ResourceNotFoundException("No campaigns found for the brand ID: " + brandId);
+			}
 
 			List<org.archi.common.core.Campaign> grpcCampaigns = campaigns.stream()
 					.map(campaign -> org.archi.common.core.Campaign.newBuilder()
@@ -220,7 +218,15 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 
 			responseObserver.onNext(response);
 			responseObserver.onCompleted();
-		} catch (Exception e) {
+		}
+		catch (ResourceNotFoundException e) {
+			// Handle resource not found
+			responseObserver.onError(Status.NOT_FOUND
+					.withDescription(e.getMessage())
+					.withCause(e)
+					.asRuntimeException());
+		}
+		catch (Exception e) {
 			// Handle exception
 			responseObserver.onError(e);
 		}

@@ -2,6 +2,8 @@ package org.archi.bff.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.archi.bff.request.CreateCampaignRequest;
+import org.archi.bff.request.UpdateCampaign;
+import org.archi.bff.response.CampaignResponse;
 import org.archi.bff.response.ResponseData;
 import org.archi.bff.service.CoreService;
 import org.archi.common.core.*;
@@ -17,11 +19,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/core")
+@RequestMapping(value = "/api/core")
 @RequiredArgsConstructor
 public class CoreController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CoreController.class);
@@ -84,6 +87,11 @@ public class CoreController {
         return coreService.getCampaigns(startDate, endDate);
     }
 
+    /*
+        {
+            url path: "localhost:8080/api/auth/core/campaigns/search?term=example"
+        }
+    * */
     @GetMapping("/campaigns/search")
     public ResponseEntity<ResponseData> searchCampaign(@RequestParam String term) {
         return coreService.searchCampaign(term);
@@ -109,30 +117,29 @@ public class CoreController {
         return coreService.createCampaign(accountId, request);
     }
 
-    @PreAuthorize("hasRole('BRAND')")
-    @PostMapping("/test")
-    public ResponseEntity<ResponseData> testController() {
-        return ResponseEntity.ok(new ResponseData(200, "ok", "none"));
-    }
-
-    @PreAuthorize("hasRole('BRAND')")
-    @GetMapping("/test")
-    public ResponseEntity<ResponseData> testController2() {
-        return ResponseEntity.ok(new ResponseData(200, "ok", "none"));
-    }
-
+    /*
+    * path: /api/core/campaigns/by-brand-id?id=3
+    * */
     @GetMapping("/campaigns/by-brand-id")
     @PreAuthorize("hasRole('BRAND')")
     public ResponseEntity<ResponseData> getCampaignsByBrandId(@RequestParam Long id) {
-        GetCampaignsByBrandIdReq request = GetCampaignsByBrandIdReq.newBuilder()
-                .setBrandId(id)
-                .build();
-        return coreService.getCampaignsByBrandId(request);
+        return coreService.getCampaignsByBrandId(id);
     }
 
-    @PutMapping("/campaigns")
+    /*
+    * path: /api/core/campaigns/3
+    * body:
+    *       {
+    *         "name": "New name",
+    *         "description": "New description"
+    *       }
+    * */
+    @PatchMapping("/campaigns/{id}")
     @PreAuthorize("hasRole('BRAND')")
-    public UpdateCampaignRes updateCampaign(@RequestBody UpdateCampaignReq request) {
-        return coreService.updateCampaign(request);
+    public ResponseEntity<ResponseData> updateCampaign(
+            @RequestBody UpdateCampaign request,
+            @PathVariable String id
+    ) {
+        return coreService.updateCampaign(id, request);
     }
 }

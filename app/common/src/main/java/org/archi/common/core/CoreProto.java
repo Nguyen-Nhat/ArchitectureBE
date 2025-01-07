@@ -195,37 +195,40 @@ public final class CoreProto {
       "ignRequest\022\014\n\004name\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001" +
       "(\t\022\021\n\tstartDate\030\003 \001(\t\022\017\n\007endDate\030\004 \001(\t\022\016" +
       "\n\006status\030\005 \001(\t\022\017\n\007brandId\030\006 \001(\003\022\023\n\013descr" +
-      "iption\030\007 \001(\t\"5\n\026CreateCampaignResponse\022\033" +
-      "\n\010campaign\030\001 \001(\0132\t.Campaign\"+\n\030GetCampai" +
-      "gnsByBrandIdReq\022\017\n\007brandId\030\001 \001(\003\"8\n\030GetC" +
-      "ampaignsByBrandIdRes\022\034\n\tcampaigns\030\001 \003(\0132" +
-      "\t.Campaign\"\242\001\n\021UpdateCampaignReq\022\022\n\ncamp" +
-      "aignId\030\001 \001(\003\022\017\n\007newName\030\002 \001(\t\022\023\n\013newImag" +
-      "eUrl\030\003 \001(\t\022\024\n\014newStartDate\030\004 \001(\t\022\022\n\nnewE" +
-      "ndDate\030\005 \001(\t\022\021\n\tnewStatus\030\006 \001(\t\022\026\n\016newDe" +
-      "scription\030\007 \001(\t\"0\n\021UpdateCampaignRes\022\033\n\010" +
-      "campaign\030\001 \001(\0132\t.Campaign2\237\006\n\013CoreServic" +
-      "e\022D\n\017GenerateVoucher\022\027.GenerateVoucherRe" +
-      "quest\032\030.GenerateVoucherResponse\022J\n\021Creat" +
-      "eVoucherType\022\031.CreateVoucherTypeRequest\032" +
-      "\032.CreateVoucherTypeResponse\0227\n\rSearchVou" +
-      "cher\022\016.SearchRequest\032\026.SearchVoucherResp" +
-      "onse\022?\n\021SearchVoucherType\022\016.SearchReques" +
-      "t\032\032.SearchVoucherTypeResponse\022A\n\021UpdateV" +
-      "oucherType\022\025.UpdateVoucherTypeReq\032\025.Upda" +
-      "teVoucherTypeRes\022;\n\017GetVouchersType\022\023.Ge" +
-      "tVoucherTypesReq\032\023.GetVoucherTypesRes\0228\n" +
-      "\013GetVouchers\022\023.GetVouchersRequest\032\024.GetV" +
-      "ouchersResponse\022;\n\014GetCampaigns\022\024.GetCam" +
-      "paignsRequest\032\025.GetCampaignsResponse\022A\n\016" +
-      "SearchCampaign\022\026.SearchCampaignRequest\032\027" +
-      ".SearchCampaignResponse\022A\n\016CreateCampaig" +
-      "n\022\026.CreateCampaignRequest\032\027.CreateCampai" +
-      "gnResponse\022M\n\025GetCampaignsByBrandId\022\031.Ge" +
-      "tCampaignsByBrandIdReq\032\031.GetCampaignsByB" +
-      "randIdRes\0228\n\016UpdateCampaign\022\022.UpdateCamp" +
-      "aignReq\032\022.UpdateCampaignResB$\n\025org.archi" +
-      ".common.coreB\tCoreProtoP\001b\006proto3"
+      "iption\030\007 \001(\t\"\236\001\n\026CreateCampaignResponse\022" +
+      "\014\n\004name\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\021\n\tstart" +
+      "Date\030\003 \001(\t\022\017\n\007endDate\030\004 \001(\t\022\016\n\006status\030\005 " +
+      "\001(\t\022\017\n\007brandId\030\006 \001(\003\022\023\n\013description\030\007 \001(" +
+      "\t\022\n\n\002id\030\010 \001(\003\"+\n\030GetCampaignsByBrandIdRe" +
+      "q\022\017\n\007brandId\030\001 \001(\003\"8\n\030GetCampaignsByBran" +
+      "dIdRes\022\034\n\tcampaigns\030\001 \003(\0132\t.Campaign\"\242\001\n" +
+      "\021UpdateCampaignReq\022\022\n\ncampaignId\030\001 \001(\003\022\017" +
+      "\n\007newName\030\002 \001(\t\022\023\n\013newImageUrl\030\003 \001(\t\022\024\n\014" +
+      "newStartDate\030\004 \001(\t\022\022\n\nnewEndDate\030\005 \001(\t\022\021" +
+      "\n\tnewStatus\030\006 \001(\t\022\026\n\016newDescription\030\007 \001(" +
+      "\t\"0\n\021UpdateCampaignRes\022\033\n\010campaign\030\001 \001(\013" +
+      "2\t.Campaign2\237\006\n\013CoreService\022D\n\017GenerateV" +
+      "oucher\022\027.GenerateVoucherRequest\032\030.Genera" +
+      "teVoucherResponse\022J\n\021CreateVoucherType\022\031" +
+      ".CreateVoucherTypeRequest\032\032.CreateVouche" +
+      "rTypeResponse\0227\n\rSearchVoucher\022\016.SearchR" +
+      "equest\032\026.SearchVoucherResponse\022?\n\021Search" +
+      "VoucherType\022\016.SearchRequest\032\032.SearchVouc" +
+      "herTypeResponse\022A\n\021UpdateVoucherType\022\025.U" +
+      "pdateVoucherTypeReq\032\025.UpdateVoucherTypeR" +
+      "es\022;\n\017GetVouchersType\022\023.GetVoucherTypesR" +
+      "eq\032\023.GetVoucherTypesRes\0228\n\013GetVouchers\022\023" +
+      ".GetVouchersRequest\032\024.GetVouchersRespons" +
+      "e\022;\n\014GetCampaigns\022\024.GetCampaignsRequest\032" +
+      "\025.GetCampaignsResponse\022A\n\016SearchCampaign" +
+      "\022\026.SearchCampaignRequest\032\027.SearchCampaig" +
+      "nResponse\022A\n\016CreateCampaign\022\026.CreateCamp" +
+      "aignRequest\032\027.CreateCampaignResponse\022M\n\025" +
+      "GetCampaignsByBrandId\022\031.GetCampaignsByBr" +
+      "andIdReq\032\031.GetCampaignsByBrandIdRes\0228\n\016U" +
+      "pdateCampaign\022\022.UpdateCampaignReq\032\022.Upda" +
+      "teCampaignResB$\n\025org.archi.common.coreB\t" +
+      "CoreProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -362,7 +365,7 @@ public final class CoreProto {
     internal_static_CreateCampaignResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateCampaignResponse_descriptor,
-        new java.lang.String[] { "Campaign", });
+        new java.lang.String[] { "Name", "ImageUrl", "StartDate", "EndDate", "Status", "BrandId", "Description", "Id", });
     internal_static_GetCampaignsByBrandIdReq_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_GetCampaignsByBrandIdReq_fieldAccessorTable = new
