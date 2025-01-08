@@ -3,9 +3,12 @@ package org.archi.bff.service;
 import lombok.RequiredArgsConstructor;
 import org.archi.bff.adapter.AuthAdapter;
 import org.archi.bff.adapter.CoreAdapter;
+import org.archi.bff.request.CreateVoucherType;
 import org.archi.bff.request.UpdateCampaign;
+import org.archi.bff.request.UpdateVoucherType;
 import org.archi.bff.response.CampaignResponse;
 import org.archi.bff.response.ResponseData;
+import org.archi.bff.response.VoucherTypeResponse;
 import org.archi.common.auth.GetBrandProfileRequest;
 import org.archi.common.auth.GetBrandProfileResponse;
 import org.archi.common.core.*;
@@ -32,7 +35,7 @@ public class CoreService {
             ResponseData responseData = new ResponseData(
                     HttpStatus.OK.value(),
                     "success",
-                    response);
+                    response.getVouchersList());
             return ResponseEntity.ok(responseData);
 
         } catch (Exception e) {
@@ -49,7 +52,20 @@ public class CoreService {
                     .build();
 
             GetVoucherTypesRes response = coreAdapter.getVoucherTypes(request);
-            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response.getVoucherTypesList());
+            ResponseData responseData = new ResponseData(
+                    HttpStatus.OK.value(),
+                    "success",
+                    response.getVoucherTypesList().stream().map(vcType ->
+                            VoucherTypeResponse.builder()
+                                    .id(vcType.getId())
+                                    .brandId(vcType.getBrandId())
+                                    .name(vcType.getName())
+                                    .imageUrl(vcType.getImageUrl())
+                                    .description(vcType.getDescription())
+                                    .value((long)vcType.getValue())
+                                    .build())
+                    .collect(Collectors.toList())
+            );
             return ResponseEntity.ok(responseData);
 
         } catch (Exception e) {
@@ -58,10 +74,36 @@ public class CoreService {
         }
     }
 
-    public ResponseEntity<ResponseData> createVoucherType(CreateVoucherTypeRequest request) {
+    public ResponseEntity<ResponseData> createVoucherType(long accountId, CreateVoucherType request) {
         try {
-            CreateVoucherTypeResponse response = coreAdapter.createVoucherType(request);
-            return ResponseEntity.ok(new ResponseData(HttpStatus.OK.value(), "succes", response.getVoucherType()));
+            // Get the brand id from account id
+            GetBrandProfileResponse brandProfile = authAdapter.getBrandProfile(
+                    GetBrandProfileRequest.newBuilder()
+                            .setId(accountId).build());
+
+            long brandId = brandProfile.getId();
+            CreateVoucherTypeRequest grpcReq = CreateVoucherTypeRequest.newBuilder()
+                    .setBrandId(brandId)
+                    .setDescription(request.getDescription())
+                    .setName(request.getName())
+                    .setValue(request.getValue())
+                    .setImageUrl(request.getImageUrl())
+                    .build();
+
+            CreateVoucherTypeResponse response = coreAdapter.createVoucherType(grpcReq);
+            VoucherType vcType = response.getVoucherType();
+            return ResponseEntity.ok(
+                    new ResponseData(
+                            HttpStatus.OK.value(),
+                            "success",
+                            VoucherTypeResponse.builder()
+                                    .id(vcType.getId())
+                                    .brandId(brandId)
+                                    .description(vcType.getDescription())
+                                    .name(vcType.getName())
+                                    .imageUrl(vcType.getImageUrl())
+                            .build()
+                    ));
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(
                     new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Failed to create voucher type", e.getMessage())
@@ -81,10 +123,35 @@ public class CoreService {
         }
     }
 
-    public ResponseEntity<ResponseData> updateVoucherType(UpdateVoucherTypeReq request) {
+    public ResponseEntity<ResponseData> updateVoucherType(Long voucherTypeId, UpdateVoucherType request) {
         try {
-            UpdateVoucherTypeRes grpcResponse = coreAdapter.updateVoucherType(request);
-            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", grpcResponse);
+            UpdateVoucherTypeReq.Builder updateBuilder = UpdateVoucherTypeReq.newBuilder();
+            updateBuilder.setVoucherId(voucherTypeId);
+            if (request.getName() != null && !request.getName().isEmpty()) {
+                updateBuilder.setName(request.getName());
+            }
+            if (request.getDescription() != null && !request.getDescription().isEmpty()) {
+                updateBuilder.setDescription(request.getDescription());
+            }
+            if (request.getValue() > 0) {
+                updateBuilder.setValue(request.getValue());
+            }
+
+            UpdateVoucherTypeRes grpcResponse = coreAdapter.updateVoucherType(updateBuilder.build());
+            VoucherType vcType = grpcResponse.getUpdatedVoucherType();
+
+            ResponseData responseData = new ResponseData(
+                    HttpStatus.OK.value(),
+                    "success",
+                    VoucherTypeResponse.builder()
+                        .id(vcType.getId())
+                        .brandId(vcType.getBrandId())
+                        .name(vcType.getName())
+                        .imageUrl(vcType.getImageUrl())
+                        .description(vcType.getDescription())
+                        .value(vcType.getValue())
+                        .build()
+                    );
             return ResponseEntity.ok(responseData);
 
         } catch (Exception e) {
@@ -93,10 +160,15 @@ public class CoreService {
         }
     }
 
+    //note
     public ResponseEntity<ResponseData> searchVoucher(String term) {
         try {
             SearchVoucherResponse response = coreAdapter.searchVoucher(SearchRequest.newBuilder().setTerm(term).build());
-            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response);
+
+            ResponseData responseData = new ResponseData(
+                    HttpStatus.OK.value(),
+                    "success",
+                    response.getVouchersList());
             return ResponseEntity.ok(responseData);
         } catch (Exception e) {
             ResponseData errorResponse = new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "error", e.getMessage());
@@ -107,7 +179,20 @@ public class CoreService {
     public ResponseEntity<ResponseData> searchVoucherType(String term) {
         try {
             SearchVoucherTypeResponse response = coreAdapter.searchVoucherType(SearchRequest.newBuilder().setTerm(term).build());
-            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response);
+            ResponseData responseData = new ResponseData(
+                    HttpStatus.OK.value(),
+                    "success",
+                    response.getVoucherTypesList().stream().map(vcType ->
+                            VoucherTypeResponse.builder()
+                            .id(vcType.getId())
+                            .brandId(vcType.getBrandId())
+                            .name(vcType.getName())
+                            .imageUrl(vcType.getImageUrl())
+                            .description(vcType.getDescription())
+                            .value((long)vcType.getValue())
+                            .build())
+                            .collect(Collectors.toList())
+            );
             return ResponseEntity.ok(responseData);
         } catch (Exception e) {
             ResponseData errorResponse = new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "error", e.getMessage());
@@ -122,7 +207,22 @@ public class CoreService {
                     .setEndDate(endDate)
                     .build();
             GetCampaignsResponse response = coreAdapter.getCampaigns(request);
-            ResponseData responseData = new ResponseData(HttpStatus.OK.value(), "success", response);
+            ResponseData responseData = new ResponseData(
+                    HttpStatus.OK.value(),
+                    "success",
+                    response.getCampaignsList().stream().map(
+                            c ->
+                                    CampaignResponse.builder()
+                                            .id(c.getId())
+                                            .name(c.getName())
+                                            .description(c.getDescription())
+                                            .status(c.getStatus())
+                                            .startDate(c.getStartDate())
+                                            .endDate(c.getEndDate())
+                                            .imageUrl(c.getImageUrl())
+                                            .build()
+                    ).collect(Collectors.toList())
+            );
             return ResponseEntity.ok(responseData);
         } catch (Exception e) {
             ResponseData errorResponse = new ResponseData(HttpStatus.INTERNAL_SERVER_ERROR.value(), "error", e.getMessage());

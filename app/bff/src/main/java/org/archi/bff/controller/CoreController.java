@@ -2,7 +2,9 @@ package org.archi.bff.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.archi.bff.request.CreateCampaignRequest;
+import org.archi.bff.request.CreateVoucherType;
 import org.archi.bff.request.UpdateCampaign;
+import org.archi.bff.request.UpdateVoucherType;
 import org.archi.bff.response.CampaignResponse;
 import org.archi.bff.response.ResponseData;
 import org.archi.bff.service.CoreService;
@@ -48,9 +50,10 @@ public class CoreController {
 
     @PostMapping("/voucher-types/create")
     @PreAuthorize("hasRole('BRAND')")
-    public ResponseEntity<ResponseData> createVoucherType(@RequestBody CreateVoucherTypeRequest request) {
+    public ResponseEntity<ResponseData> createVoucherType(@RequestBody CreateVoucherType request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        return coreService.createVoucherType(request);
+        long accountId= Long.parseLong(auth.getName());
+        return coreService.createVoucherType(accountId, request);
     }
 
     @PostMapping("/generate-voucher")
@@ -65,10 +68,12 @@ public class CoreController {
         }
     }
 
-    @PutMapping("/voucher-types")
+    @PatchMapping("/voucher-types/{id}")
     @PreAuthorize("hasRole('BRAND')")
-    public ResponseEntity<ResponseData> updateVoucherType(@RequestBody UpdateVoucherTypeReq request) {
-        return coreService.updateVoucherType(request);
+    public ResponseEntity<ResponseData> updateVoucherType(
+            @PathVariable Long id,
+            @RequestBody UpdateVoucherType request) {
+        return coreService.updateVoucherType(id, request);
     }
 
     @GetMapping("/vouchers/search")

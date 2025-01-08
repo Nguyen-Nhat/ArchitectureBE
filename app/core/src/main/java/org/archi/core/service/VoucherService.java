@@ -64,7 +64,7 @@ public class VoucherService {
     public CreateVoucherTypeResponse createVoucherType(CreateVoucherTypeRequest requestDTO) {
         // Check if a voucher type with the same name already exists for the brand
         if (voucherTypeRepo.existsByNameAndBrandId(requestDTO.getName(), requestDTO.getBrandId())) {
-            throw new IllegalArgumentException(
+            throw new InvalidArgumentException(
                     "Voucher type with the name '" + requestDTO.getName() + "' already exists for this brand.");
         }
 
@@ -90,7 +90,7 @@ public class VoucherService {
                 .build();
     }
 
-    public SearchVoucherResponse searchVoucher(SearchRequest request) {
+    public List<org.archi.common.core.Voucher> searchVoucher(SearchRequest request) {
         String term = request.getTerm();
 
         List<Voucher> matchingVouchers = voucherRepo.findByStatusContainingIgnoreCaseOrQRCodeContainingIgnoreCase(term, term);
@@ -114,14 +114,11 @@ public class VoucherService {
                         .build())
                 .collect(Collectors.toList());
 
-        // Build and return the response
-        return SearchVoucherResponse.newBuilder()
-                .addAllVouchers(grpcVouchers)
-                .build();
+        return grpcVouchers;
     }
 
     // OK
-    public SearchVoucherTypeResponse searchVoucherType(SearchRequest request) {
+    public List<org.archi.common.core.VoucherType> searchVoucherType(SearchRequest request) {
         String term = request.getTerm();
 
         List<VoucherType> matchingTypes = voucherTypeRepo.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(term, term);
@@ -138,9 +135,7 @@ public class VoucherService {
                 .collect(Collectors.toList());
 
         // Build and return the response
-        return SearchVoucherTypeResponse.newBuilder()
-                .addAllVoucherTypes(grpcVoucherTypes)
-                .build();
+        return grpcVoucherTypes;
     }
 
     // OK
@@ -213,12 +208,7 @@ public class VoucherService {
         Long brandId = request.getBrandId();
 
         // Fetch data based on filter
-        List<VoucherType> voucherTypes;
-        if (brandId != null) {
-            voucherTypes = voucherTypeRepo.findAllByBrandId(brandId);
-        } else {
-            voucherTypes = voucherTypeRepo.findAll();
-        }
+        List<VoucherType> voucherTypes =voucherTypeRepo.findAllByBrandId(brandId);
 
         // Map database entities to gRPC response objects
         List<org.archi.common.core.VoucherType> grpcVoucherTypes = voucherTypes.stream()
@@ -233,8 +223,10 @@ public class VoucherService {
                 .collect(Collectors.toList());
 
         // Build and return the response
-        return GetVoucherTypesRes.newBuilder()
-                .addAllVoucherTypes(grpcVoucherTypes)
-                .build();
+        return  grpcVoucherTypes.isEmpty()
+                ? GetVoucherTypesRes.getDefaultInstance()
+                :GetVoucherTypesRes.newBuilder()
+                    .addAllVoucherTypes(grpcVoucherTypes)
+                    .build();
     }
 }

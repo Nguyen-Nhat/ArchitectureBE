@@ -79,8 +79,11 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 	@Override
 	public void searchVoucher(SearchRequest request, StreamObserver<SearchVoucherResponse> responseObserver) {
 		try {
-			SearchVoucherResponse response = voucherService.searchVoucher(request);
-			responseObserver.onNext(response);
+			List<Voucher> grpcVouchers = voucherService.searchVoucher(request);
+			responseObserver.onNext(grpcVouchers.isEmpty()
+					? SearchVoucherResponse.getDefaultInstance()
+					: SearchVoucherResponse.newBuilder()
+						.addAllVouchers(grpcVouchers).build());
 			responseObserver.onCompleted();
 		} catch (Exception e) {
 			responseObserver.onError(e);
@@ -90,9 +93,12 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 	@Override
 	public void searchVoucherType(SearchRequest request, StreamObserver<SearchVoucherTypeResponse> responseObserver) {
 		try {
-			// Invoke service logic
-			SearchVoucherTypeResponse response = voucherService.searchVoucherType(request);
-			responseObserver.onNext(response);
+			List<VoucherType> vcTypes = voucherService.searchVoucherType(request);
+			responseObserver.onNext(vcTypes.isEmpty()
+					? SearchVoucherTypeResponse.getDefaultInstance()
+					: SearchVoucherTypeResponse.newBuilder()
+						.addAllVoucherTypes(vcTypes)
+						.build());
 			responseObserver.onCompleted();
 		} catch (Exception e) {
 			responseObserver.onError(e);
@@ -122,11 +128,12 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 							.build()
 			).collect(Collectors.toList());
 
-			GetCampaignsResponse response = GetCampaignsResponse.newBuilder()
-					.addAllCampaigns(grpcCampaigns)
-					.build();
-
-			responseObserver.onNext(response);
+			responseObserver.onNext(grpcCampaigns.isEmpty()
+					? GetCampaignsResponse.getDefaultInstance()
+							: GetCampaignsResponse.newBuilder()
+									.addAllCampaigns(grpcCampaigns)
+									.build()
+					);
 			responseObserver.onCompleted();
 		} catch (Exception e) {
 			responseObserver.onError(e);
