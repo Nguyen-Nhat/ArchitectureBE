@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.stream.Collectors;
 
 @Service
@@ -202,6 +203,12 @@ public class CoreService {
 
     public ResponseEntity<ResponseData> getCampaigns(String startDate, String endDate) {
         try {
+            LocalDate stDate = LocalDate.parse(startDate);
+            LocalDate edDate = LocalDate.parse(endDate);
+            if (edDate.isBefore(stDate)) {
+                ResponseData errorResponse = new ResponseData(HttpStatus.BAD_REQUEST.value(), "error", "End date can not be after start date");
+                return ResponseEntity.badRequest().body(errorResponse);
+            }
             GetCampaignsRequest request = GetCampaignsRequest.newBuilder()
                     .setStartDate(startDate)
                     .setEndDate(endDate)
