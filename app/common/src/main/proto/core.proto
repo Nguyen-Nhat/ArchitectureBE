@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+//import "google/protobuf/timestamp.proto";
+
 option java_multiple_files = true;
 option java_package = "org.archi.common.core";
 option java_outer_classname = "CoreProto";
@@ -18,6 +20,28 @@ service CoreService {
   rpc CreateCampaign(CreateCampaignRequest) returns(CreateCampaignResponse);
   rpc GetCampaignsByBrandId(GetCampaignsByBrandIdReq) returns(GetCampaignsByBrandIdRes);
   rpc UpdateCampaign(UpdateCampaignReq) returns(UpdateCampaignRes);
+
+  rpc GetAllGameTypes(GetAllGameTypesRequest) returns(GetAllGameTypesResponse);
+  rpc GetGameTypeById(GetGameTypeByIdRequest) returns(GetGameTypeByIdResponse);
+  rpc AddGameType(AddGameTypeRequest) returns(AddGameTypeResponse);
+  rpc UpdateGameType(UpdateGameTypeRequest) returns(UpdateGameTypeResponse);
+  rpc DeleteGameType(DeleteGameTypeRequest) returns(DeleteGameTypeResponse);
+
+  rpc GetAllGames(GetAllGamesRequest) returns(GetAllGamesResponse);
+  rpc GetGameById(GetGameByIdRequest) returns(GetGameByIdResponse);
+  rpc GetGamesByCampaign(GetGamesByCampaignRequest) returns(GetGamesByCampaignResponse);
+  rpc AddGame(AddGameRequest) returns(AddGameResponse);
+  rpc UpdateGame(UpdateGameRequest) returns(UpdateGameResponse);
+  rpc DeleteGame(DeleteGameRequest) returns(DeleteGameResponse);
+  rpc AddGamePlayer(AddGamePlayerRequest) returns(AddGamePlayerResponse);
+  rpc HasWin(HasWinRequest) returns(HasWinResponse);
+  rpc GetWinItem(GetWinItemRequest) returns(GetWinItemResponse);
+
+  rpc GetQuizQuestionById(GetQuizQuestionByIdRequest) returns(GetQuizQuestionByIdResponse);
+  rpc GetQuizQuestionsByGame(GetQuizQuestionsByGameRequest) returns(GetQuizQuestionsByGameResponse);
+  rpc AddQuizQuestion(AddQuizQuestionRequest) returns(AddQuizQuestionResponse);
+  rpc UpdateQuizQuestion(UpdateQuizQuestionRequest) returns(UpdateQuizQuestionResponse);
+  rpc DeleteQuizQuestion(DeleteQuizQuestionRequest) returns(DeleteQuizQuestionResponse);
 }
 
 message GetVoucherTypesReq {
@@ -170,3 +194,254 @@ message UpdateCampaignRes {
   Campaign campaign = 1;
 }
 
+message GameType {
+  int32 id = 1;
+  string name = 2;
+  bool isRealtime = 3;
+  string imageUrl = 4;
+  string instruction = 5;
+}
+
+message Game {
+  int64 id = 1;
+  bool allowPiecesExchange = 2;
+//  google.protobuf.Timestamp startAt = 3;
+  string startAt = 3;
+  GameType type = 4;
+  int64 campaignId = 5;
+}
+
+message GamePlayer {
+  int64 id = 1;
+  int64 gameId = 2;
+  int64 playerId = 3;
+  string playedAt = 4;
+//  google.protobuf.Timestamp playedAt = 4;
+}
+
+message QuizQuestion {
+  int64 id = 1;
+  int64 gameId = 2;
+  int32 questionNumber = 3;
+  string questionTitle = 4;
+  string questionContent = 5;
+  string answerA = 6;
+  string answerB = 7;
+  string answerC = 8;
+  string answerD = 9;
+  string correctAnswer = 10;
+  string answerExplanation = 11;
+}
+
+message Item {
+  oneof item_type {
+    Voucher voucher = 1;
+    Piece piece = 2;
+  }
+}
+
+//message Campaign {
+//  int64 id = 1;
+//  string name = 2;
+//  int64 brandId = 3;
+//}
+//
+//message Voucher {
+//  int64 id = 1;
+//  string imageUrl = 2;
+//}
+
+message Piece {
+  int64 id = 1;
+  string imageUrl = 2;
+}
+
+
+message GetAllGameTypesRequest {
+}
+
+message GetAllGameTypesResponse {
+  repeated GameType gameTypes = 1;
+}
+
+message GetGameTypeByIdRequest {
+  int32 id = 1;
+}
+
+message GetGameTypeByIdResponse {
+  GameType gameType = 1;
+}
+
+message AddGameTypeRequest {
+  string name = 1;
+  bool isRealtime = 2;
+  string imageUrl = 3;
+  string instruction = 4;
+}
+
+message AddGameTypeResponse {
+  GameType gameType = 1;
+}
+
+message UpdateGameTypeRequest {
+//  int32 id = 1;
+//  GameType updatedGameType = 2;
+  int32 id = 1;
+  string name = 2;
+  bool isRealtime = 3;
+  string imageUrl = 4;
+  string instruction = 5;
+}
+
+message UpdateGameTypeResponse {
+  GameType gameType = 1;
+}
+
+message DeleteGameTypeRequest {
+  int32 id = 1;
+}
+
+message DeleteGameTypeResponse {
+}
+
+
+message GetAllGamesRequest {
+}
+
+message GetAllGamesResponse {
+  repeated Game games = 1;
+}
+
+message GetGamesByCampaignRequest {
+  int64 campaignId = 1;
+}
+
+message GetGamesByCampaignResponse {
+  repeated Game games = 1;
+}
+
+message GetGameByIdRequest {
+  int64 id = 1;
+}
+
+message GetGameByIdResponse {
+  Game game = 1;
+}
+
+message AddGameRequest {
+  bool allowPiecesExchange = 1;
+  string startAt = 2;
+  int32 gameTypeId = 3;
+  int64 campaignId = 4;
+}
+
+message AddGameResponse {
+  Game game = 1;
+}
+
+message UpdateGameRequest {
+//  int64 id = 1;
+//  Game updatedGame = 2;
+  int64 id = 1;
+  bool allowPiecesExchange = 2;
+  string startAt = 3;
+  int32 gameTypeId = 4;
+  int64 campaignId = 5;
+}
+
+message UpdateGameResponse {
+  Game game = 1;
+}
+
+message DeleteGameRequest {
+  int64 id = 1;
+}
+
+message DeleteGameResponse {
+}
+
+message AddGamePlayerRequest {
+  int64 gameId = 1;
+  int64 playerId = 2;
+}
+
+message AddGamePlayerResponse {
+  GamePlayer gamePlayer = 1;
+}
+
+message HasWinRequest {
+}
+
+message HasWinResponse {
+  bool hasWin = 1;
+}
+
+message GetWinItemRequest {
+  int64 playerId = 1;
+  int64 gameId = 2;
+}
+
+message GetWinItemResponse {
+  Item item = 2;
+}
+
+
+message GetQuizQuestionByIdRequest {
+  int64 id = 1;
+}
+
+message GetQuizQuestionByIdResponse {
+  QuizQuestion quizQuestion = 1;
+}
+
+message GetQuizQuestionsByGameRequest {
+  int64 gameId = 1;
+}
+
+message GetQuizQuestionsByGameResponse {
+  repeated QuizQuestion quizQuestion = 1;
+}
+
+message AddQuizQuestionRequest {
+  int64 gameId = 1;
+  int32 questionNumber = 2;
+  string questionTitle = 3;
+  string questionContent = 4;
+  string answerA = 5;
+  string answerB = 6;
+  string answerC = 7;
+  string answerD = 8;
+  string correctAnswer = 9;
+  string answerExplanation = 10;
+}
+
+message AddQuizQuestionResponse {
+  QuizQuestion quizQuestion = 1;
+}
+
+message UpdateQuizQuestionRequest {
+//  int64 id = 1;
+//  QuizQuestion updatedQuizQuestion = 1;
+  int64 id = 1;
+  int64 gameId = 2;
+  int32 questionNumber = 3;
+  string questionTitle = 4;
+  string questionContent = 5;
+  string answerA = 6;
+  string answerB = 7;
+  string answerC = 8;
+  string answerD = 9;
+  string correctAnswer = 10;
+  string answerExplanation = 11;
+}
+
+message UpdateQuizQuestionResponse {
+  QuizQuestion quizQuestion = 1;
+}
+
+message DeleteQuizQuestionResponse {
+}
+
+message DeleteQuizQuestionRequest {
+  int64 id = 1;
+}

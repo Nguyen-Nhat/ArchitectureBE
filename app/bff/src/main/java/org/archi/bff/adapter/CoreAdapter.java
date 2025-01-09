@@ -54,4 +54,82 @@ public class CoreAdapter {
         return client.updateCampaign(request);
     }
 
+    public GetAllGameTypesResponse getAllGameTypes(GetAllGameTypesRequest request) {
+        return client.getAllGameTypes(request);
+    }
+
+    public GetGameTypeByIdResponse getGameTypeById(GetGameTypeByIdRequest request) {
+        return client.getGameTypeById(request);
+    }
+
+    public AddGameTypeResponse addGameType(AddGameTypeRequest request) {
+        return client.addGameType(request);
+    }
+
+    public UpdateGameTypeResponse updateGameType(UpdateGameTypeRequest request) {
+        return client.updateGameType(request);
+    }
+
+    public DeleteGameTypeResponse deleteGameType(DeleteGameTypeRequest request) {
+        return client.deleteGameType(request);
+    }
+
+
+    public GetAllGamesResponse getAllGames(GetAllGamesRequest request) {
+        return client.getAllGames(request);
+    }
+
+    public GetGameByIdResponse getGameById(GetGameByIdRequest request) {
+        return client.getGameById(request);
+    }
+
+    public GetGamesByCampaignResponse getGamesByCampaign(GetGamesByCampaignRequest request) {
+        return client.getGamesByCampaign(request);
+    }
+
+    public AddGameResponse addGame(AddGameRequest request) {
+        return client.addGame(request);
+    }
+
+    public UpdateGameResponse updateGame(UpdateGameRequest request) {
+        return client.updateGame(request);
+    }
+
+    public DeleteGameResponse deleteGame(DeleteGameRequest request) {
+        return client.deleteGame(request);
+    }
+
+    public AddGamePlayerResponse addGamePlayer(AddGamePlayerRequest request) {
+        return client.addGamePlayer(request);
+    }
+
+    public HasWinResponse hasWin(HasWinRequest request) {
+        return client.hasWin(request);
+    }
+
+    public GetWinItemResponse getWinItem(GetWinItemRequest request) {
+        return client.getWinItem(request);
+    }
+
+
+    public GetQuizQuestionByIdResponse getQuizQuestionById(GetQuizQuestionByIdRequest request) {
+        return client.getQuizQuestionById(request);
+    }
+
+    public GetQuizQuestionsByGameResponse getQuizQuestionsByGame(GetQuizQuestionsByGameRequest request) {
+        return client.getQuizQuestionsByGame(request);
+    }
+
+    public AddQuizQuestionResponse addQuizQuestion(AddQuizQuestionRequest request) {
+        return client.addQuizQuestion(request);
+    }
+
+    public UpdateQuizQuestionResponse updateQuizQuestion(UpdateQuizQuestionRequest request) {
+        return client.updateQuizQuestion(request);
+    }
+
+    public DeleteQuizQuestionResponse deleteQuizQuestion(DeleteQuizQuestionRequest request) {
+        return client.deleteQuizQuestion(request);
+    }
+
 }
