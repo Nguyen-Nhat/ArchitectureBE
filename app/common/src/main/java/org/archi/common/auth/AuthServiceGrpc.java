@@ -1,621 +1,646 @@
 package org.archi.common.auth;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.69.0)",
+    value = "by gRPC proto compiler (version 1.9.1)",
     comments = "Source: auth.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class AuthServiceGrpc {
 
   private AuthServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "AuthService";
+  public static final String SERVICE_NAME = "AuthService";
 
   // Static method descriptors that strictly reflect the proto.
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPostRegisterMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.PostRegisterRequest,
+      org.archi.common.auth.PostRegisterResponse> METHOD_POST_REGISTER = getPostRegisterMethod();
+
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PostRegisterRequest,
       org.archi.common.auth.PostRegisterResponse> getPostRegisterMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostRegister",
-      requestType = org.archi.common.auth.PostRegisterRequest.class,
-      responseType = org.archi.common.auth.PostRegisterResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.PostRegisterRequest,
       org.archi.common.auth.PostRegisterResponse> getPostRegisterMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.PostRegisterRequest, org.archi.common.auth.PostRegisterResponse> getPostRegisterMethod;
     if ((getPostRegisterMethod = AuthServiceGrpc.getPostRegisterMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getPostRegisterMethod = AuthServiceGrpc.getPostRegisterMethod) == null) {
-          AuthServiceGrpc.getPostRegisterMethod = getPostRegisterMethod =
+          AuthServiceGrpc.getPostRegisterMethod = getPostRegisterMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.PostRegisterRequest, org.archi.common.auth.PostRegisterResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostRegister"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "PostRegister"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostRegisterRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostRegisterResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostRegister"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostRegister"))
+                  .build();
+          }
         }
-      }
-    }
-    return getPostRegisterMethod;
+     }
+     return getPostRegisterMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPostLoginMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.PostLoginRequest,
+      org.archi.common.auth.PostLoginResponse> METHOD_POST_LOGIN = getPostLoginMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PostLoginRequest,
       org.archi.common.auth.PostLoginResponse> getPostLoginMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostLogin",
-      requestType = org.archi.common.auth.PostLoginRequest.class,
-      responseType = org.archi.common.auth.PostLoginResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.PostLoginRequest,
       org.archi.common.auth.PostLoginResponse> getPostLoginMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.PostLoginRequest, org.archi.common.auth.PostLoginResponse> getPostLoginMethod;
     if ((getPostLoginMethod = AuthServiceGrpc.getPostLoginMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getPostLoginMethod = AuthServiceGrpc.getPostLoginMethod) == null) {
-          AuthServiceGrpc.getPostLoginMethod = getPostLoginMethod =
+          AuthServiceGrpc.getPostLoginMethod = getPostLoginMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.PostLoginRequest, org.archi.common.auth.PostLoginResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostLogin"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "PostLogin"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostLoginRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostLoginResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostLogin"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostLogin"))
+                  .build();
+          }
         }
-      }
-    }
-    return getPostLoginMethod;
+     }
+     return getPostLoginMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPostLogoutMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.PostLogoutRequest,
+      org.archi.common.auth.PostLogoutResponse> METHOD_POST_LOGOUT = getPostLogoutMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PostLogoutRequest,
       org.archi.common.auth.PostLogoutResponse> getPostLogoutMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostLogout",
-      requestType = org.archi.common.auth.PostLogoutRequest.class,
-      responseType = org.archi.common.auth.PostLogoutResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.PostLogoutRequest,
       org.archi.common.auth.PostLogoutResponse> getPostLogoutMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.PostLogoutRequest, org.archi.common.auth.PostLogoutResponse> getPostLogoutMethod;
     if ((getPostLogoutMethod = AuthServiceGrpc.getPostLogoutMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getPostLogoutMethod = AuthServiceGrpc.getPostLogoutMethod) == null) {
-          AuthServiceGrpc.getPostLogoutMethod = getPostLogoutMethod =
+          AuthServiceGrpc.getPostLogoutMethod = getPostLogoutMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.PostLogoutRequest, org.archi.common.auth.PostLogoutResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostLogout"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "PostLogout"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostLogoutRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostLogoutResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostLogout"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostLogout"))
+                  .build();
+          }
         }
-      }
-    }
-    return getPostLogoutMethod;
+     }
+     return getPostLogoutMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPostRefreshTokenMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.PostRefreshTokenRequest,
+      org.archi.common.auth.PostRefreshTokenResponse> METHOD_POST_REFRESH_TOKEN = getPostRefreshTokenMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PostRefreshTokenRequest,
       org.archi.common.auth.PostRefreshTokenResponse> getPostRefreshTokenMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostRefreshToken",
-      requestType = org.archi.common.auth.PostRefreshTokenRequest.class,
-      responseType = org.archi.common.auth.PostRefreshTokenResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.PostRefreshTokenRequest,
       org.archi.common.auth.PostRefreshTokenResponse> getPostRefreshTokenMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.PostRefreshTokenRequest, org.archi.common.auth.PostRefreshTokenResponse> getPostRefreshTokenMethod;
     if ((getPostRefreshTokenMethod = AuthServiceGrpc.getPostRefreshTokenMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getPostRefreshTokenMethod = AuthServiceGrpc.getPostRefreshTokenMethod) == null) {
-          AuthServiceGrpc.getPostRefreshTokenMethod = getPostRefreshTokenMethod =
+          AuthServiceGrpc.getPostRefreshTokenMethod = getPostRefreshTokenMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.PostRefreshTokenRequest, org.archi.common.auth.PostRefreshTokenResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostRefreshToken"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "PostRefreshToken"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostRefreshTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostRefreshTokenResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostRefreshToken"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostRefreshToken"))
+                  .build();
+          }
         }
-      }
-    }
-    return getPostRefreshTokenMethod;
+     }
+     return getPostRefreshTokenMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetVerifyEmailMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetVerifyEmailRequest,
+      org.archi.common.auth.GetVerifyEmailResponse> METHOD_GET_VERIFY_EMAIL = getGetVerifyEmailMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetVerifyEmailRequest,
       org.archi.common.auth.GetVerifyEmailResponse> getGetVerifyEmailMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetVerifyEmail",
-      requestType = org.archi.common.auth.GetVerifyEmailRequest.class,
-      responseType = org.archi.common.auth.GetVerifyEmailResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetVerifyEmailRequest,
       org.archi.common.auth.GetVerifyEmailResponse> getGetVerifyEmailMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetVerifyEmailRequest, org.archi.common.auth.GetVerifyEmailResponse> getGetVerifyEmailMethod;
     if ((getGetVerifyEmailMethod = AuthServiceGrpc.getGetVerifyEmailMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetVerifyEmailMethod = AuthServiceGrpc.getGetVerifyEmailMethod) == null) {
-          AuthServiceGrpc.getGetVerifyEmailMethod = getGetVerifyEmailMethod =
+          AuthServiceGrpc.getGetVerifyEmailMethod = getGetVerifyEmailMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetVerifyEmailRequest, org.archi.common.auth.GetVerifyEmailResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVerifyEmail"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetVerifyEmail"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetVerifyEmailRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetVerifyEmailResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetVerifyEmail"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetVerifyEmail"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetVerifyEmailMethod;
+     }
+     return getGetVerifyEmailMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPostVerifyTokenMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.PostVerifyTokenRequest,
+      org.archi.common.auth.PostVerifyTokenResponse> METHOD_POST_VERIFY_TOKEN = getPostVerifyTokenMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PostVerifyTokenRequest,
       org.archi.common.auth.PostVerifyTokenResponse> getPostVerifyTokenMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostVerifyToken",
-      requestType = org.archi.common.auth.PostVerifyTokenRequest.class,
-      responseType = org.archi.common.auth.PostVerifyTokenResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.PostVerifyTokenRequest,
       org.archi.common.auth.PostVerifyTokenResponse> getPostVerifyTokenMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.PostVerifyTokenRequest, org.archi.common.auth.PostVerifyTokenResponse> getPostVerifyTokenMethod;
     if ((getPostVerifyTokenMethod = AuthServiceGrpc.getPostVerifyTokenMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getPostVerifyTokenMethod = AuthServiceGrpc.getPostVerifyTokenMethod) == null) {
-          AuthServiceGrpc.getPostVerifyTokenMethod = getPostVerifyTokenMethod =
+          AuthServiceGrpc.getPostVerifyTokenMethod = getPostVerifyTokenMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.PostVerifyTokenRequest, org.archi.common.auth.PostVerifyTokenResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostVerifyToken"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "PostVerifyToken"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostVerifyTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostVerifyTokenResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostVerifyToken"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostVerifyToken"))
+                  .build();
+          }
         }
-      }
-    }
-    return getPostVerifyTokenMethod;
+     }
+     return getPostVerifyTokenMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetBrandInfoMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandInfoRequest,
+      org.archi.common.auth.GetBrandInfoResponse> METHOD_GET_BRAND_INFO = getGetBrandInfoMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandInfoRequest,
       org.archi.common.auth.GetBrandInfoResponse> getGetBrandInfoMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetBrandInfo",
-      requestType = org.archi.common.auth.GetBrandInfoRequest.class,
-      responseType = org.archi.common.auth.GetBrandInfoResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandInfoRequest,
       org.archi.common.auth.GetBrandInfoResponse> getGetBrandInfoMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandInfoRequest, org.archi.common.auth.GetBrandInfoResponse> getGetBrandInfoMethod;
     if ((getGetBrandInfoMethod = AuthServiceGrpc.getGetBrandInfoMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetBrandInfoMethod = AuthServiceGrpc.getGetBrandInfoMethod) == null) {
-          AuthServiceGrpc.getGetBrandInfoMethod = getGetBrandInfoMethod =
+          AuthServiceGrpc.getGetBrandInfoMethod = getGetBrandInfoMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetBrandInfoRequest, org.archi.common.auth.GetBrandInfoResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBrandInfo"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetBrandInfo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetBrandInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetBrandInfoResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetBrandInfo"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetBrandInfo"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetBrandInfoMethod;
+     }
+     return getGetBrandInfoMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetPlayerInfoMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerInfoRequest,
+      org.archi.common.auth.GetPlayerInfoResponse> METHOD_GET_PLAYER_INFO = getGetPlayerInfoMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerInfoRequest,
       org.archi.common.auth.GetPlayerInfoResponse> getGetPlayerInfoMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetPlayerInfo",
-      requestType = org.archi.common.auth.GetPlayerInfoRequest.class,
-      responseType = org.archi.common.auth.GetPlayerInfoResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerInfoRequest,
       org.archi.common.auth.GetPlayerInfoResponse> getGetPlayerInfoMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerInfoRequest, org.archi.common.auth.GetPlayerInfoResponse> getGetPlayerInfoMethod;
     if ((getGetPlayerInfoMethod = AuthServiceGrpc.getGetPlayerInfoMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetPlayerInfoMethod = AuthServiceGrpc.getGetPlayerInfoMethod) == null) {
-          AuthServiceGrpc.getGetPlayerInfoMethod = getGetPlayerInfoMethod =
+          AuthServiceGrpc.getGetPlayerInfoMethod = getGetPlayerInfoMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetPlayerInfoRequest, org.archi.common.auth.GetPlayerInfoResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlayerInfo"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetPlayerInfo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetPlayerInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetPlayerInfoResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetPlayerInfo"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetPlayerInfo"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetPlayerInfoMethod;
+     }
+     return getGetPlayerInfoMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetAccountInfoMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetAccountInfoRequest,
+      org.archi.common.auth.GetAccountInfoResponse> METHOD_GET_ACCOUNT_INFO = getGetAccountInfoMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetAccountInfoRequest,
       org.archi.common.auth.GetAccountInfoResponse> getGetAccountInfoMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetAccountInfo",
-      requestType = org.archi.common.auth.GetAccountInfoRequest.class,
-      responseType = org.archi.common.auth.GetAccountInfoResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetAccountInfoRequest,
       org.archi.common.auth.GetAccountInfoResponse> getGetAccountInfoMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetAccountInfoRequest, org.archi.common.auth.GetAccountInfoResponse> getGetAccountInfoMethod;
     if ((getGetAccountInfoMethod = AuthServiceGrpc.getGetAccountInfoMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetAccountInfoMethod = AuthServiceGrpc.getGetAccountInfoMethod) == null) {
-          AuthServiceGrpc.getGetAccountInfoMethod = getGetAccountInfoMethod =
+          AuthServiceGrpc.getGetAccountInfoMethod = getGetAccountInfoMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetAccountInfoRequest, org.archi.common.auth.GetAccountInfoResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAccountInfo"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetAccountInfo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetAccountInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetAccountInfoResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetAccountInfo"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetAccountInfo"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetAccountInfoMethod;
+     }
+     return getGetAccountInfoMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPostCreateAccountMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.PostCreateAccountRequest,
+      org.archi.common.auth.PostCreateAccountResponse> METHOD_POST_CREATE_ACCOUNT = getPostCreateAccountMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PostCreateAccountRequest,
       org.archi.common.auth.PostCreateAccountResponse> getPostCreateAccountMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostCreateAccount",
-      requestType = org.archi.common.auth.PostCreateAccountRequest.class,
-      responseType = org.archi.common.auth.PostCreateAccountResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.PostCreateAccountRequest,
       org.archi.common.auth.PostCreateAccountResponse> getPostCreateAccountMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.PostCreateAccountRequest, org.archi.common.auth.PostCreateAccountResponse> getPostCreateAccountMethod;
     if ((getPostCreateAccountMethod = AuthServiceGrpc.getPostCreateAccountMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getPostCreateAccountMethod = AuthServiceGrpc.getPostCreateAccountMethod) == null) {
-          AuthServiceGrpc.getPostCreateAccountMethod = getPostCreateAccountMethod =
+          AuthServiceGrpc.getPostCreateAccountMethod = getPostCreateAccountMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.PostCreateAccountRequest, org.archi.common.auth.PostCreateAccountResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostCreateAccount"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "PostCreateAccount"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostCreateAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PostCreateAccountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostCreateAccount"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PostCreateAccount"))
+                  .build();
+          }
         }
-      }
-    }
-    return getPostCreateAccountMethod;
+     }
+     return getPostCreateAccountMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteAccountMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.DeleteAccountRequest,
+      org.archi.common.auth.DeleteAccountResponse> METHOD_DELETE_ACCOUNT = getDeleteAccountMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.DeleteAccountRequest,
       org.archi.common.auth.DeleteAccountResponse> getDeleteAccountMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteAccount",
-      requestType = org.archi.common.auth.DeleteAccountRequest.class,
-      responseType = org.archi.common.auth.DeleteAccountResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.DeleteAccountRequest,
       org.archi.common.auth.DeleteAccountResponse> getDeleteAccountMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.DeleteAccountRequest, org.archi.common.auth.DeleteAccountResponse> getDeleteAccountMethod;
     if ((getDeleteAccountMethod = AuthServiceGrpc.getDeleteAccountMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getDeleteAccountMethod = AuthServiceGrpc.getDeleteAccountMethod) == null) {
-          AuthServiceGrpc.getDeleteAccountMethod = getDeleteAccountMethod =
+          AuthServiceGrpc.getDeleteAccountMethod = getDeleteAccountMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.DeleteAccountRequest, org.archi.common.auth.DeleteAccountResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAccount"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "DeleteAccount"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.DeleteAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.DeleteAccountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("DeleteAccount"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("DeleteAccount"))
+                  .build();
+          }
         }
-      }
-    }
-    return getDeleteAccountMethod;
+     }
+     return getDeleteAccountMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPutUpdateAccountMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.PutUpdateAccountRequest,
+      org.archi.common.auth.PutUpdateAccountResponse> METHOD_PUT_UPDATE_ACCOUNT = getPutUpdateAccountMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PutUpdateAccountRequest,
       org.archi.common.auth.PutUpdateAccountResponse> getPutUpdateAccountMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PutUpdateAccount",
-      requestType = org.archi.common.auth.PutUpdateAccountRequest.class,
-      responseType = org.archi.common.auth.PutUpdateAccountResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.PutUpdateAccountRequest,
       org.archi.common.auth.PutUpdateAccountResponse> getPutUpdateAccountMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.PutUpdateAccountRequest, org.archi.common.auth.PutUpdateAccountResponse> getPutUpdateAccountMethod;
     if ((getPutUpdateAccountMethod = AuthServiceGrpc.getPutUpdateAccountMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getPutUpdateAccountMethod = AuthServiceGrpc.getPutUpdateAccountMethod) == null) {
-          AuthServiceGrpc.getPutUpdateAccountMethod = getPutUpdateAccountMethod =
+          AuthServiceGrpc.getPutUpdateAccountMethod = getPutUpdateAccountMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.PutUpdateAccountRequest, org.archi.common.auth.PutUpdateAccountResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutUpdateAccount"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "PutUpdateAccount"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PutUpdateAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PutUpdateAccountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PutUpdateAccount"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("PutUpdateAccount"))
+                  .build();
+          }
         }
-      }
-    }
-    return getPutUpdateAccountMethod;
+     }
+     return getPutUpdateAccountMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetBrandProfileMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandProfileRequest,
+      org.archi.common.auth.GetBrandProfileResponse> METHOD_GET_BRAND_PROFILE = getGetBrandProfileMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandProfileRequest,
       org.archi.common.auth.GetBrandProfileResponse> getGetBrandProfileMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetBrandProfile",
-      requestType = org.archi.common.auth.GetBrandProfileRequest.class,
-      responseType = org.archi.common.auth.GetBrandProfileResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandProfileRequest,
       org.archi.common.auth.GetBrandProfileResponse> getGetBrandProfileMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandProfileRequest, org.archi.common.auth.GetBrandProfileResponse> getGetBrandProfileMethod;
     if ((getGetBrandProfileMethod = AuthServiceGrpc.getGetBrandProfileMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetBrandProfileMethod = AuthServiceGrpc.getGetBrandProfileMethod) == null) {
-          AuthServiceGrpc.getGetBrandProfileMethod = getGetBrandProfileMethod =
+          AuthServiceGrpc.getGetBrandProfileMethod = getGetBrandProfileMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetBrandProfileRequest, org.archi.common.auth.GetBrandProfileResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBrandProfile"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetBrandProfile"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetBrandProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetBrandProfileResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetBrandProfile"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetBrandProfile"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetBrandProfileMethod;
+     }
+     return getGetBrandProfileMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateBrandMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.UpdateBrandRequest,
+      org.archi.common.auth.UpdateBrandResponse> METHOD_UPDATE_BRAND = getUpdateBrandMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.UpdateBrandRequest,
       org.archi.common.auth.UpdateBrandResponse> getUpdateBrandMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateBrand",
-      requestType = org.archi.common.auth.UpdateBrandRequest.class,
-      responseType = org.archi.common.auth.UpdateBrandResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.UpdateBrandRequest,
       org.archi.common.auth.UpdateBrandResponse> getUpdateBrandMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.UpdateBrandRequest, org.archi.common.auth.UpdateBrandResponse> getUpdateBrandMethod;
     if ((getUpdateBrandMethod = AuthServiceGrpc.getUpdateBrandMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getUpdateBrandMethod = AuthServiceGrpc.getUpdateBrandMethod) == null) {
-          AuthServiceGrpc.getUpdateBrandMethod = getUpdateBrandMethod =
+          AuthServiceGrpc.getUpdateBrandMethod = getUpdateBrandMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.UpdateBrandRequest, org.archi.common.auth.UpdateBrandResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBrand"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "UpdateBrand"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.UpdateBrandRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.UpdateBrandResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("UpdateBrand"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("UpdateBrand"))
+                  .build();
+          }
         }
-      }
-    }
-    return getUpdateBrandMethod;
+     }
+     return getUpdateBrandMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetPlayerProfileMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.PlayerProfileRequest,
+      org.archi.common.auth.PlayerProfileResponse> METHOD_GET_PLAYER_PROFILE = getGetPlayerProfileMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.PlayerProfileRequest,
       org.archi.common.auth.PlayerProfileResponse> getGetPlayerProfileMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetPlayerProfile",
-      requestType = org.archi.common.auth.PlayerProfileRequest.class,
-      responseType = org.archi.common.auth.PlayerProfileResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.PlayerProfileRequest,
       org.archi.common.auth.PlayerProfileResponse> getGetPlayerProfileMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.PlayerProfileRequest, org.archi.common.auth.PlayerProfileResponse> getGetPlayerProfileMethod;
     if ((getGetPlayerProfileMethod = AuthServiceGrpc.getGetPlayerProfileMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetPlayerProfileMethod = AuthServiceGrpc.getGetPlayerProfileMethod) == null) {
-          AuthServiceGrpc.getGetPlayerProfileMethod = getGetPlayerProfileMethod =
+          AuthServiceGrpc.getGetPlayerProfileMethod = getGetPlayerProfileMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.PlayerProfileRequest, org.archi.common.auth.PlayerProfileResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlayerProfile"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetPlayerProfile"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PlayerProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.PlayerProfileResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetPlayerProfile"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetPlayerProfile"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetPlayerProfileMethod;
+     }
+     return getGetPlayerProfileMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdatePlayerMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.UpdatePlayerRequest,
+      org.archi.common.auth.UpdatePlayerResponse> METHOD_UPDATE_PLAYER = getUpdatePlayerMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.UpdatePlayerRequest,
       org.archi.common.auth.UpdatePlayerResponse> getUpdatePlayerMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdatePlayer",
-      requestType = org.archi.common.auth.UpdatePlayerRequest.class,
-      responseType = org.archi.common.auth.UpdatePlayerResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.UpdatePlayerRequest,
       org.archi.common.auth.UpdatePlayerResponse> getUpdatePlayerMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.UpdatePlayerRequest, org.archi.common.auth.UpdatePlayerResponse> getUpdatePlayerMethod;
     if ((getUpdatePlayerMethod = AuthServiceGrpc.getUpdatePlayerMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getUpdatePlayerMethod = AuthServiceGrpc.getUpdatePlayerMethod) == null) {
-          AuthServiceGrpc.getUpdatePlayerMethod = getUpdatePlayerMethod =
+          AuthServiceGrpc.getUpdatePlayerMethod = getUpdatePlayerMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.UpdatePlayerRequest, org.archi.common.auth.UpdatePlayerResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePlayer"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "UpdatePlayer"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.UpdatePlayerRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.UpdatePlayerResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("UpdatePlayer"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("UpdatePlayer"))
+                  .build();
+          }
         }
-      }
-    }
-    return getUpdatePlayerMethod;
+     }
+     return getUpdatePlayerMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetAccountsMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetAccountsRequest,
+      org.archi.common.auth.GetAccountsResponse> METHOD_GET_ACCOUNTS = getGetAccountsMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetAccountsRequest,
       org.archi.common.auth.GetAccountsResponse> getGetAccountsMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetAccounts",
-      requestType = org.archi.common.auth.GetAccountsRequest.class,
-      responseType = org.archi.common.auth.GetAccountsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetAccountsRequest,
       org.archi.common.auth.GetAccountsResponse> getGetAccountsMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetAccountsRequest, org.archi.common.auth.GetAccountsResponse> getGetAccountsMethod;
     if ((getGetAccountsMethod = AuthServiceGrpc.getGetAccountsMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetAccountsMethod = AuthServiceGrpc.getGetAccountsMethod) == null) {
-          AuthServiceGrpc.getGetAccountsMethod = getGetAccountsMethod =
+          AuthServiceGrpc.getGetAccountsMethod = getGetAccountsMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetAccountsRequest, org.archi.common.auth.GetAccountsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAccounts"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetAccounts"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetAccountsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetAccounts"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetAccounts"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetAccountsMethod;
+     }
+     return getGetAccountsMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetBrandsMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandsRequest,
+      org.archi.common.auth.GetBrandsResponse> METHOD_GET_BRANDS = getGetBrandsMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandsRequest,
       org.archi.common.auth.GetBrandsResponse> getGetBrandsMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetBrands",
-      requestType = org.archi.common.auth.GetBrandsRequest.class,
-      responseType = org.archi.common.auth.GetBrandsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandsRequest,
       org.archi.common.auth.GetBrandsResponse> getGetBrandsMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetBrandsRequest, org.archi.common.auth.GetBrandsResponse> getGetBrandsMethod;
     if ((getGetBrandsMethod = AuthServiceGrpc.getGetBrandsMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetBrandsMethod = AuthServiceGrpc.getGetBrandsMethod) == null) {
-          AuthServiceGrpc.getGetBrandsMethod = getGetBrandsMethod =
+          AuthServiceGrpc.getGetBrandsMethod = getGetBrandsMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetBrandsRequest, org.archi.common.auth.GetBrandsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBrands"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetBrands"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetBrandsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetBrandsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetBrands"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetBrands"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetBrandsMethod;
+     }
+     return getGetBrandsMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetPlayersMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayersRequest,
+      org.archi.common.auth.GetPlayersResponse> METHOD_GET_PLAYERS = getGetPlayersMethod();
 
   private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayersRequest,
       org.archi.common.auth.GetPlayersResponse> getGetPlayersMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetPlayers",
-      requestType = org.archi.common.auth.GetPlayersRequest.class,
-      responseType = org.archi.common.auth.GetPlayersResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayersRequest,
       org.archi.common.auth.GetPlayersResponse> getGetPlayersMethod() {
     io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayersRequest, org.archi.common.auth.GetPlayersResponse> getGetPlayersMethod;
     if ((getGetPlayersMethod = AuthServiceGrpc.getGetPlayersMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetPlayersMethod = AuthServiceGrpc.getGetPlayersMethod) == null) {
-          AuthServiceGrpc.getGetPlayersMethod = getGetPlayersMethod =
+          AuthServiceGrpc.getGetPlayersMethod = getGetPlayersMethod = 
               io.grpc.MethodDescriptor.<org.archi.common.auth.GetPlayersRequest, org.archi.common.auth.GetPlayersResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlayers"))
+              .setFullMethodName(generateFullMethodName(
+                  "AuthService", "GetPlayers"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetPlayersRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.archi.common.auth.GetPlayersResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetPlayers"))
-              .build();
+                  .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetPlayers"))
+                  .build();
+          }
         }
-      }
-    }
-    return getGetPlayersMethod;
+     }
+     return getGetPlayersMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static AuthServiceStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AuthServiceStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<AuthServiceStub>() {
-        @java.lang.Override
-        public AuthServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new AuthServiceStub(channel, callOptions);
-        }
-      };
-    return AuthServiceStub.newStub(factory, channel);
+    return new AuthServiceStub(channel);
   }
 
   /**
@@ -623,14 +648,7 @@ public final class AuthServiceGrpc {
    */
   public static AuthServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AuthServiceBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<AuthServiceBlockingStub>() {
-        @java.lang.Override
-        public AuthServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new AuthServiceBlockingStub(channel, callOptions);
-        }
-      };
-    return AuthServiceBlockingStub.newStub(factory, channel);
+    return new AuthServiceBlockingStub(channel);
   }
 
   /**
@@ -638,178 +656,300 @@ public final class AuthServiceGrpc {
    */
   public static AuthServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AuthServiceFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<AuthServiceFutureStub>() {
-        @java.lang.Override
-        public AuthServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new AuthServiceFutureStub(channel, callOptions);
-        }
-      };
-    return AuthServiceFutureStub.newStub(factory, channel);
+    return new AuthServiceFutureStub(channel);
   }
 
   /**
    */
-  public interface AsyncService {
+  public static abstract class AuthServiceImplBase implements io.grpc.BindableService {
 
     /**
      */
-    default void postRegister(org.archi.common.auth.PostRegisterRequest request,
+    public void postRegister(org.archi.common.auth.PostRegisterRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostRegisterResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostRegisterMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPostRegisterMethod(), responseObserver);
     }
 
     /**
      */
-    default void postLogin(org.archi.common.auth.PostLoginRequest request,
+    public void postLogin(org.archi.common.auth.PostLoginRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostLoginResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostLoginMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPostLoginMethod(), responseObserver);
     }
 
     /**
      */
-    default void postLogout(org.archi.common.auth.PostLogoutRequest request,
+    public void postLogout(org.archi.common.auth.PostLogoutRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostLogoutResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostLogoutMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPostLogoutMethod(), responseObserver);
     }
 
     /**
      */
-    default void postRefreshToken(org.archi.common.auth.PostRefreshTokenRequest request,
+    public void postRefreshToken(org.archi.common.auth.PostRefreshTokenRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostRefreshTokenResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostRefreshTokenMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPostRefreshTokenMethod(), responseObserver);
     }
 
     /**
      */
-    default void getVerifyEmail(org.archi.common.auth.GetVerifyEmailRequest request,
+    public void getVerifyEmail(org.archi.common.auth.GetVerifyEmailRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetVerifyEmailResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVerifyEmailMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetVerifyEmailMethod(), responseObserver);
     }
 
     /**
      */
-    default void postVerifyToken(org.archi.common.auth.PostVerifyTokenRequest request,
+    public void postVerifyToken(org.archi.common.auth.PostVerifyTokenRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostVerifyTokenResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostVerifyTokenMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPostVerifyTokenMethod(), responseObserver);
     }
 
     /**
      */
-    default void getBrandInfo(org.archi.common.auth.GetBrandInfoRequest request,
+    public void getBrandInfo(org.archi.common.auth.GetBrandInfoRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetBrandInfoResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBrandInfoMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetBrandInfoMethod(), responseObserver);
     }
 
     /**
      */
-    default void getPlayerInfo(org.archi.common.auth.GetPlayerInfoRequest request,
+    public void getPlayerInfo(org.archi.common.auth.GetPlayerInfoRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayerInfoResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlayerInfoMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetPlayerInfoMethod(), responseObserver);
     }
 
     /**
      */
-    default void getAccountInfo(org.archi.common.auth.GetAccountInfoRequest request,
+    public void getAccountInfo(org.archi.common.auth.GetAccountInfoRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetAccountInfoResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccountInfoMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetAccountInfoMethod(), responseObserver);
     }
 
     /**
      */
-    default void postCreateAccount(org.archi.common.auth.PostCreateAccountRequest request,
+    public void postCreateAccount(org.archi.common.auth.PostCreateAccountRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostCreateAccountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostCreateAccountMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPostCreateAccountMethod(), responseObserver);
     }
 
     /**
      */
-    default void deleteAccount(org.archi.common.auth.DeleteAccountRequest request,
+    public void deleteAccount(org.archi.common.auth.DeleteAccountRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.DeleteAccountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAccountMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteAccountMethod(), responseObserver);
     }
 
     /**
      */
-    default void putUpdateAccount(org.archi.common.auth.PutUpdateAccountRequest request,
+    public void putUpdateAccount(org.archi.common.auth.PutUpdateAccountRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PutUpdateAccountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutUpdateAccountMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPutUpdateAccountMethod(), responseObserver);
     }
 
     /**
      */
-    default void getBrandProfile(org.archi.common.auth.GetBrandProfileRequest request,
+    public void getBrandProfile(org.archi.common.auth.GetBrandProfileRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetBrandProfileResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBrandProfileMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetBrandProfileMethod(), responseObserver);
     }
 
     /**
      */
-    default void updateBrand(org.archi.common.auth.UpdateBrandRequest request,
+    public void updateBrand(org.archi.common.auth.UpdateBrandRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.UpdateBrandResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBrandMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateBrandMethod(), responseObserver);
     }
 
     /**
      */
-    default void getPlayerProfile(org.archi.common.auth.PlayerProfileRequest request,
+    public void getPlayerProfile(org.archi.common.auth.PlayerProfileRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PlayerProfileResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlayerProfileMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetPlayerProfileMethod(), responseObserver);
     }
 
     /**
      */
-    default void updatePlayer(org.archi.common.auth.UpdatePlayerRequest request,
+    public void updatePlayer(org.archi.common.auth.UpdatePlayerRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.UpdatePlayerResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePlayerMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdatePlayerMethod(), responseObserver);
     }
 
     /**
      */
-    default void getAccounts(org.archi.common.auth.GetAccountsRequest request,
+    public void getAccounts(org.archi.common.auth.GetAccountsRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetAccountsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccountsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetAccountsMethod(), responseObserver);
     }
 
     /**
      */
-    default void getBrands(org.archi.common.auth.GetBrandsRequest request,
+    public void getBrands(org.archi.common.auth.GetBrandsRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetBrandsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBrandsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetBrandsMethod(), responseObserver);
     }
 
     /**
      */
-    default void getPlayers(org.archi.common.auth.GetPlayersRequest request,
+    public void getPlayers(org.archi.common.auth.GetPlayersRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayersResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlayersMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetPlayersMethod(), responseObserver);
     }
-  }
-
-  /**
-   * Base class for the server implementation of the service AuthService.
-   */
-  public static abstract class AuthServiceImplBase
-      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return AuthServiceGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getPostRegisterMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.PostRegisterRequest,
+                org.archi.common.auth.PostRegisterResponse>(
+                  this, METHODID_POST_REGISTER)))
+          .addMethod(
+            getPostLoginMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.PostLoginRequest,
+                org.archi.common.auth.PostLoginResponse>(
+                  this, METHODID_POST_LOGIN)))
+          .addMethod(
+            getPostLogoutMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.PostLogoutRequest,
+                org.archi.common.auth.PostLogoutResponse>(
+                  this, METHODID_POST_LOGOUT)))
+          .addMethod(
+            getPostRefreshTokenMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.PostRefreshTokenRequest,
+                org.archi.common.auth.PostRefreshTokenResponse>(
+                  this, METHODID_POST_REFRESH_TOKEN)))
+          .addMethod(
+            getGetVerifyEmailMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetVerifyEmailRequest,
+                org.archi.common.auth.GetVerifyEmailResponse>(
+                  this, METHODID_GET_VERIFY_EMAIL)))
+          .addMethod(
+            getPostVerifyTokenMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.PostVerifyTokenRequest,
+                org.archi.common.auth.PostVerifyTokenResponse>(
+                  this, METHODID_POST_VERIFY_TOKEN)))
+          .addMethod(
+            getGetBrandInfoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetBrandInfoRequest,
+                org.archi.common.auth.GetBrandInfoResponse>(
+                  this, METHODID_GET_BRAND_INFO)))
+          .addMethod(
+            getGetPlayerInfoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetPlayerInfoRequest,
+                org.archi.common.auth.GetPlayerInfoResponse>(
+                  this, METHODID_GET_PLAYER_INFO)))
+          .addMethod(
+            getGetAccountInfoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetAccountInfoRequest,
+                org.archi.common.auth.GetAccountInfoResponse>(
+                  this, METHODID_GET_ACCOUNT_INFO)))
+          .addMethod(
+            getPostCreateAccountMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.PostCreateAccountRequest,
+                org.archi.common.auth.PostCreateAccountResponse>(
+                  this, METHODID_POST_CREATE_ACCOUNT)))
+          .addMethod(
+            getDeleteAccountMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.DeleteAccountRequest,
+                org.archi.common.auth.DeleteAccountResponse>(
+                  this, METHODID_DELETE_ACCOUNT)))
+          .addMethod(
+            getPutUpdateAccountMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.PutUpdateAccountRequest,
+                org.archi.common.auth.PutUpdateAccountResponse>(
+                  this, METHODID_PUT_UPDATE_ACCOUNT)))
+          .addMethod(
+            getGetBrandProfileMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetBrandProfileRequest,
+                org.archi.common.auth.GetBrandProfileResponse>(
+                  this, METHODID_GET_BRAND_PROFILE)))
+          .addMethod(
+            getUpdateBrandMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.UpdateBrandRequest,
+                org.archi.common.auth.UpdateBrandResponse>(
+                  this, METHODID_UPDATE_BRAND)))
+          .addMethod(
+            getGetPlayerProfileMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.PlayerProfileRequest,
+                org.archi.common.auth.PlayerProfileResponse>(
+                  this, METHODID_GET_PLAYER_PROFILE)))
+          .addMethod(
+            getUpdatePlayerMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.UpdatePlayerRequest,
+                org.archi.common.auth.UpdatePlayerResponse>(
+                  this, METHODID_UPDATE_PLAYER)))
+          .addMethod(
+            getGetAccountsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetAccountsRequest,
+                org.archi.common.auth.GetAccountsResponse>(
+                  this, METHODID_GET_ACCOUNTS)))
+          .addMethod(
+            getGetBrandsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetBrandsRequest,
+                org.archi.common.auth.GetBrandsResponse>(
+                  this, METHODID_GET_BRANDS)))
+          .addMethod(
+            getGetPlayersMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.archi.common.auth.GetPlayersRequest,
+                org.archi.common.auth.GetPlayersResponse>(
+                  this, METHODID_GET_PLAYERS)))
+          .build();
     }
   }
 
   /**
-   * A stub to allow clients to do asynchronous rpc calls to service AuthService.
    */
-  public static final class AuthServiceStub
-      extends io.grpc.stub.AbstractAsyncStub<AuthServiceStub> {
-    private AuthServiceStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class AuthServiceStub extends io.grpc.stub.AbstractStub<AuthServiceStub> {
+    private AuthServiceStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private AuthServiceStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected AuthServiceStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected AuthServiceStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new AuthServiceStub(channel, callOptions);
     }
 
@@ -817,7 +957,7 @@ public final class AuthServiceGrpc {
      */
     public void postRegister(org.archi.common.auth.PostRegisterRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostRegisterResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getPostRegisterMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -825,7 +965,7 @@ public final class AuthServiceGrpc {
      */
     public void postLogin(org.archi.common.auth.PostLoginRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostLoginResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getPostLoginMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -833,7 +973,7 @@ public final class AuthServiceGrpc {
      */
     public void postLogout(org.archi.common.auth.PostLogoutRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostLogoutResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getPostLogoutMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -841,7 +981,7 @@ public final class AuthServiceGrpc {
      */
     public void postRefreshToken(org.archi.common.auth.PostRefreshTokenRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostRefreshTokenResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getPostRefreshTokenMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -849,7 +989,7 @@ public final class AuthServiceGrpc {
      */
     public void getVerifyEmail(org.archi.common.auth.GetVerifyEmailRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetVerifyEmailResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetVerifyEmailMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -857,7 +997,7 @@ public final class AuthServiceGrpc {
      */
     public void postVerifyToken(org.archi.common.auth.PostVerifyTokenRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostVerifyTokenResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getPostVerifyTokenMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -865,7 +1005,7 @@ public final class AuthServiceGrpc {
      */
     public void getBrandInfo(org.archi.common.auth.GetBrandInfoRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetBrandInfoResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetBrandInfoMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -873,7 +1013,7 @@ public final class AuthServiceGrpc {
      */
     public void getPlayerInfo(org.archi.common.auth.GetPlayerInfoRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayerInfoResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetPlayerInfoMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -881,7 +1021,7 @@ public final class AuthServiceGrpc {
      */
     public void getAccountInfo(org.archi.common.auth.GetAccountInfoRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetAccountInfoResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetAccountInfoMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -889,7 +1029,7 @@ public final class AuthServiceGrpc {
      */
     public void postCreateAccount(org.archi.common.auth.PostCreateAccountRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PostCreateAccountResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getPostCreateAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -897,7 +1037,7 @@ public final class AuthServiceGrpc {
      */
     public void deleteAccount(org.archi.common.auth.DeleteAccountRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.DeleteAccountResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getDeleteAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -905,7 +1045,7 @@ public final class AuthServiceGrpc {
      */
     public void putUpdateAccount(org.archi.common.auth.PutUpdateAccountRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PutUpdateAccountResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getPutUpdateAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -913,7 +1053,7 @@ public final class AuthServiceGrpc {
      */
     public void getBrandProfile(org.archi.common.auth.GetBrandProfileRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetBrandProfileResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetBrandProfileMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -921,7 +1061,7 @@ public final class AuthServiceGrpc {
      */
     public void updateBrand(org.archi.common.auth.UpdateBrandRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.UpdateBrandResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getUpdateBrandMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -929,7 +1069,7 @@ public final class AuthServiceGrpc {
      */
     public void getPlayerProfile(org.archi.common.auth.PlayerProfileRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.PlayerProfileResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetPlayerProfileMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -937,7 +1077,7 @@ public final class AuthServiceGrpc {
      */
     public void updatePlayer(org.archi.common.auth.UpdatePlayerRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.UpdatePlayerResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getUpdatePlayerMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -945,7 +1085,7 @@ public final class AuthServiceGrpc {
      */
     public void getAccounts(org.archi.common.auth.GetAccountsRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetAccountsResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetAccountsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -953,7 +1093,7 @@ public final class AuthServiceGrpc {
      */
     public void getBrands(org.archi.common.auth.GetBrandsRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetBrandsResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetBrandsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -961,174 +1101,178 @@ public final class AuthServiceGrpc {
      */
     public void getPlayers(org.archi.common.auth.GetPlayersRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayersResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getGetPlayersMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service AuthService.
    */
-  public static final class AuthServiceBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<AuthServiceBlockingStub> {
-    private AuthServiceBlockingStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class AuthServiceBlockingStub extends io.grpc.stub.AbstractStub<AuthServiceBlockingStub> {
+    private AuthServiceBlockingStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private AuthServiceBlockingStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected AuthServiceBlockingStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected AuthServiceBlockingStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new AuthServiceBlockingStub(channel, callOptions);
     }
 
     /**
      */
     public org.archi.common.auth.PostRegisterResponse postRegister(org.archi.common.auth.PostRegisterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getPostRegisterMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.PostLoginResponse postLogin(org.archi.common.auth.PostLoginRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getPostLoginMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.PostLogoutResponse postLogout(org.archi.common.auth.PostLogoutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getPostLogoutMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.PostRefreshTokenResponse postRefreshToken(org.archi.common.auth.PostRefreshTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getPostRefreshTokenMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.GetVerifyEmailResponse getVerifyEmail(org.archi.common.auth.GetVerifyEmailRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetVerifyEmailMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.PostVerifyTokenResponse postVerifyToken(org.archi.common.auth.PostVerifyTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getPostVerifyTokenMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.GetBrandInfoResponse getBrandInfo(org.archi.common.auth.GetBrandInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetBrandInfoMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.GetPlayerInfoResponse getPlayerInfo(org.archi.common.auth.GetPlayerInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetPlayerInfoMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.GetAccountInfoResponse getAccountInfo(org.archi.common.auth.GetAccountInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetAccountInfoMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.PostCreateAccountResponse postCreateAccount(org.archi.common.auth.PostCreateAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getPostCreateAccountMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.DeleteAccountResponse deleteAccount(org.archi.common.auth.DeleteAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getDeleteAccountMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.PutUpdateAccountResponse putUpdateAccount(org.archi.common.auth.PutUpdateAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getPutUpdateAccountMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.GetBrandProfileResponse getBrandProfile(org.archi.common.auth.GetBrandProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetBrandProfileMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.UpdateBrandResponse updateBrand(org.archi.common.auth.UpdateBrandRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getUpdateBrandMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.PlayerProfileResponse getPlayerProfile(org.archi.common.auth.PlayerProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetPlayerProfileMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.UpdatePlayerResponse updatePlayer(org.archi.common.auth.UpdatePlayerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getUpdatePlayerMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.GetAccountsResponse getAccounts(org.archi.common.auth.GetAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetAccountsMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.GetBrandsResponse getBrands(org.archi.common.auth.GetBrandsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetBrandsMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.archi.common.auth.GetPlayersResponse getPlayers(org.archi.common.auth.GetPlayersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getGetPlayersMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service AuthService.
    */
-  public static final class AuthServiceFutureStub
-      extends io.grpc.stub.AbstractFutureStub<AuthServiceFutureStub> {
-    private AuthServiceFutureStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class AuthServiceFutureStub extends io.grpc.stub.AbstractStub<AuthServiceFutureStub> {
+    private AuthServiceFutureStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private AuthServiceFutureStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected AuthServiceFutureStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected AuthServiceFutureStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new AuthServiceFutureStub(channel, callOptions);
     }
 
@@ -1136,7 +1280,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PostRegisterResponse> postRegister(
         org.archi.common.auth.PostRegisterRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getPostRegisterMethod(), getCallOptions()), request);
     }
 
@@ -1144,7 +1288,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PostLoginResponse> postLogin(
         org.archi.common.auth.PostLoginRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getPostLoginMethod(), getCallOptions()), request);
     }
 
@@ -1152,7 +1296,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PostLogoutResponse> postLogout(
         org.archi.common.auth.PostLogoutRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getPostLogoutMethod(), getCallOptions()), request);
     }
 
@@ -1160,7 +1304,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PostRefreshTokenResponse> postRefreshToken(
         org.archi.common.auth.PostRefreshTokenRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getPostRefreshTokenMethod(), getCallOptions()), request);
     }
 
@@ -1168,7 +1312,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetVerifyEmailResponse> getVerifyEmail(
         org.archi.common.auth.GetVerifyEmailRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetVerifyEmailMethod(), getCallOptions()), request);
     }
 
@@ -1176,7 +1320,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PostVerifyTokenResponse> postVerifyToken(
         org.archi.common.auth.PostVerifyTokenRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getPostVerifyTokenMethod(), getCallOptions()), request);
     }
 
@@ -1184,7 +1328,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetBrandInfoResponse> getBrandInfo(
         org.archi.common.auth.GetBrandInfoRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetBrandInfoMethod(), getCallOptions()), request);
     }
 
@@ -1192,7 +1336,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetPlayerInfoResponse> getPlayerInfo(
         org.archi.common.auth.GetPlayerInfoRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetPlayerInfoMethod(), getCallOptions()), request);
     }
 
@@ -1200,7 +1344,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetAccountInfoResponse> getAccountInfo(
         org.archi.common.auth.GetAccountInfoRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetAccountInfoMethod(), getCallOptions()), request);
     }
 
@@ -1208,7 +1352,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PostCreateAccountResponse> postCreateAccount(
         org.archi.common.auth.PostCreateAccountRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getPostCreateAccountMethod(), getCallOptions()), request);
     }
 
@@ -1216,7 +1360,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.DeleteAccountResponse> deleteAccount(
         org.archi.common.auth.DeleteAccountRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getDeleteAccountMethod(), getCallOptions()), request);
     }
 
@@ -1224,7 +1368,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PutUpdateAccountResponse> putUpdateAccount(
         org.archi.common.auth.PutUpdateAccountRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getPutUpdateAccountMethod(), getCallOptions()), request);
     }
 
@@ -1232,7 +1376,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetBrandProfileResponse> getBrandProfile(
         org.archi.common.auth.GetBrandProfileRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetBrandProfileMethod(), getCallOptions()), request);
     }
 
@@ -1240,7 +1384,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.UpdateBrandResponse> updateBrand(
         org.archi.common.auth.UpdateBrandRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getUpdateBrandMethod(), getCallOptions()), request);
     }
 
@@ -1248,7 +1392,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.PlayerProfileResponse> getPlayerProfile(
         org.archi.common.auth.PlayerProfileRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetPlayerProfileMethod(), getCallOptions()), request);
     }
 
@@ -1256,7 +1400,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.UpdatePlayerResponse> updatePlayer(
         org.archi.common.auth.UpdatePlayerRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getUpdatePlayerMethod(), getCallOptions()), request);
     }
 
@@ -1264,7 +1408,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetAccountsResponse> getAccounts(
         org.archi.common.auth.GetAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetAccountsMethod(), getCallOptions()), request);
     }
 
@@ -1272,7 +1416,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetBrandsResponse> getBrands(
         org.archi.common.auth.GetBrandsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetBrandsMethod(), getCallOptions()), request);
     }
 
@@ -1280,7 +1424,7 @@ public final class AuthServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetPlayersResponse> getPlayers(
         org.archi.common.auth.GetPlayersRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getGetPlayersMethod(), getCallOptions()), request);
     }
   }
@@ -1310,10 +1454,10 @@ public final class AuthServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AsyncService serviceImpl;
+    private final AuthServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AsyncService serviceImpl, int methodId) {
+    MethodHandlers(AuthServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1414,144 +1558,6 @@ public final class AuthServiceGrpc {
     }
   }
 
-  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          getPostRegisterMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PostRegisterRequest,
-              org.archi.common.auth.PostRegisterResponse>(
-                service, METHODID_POST_REGISTER)))
-        .addMethod(
-          getPostLoginMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PostLoginRequest,
-              org.archi.common.auth.PostLoginResponse>(
-                service, METHODID_POST_LOGIN)))
-        .addMethod(
-          getPostLogoutMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PostLogoutRequest,
-              org.archi.common.auth.PostLogoutResponse>(
-                service, METHODID_POST_LOGOUT)))
-        .addMethod(
-          getPostRefreshTokenMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PostRefreshTokenRequest,
-              org.archi.common.auth.PostRefreshTokenResponse>(
-                service, METHODID_POST_REFRESH_TOKEN)))
-        .addMethod(
-          getGetVerifyEmailMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetVerifyEmailRequest,
-              org.archi.common.auth.GetVerifyEmailResponse>(
-                service, METHODID_GET_VERIFY_EMAIL)))
-        .addMethod(
-          getPostVerifyTokenMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PostVerifyTokenRequest,
-              org.archi.common.auth.PostVerifyTokenResponse>(
-                service, METHODID_POST_VERIFY_TOKEN)))
-        .addMethod(
-          getGetBrandInfoMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetBrandInfoRequest,
-              org.archi.common.auth.GetBrandInfoResponse>(
-                service, METHODID_GET_BRAND_INFO)))
-        .addMethod(
-          getGetPlayerInfoMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetPlayerInfoRequest,
-              org.archi.common.auth.GetPlayerInfoResponse>(
-                service, METHODID_GET_PLAYER_INFO)))
-        .addMethod(
-          getGetAccountInfoMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetAccountInfoRequest,
-              org.archi.common.auth.GetAccountInfoResponse>(
-                service, METHODID_GET_ACCOUNT_INFO)))
-        .addMethod(
-          getPostCreateAccountMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PostCreateAccountRequest,
-              org.archi.common.auth.PostCreateAccountResponse>(
-                service, METHODID_POST_CREATE_ACCOUNT)))
-        .addMethod(
-          getDeleteAccountMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.DeleteAccountRequest,
-              org.archi.common.auth.DeleteAccountResponse>(
-                service, METHODID_DELETE_ACCOUNT)))
-        .addMethod(
-          getPutUpdateAccountMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PutUpdateAccountRequest,
-              org.archi.common.auth.PutUpdateAccountResponse>(
-                service, METHODID_PUT_UPDATE_ACCOUNT)))
-        .addMethod(
-          getGetBrandProfileMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetBrandProfileRequest,
-              org.archi.common.auth.GetBrandProfileResponse>(
-                service, METHODID_GET_BRAND_PROFILE)))
-        .addMethod(
-          getUpdateBrandMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.UpdateBrandRequest,
-              org.archi.common.auth.UpdateBrandResponse>(
-                service, METHODID_UPDATE_BRAND)))
-        .addMethod(
-          getGetPlayerProfileMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.PlayerProfileRequest,
-              org.archi.common.auth.PlayerProfileResponse>(
-                service, METHODID_GET_PLAYER_PROFILE)))
-        .addMethod(
-          getUpdatePlayerMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.UpdatePlayerRequest,
-              org.archi.common.auth.UpdatePlayerResponse>(
-                service, METHODID_UPDATE_PLAYER)))
-        .addMethod(
-          getGetAccountsMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetAccountsRequest,
-              org.archi.common.auth.GetAccountsResponse>(
-                service, METHODID_GET_ACCOUNTS)))
-        .addMethod(
-          getGetBrandsMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetBrandsRequest,
-              org.archi.common.auth.GetBrandsResponse>(
-                service, METHODID_GET_BRANDS)))
-        .addMethod(
-          getGetPlayersMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              org.archi.common.auth.GetPlayersRequest,
-              org.archi.common.auth.GetPlayersResponse>(
-                service, METHODID_GET_PLAYERS)))
-        .build();
-  }
-
   private static abstract class AuthServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     AuthServiceBaseDescriptorSupplier() {}
@@ -1575,9 +1581,9 @@ public final class AuthServiceGrpc {
   private static final class AuthServiceMethodDescriptorSupplier
       extends AuthServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final java.lang.String methodName;
+    private final String methodName;
 
-    AuthServiceMethodDescriptorSupplier(java.lang.String methodName) {
+    AuthServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 

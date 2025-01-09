@@ -20,36 +20,32 @@ public interface GetAccountsRequestOrBuilder extends
   int getSize();
 
   /**
-   * <code>optional string sort = 3;</code>
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    * @return Whether the sort field is set.
    */
   boolean hasSort();
   /**
-   * <code>optional string sort = 3;</code>
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    * @return The sort.
    */
-  java.lang.String getSort();
+  com.google.protobuf.StringValue getSort();
   /**
-   * <code>optional string sort = 3;</code>
-   * @return The bytes for sort.
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getSortBytes();
+  com.google.protobuf.StringValueOrBuilder getSortOrBuilder();
 
   /**
-   * <code>optional string username = 4;</code>
+   * <code>.google.protobuf.StringValue username = 4;</code>
    * @return Whether the username field is set.
    */
   boolean hasUsername();
   /**
-   * <code>optional string username = 4;</code>
+   * <code>.google.protobuf.StringValue username = 4;</code>
    * @return The username.
    */
-  java.lang.String getUsername();
+  com.google.protobuf.StringValue getUsername();
   /**
-   * <code>optional string username = 4;</code>
-   * @return The bytes for username.
+   * <code>.google.protobuf.StringValue username = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getUsernameBytes();
+  com.google.protobuf.StringValueOrBuilder getUsernameOrBuilder();
 }

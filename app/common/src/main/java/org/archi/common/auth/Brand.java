@@ -34,6 +34,77 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private Brand(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 8: {
+
+            id_ = input.readInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            field_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            address_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            gps_ = s;
+            break;
+          }
+          case 48: {
+
+            isEnable_ = input.readBool();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.archi.common.auth.AuthProto.internal_static_Brand_descriptor;
@@ -242,22 +313,22 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+    if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
+    if (!getFieldBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, field_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+    if (!getAddressBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, address_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gps_)) {
+    if (!getGpsBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, gps_);
     }
     if (isEnable_ != false) {
       output.writeBool(6, isEnable_);
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -270,23 +341,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+    if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
+    if (!getFieldBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, field_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+    if (!getAddressBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, address_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gps_)) {
+    if (!getGpsBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, gps_);
     }
     if (isEnable_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, isEnable_);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -313,7 +384,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGps())) return false;
     if (getIsEnable()
         != other.getIsEnable()) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -338,7 +409,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ISENABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsEnable());
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -455,13 +526,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.archi.common.auth.Brand.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -580,7 +656,7 @@ private static final long serialVersionUID = 0L;
       if (other.getIsEnable() != false) {
         setIsEnable(other.getIsEnable());
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -595,60 +671,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      org.archi.common.auth.Brand parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              id_ = input.readInt64();
-
-              break;
-            } // case 8
-            case 18: {
-              name_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 18
-            case 26: {
-              field_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 26
-            case 34: {
-              address_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 34
-            case 42: {
-              gps_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 42
-            case 48: {
-              isEnable_ = input.readBool();
-
-              break;
-            } // case 48
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (org.archi.common.auth.Brand) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
 
@@ -1062,18 +1095,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new Brand(input, extensionRegistry);
     }
   };
 

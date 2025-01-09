@@ -144,6 +144,226 @@ public final class CoreProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_UpdateCampaignRes_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GameType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GameType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Game_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Game_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GamePlayer_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GamePlayer_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_QuizQuestion_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_QuizQuestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Item_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Item_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Piece_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Piece_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAllGameTypesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetAllGameTypesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAllGameTypesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetAllGameTypesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetGameTypeByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetGameTypeByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetGameTypeByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetGameTypeByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddGameTypeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddGameTypeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddGameTypeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddGameTypeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateGameTypeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateGameTypeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateGameTypeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateGameTypeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeleteGameTypeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeleteGameTypeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeleteGameTypeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeleteGameTypeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAllGamesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetAllGamesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAllGamesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetAllGamesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetGamesByCampaignRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetGamesByCampaignRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetGamesByCampaignResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetGamesByCampaignResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetGameByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetGameByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetGameByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetGameByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddGameRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddGameRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddGameResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddGameResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateGameRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateGameRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateGameResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateGameResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeleteGameRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeleteGameRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeleteGameResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeleteGameResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddGamePlayerRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddGamePlayerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddGamePlayerResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddGamePlayerResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_HasWinRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_HasWinRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_HasWinResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_HasWinResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetWinItemRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetWinItemRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetWinItemResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetWinItemResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetQuizQuestionByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetQuizQuestionByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetQuizQuestionByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetQuizQuestionByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetQuizQuestionsByGameRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetQuizQuestionsByGameRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetQuizQuestionsByGameResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetQuizQuestionsByGameResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddQuizQuestionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddQuizQuestionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddQuizQuestionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddQuizQuestionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateQuizQuestionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateQuizQuestionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateQuizQuestionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateQuizQuestionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeleteQuizQuestionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeleteQuizQuestionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeleteQuizQuestionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeleteQuizQuestionRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -203,28 +423,134 @@ public final class CoreProto {
       "e\030\002 \001(\t\022\023\n\013newImageUrl\030\003 \001(\t\022\024\n\014newStart" +
       "Date\030\004 \001(\t\022\022\n\nnewEndDate\030\005 \001(\t\022\021\n\tnewSta" +
       "tus\030\006 \001(\t\"0\n\021UpdateCampaignRes\022\033\n\010campai" +
-      "gn\030\001 \001(\0132\t.Campaign2\237\006\n\013CoreService\022D\n\017G" +
-      "enerateVoucher\022\027.GenerateVoucherRequest\032" +
-      "\030.GenerateVoucherResponse\022J\n\021CreateVouch" +
-      "erType\022\031.CreateVoucherTypeRequest\032\032.Crea" +
-      "teVoucherTypeResponse\0227\n\rSearchVoucher\022\016" +
-      ".SearchRequest\032\026.SearchVoucherResponse\022?" +
-      "\n\021SearchVoucherType\022\016.SearchRequest\032\032.Se" +
-      "archVoucherTypeResponse\022A\n\021UpdateVoucher" +
-      "Type\022\025.UpdateVoucherTypeReq\032\025.UpdateVouc" +
-      "herTypeRes\022;\n\017GetVouchersType\022\023.GetVouch" +
-      "erTypesReq\032\023.GetVoucherTypesRes\0228\n\013GetVo" +
-      "uchers\022\023.GetVouchersRequest\032\024.GetVoucher" +
-      "sResponse\022;\n\014GetCampaigns\022\024.GetCampaigns" +
-      "Request\032\025.GetCampaignsResponse\022A\n\016Search" +
-      "Campaign\022\026.SearchCampaignRequest\032\027.Searc" +
-      "hCampaignResponse\022A\n\016CreateCampaign\022\026.Cr" +
-      "eateCampaignRequest\032\027.CreateCampaignResp" +
-      "onse\022M\n\025GetCampaignsByBrandId\022\031.GetCampa" +
-      "ignsByBrandIdReq\032\031.GetCampaignsByBrandId" +
-      "Res\0228\n\016UpdateCampaign\022\022.UpdateCampaignRe" +
-      "q\032\022.UpdateCampaignResB$\n\025org.archi.commo" +
-      "n.coreB\tCoreProtoP\001b\006proto3"
+      "gn\030\001 \001(\0132\t.Campaign\"_\n\010GameType\022\n\n\002id\030\001 " +
+      "\001(\005\022\014\n\004name\030\002 \001(\t\022\022\n\nisRealtime\030\003 \001(\010\022\020\n" +
+      "\010imageUrl\030\004 \001(\t\022\023\n\013instruction\030\005 \001(\t\"m\n\004" +
+      "Game\022\n\n\002id\030\001 \001(\003\022\033\n\023allowPiecesExchange\030" +
+      "\002 \001(\010\022\017\n\007startAt\030\003 \001(\t\022\027\n\004type\030\004 \001(\0132\t.G" +
+      "ameType\022\022\n\ncampaignId\030\005 \001(\003\"L\n\nGamePlaye" +
+      "r\022\n\n\002id\030\001 \001(\003\022\016\n\006gameId\030\002 \001(\003\022\020\n\010playerI" +
+      "d\030\003 \001(\003\022\020\n\010playedAt\030\004 \001(\t\"\350\001\n\014QuizQuesti" +
+      "on\022\n\n\002id\030\001 \001(\003\022\016\n\006gameId\030\002 \001(\003\022\026\n\016questi" +
+      "onNumber\030\003 \001(\005\022\025\n\rquestionTitle\030\004 \001(\t\022\027\n" +
+      "\017questionContent\030\005 \001(\t\022\017\n\007answerA\030\006 \001(\t\022" +
+      "\017\n\007answerB\030\007 \001(\t\022\017\n\007answerC\030\010 \001(\t\022\017\n\007ans" +
+      "werD\030\t \001(\t\022\025\n\rcorrectAnswer\030\n \001(\t\022\031\n\021ans" +
+      "werExplanation\030\013 \001(\t\"I\n\004Item\022\033\n\007voucher\030" +
+      "\001 \001(\0132\010.VoucherH\000\022\027\n\005piece\030\002 \001(\0132\006.Piece" +
+      "H\000B\013\n\titem_type\"%\n\005Piece\022\n\n\002id\030\001 \001(\003\022\020\n\010" +
+      "imageUrl\030\002 \001(\t\"\030\n\026GetAllGameTypesRequest" +
+      "\"7\n\027GetAllGameTypesResponse\022\034\n\tgameTypes" +
+      "\030\001 \003(\0132\t.GameType\"$\n\026GetGameTypeByIdRequ" +
+      "est\022\n\n\002id\030\001 \001(\005\"6\n\027GetGameTypeByIdRespon" +
+      "se\022\033\n\010gameType\030\001 \001(\0132\t.GameType\"]\n\022AddGa" +
+      "meTypeRequest\022\014\n\004name\030\001 \001(\t\022\022\n\nisRealtim" +
+      "e\030\002 \001(\010\022\020\n\010imageUrl\030\003 \001(\t\022\023\n\013instruction" +
+      "\030\004 \001(\t\"2\n\023AddGameTypeResponse\022\033\n\010gameTyp" +
+      "e\030\001 \001(\0132\t.GameType\"l\n\025UpdateGameTypeRequ" +
+      "est\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\022\n\nisRealt" +
+      "ime\030\003 \001(\010\022\020\n\010imageUrl\030\004 \001(\t\022\023\n\013instructi" +
+      "on\030\005 \001(\t\"5\n\026UpdateGameTypeResponse\022\033\n\010ga" +
+      "meType\030\001 \001(\0132\t.GameType\"#\n\025DeleteGameTyp" +
+      "eRequest\022\n\n\002id\030\001 \001(\005\"\030\n\026DeleteGameTypeRe" +
+      "sponse\"\024\n\022GetAllGamesRequest\"+\n\023GetAllGa" +
+      "mesResponse\022\024\n\005games\030\001 \003(\0132\005.Game\"/\n\031Get" +
+      "GamesByCampaignRequest\022\022\n\ncampaignId\030\001 \001" +
+      "(\003\"2\n\032GetGamesByCampaignResponse\022\024\n\005game" +
+      "s\030\001 \003(\0132\005.Game\" \n\022GetGameByIdRequest\022\n\n\002" +
+      "id\030\001 \001(\003\"*\n\023GetGameByIdResponse\022\023\n\004game\030" +
+      "\001 \001(\0132\005.Game\"f\n\016AddGameRequest\022\033\n\023allowP" +
+      "iecesExchange\030\001 \001(\010\022\017\n\007startAt\030\002 \001(\t\022\022\n\n" +
+      "gameTypeId\030\003 \001(\005\022\022\n\ncampaignId\030\004 \001(\003\"&\n\017" +
+      "AddGameResponse\022\023\n\004game\030\001 \001(\0132\005.Game\"u\n\021" +
+      "UpdateGameRequest\022\n\n\002id\030\001 \001(\003\022\033\n\023allowPi" +
+      "ecesExchange\030\002 \001(\010\022\017\n\007startAt\030\003 \001(\t\022\022\n\ng" +
+      "ameTypeId\030\004 \001(\005\022\022\n\ncampaignId\030\005 \001(\003\")\n\022U" +
+      "pdateGameResponse\022\023\n\004game\030\001 \001(\0132\005.Game\"\037" +
+      "\n\021DeleteGameRequest\022\n\n\002id\030\001 \001(\003\"\024\n\022Delet" +
+      "eGameResponse\"8\n\024AddGamePlayerRequest\022\016\n" +
+      "\006gameId\030\001 \001(\003\022\020\n\010playerId\030\002 \001(\003\"8\n\025AddGa" +
+      "mePlayerResponse\022\037\n\ngamePlayer\030\001 \001(\0132\013.G" +
+      "amePlayer\"\017\n\rHasWinRequest\" \n\016HasWinResp" +
+      "onse\022\016\n\006hasWin\030\001 \001(\010\"5\n\021GetWinItemReques" +
+      "t\022\020\n\010playerId\030\001 \001(\003\022\016\n\006gameId\030\002 \001(\003\")\n\022G" +
+      "etWinItemResponse\022\023\n\004item\030\002 \001(\0132\005.Item\"(" +
+      "\n\032GetQuizQuestionByIdRequest\022\n\n\002id\030\001 \001(\003" +
+      "\"B\n\033GetQuizQuestionByIdResponse\022#\n\014quizQ" +
+      "uestion\030\001 \001(\0132\r.QuizQuestion\"/\n\035GetQuizQ" +
+      "uestionsByGameRequest\022\016\n\006gameId\030\001 \001(\003\"E\n" +
+      "\036GetQuizQuestionsByGameResponse\022#\n\014quizQ" +
+      "uestion\030\001 \003(\0132\r.QuizQuestion\"\346\001\n\026AddQuiz" +
+      "QuestionRequest\022\016\n\006gameId\030\001 \001(\003\022\026\n\016quest" +
+      "ionNumber\030\002 \001(\005\022\025\n\rquestionTitle\030\003 \001(\t\022\027" +
+      "\n\017questionContent\030\004 \001(\t\022\017\n\007answerA\030\005 \001(\t" +
+      "\022\017\n\007answerB\030\006 \001(\t\022\017\n\007answerC\030\007 \001(\t\022\017\n\007an" +
+      "swerD\030\010 \001(\t\022\025\n\rcorrectAnswer\030\t \001(\t\022\031\n\021an" +
+      "swerExplanation\030\n \001(\t\">\n\027AddQuizQuestion" +
+      "Response\022#\n\014quizQuestion\030\001 \001(\0132\r.QuizQue" +
+      "stion\"\365\001\n\031UpdateQuizQuestionRequest\022\n\n\002i" +
+      "d\030\001 \001(\003\022\016\n\006gameId\030\002 \001(\003\022\026\n\016questionNumbe" +
+      "r\030\003 \001(\005\022\025\n\rquestionTitle\030\004 \001(\t\022\027\n\017questi" +
+      "onContent\030\005 \001(\t\022\017\n\007answerA\030\006 \001(\t\022\017\n\007answ" +
+      "erB\030\007 \001(\t\022\017\n\007answerC\030\010 \001(\t\022\017\n\007answerD\030\t " +
+      "\001(\t\022\025\n\rcorrectAnswer\030\n \001(\t\022\031\n\021answerExpl" +
+      "anation\030\013 \001(\t\"A\n\032UpdateQuizQuestionRespo" +
+      "nse\022#\n\014quizQuestion\030\001 \001(\0132\r.QuizQuestion" +
+      "\"\034\n\032DeleteQuizQuestionResponse\"\'\n\031Delete" +
+      "QuizQuestionRequest\022\n\n\002id\030\001 \001(\0032\375\017\n\013Core" +
+      "Service\022D\n\017GenerateVoucher\022\027.GenerateVou" +
+      "cherRequest\032\030.GenerateVoucherResponse\022J\n" +
+      "\021CreateVoucherType\022\031.CreateVoucherTypeRe" +
+      "quest\032\032.CreateVoucherTypeResponse\0227\n\rSea" +
+      "rchVoucher\022\016.SearchRequest\032\026.SearchVouch" +
+      "erResponse\022?\n\021SearchVoucherType\022\016.Search" +
+      "Request\032\032.SearchVoucherTypeResponse\022A\n\021U" +
+      "pdateVoucherType\022\025.UpdateVoucherTypeReq\032" +
+      "\025.UpdateVoucherTypeRes\022;\n\017GetVouchersTyp" +
+      "e\022\023.GetVoucherTypesReq\032\023.GetVoucherTypes" +
+      "Res\0228\n\013GetVouchers\022\023.GetVouchersRequest\032" +
+      "\024.GetVouchersResponse\022;\n\014GetCampaigns\022\024." +
+      "GetCampaignsRequest\032\025.GetCampaignsRespon" +
+      "se\022A\n\016SearchCampaign\022\026.SearchCampaignReq" +
+      "uest\032\027.SearchCampaignResponse\022A\n\016CreateC" +
+      "ampaign\022\026.CreateCampaignRequest\032\027.Create" +
+      "CampaignResponse\022M\n\025GetCampaignsByBrandI" +
+      "d\022\031.GetCampaignsByBrandIdReq\032\031.GetCampai" +
+      "gnsByBrandIdRes\0228\n\016UpdateCampaign\022\022.Upda" +
+      "teCampaignReq\032\022.UpdateCampaignRes\022D\n\017Get" +
+      "AllGameTypes\022\027.GetAllGameTypesRequest\032\030." +
+      "GetAllGameTypesResponse\022D\n\017GetGameTypeBy" +
+      "Id\022\027.GetGameTypeByIdRequest\032\030.GetGameTyp" +
+      "eByIdResponse\0228\n\013AddGameType\022\023.AddGameTy" +
+      "peRequest\032\024.AddGameTypeResponse\022A\n\016Updat" +
+      "eGameType\022\026.UpdateGameTypeRequest\032\027.Upda" +
+      "teGameTypeResponse\022A\n\016DeleteGameType\022\026.D" +
+      "eleteGameTypeRequest\032\027.DeleteGameTypeRes" +
+      "ponse\0228\n\013GetAllGames\022\023.GetAllGamesReques" +
+      "t\032\024.GetAllGamesResponse\0228\n\013GetGameById\022\023" +
+      ".GetGameByIdRequest\032\024.GetGameByIdRespons" +
+      "e\022M\n\022GetGamesByCampaign\022\032.GetGamesByCamp" +
+      "aignRequest\032\033.GetGamesByCampaignResponse" +
+      "\022,\n\007AddGame\022\017.AddGameRequest\032\020.AddGameRe" +
+      "sponse\0225\n\nUpdateGame\022\022.UpdateGameRequest" +
+      "\032\023.UpdateGameResponse\0225\n\nDeleteGame\022\022.De" +
+      "leteGameRequest\032\023.DeleteGameResponse\022>\n\r" +
+      "AddGamePlayer\022\025.AddGamePlayerRequest\032\026.A" +
+      "ddGamePlayerResponse\022)\n\006HasWin\022\016.HasWinR" +
+      "equest\032\017.HasWinResponse\0225\n\nGetWinItem\022\022." +
+      "GetWinItemRequest\032\023.GetWinItemResponse\022P" +
+      "\n\023GetQuizQuestionById\022\033.GetQuizQuestionB" +
+      "yIdRequest\032\034.GetQuizQuestionByIdResponse" +
+      "\022Y\n\026GetQuizQuestionsByGame\022\036.GetQuizQues" +
+      "tionsByGameRequest\032\037.GetQuizQuestionsByG" +
+      "ameResponse\022D\n\017AddQuizQuestion\022\027.AddQuiz" +
+      "QuestionRequest\032\030.AddQuizQuestionRespons" +
+      "e\022M\n\022UpdateQuizQuestion\022\032.UpdateQuizQues" +
+      "tionRequest\032\033.UpdateQuizQuestionResponse" +
+      "\022M\n\022DeleteQuizQuestion\022\032.DeleteQuizQuest" +
+      "ionRequest\032\033.DeleteQuizQuestionResponseB" +
+      "$\n\025org.archi.common.coreB\tCoreProtoP\001b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -386,6 +712,270 @@ public final class CoreProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpdateCampaignRes_descriptor,
         new java.lang.String[] { "Campaign", });
+    internal_static_GameType_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_GameType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GameType_descriptor,
+        new java.lang.String[] { "Id", "Name", "IsRealtime", "ImageUrl", "Instruction", });
+    internal_static_Game_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_Game_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Game_descriptor,
+        new java.lang.String[] { "Id", "AllowPiecesExchange", "StartAt", "Type", "CampaignId", });
+    internal_static_GamePlayer_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_GamePlayer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GamePlayer_descriptor,
+        new java.lang.String[] { "Id", "GameId", "PlayerId", "PlayedAt", });
+    internal_static_QuizQuestion_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_QuizQuestion_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_QuizQuestion_descriptor,
+        new java.lang.String[] { "Id", "GameId", "QuestionNumber", "QuestionTitle", "QuestionContent", "AnswerA", "AnswerB", "AnswerC", "AnswerD", "CorrectAnswer", "AnswerExplanation", });
+    internal_static_Item_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_Item_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Item_descriptor,
+        new java.lang.String[] { "Voucher", "Piece", "ItemType", });
+    internal_static_Piece_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_Piece_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Piece_descriptor,
+        new java.lang.String[] { "Id", "ImageUrl", });
+    internal_static_GetAllGameTypesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_GetAllGameTypesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetAllGameTypesRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_GetAllGameTypesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_GetAllGameTypesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetAllGameTypesResponse_descriptor,
+        new java.lang.String[] { "GameTypes", });
+    internal_static_GetGameTypeByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_GetGameTypeByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetGameTypeByIdRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_GetGameTypeByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_GetGameTypeByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetGameTypeByIdResponse_descriptor,
+        new java.lang.String[] { "GameType", });
+    internal_static_AddGameTypeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_AddGameTypeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddGameTypeRequest_descriptor,
+        new java.lang.String[] { "Name", "IsRealtime", "ImageUrl", "Instruction", });
+    internal_static_AddGameTypeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_AddGameTypeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddGameTypeResponse_descriptor,
+        new java.lang.String[] { "GameType", });
+    internal_static_UpdateGameTypeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_UpdateGameTypeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateGameTypeRequest_descriptor,
+        new java.lang.String[] { "Id", "Name", "IsRealtime", "ImageUrl", "Instruction", });
+    internal_static_UpdateGameTypeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_UpdateGameTypeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateGameTypeResponse_descriptor,
+        new java.lang.String[] { "GameType", });
+    internal_static_DeleteGameTypeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_DeleteGameTypeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeleteGameTypeRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_DeleteGameTypeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_DeleteGameTypeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeleteGameTypeResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_GetAllGamesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(42);
+    internal_static_GetAllGamesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetAllGamesRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_GetAllGamesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_GetAllGamesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetAllGamesResponse_descriptor,
+        new java.lang.String[] { "Games", });
+    internal_static_GetGamesByCampaignRequest_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_GetGamesByCampaignRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetGamesByCampaignRequest_descriptor,
+        new java.lang.String[] { "CampaignId", });
+    internal_static_GetGamesByCampaignResponse_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_GetGamesByCampaignResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetGamesByCampaignResponse_descriptor,
+        new java.lang.String[] { "Games", });
+    internal_static_GetGameByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_GetGameByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetGameByIdRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_GetGameByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_GetGameByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetGameByIdResponse_descriptor,
+        new java.lang.String[] { "Game", });
+    internal_static_AddGameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_AddGameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddGameRequest_descriptor,
+        new java.lang.String[] { "AllowPiecesExchange", "StartAt", "GameTypeId", "CampaignId", });
+    internal_static_AddGameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(49);
+    internal_static_AddGameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddGameResponse_descriptor,
+        new java.lang.String[] { "Game", });
+    internal_static_UpdateGameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(50);
+    internal_static_UpdateGameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateGameRequest_descriptor,
+        new java.lang.String[] { "Id", "AllowPiecesExchange", "StartAt", "GameTypeId", "CampaignId", });
+    internal_static_UpdateGameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(51);
+    internal_static_UpdateGameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateGameResponse_descriptor,
+        new java.lang.String[] { "Game", });
+    internal_static_DeleteGameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(52);
+    internal_static_DeleteGameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeleteGameRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_DeleteGameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(53);
+    internal_static_DeleteGameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeleteGameResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_AddGamePlayerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(54);
+    internal_static_AddGamePlayerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddGamePlayerRequest_descriptor,
+        new java.lang.String[] { "GameId", "PlayerId", });
+    internal_static_AddGamePlayerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(55);
+    internal_static_AddGamePlayerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddGamePlayerResponse_descriptor,
+        new java.lang.String[] { "GamePlayer", });
+    internal_static_HasWinRequest_descriptor =
+      getDescriptor().getMessageTypes().get(56);
+    internal_static_HasWinRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_HasWinRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_HasWinResponse_descriptor =
+      getDescriptor().getMessageTypes().get(57);
+    internal_static_HasWinResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_HasWinResponse_descriptor,
+        new java.lang.String[] { "HasWin", });
+    internal_static_GetWinItemRequest_descriptor =
+      getDescriptor().getMessageTypes().get(58);
+    internal_static_GetWinItemRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetWinItemRequest_descriptor,
+        new java.lang.String[] { "PlayerId", "GameId", });
+    internal_static_GetWinItemResponse_descriptor =
+      getDescriptor().getMessageTypes().get(59);
+    internal_static_GetWinItemResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetWinItemResponse_descriptor,
+        new java.lang.String[] { "Item", });
+    internal_static_GetQuizQuestionByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(60);
+    internal_static_GetQuizQuestionByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetQuizQuestionByIdRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_GetQuizQuestionByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(61);
+    internal_static_GetQuizQuestionByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetQuizQuestionByIdResponse_descriptor,
+        new java.lang.String[] { "QuizQuestion", });
+    internal_static_GetQuizQuestionsByGameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(62);
+    internal_static_GetQuizQuestionsByGameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetQuizQuestionsByGameRequest_descriptor,
+        new java.lang.String[] { "GameId", });
+    internal_static_GetQuizQuestionsByGameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(63);
+    internal_static_GetQuizQuestionsByGameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetQuizQuestionsByGameResponse_descriptor,
+        new java.lang.String[] { "QuizQuestion", });
+    internal_static_AddQuizQuestionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(64);
+    internal_static_AddQuizQuestionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddQuizQuestionRequest_descriptor,
+        new java.lang.String[] { "GameId", "QuestionNumber", "QuestionTitle", "QuestionContent", "AnswerA", "AnswerB", "AnswerC", "AnswerD", "CorrectAnswer", "AnswerExplanation", });
+    internal_static_AddQuizQuestionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(65);
+    internal_static_AddQuizQuestionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddQuizQuestionResponse_descriptor,
+        new java.lang.String[] { "QuizQuestion", });
+    internal_static_UpdateQuizQuestionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(66);
+    internal_static_UpdateQuizQuestionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateQuizQuestionRequest_descriptor,
+        new java.lang.String[] { "Id", "GameId", "QuestionNumber", "QuestionTitle", "QuestionContent", "AnswerA", "AnswerB", "AnswerC", "AnswerD", "CorrectAnswer", "AnswerExplanation", });
+    internal_static_UpdateQuizQuestionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(67);
+    internal_static_UpdateQuizQuestionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateQuizQuestionResponse_descriptor,
+        new java.lang.String[] { "QuizQuestion", });
+    internal_static_DeleteQuizQuestionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(68);
+    internal_static_DeleteQuizQuestionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeleteQuizQuestionResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_DeleteQuizQuestionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(69);
+    internal_static_DeleteQuizQuestionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeleteQuizQuestionRequest_descriptor,
+        new java.lang.String[] { "Id", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

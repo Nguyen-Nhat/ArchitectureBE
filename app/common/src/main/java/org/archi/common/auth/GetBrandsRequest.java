@@ -16,8 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetBrandsRequest() {
-    sort_ = "";
-    name_ = "";
   }
 
   @java.lang.Override
@@ -32,6 +30,79 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private GetBrandsRequest(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 8: {
+
+            page_ = input.readInt32();
+            break;
+          }
+          case 16: {
+
+            size_ = input.readInt32();
+            break;
+          }
+          case 26: {
+            com.google.protobuf.StringValue.Builder subBuilder = null;
+            if (sort_ != null) {
+              subBuilder = sort_.toBuilder();
+            }
+            sort_ = input.readMessage(com.google.protobuf.StringValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(sort_);
+              sort_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 34: {
+            com.google.protobuf.StringValue.Builder subBuilder = null;
+            if (name_ != null) {
+              subBuilder = name_.toBuilder();
+            }
+            name_ = input.readMessage(com.google.protobuf.StringValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(name_);
+              name_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.archi.common.auth.AuthProto.internal_static_GetBrandsRequest_descriptor;
@@ -45,7 +116,6 @@ private static final long serialVersionUID = 0L;
             org.archi.common.auth.GetBrandsRequest.class, org.archi.common.auth.GetBrandsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PAGE_FIELD_NUMBER = 1;
   private int page_;
   /**
@@ -69,95 +139,55 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SORT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sort_;
+  private com.google.protobuf.StringValue sort_;
   /**
-   * <code>optional string sort = 3;</code>
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    * @return Whether the sort field is set.
    */
   @java.lang.Override
   public boolean hasSort() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return sort_ != null;
   }
   /**
-   * <code>optional string sort = 3;</code>
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    * @return The sort.
    */
   @java.lang.Override
-  public java.lang.String getSort() {
-    java.lang.Object ref = sort_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sort_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getSort() {
+    return sort_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : sort_;
   }
   /**
-   * <code>optional string sort = 3;</code>
-   * @return The bytes for sort.
+   * <code>.google.protobuf.StringValue sort = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSortBytes() {
-    java.lang.Object ref = sort_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      sort_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getSortOrBuilder() {
+    return getSort();
   }
 
   public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+  private com.google.protobuf.StringValue name_;
   /**
-   * <code>optional string name = 4;</code>
+   * <code>.google.protobuf.StringValue name = 4;</code>
    * @return Whether the name field is set.
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return name_ != null;
   }
   /**
-   * <code>optional string name = 4;</code>
+   * <code>.google.protobuf.StringValue name = 4;</code>
    * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
+  public com.google.protobuf.StringValue getName() {
+    return name_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : name_;
   }
   /**
-   * <code>optional string name = 4;</code>
-   * @return The bytes for name.
+   * <code>.google.protobuf.StringValue name = 4;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.StringValueOrBuilder getNameOrBuilder() {
+    return getName();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -180,13 +210,13 @@ private static final long serialVersionUID = 0L;
     if (size_ != 0) {
       output.writeInt32(2, size_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sort_);
+    if (sort_ != null) {
+      output.writeMessage(3, getSort());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    if (name_ != null) {
+      output.writeMessage(4, getName());
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -203,13 +233,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, size_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sort_);
+    if (sort_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getSort());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    if (name_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getName());
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -238,7 +270,7 @@ private static final long serialVersionUID = 0L;
       if (!getName()
           .equals(other.getName())) return false;
     }
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -261,7 +293,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
     }
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -378,13 +410,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.archi.common.auth.GetBrandsRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -393,10 +430,18 @@ private static final long serialVersionUID = 0L;
 
       size_ = 0;
 
-      sort_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+      if (sortBuilder_ == null) {
+        sort_ = null;
+      } else {
+        sort_ = null;
+        sortBuilder_ = null;
+      }
+      if (nameBuilder_ == null) {
+        name_ = null;
+      } else {
+        name_ = null;
+        nameBuilder_ = null;
+      }
       return this;
     }
 
@@ -423,19 +468,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.archi.common.auth.GetBrandsRequest buildPartial() {
       org.archi.common.auth.GetBrandsRequest result = new org.archi.common.auth.GetBrandsRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.page_ = page_;
       result.size_ = size_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (sortBuilder_ == null) {
+        result.sort_ = sort_;
+      } else {
+        result.sort_ = sortBuilder_.build();
       }
-      result.sort_ = sort_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
+      if (nameBuilder_ == null) {
+        result.name_ = name_;
+      } else {
+        result.name_ = nameBuilder_.build();
       }
-      result.name_ = name_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -491,16 +535,12 @@ private static final long serialVersionUID = 0L;
         setSize(other.getSize());
       }
       if (other.hasSort()) {
-        bitField0_ |= 0x00000001;
-        sort_ = other.sort_;
-        onChanged();
+        mergeSort(other.getSort());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
-        name_ = other.name_;
-        onChanged();
+        mergeName(other.getName());
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -515,53 +555,19 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      org.archi.common.auth.GetBrandsRequest parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              page_ = input.readInt32();
-
-              break;
-            } // case 8
-            case 16: {
-              size_ = input.readInt32();
-
-              break;
-            } // case 16
-            case 26: {
-              sort_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 26
-            case 34: {
-              name_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 34
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (org.archi.common.auth.GetBrandsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
-    private int bitField0_;
 
     private int page_ ;
     /**
@@ -625,170 +631,242 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object sort_ = "";
+    private com.google.protobuf.StringValue sort_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> sortBuilder_;
     /**
-     * <code>optional string sort = 3;</code>
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      * @return Whether the sort field is set.
      */
     public boolean hasSort() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return sortBuilder_ != null || sort_ != null;
     }
     /**
-     * <code>optional string sort = 3;</code>
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      * @return The sort.
      */
-    public java.lang.String getSort() {
-      java.lang.Object ref = sort_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sort_ = s;
-        return s;
+    public com.google.protobuf.StringValue getSort() {
+      if (sortBuilder_ == null) {
+        return sort_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : sort_;
       } else {
-        return (java.lang.String) ref;
+        return sortBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string sort = 3;</code>
-     * @return The bytes for sort.
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getSortBytes() {
-      java.lang.Object ref = sort_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sort_ = b;
-        return b;
+    public Builder setSort(com.google.protobuf.StringValue value) {
+      if (sortBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sort_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        sortBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string sort = 3;</code>
-     * @param value The sort to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      */
     public Builder setSort(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-      sort_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (sortBuilder_ == null) {
+        sort_ = builderForValue.build();
+        onChanged();
+      } else {
+        sortBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string sort = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue sort = 3;</code>
+     */
+    public Builder mergeSort(com.google.protobuf.StringValue value) {
+      if (sortBuilder_ == null) {
+        if (sort_ != null) {
+          sort_ =
+            com.google.protobuf.StringValue.newBuilder(sort_).mergeFrom(value).buildPartial();
+        } else {
+          sort_ = value;
+        }
+        onChanged();
+      } else {
+        sortBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      */
     public Builder clearSort() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      sort_ = getDefaultInstance().getSort();
-      onChanged();
+      if (sortBuilder_ == null) {
+        sort_ = null;
+        onChanged();
+      } else {
+        sort_ = null;
+        sortBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string sort = 3;</code>
-     * @param value The bytes for sort to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue sort = 3;</code>
      */
-    public Builder setSortBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      sort_ = value;
+    public com.google.protobuf.StringValue.Builder getSortBuilder() {
+      
       onChanged();
-      return this;
+      return getSortFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue sort = 3;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getSortOrBuilder() {
+      if (sortBuilder_ != null) {
+        return sortBuilder_.getMessageOrBuilder();
+      } else {
+        return sort_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : sort_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sort = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getSortFieldBuilder() {
+      if (sortBuilder_ == null) {
+        sortBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getSort(),
+                getParentForChildren(),
+                isClean());
+        sort_ = null;
+      }
+      return sortBuilder_;
     }
 
-    private java.lang.Object name_ = "";
+    private com.google.protobuf.StringValue name_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> nameBuilder_;
     /**
-     * <code>optional string name = 4;</code>
+     * <code>.google.protobuf.StringValue name = 4;</code>
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return nameBuilder_ != null || name_ != null;
     }
     /**
-     * <code>optional string name = 4;</code>
+     * <code>.google.protobuf.StringValue name = 4;</code>
      * @return The name.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
+    public com.google.protobuf.StringValue getName() {
+      if (nameBuilder_ == null) {
+        return name_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : name_;
       } else {
-        return (java.lang.String) ref;
+        return nameBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string name = 4;</code>
-     * @return The bytes for name.
+     * <code>.google.protobuf.StringValue name = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
+    public Builder setName(com.google.protobuf.StringValue value) {
+      if (nameBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        nameBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>optional string name = 4;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue name = 4;</code>
      */
     public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-      name_ = value;
-      onChanged();
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (nameBuilder_ == null) {
+        name_ = builderForValue.build();
+        onChanged();
+      } else {
+        nameBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>optional string name = 4;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue name = 4;</code>
+     */
+    public Builder mergeName(com.google.protobuf.StringValue value) {
+      if (nameBuilder_ == null) {
+        if (name_ != null) {
+          name_ =
+            com.google.protobuf.StringValue.newBuilder(name_).mergeFrom(value).buildPartial();
+        } else {
+          name_ = value;
+        }
+        onChanged();
+      } else {
+        nameBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue name = 4;</code>
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      name_ = getDefaultInstance().getName();
-      onChanged();
+      if (nameBuilder_ == null) {
+        name_ = null;
+        onChanged();
+      } else {
+        name_ = null;
+        nameBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>optional string name = 4;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.StringValue name = 4;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
-      name_ = value;
+    public com.google.protobuf.StringValue.Builder getNameBuilder() {
+      
       onChanged();
-      return this;
+      return getNameFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue name = 4;</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getNameOrBuilder() {
+      if (nameBuilder_ != null) {
+        return nameBuilder_.getMessageOrBuilder();
+      } else {
+        return name_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : name_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue name = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getNameFieldBuilder() {
+      if (nameBuilder_ == null) {
+        nameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getName(),
+                getParentForChildren(),
+                isClean());
+        name_ = null;
+      }
+      return nameBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -823,18 +901,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new GetBrandsRequest(input, extensionRegistry);
     }
   };
 

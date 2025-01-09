@@ -14,47 +14,47 @@ public interface PutUpdateAccountRequestOrBuilder extends
   long getId();
 
   /**
-   * <code>optional string email = 2;</code>
+   * <code>.google.protobuf.StringValue email = 2;</code>
    * @return Whether the email field is set.
    */
   boolean hasEmail();
   /**
-   * <code>optional string email = 2;</code>
+   * <code>.google.protobuf.StringValue email = 2;</code>
    * @return The email.
    */
-  java.lang.String getEmail();
+  com.google.protobuf.StringValue getEmail();
   /**
-   * <code>optional string email = 2;</code>
-   * @return The bytes for email.
+   * <code>.google.protobuf.StringValue email = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getEmailBytes();
+  com.google.protobuf.StringValueOrBuilder getEmailOrBuilder();
 
   /**
-   * <code>optional string phoneNumber = 3;</code>
+   * <code>.google.protobuf.StringValue phoneNumber = 3;</code>
    * @return Whether the phoneNumber field is set.
    */
   boolean hasPhoneNumber();
   /**
-   * <code>optional string phoneNumber = 3;</code>
+   * <code>.google.protobuf.StringValue phoneNumber = 3;</code>
    * @return The phoneNumber.
    */
-  java.lang.String getPhoneNumber();
+  com.google.protobuf.StringValue getPhoneNumber();
   /**
-   * <code>optional string phoneNumber = 3;</code>
-   * @return The bytes for phoneNumber.
+   * <code>.google.protobuf.StringValue phoneNumber = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPhoneNumberBytes();
+  com.google.protobuf.StringValueOrBuilder getPhoneNumberOrBuilder();
 
   /**
-   * <code>optional bool isActive = 5;</code>
+   * <code>.google.protobuf.BoolValue isActive = 4;</code>
    * @return Whether the isActive field is set.
    */
   boolean hasIsActive();
   /**
-   * <code>optional bool isActive = 5;</code>
+   * <code>.google.protobuf.BoolValue isActive = 4;</code>
    * @return The isActive.
    */
-  boolean getIsActive();
+  com.google.protobuf.BoolValue getIsActive();
+  /**
+   * <code>.google.protobuf.BoolValue isActive = 4;</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getIsActiveOrBuilder();
 }

@@ -1,5 +1,7 @@
 package org.archi.bff.service;
 
+import com.google.protobuf.BoolValue;
+import com.google.protobuf.StringValue;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -162,13 +164,13 @@ public class AuthService {
   public ResponseData updateAccount(long l, UpdatedAccount request) {
     PutUpdateAccountRequest.Builder requestBuilder = PutUpdateAccountRequest.newBuilder();
     if (StringUtils.hasText(request.getEmail())) {
-      requestBuilder.setEmail(request.getEmail());
+      requestBuilder.setEmail(StringValue.of(request.getEmail()));
     }
     if (StringUtils.hasText(request.getPhoneNumber())) {
-      requestBuilder.setPhoneNumber(request.getPhoneNumber());
+      requestBuilder.setPhoneNumber(StringValue.of(request.getPhoneNumber()));
     }
     if (request.getIsActive() != null) {
-      requestBuilder.setIsActive(request.getIsActive());
+      requestBuilder.setIsActive(BoolValue.of(request.getIsActive()));
     }
     requestBuilder.setId(l);
     PutUpdateAccountRequest putRequest = requestBuilder.build();
@@ -197,16 +199,16 @@ public class AuthService {
     UpdateBrandRequest.Builder builder = UpdateBrandRequest.newBuilder();
     builder.setId(l);
     if (StringUtils.hasText(brand.getName())) {
-      builder.setName(brand.getName());
+      builder.setName(StringValue.of(brand.getName()));
     }
     if (StringUtils.hasText(brand.getField())) {
-      builder.setField(brand.getField());
+      builder.setField(StringValue.of(brand.getField()));
     }
     if (StringUtils.hasText(brand.getAddress())) {
-      builder.setAddress(brand.getAddress());
+      builder.setAddress(StringValue.of(brand.getAddress()));
     }
     if (StringUtils.hasText(brand.getGps())) {
-      builder.setGps(brand.getGps());
+      builder.setGps(StringValue.of(brand.getGps()));
     }
     UpdateBrandResponse response = adapter.updateBrand(builder.build());
     return new ResponseData(response.getStatus(), response.getMessage(), null);
@@ -233,32 +235,37 @@ public class AuthService {
     UpdatePlayerRequest.Builder builder = UpdatePlayerRequest.newBuilder();
     builder.setId(l);
     if (StringUtils.hasText(request.getName())) {
-      builder.setName(request.getName());
+      builder.setName(StringValue.of(request.getName()));
     }
     if (StringUtils.hasText(request.getBirthDate())) {
-      builder.setBirthDate(request.getBirthDate());
+      builder.setBirthDate(StringValue.of(request.getBirthDate()));
     }
     if (StringUtils.hasText(request.getGender())) {
-      builder.setGender(request.getGender());
+      builder.setGender(StringValue.of(request.getGender()));
     }
     if (StringUtils.hasText(request.getFacebook())) {
-      builder.setFacebook(request.getFacebook());
+      builder.setFacebook(StringValue.of(request.getFacebook()));
     }
     if (StringUtils.hasText(request.getAvatar())) {
-      builder.setAvatar(request.getAvatar());
+      builder.setAvatar(StringValue.of(request.getAvatar()));
     }
     UpdatePlayerResponse response = adapter.updatePlayer(builder.build());
     return new ResponseData(response.getStatus(), response.getMessage(), null);
   }
 
   public ResponseData getAccounts(int pageNumber, int pageSize, String sort, String username) {
-    GetAccountsRequest request = GetAccountsRequest.newBuilder()
-            .setPage(pageNumber)
-            .setSize(pageSize)
-            .setUsername(username)
-            .setSort(sort)
-            .build();
+    GetAccountsRequest.Builder builder = GetAccountsRequest.newBuilder();
+    builder.setPage(pageNumber);
+    builder.setSize(pageSize);
+    if (StringUtils.hasText(sort)) {
+      builder.setSort(StringValue.of(sort));
+    }
+    if (StringUtils.hasText(username)) {
+      builder.setUsername(StringValue.of(username));
+    }
+    GetAccountsRequest request = builder.build();
     GetAccountsResponse response = adapter.getAccounts(request);
+
     List<AccountResponse> accounts = response.getAccountsList().stream().map(account -> AccountResponse.builder()
             .id(account.getId())
             .username(account.getUsername())
@@ -272,13 +279,17 @@ public class AuthService {
   }
 
   public ResponseData getBrands(int pageNumber, int pageSize, String sort, String name) {
-    GetBrandsRequest request = GetBrandsRequest.newBuilder()
-            .setPage(pageNumber)
-            .setSize(pageSize)
-            .setName(name)
-            .setSort(sort)
-            .build();
-    GetBrandsResponse response = adapter.getBrands(request);
+    GetBrandsRequest.Builder builder = GetBrandsRequest.newBuilder();
+    builder.setPage(pageNumber);
+    builder.setSize(pageSize);
+    if (StringUtils.hasText(sort)) {
+      builder.setSort(StringValue.of(sort));
+    }
+    if (StringUtils.hasText(name)) {
+      builder.setName(StringValue.of(name));
+    }
+    GetBrandsResponse response = adapter.getBrands(builder.build());
+
     List<BrandResponse> brands = response.getBrandsList().stream().map(brand -> BrandResponse.builder()
             .id(brand.getId())
             .name(brand.getName())
@@ -291,12 +302,16 @@ public class AuthService {
   }
 
   public ResponseData getPlayers(int pageNumber, int pageSize, String sort, String name) {
-    GetPlayersRequest request = GetPlayersRequest.newBuilder()
-            .setPage(pageNumber)
-            .setSize(pageSize)
-            .setName(name)
-            .setSort(sort)
-            .build();
+    GetPlayersRequest.Builder builder = GetPlayersRequest.newBuilder();
+    builder.setPage(pageNumber);
+    builder.setSize(pageSize);
+    if (StringUtils.hasText(sort)) {
+      builder.setSort(StringValue.of(sort));
+    }
+    if (StringUtils.hasText(name)) {
+      builder.setName(StringValue.of(name));
+    }
+    GetPlayersRequest request = builder.build();
     GetPlayersResponse response = adapter.getPlayers(request);
     List<PlayerResponse> players = response.getPlayersList().stream().map(player -> PlayerResponse.builder()
             .id(player.getId())

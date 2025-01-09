@@ -18,87 +18,77 @@ public interface UpdatePlayerRequestOrBuilder extends
   long getId();
 
   /**
-   * <code>optional string name = 2;</code>
+   * <code>.google.protobuf.StringValue name = 2;</code>
    * @return Whether the name field is set.
    */
   boolean hasName();
   /**
-   * <code>optional string name = 2;</code>
+   * <code>.google.protobuf.StringValue name = 2;</code>
    * @return The name.
    */
-  java.lang.String getName();
+  com.google.protobuf.StringValue getName();
   /**
-   * <code>optional string name = 2;</code>
-   * @return The bytes for name.
+   * <code>.google.protobuf.StringValue name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.StringValueOrBuilder getNameOrBuilder();
 
   /**
-   * <code>optional string avatar = 3;</code>
+   * <code>.google.protobuf.StringValue avatar = 3;</code>
    * @return Whether the avatar field is set.
    */
   boolean hasAvatar();
   /**
-   * <code>optional string avatar = 3;</code>
+   * <code>.google.protobuf.StringValue avatar = 3;</code>
    * @return The avatar.
    */
-  java.lang.String getAvatar();
+  com.google.protobuf.StringValue getAvatar();
   /**
-   * <code>optional string avatar = 3;</code>
-   * @return The bytes for avatar.
+   * <code>.google.protobuf.StringValue avatar = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getAvatarBytes();
+  com.google.protobuf.StringValueOrBuilder getAvatarOrBuilder();
 
   /**
-   * <code>optional string birthDate = 4;</code>
+   * <code>.google.protobuf.StringValue birthDate = 4;</code>
    * @return Whether the birthDate field is set.
    */
   boolean hasBirthDate();
   /**
-   * <code>optional string birthDate = 4;</code>
+   * <code>.google.protobuf.StringValue birthDate = 4;</code>
    * @return The birthDate.
    */
-  java.lang.String getBirthDate();
+  com.google.protobuf.StringValue getBirthDate();
   /**
-   * <code>optional string birthDate = 4;</code>
-   * @return The bytes for birthDate.
+   * <code>.google.protobuf.StringValue birthDate = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getBirthDateBytes();
+  com.google.protobuf.StringValueOrBuilder getBirthDateOrBuilder();
 
   /**
-   * <code>optional string gender = 5;</code>
+   * <code>.google.protobuf.StringValue gender = 5;</code>
    * @return Whether the gender field is set.
    */
   boolean hasGender();
   /**
-   * <code>optional string gender = 5;</code>
+   * <code>.google.protobuf.StringValue gender = 5;</code>
    * @return The gender.
    */
-  java.lang.String getGender();
+  com.google.protobuf.StringValue getGender();
   /**
-   * <code>optional string gender = 5;</code>
-   * @return The bytes for gender.
+   * <code>.google.protobuf.StringValue gender = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getGenderBytes();
+  com.google.protobuf.StringValueOrBuilder getGenderOrBuilder();
 
   /**
-   * <code>optional string facebook = 6;</code>
+   * <code>.google.protobuf.StringValue facebook = 6;</code>
    * @return Whether the facebook field is set.
    */
   boolean hasFacebook();
   /**
-   * <code>optional string facebook = 6;</code>
+   * <code>.google.protobuf.StringValue facebook = 6;</code>
    * @return The facebook.
    */
-  java.lang.String getFacebook();
+  com.google.protobuf.StringValue getFacebook();
   /**
-   * <code>optional string facebook = 6;</code>
-   * @return The bytes for facebook.
+   * <code>.google.protobuf.StringValue facebook = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getFacebookBytes();
+  com.google.protobuf.StringValueOrBuilder getFacebookOrBuilder();
 }

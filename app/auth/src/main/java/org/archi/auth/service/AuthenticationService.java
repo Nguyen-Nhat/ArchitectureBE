@@ -363,23 +363,23 @@ public class AuthenticationService {
     if (account == null || account.getId() <= 0) {
       return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.NOT_FOUND.value()).setMessage("Account not found").build();
     }
-    if (StringUtils.hasText(request.getEmail()) && !request.getEmail().equals(account.getEmail())) {
-      Account existed = accountService.findByEmail(request.getEmail());
+    if (request.hasEmail() && !request.getEmail().getValue().equals(account.getEmail())) {
+      Account existed = accountService.findByEmail(request.getEmail().getValue());
       if (existed != null && existed.getId() >= 0) {
         return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Email already exists").build();
       }
-      account.setEmail(request.getEmail());
+      account.setEmail(request.getEmail().getValue());
     }
-    if (StringUtils.hasText(request.getPhoneNumber()) && !request.getPhoneNumber().equals(account.getPhoneNumber())) {
-      account.setPhoneNumber(request.getPhoneNumber());
-      Account existed = accountService.findByPhoneNumber(request.getPhoneNumber());
+    if (request.hasPhoneNumber() && !request.getPhoneNumber().getValue().equals(account.getPhoneNumber())) {
+      account.setPhoneNumber(request.getPhoneNumber().getValue());
+      Account existed = accountService.findByPhoneNumber(request.getPhoneNumber().getValue());
       if (existed != null && existed.getId() >= 0) {
         return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.BAD_REQUEST.value()).setMessage("Phone number already exists").build();
       }
     }
-    Boolean isActive = request.getIsActive();
-    if (isActive != null && isActive != account.getIsActive()) {
-      account.setIsActive(isActive);
+
+    if (request.hasIsActive()) {
+      account.setIsActive(request.getIsActive().getValue());
     }
     accountService.save(account);
     return PutUpdateAccountResponse.newBuilder().setStatus(HttpStatus.OK.value()).setMessage("Success").build();
@@ -486,18 +486,12 @@ public class AuthenticationService {
               .setMessage("Brand not found")
               .build();
     }
-    if (StringUtils.hasText(request.getName())) {
-      brand.setName(request.getName());
-    }
-    if (StringUtils.hasText(request.getField())) {
-      brand.setField(request.getField());
-    }
-    if (StringUtils.hasText(request.getAddress())) {
-      brand.setAddress(request.getAddress());
-    }
-    if (StringUtils.hasText(request.getGps())) {
-      brand.setGps(request.getGps());
-    }
+
+    if (request.hasName())  brand.setName(request.getName().getValue());
+    if (request.hasField())  brand.setField(request.getField().getValue());
+    if (request.hasAddress()) brand.setAddress(request.getAddress().getValue());
+    if (request.hasGps()) brand.setGps(request.getGps().getValue());
+
     if (StringUtils.hasText(brand.getName())) {
       brand.setIsEnable(true);
     }
@@ -566,24 +560,19 @@ public class AuthenticationService {
               .setMessage("Player not found")
               .build();
     }
-    if (StringUtils.hasText(request.getName())) {
-      player.setName(request.getName());
-    }
-    if (StringUtils.hasText(request.getAvatar())) {
-      player.setAvatar(request.getAvatar());
-    }
-    if (StringUtils.hasText(request.getBirthDate())) {
-      java.sql.Date birthDate = java.sql.Date.valueOf(request.getBirthDate());
+
+    if (request.hasName())  player.setName(request.getName().getValue());
+    if (request.hasAvatar())  player.setAvatar(request.getAvatar().getValue());
+    if (request.hasBirthDate()) {
+      java.sql.Date birthDate = java.sql.Date.valueOf(request.getBirthDate().getValue());
       player.setBirthDate(birthDate);
     }
-
-    if (StringUtils.hasText(request.getFacebook())) {
-      player.setFacebook(request.getFacebook());
-    }
-    if (StringUtils.hasText(request.getGender())) {
-      GENDER gender = GENDER.valueOf(request.getGender().toUpperCase(Locale.ROOT));
+    if (request.hasFacebook()) player.setFacebook(request.getFacebook().getValue());
+    if (request.hasGender()) {
+      GENDER gender = GENDER.valueOf(request.getGender().getValue().toUpperCase(Locale.ROOT));
       player.setGender(gender);
     }
+
     playerService.save(player);
     return UpdatePlayerResponse.newBuilder()
             .setStatus(HttpStatus.OK.value())
@@ -594,11 +583,10 @@ public class AuthenticationService {
   public GetAccountsResponse getAccounts(GetAccountsRequest request) {
     int page = request.getPage();
     int size = request.getSize();
-    String sort = request.getSort();
-    String username = request.getUsername();
 
     Pageable pageable = null;
-    if (StringUtils.hasText(sort)) {
+    if (request.hasSort()) {
+      String sort = request.getSort().getValue() ;
       List<Sort.Order> orders = new ArrayList<>();
       String[] list = sort.split(",");
       for (String element : list) {
@@ -609,8 +597,8 @@ public class AuthenticationService {
     Page<Account> accounts = null;
 
     Specification<Account> specs = Specification.where(null);
-    if (StringUtils.hasText(username)) {
-      System.out.println(username);
+    if (request.hasUsername()) {
+      String username = request.getUsername().getValue();
       specs = specs.and(AccountSpecs.containsUsername(username));
     }
     try {
@@ -643,12 +631,11 @@ public class AuthenticationService {
   public GetBrandsResponse getBrands(GetBrandsRequest request) {
     int page = request.getPage();
     int size = request.getSize();
-    String sort = request.getSort();
-    String name = request.getName();
 
     Pageable pageable = null;
-    if (StringUtils.hasText(sort)) {
+    if (request.hasSort()) {
       List<Sort.Order> orders = new ArrayList<>();
+      String sort = request.getSort().getValue();
       String[] list = sort.split(",");
       for (String element : list) {
         orders.add(new Sort.Order(Sort.Direction.fromString(element.split(":")[1].toUpperCase()), element.split(":")[0]));
@@ -656,8 +643,8 @@ public class AuthenticationService {
       pageable = PageRequest.of(page, size, Sort.by(orders));
     } else pageable = PageRequest.of(page, size);
     Specification<Brand> specs = null;
-    if (StringUtils.hasText(name)) {
-      specs = BrandSpecs.containsName(name);
+    if (request.hasName()) {
+      specs = BrandSpecs.containsName(request.getName().getValue());
     }
 
     Page<Brand> brands = null;
@@ -691,12 +678,11 @@ public class AuthenticationService {
   public GetPlayersResponse getPlayers(GetPlayersRequest request) {
     int page = request.getPage();
     int size = request.getSize();
-    String sort = request.getSort();
-    String name = request.getName();
 
     Pageable pageable = null;
-    if (StringUtils.hasText(sort)) {
+    if (request.hasSort()) {
       List<Sort.Order> orders = new ArrayList<>();
+      String sort = request.getSort().getValue();
       String[] list = sort.split(",");
       for (String element : list) {
         orders.add(new Sort.Order(Sort.Direction.fromString(element.split(":")[1].toUpperCase()), element.split(":")[0]));
@@ -705,8 +691,8 @@ public class AuthenticationService {
     } else pageable = PageRequest.of(page, size);
 
     Specification<Player> specs = null;
-    if (StringUtils.hasText(name)) {
-      specs = PlayerSpecs.containsName(name);
+    if (request.hasName()) {
+      specs = PlayerSpecs.containsName(request.getName().getValue());
     }
 
 
