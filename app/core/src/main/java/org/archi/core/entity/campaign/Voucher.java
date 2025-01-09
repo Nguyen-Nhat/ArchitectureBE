@@ -1,25 +1,5 @@
 package org.archi.core.entity.campaign;
 
-//import jakarta.persistence.*;
-//import lombok.AllArgsConstructor;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-//
-//@Entity
-//@Table(name = "voucher")
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//public class Voucher implements Item {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "voucher_id")
-//    private Long id;
-//
-//    @Column(name = "image_url")
-//    private String imageUrl;
-//}
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -40,7 +20,7 @@ public class Voucher implements Item {
     @Column(nullable = false, updatable = false)
     private LocalDateTime expiredDate;
     private String status;
-    @Column(name = "qr_code", unique = true, nullable = true)
+    @Column(unique = true, nullable = true, name = "qr_code")
     private String QRCode;
     private Long playerId;
     @ManyToOne
