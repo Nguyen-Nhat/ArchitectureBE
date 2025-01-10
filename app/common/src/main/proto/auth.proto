@@ -25,7 +25,41 @@ service AuthService {
   rpc GetAccounts(GetAccountsRequest) returns(GetAccountsResponse);
   rpc GetBrands(GetBrandsRequest) returns(GetBrandsResponse);
   rpc GetPlayers(GetPlayersRequest) returns(GetPlayersResponse);
+  rpc RetrievePlayerProfile(RetrievePlayerProfileRequest) returns(RetrievePlayerProfileResponse);
+
+  rpc GetPlayerByEmail(GetPlayerByEmailRequest) returns(GetPlayerByEmailResponse);
+  rpc GetPlayerByPhoneNumber(GetPlayerByPhoneNumberRequest) returns(GetPlayerByPhoneNumberResponse);
 }
+
+message GetPlayerByEmailRequest {
+  string email = 1;
+}
+message GetPlayerByEmailResponse {
+  int64 status = 1;
+  string message = 2;
+  Player player = 3;
+}
+
+message GetPlayerByPhoneNumberRequest {
+  string phoneNumber = 1;
+}
+message GetPlayerByPhoneNumberResponse {
+  int64 status = 1;
+  string message = 2;
+  Player player = 3;
+}
+
+message RetrievePlayerProfileRequest {
+  int64 id = 1; // Account ID.
+}
+
+message RetrievePlayerProfileResponse {
+  int64 status = 1;
+  string message = 2;
+  Player player = 3;
+}
+
+
 
 message GetPlayersRequest {
   int32 page = 1;

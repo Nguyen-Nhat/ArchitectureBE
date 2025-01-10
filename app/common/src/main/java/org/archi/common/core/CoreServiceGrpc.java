@@ -387,6 +387,471 @@ public final class CoreServiceGrpc {
     return getUpdateCampaignMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.PostCreatePuzzleRequest,
+      org.archi.common.core.PostCreatePuzzleResponse> getPostCreatePuzzleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostCreatePuzzle",
+      requestType = org.archi.common.core.PostCreatePuzzleRequest.class,
+      responseType = org.archi.common.core.PostCreatePuzzleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.PostCreatePuzzleRequest,
+      org.archi.common.core.PostCreatePuzzleResponse> getPostCreatePuzzleMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.PostCreatePuzzleRequest, org.archi.common.core.PostCreatePuzzleResponse> getPostCreatePuzzleMethod;
+    if ((getPostCreatePuzzleMethod = CoreServiceGrpc.getPostCreatePuzzleMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getPostCreatePuzzleMethod = CoreServiceGrpc.getPostCreatePuzzleMethod) == null) {
+          CoreServiceGrpc.getPostCreatePuzzleMethod = getPostCreatePuzzleMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.PostCreatePuzzleRequest, org.archi.common.core.PostCreatePuzzleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostCreatePuzzle"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.PostCreatePuzzleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.PostCreatePuzzleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("PostCreatePuzzle"))
+              .build();
+        }
+      }
+    }
+    return getPostCreatePuzzleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetPuzzleRequest,
+      org.archi.common.core.GetPuzzleResponse> getGetPuzzleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPuzzle",
+      requestType = org.archi.common.core.GetPuzzleRequest.class,
+      responseType = org.archi.common.core.GetPuzzleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.GetPuzzleRequest,
+      org.archi.common.core.GetPuzzleResponse> getGetPuzzleMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.GetPuzzleRequest, org.archi.common.core.GetPuzzleResponse> getGetPuzzleMethod;
+    if ((getGetPuzzleMethod = CoreServiceGrpc.getGetPuzzleMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getGetPuzzleMethod = CoreServiceGrpc.getGetPuzzleMethod) == null) {
+          CoreServiceGrpc.getGetPuzzleMethod = getGetPuzzleMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.GetPuzzleRequest, org.archi.common.core.GetPuzzleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPuzzle"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetPuzzleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetPuzzleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetPuzzle"))
+              .build();
+        }
+      }
+    }
+    return getGetPuzzleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetPuzzlesRequest,
+      org.archi.common.core.GetPuzzlesResponse> getGetPuzzlesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPuzzles",
+      requestType = org.archi.common.core.GetPuzzlesRequest.class,
+      responseType = org.archi.common.core.GetPuzzlesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.GetPuzzlesRequest,
+      org.archi.common.core.GetPuzzlesResponse> getGetPuzzlesMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.GetPuzzlesRequest, org.archi.common.core.GetPuzzlesResponse> getGetPuzzlesMethod;
+    if ((getGetPuzzlesMethod = CoreServiceGrpc.getGetPuzzlesMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getGetPuzzlesMethod = CoreServiceGrpc.getGetPuzzlesMethod) == null) {
+          CoreServiceGrpc.getGetPuzzlesMethod = getGetPuzzlesMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.GetPuzzlesRequest, org.archi.common.core.GetPuzzlesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPuzzles"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetPuzzlesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetPuzzlesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetPuzzles"))
+              .build();
+        }
+      }
+    }
+    return getGetPuzzlesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.UpdatePuzzleRequest,
+      org.archi.common.core.UpdatePuzzleResponse> getUpdatePuzzleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePuzzle",
+      requestType = org.archi.common.core.UpdatePuzzleRequest.class,
+      responseType = org.archi.common.core.UpdatePuzzleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.UpdatePuzzleRequest,
+      org.archi.common.core.UpdatePuzzleResponse> getUpdatePuzzleMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.UpdatePuzzleRequest, org.archi.common.core.UpdatePuzzleResponse> getUpdatePuzzleMethod;
+    if ((getUpdatePuzzleMethod = CoreServiceGrpc.getUpdatePuzzleMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getUpdatePuzzleMethod = CoreServiceGrpc.getUpdatePuzzleMethod) == null) {
+          CoreServiceGrpc.getUpdatePuzzleMethod = getUpdatePuzzleMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.UpdatePuzzleRequest, org.archi.common.core.UpdatePuzzleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePuzzle"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.UpdatePuzzleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.UpdatePuzzleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("UpdatePuzzle"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePuzzleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.CreatePieceRequest,
+      org.archi.common.core.CreatePieceResponse> getCreatePieceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePiece",
+      requestType = org.archi.common.core.CreatePieceRequest.class,
+      responseType = org.archi.common.core.CreatePieceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.CreatePieceRequest,
+      org.archi.common.core.CreatePieceResponse> getCreatePieceMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.CreatePieceRequest, org.archi.common.core.CreatePieceResponse> getCreatePieceMethod;
+    if ((getCreatePieceMethod = CoreServiceGrpc.getCreatePieceMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getCreatePieceMethod = CoreServiceGrpc.getCreatePieceMethod) == null) {
+          CoreServiceGrpc.getCreatePieceMethod = getCreatePieceMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.CreatePieceRequest, org.archi.common.core.CreatePieceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePiece"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.CreatePieceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.CreatePieceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("CreatePiece"))
+              .build();
+        }
+      }
+    }
+    return getCreatePieceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetPieceRequest,
+      org.archi.common.core.GetPieceResponse> getGetPieceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPiece",
+      requestType = org.archi.common.core.GetPieceRequest.class,
+      responseType = org.archi.common.core.GetPieceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.GetPieceRequest,
+      org.archi.common.core.GetPieceResponse> getGetPieceMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.GetPieceRequest, org.archi.common.core.GetPieceResponse> getGetPieceMethod;
+    if ((getGetPieceMethod = CoreServiceGrpc.getGetPieceMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getGetPieceMethod = CoreServiceGrpc.getGetPieceMethod) == null) {
+          CoreServiceGrpc.getGetPieceMethod = getGetPieceMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.GetPieceRequest, org.archi.common.core.GetPieceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPiece"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetPieceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetPieceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetPiece"))
+              .build();
+        }
+      }
+    }
+    return getGetPieceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.UpdatePieceRequest,
+      org.archi.common.core.UpdatePieceResponse> getUpdatePieceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePiece",
+      requestType = org.archi.common.core.UpdatePieceRequest.class,
+      responseType = org.archi.common.core.UpdatePieceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.UpdatePieceRequest,
+      org.archi.common.core.UpdatePieceResponse> getUpdatePieceMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.UpdatePieceRequest, org.archi.common.core.UpdatePieceResponse> getUpdatePieceMethod;
+    if ((getUpdatePieceMethod = CoreServiceGrpc.getUpdatePieceMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getUpdatePieceMethod = CoreServiceGrpc.getUpdatePieceMethod) == null) {
+          CoreServiceGrpc.getUpdatePieceMethod = getUpdatePieceMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.UpdatePieceRequest, org.archi.common.core.UpdatePieceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePiece"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.UpdatePieceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.UpdatePieceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("UpdatePiece"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePieceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.DeletePieceRequest,
+      org.archi.common.core.DeletePieceResponse> getDeletePieceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePiece",
+      requestType = org.archi.common.core.DeletePieceRequest.class,
+      responseType = org.archi.common.core.DeletePieceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.DeletePieceRequest,
+      org.archi.common.core.DeletePieceResponse> getDeletePieceMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.DeletePieceRequest, org.archi.common.core.DeletePieceResponse> getDeletePieceMethod;
+    if ((getDeletePieceMethod = CoreServiceGrpc.getDeletePieceMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getDeletePieceMethod = CoreServiceGrpc.getDeletePieceMethod) == null) {
+          CoreServiceGrpc.getDeletePieceMethod = getDeletePieceMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.DeletePieceRequest, org.archi.common.core.DeletePieceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePiece"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.DeletePieceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.DeletePieceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("DeletePiece"))
+              .build();
+        }
+      }
+    }
+    return getDeletePieceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetAllPiecesRequest,
+      org.archi.common.core.GetAllPiecesResponse> getGetAllPiecesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAllPieces",
+      requestType = org.archi.common.core.GetAllPiecesRequest.class,
+      responseType = org.archi.common.core.GetAllPiecesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.GetAllPiecesRequest,
+      org.archi.common.core.GetAllPiecesResponse> getGetAllPiecesMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.GetAllPiecesRequest, org.archi.common.core.GetAllPiecesResponse> getGetAllPiecesMethod;
+    if ((getGetAllPiecesMethod = CoreServiceGrpc.getGetAllPiecesMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getGetAllPiecesMethod = CoreServiceGrpc.getGetAllPiecesMethod) == null) {
+          CoreServiceGrpc.getGetAllPiecesMethod = getGetAllPiecesMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.GetAllPiecesRequest, org.archi.common.core.GetAllPiecesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAllPieces"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetAllPiecesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetAllPiecesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetAllPieces"))
+              .build();
+        }
+      }
+    }
+    return getGetAllPiecesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetRandomPieceRequest,
+      org.archi.common.core.GetRandomPieceResponse> getGetRandomPieceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRandomPiece",
+      requestType = org.archi.common.core.GetRandomPieceRequest.class,
+      responseType = org.archi.common.core.GetRandomPieceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.GetRandomPieceRequest,
+      org.archi.common.core.GetRandomPieceResponse> getGetRandomPieceMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.GetRandomPieceRequest, org.archi.common.core.GetRandomPieceResponse> getGetRandomPieceMethod;
+    if ((getGetRandomPieceMethod = CoreServiceGrpc.getGetRandomPieceMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getGetRandomPieceMethod = CoreServiceGrpc.getGetRandomPieceMethod) == null) {
+          CoreServiceGrpc.getGetRandomPieceMethod = getGetRandomPieceMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.GetRandomPieceRequest, org.archi.common.core.GetRandomPieceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRandomPiece"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetRandomPieceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetRandomPieceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetRandomPiece"))
+              .build();
+        }
+      }
+    }
+    return getGetRandomPieceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.CreatePiecePlayerRequest,
+      org.archi.common.core.CreatePiecePlayerResponse> getCreatePiecePlayerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePiecePlayer",
+      requestType = org.archi.common.core.CreatePiecePlayerRequest.class,
+      responseType = org.archi.common.core.CreatePiecePlayerResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.CreatePiecePlayerRequest,
+      org.archi.common.core.CreatePiecePlayerResponse> getCreatePiecePlayerMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.CreatePiecePlayerRequest, org.archi.common.core.CreatePiecePlayerResponse> getCreatePiecePlayerMethod;
+    if ((getCreatePiecePlayerMethod = CoreServiceGrpc.getCreatePiecePlayerMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getCreatePiecePlayerMethod = CoreServiceGrpc.getCreatePiecePlayerMethod) == null) {
+          CoreServiceGrpc.getCreatePiecePlayerMethod = getCreatePiecePlayerMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.CreatePiecePlayerRequest, org.archi.common.core.CreatePiecePlayerResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePiecePlayer"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.CreatePiecePlayerRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.CreatePiecePlayerResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("CreatePiecePlayer"))
+              .build();
+        }
+      }
+    }
+    return getCreatePiecePlayerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetAllPiecePlayersRequest,
+      org.archi.common.core.GetAllPiecePlayersResponse> getGetAllPiecePlayersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAllPiecePlayers",
+      requestType = org.archi.common.core.GetAllPiecePlayersRequest.class,
+      responseType = org.archi.common.core.GetAllPiecePlayersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.GetAllPiecePlayersRequest,
+      org.archi.common.core.GetAllPiecePlayersResponse> getGetAllPiecePlayersMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.GetAllPiecePlayersRequest, org.archi.common.core.GetAllPiecePlayersResponse> getGetAllPiecePlayersMethod;
+    if ((getGetAllPiecePlayersMethod = CoreServiceGrpc.getGetAllPiecePlayersMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getGetAllPiecePlayersMethod = CoreServiceGrpc.getGetAllPiecePlayersMethod) == null) {
+          CoreServiceGrpc.getGetAllPiecePlayersMethod = getGetAllPiecePlayersMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.GetAllPiecePlayersRequest, org.archi.common.core.GetAllPiecePlayersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAllPiecePlayers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetAllPiecePlayersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetAllPiecePlayersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetAllPiecePlayers"))
+              .build();
+        }
+      }
+    }
+    return getGetAllPiecePlayersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.TransferPieceRequest,
+      org.archi.common.core.TransferPieceResponse> getTransferPieceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TransferPiece",
+      requestType = org.archi.common.core.TransferPieceRequest.class,
+      responseType = org.archi.common.core.TransferPieceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.TransferPieceRequest,
+      org.archi.common.core.TransferPieceResponse> getTransferPieceMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.TransferPieceRequest, org.archi.common.core.TransferPieceResponse> getTransferPieceMethod;
+    if ((getTransferPieceMethod = CoreServiceGrpc.getTransferPieceMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getTransferPieceMethod = CoreServiceGrpc.getTransferPieceMethod) == null) {
+          CoreServiceGrpc.getTransferPieceMethod = getTransferPieceMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.TransferPieceRequest, org.archi.common.core.TransferPieceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TransferPiece"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.TransferPieceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.TransferPieceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("TransferPiece"))
+              .build();
+        }
+      }
+    }
+    return getTransferPieceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.GetGameTurnsRequest,
+      org.archi.common.core.GetGameTurnsResponse> getGetGameTurnsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetGameTurns",
+      requestType = org.archi.common.core.GetGameTurnsRequest.class,
+      responseType = org.archi.common.core.GetGameTurnsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.GetGameTurnsRequest,
+      org.archi.common.core.GetGameTurnsResponse> getGetGameTurnsMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.GetGameTurnsRequest, org.archi.common.core.GetGameTurnsResponse> getGetGameTurnsMethod;
+    if ((getGetGameTurnsMethod = CoreServiceGrpc.getGetGameTurnsMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getGetGameTurnsMethod = CoreServiceGrpc.getGetGameTurnsMethod) == null) {
+          CoreServiceGrpc.getGetGameTurnsMethod = getGetGameTurnsMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.GetGameTurnsRequest, org.archi.common.core.GetGameTurnsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetGameTurns"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetGameTurnsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.GetGameTurnsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("GetGameTurns"))
+              .build();
+        }
+      }
+    }
+    return getGetGameTurnsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.core.TransferGameTurnRequest,
+      org.archi.common.core.TransferGameTurnResponse> getTransferGameTurnMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TransferGameTurn",
+      requestType = org.archi.common.core.TransferGameTurnRequest.class,
+      responseType = org.archi.common.core.TransferGameTurnResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.core.TransferGameTurnRequest,
+      org.archi.common.core.TransferGameTurnResponse> getTransferGameTurnMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.core.TransferGameTurnRequest, org.archi.common.core.TransferGameTurnResponse> getTransferGameTurnMethod;
+    if ((getTransferGameTurnMethod = CoreServiceGrpc.getTransferGameTurnMethod) == null) {
+      synchronized (CoreServiceGrpc.class) {
+        if ((getTransferGameTurnMethod = CoreServiceGrpc.getTransferGameTurnMethod) == null) {
+          CoreServiceGrpc.getTransferGameTurnMethod = getTransferGameTurnMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.core.TransferGameTurnRequest, org.archi.common.core.TransferGameTurnResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TransferGameTurn"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.TransferGameTurnRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.core.TransferGameTurnResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreServiceMethodDescriptorSupplier("TransferGameTurn"))
+              .build();
+        }
+      }
+    }
+    return getTransferGameTurnMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -524,6 +989,138 @@ public final class CoreServiceGrpc {
         io.grpc.stub.StreamObserver<org.archi.common.core.UpdateCampaignRes> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCampaignMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Puzzle 
+     * </pre>
+     */
+    default void postCreatePuzzle(org.archi.common.core.PostCreatePuzzleRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.PostCreatePuzzleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostCreatePuzzleMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getPuzzle(org.archi.common.core.GetPuzzleRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetPuzzleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPuzzleMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getPuzzles(org.archi.common.core.GetPuzzlesRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetPuzzlesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPuzzlesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * /Puzzle 
+     * </pre>
+     */
+    default void updatePuzzle(org.archi.common.core.UpdatePuzzleRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.UpdatePuzzleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePuzzleMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Piece 
+     * </pre>
+     */
+    default void createPiece(org.archi.common.core.CreatePieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.CreatePieceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePieceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getPiece(org.archi.common.core.GetPieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetPieceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPieceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updatePiece(org.archi.common.core.UpdatePieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.UpdatePieceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePieceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deletePiece(org.archi.common.core.DeletePieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.DeletePieceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePieceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lấy toàn bộ mảnh của một puzzle.
+     * </pre>
+     */
+    default void getAllPieces(org.archi.common.core.GetAllPiecesRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetAllPiecesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllPiecesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Random Piece 
+     * </pre>
+     */
+    default void getRandomPiece(org.archi.common.core.GetRandomPieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetRandomPieceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRandomPieceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Piece - Player
+     * </pre>
+     */
+    default void createPiecePlayer(org.archi.common.core.CreatePiecePlayerRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.CreatePiecePlayerResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePiecePlayerMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Piece - Player
+     * </pre>
+     */
+    default void getAllPiecePlayers(org.archi.common.core.GetAllPiecePlayersRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetAllPiecePlayersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllPiecePlayersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Transfer Piece
+     * </pre>
+     */
+    default void transferPiece(org.archi.common.core.TransferPieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.TransferPieceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTransferPieceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Game turns
+     * </pre>
+     */
+    default void getGameTurns(org.archi.common.core.GetGameTurnsRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetGameTurnsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGameTurnsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void transferGameTurn(org.archi.common.core.TransferGameTurnRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.TransferGameTurnResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTransferGameTurnMethod(), responseObserver);
+    }
   }
 
   /**
@@ -654,6 +1251,153 @@ public final class CoreServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCampaignMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Puzzle 
+     * </pre>
+     */
+    public void postCreatePuzzle(org.archi.common.core.PostCreatePuzzleRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.PostCreatePuzzleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostCreatePuzzleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPuzzle(org.archi.common.core.GetPuzzleRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetPuzzleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPuzzleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPuzzles(org.archi.common.core.GetPuzzlesRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetPuzzlesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPuzzlesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * /Puzzle 
+     * </pre>
+     */
+    public void updatePuzzle(org.archi.common.core.UpdatePuzzleRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.UpdatePuzzleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePuzzleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Piece 
+     * </pre>
+     */
+    public void createPiece(org.archi.common.core.CreatePieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.CreatePieceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePieceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPiece(org.archi.common.core.GetPieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetPieceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPieceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updatePiece(org.archi.common.core.UpdatePieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.UpdatePieceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePieceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deletePiece(org.archi.common.core.DeletePieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.DeletePieceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePieceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lấy toàn bộ mảnh của một puzzle.
+     * </pre>
+     */
+    public void getAllPieces(org.archi.common.core.GetAllPiecesRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetAllPiecesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAllPiecesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Random Piece 
+     * </pre>
+     */
+    public void getRandomPiece(org.archi.common.core.GetRandomPieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetRandomPieceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRandomPieceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Piece - Player
+     * </pre>
+     */
+    public void createPiecePlayer(org.archi.common.core.CreatePiecePlayerRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.CreatePiecePlayerResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePiecePlayerMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Piece - Player
+     * </pre>
+     */
+    public void getAllPiecePlayers(org.archi.common.core.GetAllPiecePlayersRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetAllPiecePlayersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAllPiecePlayersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Transfer Piece
+     * </pre>
+     */
+    public void transferPiece(org.archi.common.core.TransferPieceRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.TransferPieceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTransferPieceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Game turns
+     * </pre>
+     */
+    public void getGameTurns(org.archi.common.core.GetGameTurnsRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.GetGameTurnsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetGameTurnsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void transferGameTurn(org.archi.common.core.TransferGameTurnRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.core.TransferGameTurnResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTransferGameTurnMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -760,6 +1504,138 @@ public final class CoreServiceGrpc {
     public org.archi.common.core.UpdateCampaignRes updateCampaign(org.archi.common.core.UpdateCampaignReq request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCampaignMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Puzzle 
+     * </pre>
+     */
+    public org.archi.common.core.PostCreatePuzzleResponse postCreatePuzzle(org.archi.common.core.PostCreatePuzzleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostCreatePuzzleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.core.GetPuzzleResponse getPuzzle(org.archi.common.core.GetPuzzleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPuzzleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.core.GetPuzzlesResponse getPuzzles(org.archi.common.core.GetPuzzlesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPuzzlesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * /Puzzle 
+     * </pre>
+     */
+    public org.archi.common.core.UpdatePuzzleResponse updatePuzzle(org.archi.common.core.UpdatePuzzleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePuzzleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Piece 
+     * </pre>
+     */
+    public org.archi.common.core.CreatePieceResponse createPiece(org.archi.common.core.CreatePieceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePieceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.core.GetPieceResponse getPiece(org.archi.common.core.GetPieceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPieceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.core.UpdatePieceResponse updatePiece(org.archi.common.core.UpdatePieceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePieceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.core.DeletePieceResponse deletePiece(org.archi.common.core.DeletePieceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePieceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lấy toàn bộ mảnh của một puzzle.
+     * </pre>
+     */
+    public org.archi.common.core.GetAllPiecesResponse getAllPieces(org.archi.common.core.GetAllPiecesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAllPiecesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Random Piece 
+     * </pre>
+     */
+    public org.archi.common.core.GetRandomPieceResponse getRandomPiece(org.archi.common.core.GetRandomPieceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRandomPieceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *Piece - Player
+     * </pre>
+     */
+    public org.archi.common.core.CreatePiecePlayerResponse createPiecePlayer(org.archi.common.core.CreatePiecePlayerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePiecePlayerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *Piece - Player
+     * </pre>
+     */
+    public org.archi.common.core.GetAllPiecePlayersResponse getAllPiecePlayers(org.archi.common.core.GetAllPiecePlayersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAllPiecePlayersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Transfer Piece
+     * </pre>
+     */
+    public org.archi.common.core.TransferPieceResponse transferPiece(org.archi.common.core.TransferPieceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTransferPieceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *Game turns
+     * </pre>
+     */
+    public org.archi.common.core.GetGameTurnsResponse getGameTurns(org.archi.common.core.GetGameTurnsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGameTurnsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.core.TransferGameTurnResponse transferGameTurn(org.archi.common.core.TransferGameTurnRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTransferGameTurnMethod(), getCallOptions(), request);
     }
   }
 
@@ -880,6 +1756,153 @@ public final class CoreServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCampaignMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Puzzle 
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.PostCreatePuzzleResponse> postCreatePuzzle(
+        org.archi.common.core.PostCreatePuzzleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostCreatePuzzleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetPuzzleResponse> getPuzzle(
+        org.archi.common.core.GetPuzzleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPuzzleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetPuzzlesResponse> getPuzzles(
+        org.archi.common.core.GetPuzzlesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPuzzlesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * /Puzzle 
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.UpdatePuzzleResponse> updatePuzzle(
+        org.archi.common.core.UpdatePuzzleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePuzzleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Piece 
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.CreatePieceResponse> createPiece(
+        org.archi.common.core.CreatePieceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePieceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetPieceResponse> getPiece(
+        org.archi.common.core.GetPieceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPieceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.UpdatePieceResponse> updatePiece(
+        org.archi.common.core.UpdatePieceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePieceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.DeletePieceResponse> deletePiece(
+        org.archi.common.core.DeletePieceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePieceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lấy toàn bộ mảnh của một puzzle.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetAllPiecesResponse> getAllPieces(
+        org.archi.common.core.GetAllPiecesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAllPiecesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Random Piece 
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetRandomPieceResponse> getRandomPiece(
+        org.archi.common.core.GetRandomPieceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRandomPieceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *Piece - Player
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.CreatePiecePlayerResponse> createPiecePlayer(
+        org.archi.common.core.CreatePiecePlayerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePiecePlayerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *Piece - Player
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetAllPiecePlayersResponse> getAllPiecePlayers(
+        org.archi.common.core.GetAllPiecePlayersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAllPiecePlayersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Transfer Piece
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.TransferPieceResponse> transferPiece(
+        org.archi.common.core.TransferPieceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTransferPieceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *Game turns
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.GetGameTurnsResponse> getGameTurns(
+        org.archi.common.core.GetGameTurnsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetGameTurnsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.core.TransferGameTurnResponse> transferGameTurn(
+        org.archi.common.core.TransferGameTurnRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTransferGameTurnMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GENERATE_VOUCHER = 0;
@@ -894,6 +1917,21 @@ public final class CoreServiceGrpc {
   private static final int METHODID_CREATE_CAMPAIGN = 9;
   private static final int METHODID_GET_CAMPAIGNS_BY_BRAND_ID = 10;
   private static final int METHODID_UPDATE_CAMPAIGN = 11;
+  private static final int METHODID_POST_CREATE_PUZZLE = 12;
+  private static final int METHODID_GET_PUZZLE = 13;
+  private static final int METHODID_GET_PUZZLES = 14;
+  private static final int METHODID_UPDATE_PUZZLE = 15;
+  private static final int METHODID_CREATE_PIECE = 16;
+  private static final int METHODID_GET_PIECE = 17;
+  private static final int METHODID_UPDATE_PIECE = 18;
+  private static final int METHODID_DELETE_PIECE = 19;
+  private static final int METHODID_GET_ALL_PIECES = 20;
+  private static final int METHODID_GET_RANDOM_PIECE = 21;
+  private static final int METHODID_CREATE_PIECE_PLAYER = 22;
+  private static final int METHODID_GET_ALL_PIECE_PLAYERS = 23;
+  private static final int METHODID_TRANSFER_PIECE = 24;
+  private static final int METHODID_GET_GAME_TURNS = 25;
+  private static final int METHODID_TRANSFER_GAME_TURN = 26;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -959,6 +1997,66 @@ public final class CoreServiceGrpc {
         case METHODID_UPDATE_CAMPAIGN:
           serviceImpl.updateCampaign((org.archi.common.core.UpdateCampaignReq) request,
               (io.grpc.stub.StreamObserver<org.archi.common.core.UpdateCampaignRes>) responseObserver);
+          break;
+        case METHODID_POST_CREATE_PUZZLE:
+          serviceImpl.postCreatePuzzle((org.archi.common.core.PostCreatePuzzleRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.PostCreatePuzzleResponse>) responseObserver);
+          break;
+        case METHODID_GET_PUZZLE:
+          serviceImpl.getPuzzle((org.archi.common.core.GetPuzzleRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.GetPuzzleResponse>) responseObserver);
+          break;
+        case METHODID_GET_PUZZLES:
+          serviceImpl.getPuzzles((org.archi.common.core.GetPuzzlesRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.GetPuzzlesResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PUZZLE:
+          serviceImpl.updatePuzzle((org.archi.common.core.UpdatePuzzleRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.UpdatePuzzleResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_PIECE:
+          serviceImpl.createPiece((org.archi.common.core.CreatePieceRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.CreatePieceResponse>) responseObserver);
+          break;
+        case METHODID_GET_PIECE:
+          serviceImpl.getPiece((org.archi.common.core.GetPieceRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.GetPieceResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PIECE:
+          serviceImpl.updatePiece((org.archi.common.core.UpdatePieceRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.UpdatePieceResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_PIECE:
+          serviceImpl.deletePiece((org.archi.common.core.DeletePieceRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.DeletePieceResponse>) responseObserver);
+          break;
+        case METHODID_GET_ALL_PIECES:
+          serviceImpl.getAllPieces((org.archi.common.core.GetAllPiecesRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.GetAllPiecesResponse>) responseObserver);
+          break;
+        case METHODID_GET_RANDOM_PIECE:
+          serviceImpl.getRandomPiece((org.archi.common.core.GetRandomPieceRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.GetRandomPieceResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_PIECE_PLAYER:
+          serviceImpl.createPiecePlayer((org.archi.common.core.CreatePiecePlayerRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.CreatePiecePlayerResponse>) responseObserver);
+          break;
+        case METHODID_GET_ALL_PIECE_PLAYERS:
+          serviceImpl.getAllPiecePlayers((org.archi.common.core.GetAllPiecePlayersRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.GetAllPiecePlayersResponse>) responseObserver);
+          break;
+        case METHODID_TRANSFER_PIECE:
+          serviceImpl.transferPiece((org.archi.common.core.TransferPieceRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.TransferPieceResponse>) responseObserver);
+          break;
+        case METHODID_GET_GAME_TURNS:
+          serviceImpl.getGameTurns((org.archi.common.core.GetGameTurnsRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.GetGameTurnsResponse>) responseObserver);
+          break;
+        case METHODID_TRANSFER_GAME_TURN:
+          serviceImpl.transferGameTurn((org.archi.common.core.TransferGameTurnRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.core.TransferGameTurnResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1062,6 +2160,111 @@ public final class CoreServiceGrpc {
               org.archi.common.core.UpdateCampaignReq,
               org.archi.common.core.UpdateCampaignRes>(
                 service, METHODID_UPDATE_CAMPAIGN)))
+        .addMethod(
+          getPostCreatePuzzleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.PostCreatePuzzleRequest,
+              org.archi.common.core.PostCreatePuzzleResponse>(
+                service, METHODID_POST_CREATE_PUZZLE)))
+        .addMethod(
+          getGetPuzzleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetPuzzleRequest,
+              org.archi.common.core.GetPuzzleResponse>(
+                service, METHODID_GET_PUZZLE)))
+        .addMethod(
+          getGetPuzzlesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetPuzzlesRequest,
+              org.archi.common.core.GetPuzzlesResponse>(
+                service, METHODID_GET_PUZZLES)))
+        .addMethod(
+          getUpdatePuzzleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.UpdatePuzzleRequest,
+              org.archi.common.core.UpdatePuzzleResponse>(
+                service, METHODID_UPDATE_PUZZLE)))
+        .addMethod(
+          getCreatePieceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.CreatePieceRequest,
+              org.archi.common.core.CreatePieceResponse>(
+                service, METHODID_CREATE_PIECE)))
+        .addMethod(
+          getGetPieceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetPieceRequest,
+              org.archi.common.core.GetPieceResponse>(
+                service, METHODID_GET_PIECE)))
+        .addMethod(
+          getUpdatePieceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.UpdatePieceRequest,
+              org.archi.common.core.UpdatePieceResponse>(
+                service, METHODID_UPDATE_PIECE)))
+        .addMethod(
+          getDeletePieceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.DeletePieceRequest,
+              org.archi.common.core.DeletePieceResponse>(
+                service, METHODID_DELETE_PIECE)))
+        .addMethod(
+          getGetAllPiecesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetAllPiecesRequest,
+              org.archi.common.core.GetAllPiecesResponse>(
+                service, METHODID_GET_ALL_PIECES)))
+        .addMethod(
+          getGetRandomPieceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetRandomPieceRequest,
+              org.archi.common.core.GetRandomPieceResponse>(
+                service, METHODID_GET_RANDOM_PIECE)))
+        .addMethod(
+          getCreatePiecePlayerMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.CreatePiecePlayerRequest,
+              org.archi.common.core.CreatePiecePlayerResponse>(
+                service, METHODID_CREATE_PIECE_PLAYER)))
+        .addMethod(
+          getGetAllPiecePlayersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetAllPiecePlayersRequest,
+              org.archi.common.core.GetAllPiecePlayersResponse>(
+                service, METHODID_GET_ALL_PIECE_PLAYERS)))
+        .addMethod(
+          getTransferPieceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.TransferPieceRequest,
+              org.archi.common.core.TransferPieceResponse>(
+                service, METHODID_TRANSFER_PIECE)))
+        .addMethod(
+          getGetGameTurnsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.GetGameTurnsRequest,
+              org.archi.common.core.GetGameTurnsResponse>(
+                service, METHODID_GET_GAME_TURNS)))
+        .addMethod(
+          getTransferGameTurnMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.core.TransferGameTurnRequest,
+              org.archi.common.core.TransferGameTurnResponse>(
+                service, METHODID_TRANSFER_GAME_TURN)))
         .build();
   }
 
@@ -1122,6 +2325,21 @@ public final class CoreServiceGrpc {
               .addMethod(getCreateCampaignMethod())
               .addMethod(getGetCampaignsByBrandIdMethod())
               .addMethod(getUpdateCampaignMethod())
+              .addMethod(getPostCreatePuzzleMethod())
+              .addMethod(getGetPuzzleMethod())
+              .addMethod(getGetPuzzlesMethod())
+              .addMethod(getUpdatePuzzleMethod())
+              .addMethod(getCreatePieceMethod())
+              .addMethod(getGetPieceMethod())
+              .addMethod(getUpdatePieceMethod())
+              .addMethod(getDeletePieceMethod())
+              .addMethod(getGetAllPiecesMethod())
+              .addMethod(getGetRandomPieceMethod())
+              .addMethod(getCreatePiecePlayerMethod())
+              .addMethod(getGetAllPiecePlayersMethod())
+              .addMethod(getTransferPieceMethod())
+              .addMethod(getGetGameTurnsMethod())
+              .addMethod(getTransferGameTurnMethod())
               .build();
         }
       }

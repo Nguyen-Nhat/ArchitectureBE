@@ -1,10 +1,12 @@
 package org.archi.core.grpc;
 
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.archi.common.core.*;
 import org.archi.core.service.CampaignService;
+import org.archi.core.service.GrpcCoreService;
 import org.archi.core.service.VoucherService;
 
 import java.time.LocalDateTime;
@@ -16,6 +18,7 @@ import java.util.stream.Collectors;
 public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase{
 	private final CampaignService campaignService;
 	private final VoucherService voucherService;
+	private final GrpcCoreService grpcCoreService;
 
 	@Override
 	public void generateVoucher(GenerateVoucherRequest request, StreamObserver<GenerateVoucherResponse> responseObserver) {
@@ -229,4 +232,112 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 		}
 	}
 
+	/*=========== PUZZLE =============*/
+
+	@Override
+	public void postCreatePuzzle(PostCreatePuzzleRequest request, StreamObserver<PostCreatePuzzleResponse> responseObserver) {
+		PostCreatePuzzleResponse response = grpcCoreService.createPuzzle(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void getPuzzles(GetPuzzlesRequest request, StreamObserver<GetPuzzlesResponse> responseObserver) {
+		GetPuzzlesResponse response = grpcCoreService.getPuzzles(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void updatePuzzle(UpdatePuzzleRequest request, StreamObserver<UpdatePuzzleResponse> responseObserver) {
+		UpdatePuzzleResponse response = grpcCoreService.updatePuzzle(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	/// Hàm lấy thông tin puzzle cụ thể.
+	@Override
+	public void getPuzzle(GetPuzzleRequest request, StreamObserver<GetPuzzleResponse> responseObserver) {
+		GetPuzzleResponse response = grpcCoreService.getPuzzle(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void createPiece(CreatePieceRequest request, StreamObserver<CreatePieceResponse> responseObserver) {
+		CreatePieceResponse response = grpcCoreService.createPiece(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void getPiece(GetPieceRequest request, StreamObserver<GetPieceResponse> responseObserver) {
+		GetPieceResponse	response = grpcCoreService.getPiece(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void getAllPieces(GetAllPiecesRequest request, StreamObserver<GetAllPiecesResponse> responseObserver) {
+		GetAllPiecesResponse response = grpcCoreService.getAllPieces(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void updatePiece(UpdatePieceRequest request, StreamObserver<UpdatePieceResponse> responseObserver) {
+		UpdatePieceResponse response = grpcCoreService.updatePiece(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void deletePiece(DeletePieceRequest request, StreamObserver<DeletePieceResponse> responseObserver) {
+		DeletePieceResponse response = grpcCoreService.deletePiece(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void getRandomPiece(GetRandomPieceRequest request, StreamObserver<GetRandomPieceResponse> responseObserver) {
+		GetRandomPieceResponse response = grpcCoreService.getRandomPiece(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+
+	@Override
+	public void getAllPiecePlayers(GetAllPiecePlayersRequest request, StreamObserver<GetAllPiecePlayersResponse> responseObserver) {
+		GetAllPiecePlayersResponse response = grpcCoreService.getAllPiecePlayers(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void createPiecePlayer(CreatePiecePlayerRequest request, StreamObserver<CreatePiecePlayerResponse> responseObserver) {
+		CreatePiecePlayerResponse response = grpcCoreService.createPiecePlayer(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void transferPiece(TransferPieceRequest request, StreamObserver<TransferPieceResponse> responseObserver) {
+		TransferPieceResponse response = grpcCoreService.transferPiece(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void getGameTurns(GetGameTurnsRequest request, StreamObserver<GetGameTurnsResponse> responseObserver) {
+		GetGameTurnsResponse response = grpcCoreService.getGameTurns(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void transferGameTurn(TransferGameTurnRequest request, StreamObserver<TransferGameTurnResponse> responseObserver) {
+		TransferGameTurnResponse response = grpcCoreService.transferGameTurn(request);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
 }

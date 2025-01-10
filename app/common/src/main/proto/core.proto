@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "google/protobuf/wrappers.proto";
 option java_multiple_files = true;
 option java_package = "org.archi.common.core";
 option java_outer_classname = "CoreProto";
@@ -18,6 +19,219 @@ service CoreService {
   rpc CreateCampaign(CreateCampaignRequest) returns(CreateCampaignResponse);
   rpc GetCampaignsByBrandId(GetCampaignsByBrandIdReq) returns(GetCampaignsByBrandIdRes);
   rpc UpdateCampaign(UpdateCampaignReq) returns(UpdateCampaignRes);
+  /* Puzzle */
+  rpc PostCreatePuzzle(PostCreatePuzzleRequest) returns(PostCreatePuzzleResponse);
+  rpc GetPuzzle(GetPuzzleRequest) returns (GetPuzzleResponse);
+  rpc GetPuzzles(GetPuzzlesRequest) returns(GetPuzzlesResponse);
+  rpc UpdatePuzzle(UpdatePuzzleRequest) returns(UpdatePuzzleResponse);
+  /* /Puzzle */
+  /* Piece */
+  rpc CreatePiece(CreatePieceRequest) returns(CreatePieceResponse);
+  rpc GetPiece(GetPieceRequest) returns(GetPieceResponse);
+  rpc UpdatePiece(UpdatePieceRequest) returns(UpdatePieceResponse);
+  rpc DeletePiece(DeletePieceRequest) returns(DeletePieceResponse);
+  rpc GetAllPieces(GetAllPiecesRequest) returns(GetAllPiecesResponse); // Lấy toàn bộ mảnh của một puzzle.
+  /* /Piece */
+
+  /* Random Piece */
+  rpc GetRandomPiece(GetRandomPieceRequest) returns(GetRandomPieceResponse);
+  /* Random Piece */
+
+  /*Piece - Player*/
+  rpc CreatePiecePlayer(CreatePiecePlayerRequest) returns(CreatePiecePlayerResponse);
+  rpc GetAllPiecePlayers(GetAllPiecePlayersRequest) returns(GetAllPiecePlayersResponse);
+  /*Piece - Player*/
+
+  /* Transfer Piece*/
+  rpc TransferPiece(TransferPieceRequest) returns(TransferPieceResponse);
+
+  /*Game turns*/
+  rpc GetGameTurns(GetGameTurnsRequest) returns(GetGameTurnsResponse);
+  rpc TransferGameTurn(TransferGameTurnRequest) returns(TransferGameTurnResponse);
+
+}
+
+message TransferGameTurnRequest {
+  int64 senderId = 1;
+  int64 recipientId = 2;
+  int32 times = 3;
+}
+message TransferGameTurnResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message GetGameTurnsRequest {
+  int64 playerId = 1;
+}
+message GetGameTurnsResponse {
+  int64 status = 1;
+  string message = 2;
+  int32 times = 3;
+}
+
+message TransferPieceRequest {
+  int64 senderId = 1;
+  int64 recipientId = 2;
+  int64 pieceId = 3;
+}
+
+message TransferPieceResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message GetAllPiecePlayersRequest {
+  int64 playerId = 1;
+}
+message GetAllPiecePlayersResponse {
+  int64 status = 1;
+  string message = 2;
+  repeated Piece piece = 3;
+}
+
+
+message CreatePiecePlayerRequest {
+  int64 playerId = 1;
+  int64 pieceId = 2;
+}
+message CreatePiecePlayerResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+
+message GetRandomPieceRequest {
+  int64 playerId = 1;
+}
+message GetRandomPieceResponse {
+  int64 status = 1;
+  string message = 2;
+  Piece piece = 3;
+}
+
+message DeletePieceRequest {
+  int64 puzzleId = 1;
+  int64 pieceId = 2;
+}
+message DeletePieceResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message UpdatePieceRequest {
+  int64 puzzleId = 1;
+  int64 pieceId = 2;
+  google.protobuf.StringValue image = 3;
+  google.protobuf.Int32Value ordinal = 4;
+  google.protobuf.Int32Value quantity = 5;
+}
+
+message UpdatePieceResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message CreatePieceRequest{
+  string image = 1;
+  int64 puzzleId = 2;
+  int32 ordinal = 3;
+  int32 quantity = 4;
+}
+
+message CreatePieceResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message Piece {
+  int64 id = 1;
+  string image = 2;
+  int32 ordinal = 3;
+  int64 puzzleId = 4;
+  int32 quantity = 5;
+}
+message GetPieceRequest {
+  int64 puzzleId = 1;
+  int64 pieceId = 2;
+}
+message GetPieceResponse {
+  int64 status = 1;
+  string message = 2;
+  Piece piece = 3;
+}
+
+message GetAllPiecesRequest {
+  int64 puzzleId = 1;
+}
+message GetAllPiecesResponse {
+  int64 status = 1;
+  string message = 2;
+  repeated Piece pieces = 3;
+}
+
+message GetPuzzleRequest {
+  int64 id = 1;
+}
+message GetPuzzleResponse {
+  int64 status = 1;
+  string message = 2;
+  Puzzle puzzle = 3;
+}
+
+message UpdatePuzzleRequest {
+  int64 id = 1;
+  google.protobuf.StringValue title = 2;
+  google.protobuf.StringValue image = 3;
+  google.protobuf.StringValue startDate = 4;
+  google.protobuf.StringValue endDate = 5;
+  google.protobuf.Int32Value numberOfPieces = 6;
+  google.protobuf.StringValue status = 7;
+}
+
+message UpdatePuzzleResponse {
+  int64 status = 1;
+  string message = 2;
+}
+
+message GetPuzzlesRequest {
+  int32 page = 1;
+  int32 size = 2;
+  google.protobuf.StringValue sort = 3;
+  google.protobuf.StringValue title = 4;
+}
+
+message Puzzle {
+  int64 id = 1;
+  string title = 2;
+  string image = 3;
+  string startDate = 4;
+  string endDate = 5;
+  int32 numberOfPieces = 6;
+  string status = 7;
+}
+message GetPuzzlesResponse {
+  int64 status = 1;
+  string message = 2;
+  int64 totalPage = 3;
+  int64 totalElement = 4;
+  int64 page = 5;
+  int64 size = 6;
+  repeated Puzzle puzzle = 7;
+}
+
+
+message PostCreatePuzzleRequest {
+  string title = 1;
+  string image = 2;
+  string startDate = 3;
+  string endDate = 4;
+  int32 numberOfPieces = 5;
+  string status = 6;
+}
+message PostCreatePuzzleResponse {
+  int64 status = 1;
+  string message = 2;
 }
 
 message GetVoucherTypesReq {

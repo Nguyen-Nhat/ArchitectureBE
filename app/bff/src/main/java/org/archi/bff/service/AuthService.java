@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.archi.bff.adapter.AuthAdapter;
+import org.archi.bff.adapter.CoreAdapter;
 import org.archi.bff.request.*;
 import org.archi.bff.response.*;
 import org.archi.common.auth.*;
@@ -30,6 +31,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class AuthService {
   private final AuthAdapter adapter;
+  private final CoreAdapter coreAdapter;
 
   public ResponseData register(RegisterRequest request) {
     // Thực hiện register a new user.

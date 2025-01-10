@@ -15,6 +15,166 @@ public final class CoreProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransferGameTurnRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TransferGameTurnRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransferGameTurnResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TransferGameTurnResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetGameTurnsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetGameTurnsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetGameTurnsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetGameTurnsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransferPieceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TransferPieceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransferPieceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TransferPieceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAllPiecePlayersRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetAllPiecePlayersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAllPiecePlayersResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetAllPiecePlayersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CreatePiecePlayerRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CreatePiecePlayerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CreatePiecePlayerResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CreatePiecePlayerResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetRandomPieceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetRandomPieceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetRandomPieceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetRandomPieceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeletePieceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeletePieceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeletePieceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeletePieceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdatePieceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdatePieceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdatePieceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdatePieceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CreatePieceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CreatePieceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CreatePieceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CreatePieceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Piece_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Piece_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPieceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPieceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPieceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPieceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAllPiecesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetAllPiecesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAllPiecesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetAllPiecesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPuzzleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPuzzleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPuzzleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPuzzleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdatePuzzleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdatePuzzleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdatePuzzleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdatePuzzleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPuzzlesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPuzzlesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Puzzle_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Puzzle_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPuzzlesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPuzzlesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostCreatePuzzleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostCreatePuzzleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PostCreatePuzzleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PostCreatePuzzleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GetVoucherTypesReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -153,239 +313,526 @@ public final class CoreProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\ncore.proto\"%\n\022GetVoucherTypesReq\022\017\n\007br" +
-      "andId\030\001 \001(\003\"8\n\022GetVoucherTypesRes\022\"\n\014vou" +
-      "cherTypes\030\001 \003(\0132\014.VoucherType\"&\n\022GetVouc" +
-      "hersRequest\022\020\n\010playerId\030\001 \001(\003\"1\n\023GetVouc" +
-      "hersResponse\022\032\n\010vouchers\030\001 \003(\0132\010.Voucher" +
-      "\"\035\n\rSearchRequest\022\014\n\004term\030\001 \001(\t\"3\n\025Searc" +
-      "hVoucherResponse\022\032\n\010vouchers\030\001 \003(\0132\010.Vou" +
-      "cher\"?\n\031SearchVoucherTypeResponse\022\"\n\014vou" +
-      "cherTypes\030\001 \003(\0132\014.VoucherType\"\177\n\007Voucher" +
-      "\022\n\n\002id\030\001 \001(\003\022\020\n\010issuedAt\030\002 \001(\t\022\023\n\013expire" +
-      "dDate\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022\016\n\006QRCode\030\005 " +
-      "\001(\t\022!\n\013voucherType\030\006 \001(\0132\014.VoucherType\"|" +
-      "\n\024UpdateVoucherTypeReq\022\016\n\006status\030\001 \001(\t\022\023" +
-      "\n\013description\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005val" +
-      "ue\030\004 \001(\001\022\021\n\tvoucherId\030\005 \001(\003\022\017\n\007brandId\030\006" +
-      " \001(\003\"@\n\024UpdateVoucherTypeRes\022(\n\022updatedV" +
-      "oucherType\030\001 \001(\0132\014.VoucherType\"d\n\026Genera" +
-      "teVoucherRequest\022\025\n\rvoucherTypeId\030\001 \001(\003\022" +
-      "\020\n\010duration\030\002 \001(\t\022\017\n\007brandId\030\003 \001(\003\022\020\n\010pl" +
-      "ayerId\030\004 \001(\003\"\217\001\n\027GenerateVoucherResponse" +
-      "\022\n\n\002id\030\001 \001(\003\022\020\n\010issuedAt\030\002 \001(\t\022\023\n\013expire" +
-      "dDate\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022\016\n\006QRCode\030\005 " +
-      "\001(\t\022!\n\013voucherType\030\006 \001(\0132\014.VoucherType\"o" +
-      "\n\030CreateVoucherTypeRequest\022\014\n\004name\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\001\022\020\n\010imageUrl\030\003 \001(\t\022\023\n\013des" +
-      "cription\030\004 \001(\t\022\017\n\007brandId\030\005 \001(\003\">\n\031Creat" +
-      "eVoucherTypeResponse\022!\n\013voucherType\030\001 \001(" +
-      "\0132\014.VoucherType\"n\n\013VoucherType\022\n\n\002id\030\001 \001" +
-      "(\003\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\020\n\010image" +
-      "Url\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007brandI" +
-      "d\030\006 \001(\003\"9\n\023GetCampaignsRequest\022\021\n\tstartD" +
-      "ate\030\001 \001(\t\022\017\n\007endDate\030\002 \001(\t\"4\n\024GetCampaig" +
-      "nsResponse\022\034\n\tcampaigns\030\001 \003(\0132\t.Campaign" +
-      "\"\177\n\010Campaign\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020" +
-      "\n\010imageUrl\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\021\n" +
-      "\tstartDate\030\005 \001(\t\022\017\n\007endDate\030\006 \001(\t\022\016\n\006sta" +
-      "tus\030\007 \001(\t\"%\n\025SearchCampaignRequest\022\014\n\004te" +
-      "rm\030\001 \001(\t\"6\n\026SearchCampaignResponse\022\034\n\tca" +
-      "mpaigns\030\001 \003(\0132\t.Campaign\"|\n\025CreateCampai" +
-      "gnRequest\022\014\n\004name\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(" +
-      "\t\022\021\n\tstartDate\030\003 \001(\t\022\017\n\007endDate\030\004 \001(\t\022\016\n" +
-      "\006status\030\005 \001(\t\022\017\n\007brandId\030\006 \001(\003\"5\n\026Create" +
-      "CampaignResponse\022\033\n\010campaign\030\001 \001(\0132\t.Cam" +
-      "paign\"+\n\030GetCampaignsByBrandIdReq\022\017\n\007bra" +
-      "ndId\030\001 \001(\003\"8\n\030GetCampaignsByBrandIdRes\022\034" +
-      "\n\tcampaigns\030\001 \003(\0132\t.Campaign\"\212\001\n\021UpdateC" +
-      "ampaignReq\022\022\n\ncampaignId\030\001 \001(\003\022\017\n\007newNam" +
-      "e\030\002 \001(\t\022\023\n\013newImageUrl\030\003 \001(\t\022\024\n\014newStart" +
-      "Date\030\004 \001(\t\022\022\n\nnewEndDate\030\005 \001(\t\022\021\n\tnewSta" +
-      "tus\030\006 \001(\t\"0\n\021UpdateCampaignRes\022\033\n\010campai" +
-      "gn\030\001 \001(\0132\t.Campaign2\237\006\n\013CoreService\022D\n\017G" +
-      "enerateVoucher\022\027.GenerateVoucherRequest\032" +
-      "\030.GenerateVoucherResponse\022J\n\021CreateVouch" +
-      "erType\022\031.CreateVoucherTypeRequest\032\032.Crea" +
-      "teVoucherTypeResponse\0227\n\rSearchVoucher\022\016" +
-      ".SearchRequest\032\026.SearchVoucherResponse\022?" +
-      "\n\021SearchVoucherType\022\016.SearchRequest\032\032.Se" +
-      "archVoucherTypeResponse\022A\n\021UpdateVoucher" +
-      "Type\022\025.UpdateVoucherTypeReq\032\025.UpdateVouc" +
-      "herTypeRes\022;\n\017GetVouchersType\022\023.GetVouch" +
-      "erTypesReq\032\023.GetVoucherTypesRes\0228\n\013GetVo" +
-      "uchers\022\023.GetVouchersRequest\032\024.GetVoucher" +
-      "sResponse\022;\n\014GetCampaigns\022\024.GetCampaigns" +
-      "Request\032\025.GetCampaignsResponse\022A\n\016Search" +
-      "Campaign\022\026.SearchCampaignRequest\032\027.Searc" +
-      "hCampaignResponse\022A\n\016CreateCampaign\022\026.Cr" +
-      "eateCampaignRequest\032\027.CreateCampaignResp" +
-      "onse\022M\n\025GetCampaignsByBrandId\022\031.GetCampa" +
-      "ignsByBrandIdReq\032\031.GetCampaignsByBrandId" +
-      "Res\0228\n\016UpdateCampaign\022\022.UpdateCampaignRe" +
-      "q\032\022.UpdateCampaignResB$\n\025org.archi.commo" +
-      "n.coreB\tCoreProtoP\001b\006proto3"
+      "\n\ncore.proto\032\036google/protobuf/wrappers.p" +
+      "roto\"O\n\027TransferGameTurnRequest\022\020\n\010sende" +
+      "rId\030\001 \001(\003\022\023\n\013recipientId\030\002 \001(\003\022\r\n\005times\030" +
+      "\003 \001(\005\";\n\030TransferGameTurnResponse\022\016\n\006sta" +
+      "tus\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"\'\n\023GetGameTur" +
+      "nsRequest\022\020\n\010playerId\030\001 \001(\003\"F\n\024GetGameTu" +
+      "rnsResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002" +
+      " \001(\t\022\r\n\005times\030\003 \001(\005\"N\n\024TransferPieceRequ" +
+      "est\022\020\n\010senderId\030\001 \001(\003\022\023\n\013recipientId\030\002 \001" +
+      "(\003\022\017\n\007pieceId\030\003 \001(\003\"8\n\025TransferPieceResp" +
+      "onse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"-\n" +
+      "\031GetAllPiecePlayersRequest\022\020\n\010playerId\030\001" +
+      " \001(\003\"T\n\032GetAllPiecePlayersResponse\022\016\n\006st" +
+      "atus\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\025\n\005piece\030\003 \003" +
+      "(\0132\006.Piece\"=\n\030CreatePiecePlayerRequest\022\020" +
+      "\n\010playerId\030\001 \001(\003\022\017\n\007pieceId\030\002 \001(\003\"<\n\031Cre" +
+      "atePiecePlayerResponse\022\016\n\006status\030\001 \001(\003\022\017" +
+      "\n\007message\030\002 \001(\t\")\n\025GetRandomPieceRequest" +
+      "\022\020\n\010playerId\030\001 \001(\003\"P\n\026GetRandomPieceResp" +
+      "onse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\025\n" +
+      "\005piece\030\003 \001(\0132\006.Piece\"7\n\022DeletePieceReque" +
+      "st\022\020\n\010puzzleId\030\001 \001(\003\022\017\n\007pieceId\030\002 \001(\003\"6\n" +
+      "\023DeletePieceResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007" +
+      "message\030\002 \001(\t\"\301\001\n\022UpdatePieceRequest\022\020\n\010" +
+      "puzzleId\030\001 \001(\003\022\017\n\007pieceId\030\002 \001(\003\022+\n\005image" +
+      "\030\003 \001(\0132\034.google.protobuf.StringValue\022,\n\007" +
+      "ordinal\030\004 \001(\0132\033.google.protobuf.Int32Val" +
+      "ue\022-\n\010quantity\030\005 \001(\0132\033.google.protobuf.I" +
+      "nt32Value\"6\n\023UpdatePieceResponse\022\016\n\006stat" +
+      "us\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\"X\n\022CreatePiece" +
+      "Request\022\r\n\005image\030\001 \001(\t\022\020\n\010puzzleId\030\002 \001(\003" +
+      "\022\017\n\007ordinal\030\003 \001(\005\022\020\n\010quantity\030\004 \001(\005\"6\n\023C" +
+      "reatePieceResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007me" +
+      "ssage\030\002 \001(\t\"W\n\005Piece\022\n\n\002id\030\001 \001(\003\022\r\n\005imag" +
+      "e\030\002 \001(\t\022\017\n\007ordinal\030\003 \001(\005\022\020\n\010puzzleId\030\004 \001" +
+      "(\003\022\020\n\010quantity\030\005 \001(\005\"4\n\017GetPieceRequest\022" +
+      "\020\n\010puzzleId\030\001 \001(\003\022\017\n\007pieceId\030\002 \001(\003\"J\n\020Ge" +
+      "tPieceResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007messag" +
+      "e\030\002 \001(\t\022\025\n\005piece\030\003 \001(\0132\006.Piece\"\'\n\023GetAll" +
+      "PiecesRequest\022\020\n\010puzzleId\030\001 \001(\003\"O\n\024GetAl" +
+      "lPiecesResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007messa" +
+      "ge\030\002 \001(\t\022\026\n\006pieces\030\003 \003(\0132\006.Piece\"\036\n\020GetP" +
+      "uzzleRequest\022\n\n\002id\030\001 \001(\003\"M\n\021GetPuzzleRes" +
+      "ponse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\027" +
+      "\n\006puzzle\030\003 \001(\0132\007.Puzzle\"\276\002\n\023UpdatePuzzle" +
+      "Request\022\n\n\002id\030\001 \001(\003\022+\n\005title\030\002 \001(\0132\034.goo" +
+      "gle.protobuf.StringValue\022+\n\005image\030\003 \001(\0132" +
+      "\034.google.protobuf.StringValue\022/\n\tstartDa" +
+      "te\030\004 \001(\0132\034.google.protobuf.StringValue\022-" +
+      "\n\007endDate\030\005 \001(\0132\034.google.protobuf.String" +
+      "Value\0223\n\016numberOfPieces\030\006 \001(\0132\033.google.p" +
+      "rotobuf.Int32Value\022,\n\006status\030\007 \001(\0132\034.goo" +
+      "gle.protobuf.StringValue\"7\n\024UpdatePuzzle" +
+      "Response\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(" +
+      "\t\"\210\001\n\021GetPuzzlesRequest\022\014\n\004page\030\001 \001(\005\022\014\n" +
+      "\004size\030\002 \001(\005\022*\n\004sort\030\003 \001(\0132\034.google.proto" +
+      "buf.StringValue\022+\n\005title\030\004 \001(\0132\034.google." +
+      "protobuf.StringValue\"~\n\006Puzzle\022\n\n\002id\030\001 \001" +
+      "(\003\022\r\n\005title\030\002 \001(\t\022\r\n\005image\030\003 \001(\t\022\021\n\tstar" +
+      "tDate\030\004 \001(\t\022\017\n\007endDate\030\005 \001(\t\022\026\n\016numberOf" +
+      "Pieces\030\006 \001(\005\022\016\n\006status\030\007 \001(\t\"\223\001\n\022GetPuzz" +
+      "lesResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002" +
+      " \001(\t\022\021\n\ttotalPage\030\003 \001(\003\022\024\n\014totalElement\030" +
+      "\004 \001(\003\022\014\n\004page\030\005 \001(\003\022\014\n\004size\030\006 \001(\003\022\027\n\006puz" +
+      "zle\030\007 \003(\0132\007.Puzzle\"\203\001\n\027PostCreatePuzzleR" +
+      "equest\022\r\n\005title\030\001 \001(\t\022\r\n\005image\030\002 \001(\t\022\021\n\t" +
+      "startDate\030\003 \001(\t\022\017\n\007endDate\030\004 \001(\t\022\026\n\016numb" +
+      "erOfPieces\030\005 \001(\005\022\016\n\006status\030\006 \001(\t\";\n\030Post" +
+      "CreatePuzzleResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007" +
+      "message\030\002 \001(\t\"%\n\022GetVoucherTypesReq\022\017\n\007b" +
+      "randId\030\001 \001(\003\"8\n\022GetVoucherTypesRes\022\"\n\014vo" +
+      "ucherTypes\030\001 \003(\0132\014.VoucherType\"&\n\022GetVou" +
+      "chersRequest\022\020\n\010playerId\030\001 \001(\003\"1\n\023GetVou" +
+      "chersResponse\022\032\n\010vouchers\030\001 \003(\0132\010.Vouche" +
+      "r\"\035\n\rSearchRequest\022\014\n\004term\030\001 \001(\t\"3\n\025Sear" +
+      "chVoucherResponse\022\032\n\010vouchers\030\001 \003(\0132\010.Vo" +
+      "ucher\"?\n\031SearchVoucherTypeResponse\022\"\n\014vo" +
+      "ucherTypes\030\001 \003(\0132\014.VoucherType\"\177\n\007Vouche" +
+      "r\022\n\n\002id\030\001 \001(\003\022\020\n\010issuedAt\030\002 \001(\t\022\023\n\013expir" +
+      "edDate\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022\016\n\006QRCode\030\005" +
+      " \001(\t\022!\n\013voucherType\030\006 \001(\0132\014.VoucherType\"" +
+      "|\n\024UpdateVoucherTypeReq\022\016\n\006status\030\001 \001(\t\022" +
+      "\023\n\013description\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005va" +
+      "lue\030\004 \001(\001\022\021\n\tvoucherId\030\005 \001(\003\022\017\n\007brandId\030" +
+      "\006 \001(\003\"@\n\024UpdateVoucherTypeRes\022(\n\022updated" +
+      "VoucherType\030\001 \001(\0132\014.VoucherType\"d\n\026Gener" +
+      "ateVoucherRequest\022\025\n\rvoucherTypeId\030\001 \001(\003" +
+      "\022\020\n\010duration\030\002 \001(\t\022\017\n\007brandId\030\003 \001(\003\022\020\n\010p" +
+      "layerId\030\004 \001(\003\"\217\001\n\027GenerateVoucherRespons" +
+      "e\022\n\n\002id\030\001 \001(\003\022\020\n\010issuedAt\030\002 \001(\t\022\023\n\013expir" +
+      "edDate\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022\016\n\006QRCode\030\005" +
+      " \001(\t\022!\n\013voucherType\030\006 \001(\0132\014.VoucherType\"" +
+      "o\n\030CreateVoucherTypeRequest\022\014\n\004name\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\001\022\020\n\010imageUrl\030\003 \001(\t\022\023\n\013de" +
+      "scription\030\004 \001(\t\022\017\n\007brandId\030\005 \001(\003\">\n\031Crea" +
+      "teVoucherTypeResponse\022!\n\013voucherType\030\001 \001" +
+      "(\0132\014.VoucherType\"n\n\013VoucherType\022\n\n\002id\030\001 " +
+      "\001(\003\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\001\022\020\n\010imag" +
+      "eUrl\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007brand" +
+      "Id\030\006 \001(\003\"9\n\023GetCampaignsRequest\022\021\n\tstart" +
+      "Date\030\001 \001(\t\022\017\n\007endDate\030\002 \001(\t\"4\n\024GetCampai" +
+      "gnsResponse\022\034\n\tcampaigns\030\001 \003(\0132\t.Campaig" +
+      "n\"\177\n\010Campaign\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022" +
+      "\020\n\010imageUrl\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\021" +
+      "\n\tstartDate\030\005 \001(\t\022\017\n\007endDate\030\006 \001(\t\022\016\n\006st" +
+      "atus\030\007 \001(\t\"%\n\025SearchCampaignRequest\022\014\n\004t" +
+      "erm\030\001 \001(\t\"6\n\026SearchCampaignResponse\022\034\n\tc" +
+      "ampaigns\030\001 \003(\0132\t.Campaign\"|\n\025CreateCampa" +
+      "ignRequest\022\014\n\004name\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001" +
+      "(\t\022\021\n\tstartDate\030\003 \001(\t\022\017\n\007endDate\030\004 \001(\t\022\016" +
+      "\n\006status\030\005 \001(\t\022\017\n\007brandId\030\006 \001(\003\"5\n\026Creat" +
+      "eCampaignResponse\022\033\n\010campaign\030\001 \001(\0132\t.Ca" +
+      "mpaign\"+\n\030GetCampaignsByBrandIdReq\022\017\n\007br" +
+      "andId\030\001 \001(\003\"8\n\030GetCampaignsByBrandIdRes\022" +
+      "\034\n\tcampaigns\030\001 \003(\0132\t.Campaign\"\212\001\n\021Update" +
+      "CampaignReq\022\022\n\ncampaignId\030\001 \001(\003\022\017\n\007newNa" +
+      "me\030\002 \001(\t\022\023\n\013newImageUrl\030\003 \001(\t\022\024\n\014newStar" +
+      "tDate\030\004 \001(\t\022\022\n\nnewEndDate\030\005 \001(\t\022\021\n\tnewSt" +
+      "atus\030\006 \001(\t\"0\n\021UpdateCampaignRes\022\033\n\010campa" +
+      "ign\030\001 \001(\0132\t.Campaign2\320\r\n\013CoreService\022D\n\017" +
+      "GenerateVoucher\022\027.GenerateVoucherRequest" +
+      "\032\030.GenerateVoucherResponse\022J\n\021CreateVouc" +
+      "herType\022\031.CreateVoucherTypeRequest\032\032.Cre" +
+      "ateVoucherTypeResponse\0227\n\rSearchVoucher\022" +
+      "\016.SearchRequest\032\026.SearchVoucherResponse\022" +
+      "?\n\021SearchVoucherType\022\016.SearchRequest\032\032.S" +
+      "earchVoucherTypeResponse\022A\n\021UpdateVouche" +
+      "rType\022\025.UpdateVoucherTypeReq\032\025.UpdateVou" +
+      "cherTypeRes\022;\n\017GetVouchersType\022\023.GetVouc" +
+      "herTypesReq\032\023.GetVoucherTypesRes\0228\n\013GetV" +
+      "ouchers\022\023.GetVouchersRequest\032\024.GetVouche" +
+      "rsResponse\022;\n\014GetCampaigns\022\024.GetCampaign" +
+      "sRequest\032\025.GetCampaignsResponse\022A\n\016Searc" +
+      "hCampaign\022\026.SearchCampaignRequest\032\027.Sear" +
+      "chCampaignResponse\022A\n\016CreateCampaign\022\026.C" +
+      "reateCampaignRequest\032\027.CreateCampaignRes" +
+      "ponse\022M\n\025GetCampaignsByBrandId\022\031.GetCamp" +
+      "aignsByBrandIdReq\032\031.GetCampaignsByBrandI" +
+      "dRes\0228\n\016UpdateCampaign\022\022.UpdateCampaignR" +
+      "eq\032\022.UpdateCampaignRes\022G\n\020PostCreatePuzz" +
+      "le\022\030.PostCreatePuzzleRequest\032\031.PostCreat" +
+      "ePuzzleResponse\0222\n\tGetPuzzle\022\021.GetPuzzle" +
+      "Request\032\022.GetPuzzleResponse\0225\n\nGetPuzzle" +
+      "s\022\022.GetPuzzlesRequest\032\023.GetPuzzlesRespon" +
+      "se\022;\n\014UpdatePuzzle\022\024.UpdatePuzzleRequest" +
+      "\032\025.UpdatePuzzleResponse\0228\n\013CreatePiece\022\023" +
+      ".CreatePieceRequest\032\024.CreatePieceRespons" +
+      "e\022/\n\010GetPiece\022\020.GetPieceRequest\032\021.GetPie" +
+      "ceResponse\0228\n\013UpdatePiece\022\023.UpdatePieceR" +
+      "equest\032\024.UpdatePieceResponse\0228\n\013DeletePi" +
+      "ece\022\023.DeletePieceRequest\032\024.DeletePieceRe" +
+      "sponse\022;\n\014GetAllPieces\022\024.GetAllPiecesReq" +
+      "uest\032\025.GetAllPiecesResponse\022A\n\016GetRandom" +
+      "Piece\022\026.GetRandomPieceRequest\032\027.GetRando" +
+      "mPieceResponse\022J\n\021CreatePiecePlayer\022\031.Cr" +
+      "eatePiecePlayerRequest\032\032.CreatePiecePlay" +
+      "erResponse\022M\n\022GetAllPiecePlayers\022\032.GetAl" +
+      "lPiecePlayersRequest\032\033.GetAllPiecePlayer" +
+      "sResponse\022>\n\rTransferPiece\022\025.TransferPie" +
+      "ceRequest\032\026.TransferPieceResponse\022;\n\014Get" +
+      "GameTurns\022\024.GetGameTurnsRequest\032\025.GetGam" +
+      "eTurnsResponse\022G\n\020TransferGameTurn\022\030.Tra" +
+      "nsferGameTurnRequest\032\031.TransferGameTurnR" +
+      "esponseB$\n\025org.archi.common.coreB\tCorePr" +
+      "otoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.WrappersProto.getDescriptor(),
         });
-    internal_static_GetVoucherTypesReq_descriptor =
+    internal_static_TransferGameTurnRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_TransferGameTurnRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TransferGameTurnRequest_descriptor,
+        new java.lang.String[] { "SenderId", "RecipientId", "Times", });
+    internal_static_TransferGameTurnResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_TransferGameTurnResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TransferGameTurnResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_GetGameTurnsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_GetGameTurnsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetGameTurnsRequest_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_GetGameTurnsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_GetGameTurnsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetGameTurnsResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Times", });
+    internal_static_TransferPieceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_TransferPieceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TransferPieceRequest_descriptor,
+        new java.lang.String[] { "SenderId", "RecipientId", "PieceId", });
+    internal_static_TransferPieceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_TransferPieceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TransferPieceResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_GetAllPiecePlayersRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_GetAllPiecePlayersRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetAllPiecePlayersRequest_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_GetAllPiecePlayersResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_GetAllPiecePlayersResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetAllPiecePlayersResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Piece", });
+    internal_static_CreatePiecePlayerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_CreatePiecePlayerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CreatePiecePlayerRequest_descriptor,
+        new java.lang.String[] { "PlayerId", "PieceId", });
+    internal_static_CreatePiecePlayerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_CreatePiecePlayerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CreatePiecePlayerResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_GetRandomPieceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_GetRandomPieceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetRandomPieceRequest_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_GetRandomPieceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_GetRandomPieceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetRandomPieceResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Piece", });
+    internal_static_DeletePieceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_DeletePieceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeletePieceRequest_descriptor,
+        new java.lang.String[] { "PuzzleId", "PieceId", });
+    internal_static_DeletePieceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_DeletePieceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeletePieceResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_UpdatePieceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_UpdatePieceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdatePieceRequest_descriptor,
+        new java.lang.String[] { "PuzzleId", "PieceId", "Image", "Ordinal", "Quantity", });
+    internal_static_UpdatePieceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_UpdatePieceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdatePieceResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_CreatePieceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_CreatePieceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CreatePieceRequest_descriptor,
+        new java.lang.String[] { "Image", "PuzzleId", "Ordinal", "Quantity", });
+    internal_static_CreatePieceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_CreatePieceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CreatePieceResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_Piece_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_Piece_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Piece_descriptor,
+        new java.lang.String[] { "Id", "Image", "Ordinal", "PuzzleId", "Quantity", });
+    internal_static_GetPieceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_GetPieceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPieceRequest_descriptor,
+        new java.lang.String[] { "PuzzleId", "PieceId", });
+    internal_static_GetPieceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_GetPieceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPieceResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Piece", });
+    internal_static_GetAllPiecesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_GetAllPiecesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetAllPiecesRequest_descriptor,
+        new java.lang.String[] { "PuzzleId", });
+    internal_static_GetAllPiecesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_GetAllPiecesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetAllPiecesResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Pieces", });
+    internal_static_GetPuzzleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_GetPuzzleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPuzzleRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_GetPuzzleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_GetPuzzleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPuzzleResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Puzzle", });
+    internal_static_UpdatePuzzleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_UpdatePuzzleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdatePuzzleRequest_descriptor,
+        new java.lang.String[] { "Id", "Title", "Image", "StartDate", "EndDate", "NumberOfPieces", "Status", });
+    internal_static_UpdatePuzzleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_UpdatePuzzleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdatePuzzleResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_GetPuzzlesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_GetPuzzlesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPuzzlesRequest_descriptor,
+        new java.lang.String[] { "Page", "Size", "Sort", "Title", });
+    internal_static_Puzzle_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_Puzzle_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Puzzle_descriptor,
+        new java.lang.String[] { "Id", "Title", "Image", "StartDate", "EndDate", "NumberOfPieces", "Status", });
+    internal_static_GetPuzzlesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_GetPuzzlesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPuzzlesResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "TotalPage", "TotalElement", "Page", "Size", "Puzzle", });
+    internal_static_PostCreatePuzzleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_PostCreatePuzzleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostCreatePuzzleRequest_descriptor,
+        new java.lang.String[] { "Title", "Image", "StartDate", "EndDate", "NumberOfPieces", "Status", });
+    internal_static_PostCreatePuzzleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_PostCreatePuzzleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PostCreatePuzzleResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_GetVoucherTypesReq_descriptor =
+      getDescriptor().getMessageTypes().get(32);
     internal_static_GetVoucherTypesReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetVoucherTypesReq_descriptor,
         new java.lang.String[] { "BrandId", });
     internal_static_GetVoucherTypesRes_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_GetVoucherTypesRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetVoucherTypesRes_descriptor,
         new java.lang.String[] { "VoucherTypes", });
     internal_static_GetVouchersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_GetVouchersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetVouchersRequest_descriptor,
         new java.lang.String[] { "PlayerId", });
     internal_static_GetVouchersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_GetVouchersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetVouchersResponse_descriptor,
         new java.lang.String[] { "Vouchers", });
     internal_static_SearchRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_SearchRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SearchRequest_descriptor,
         new java.lang.String[] { "Term", });
     internal_static_SearchVoucherResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_SearchVoucherResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SearchVoucherResponse_descriptor,
         new java.lang.String[] { "Vouchers", });
     internal_static_SearchVoucherTypeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_SearchVoucherTypeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SearchVoucherTypeResponse_descriptor,
         new java.lang.String[] { "VoucherTypes", });
     internal_static_Voucher_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_Voucher_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Voucher_descriptor,
         new java.lang.String[] { "Id", "IssuedAt", "ExpiredDate", "Status", "QRCode", "VoucherType", });
     internal_static_UpdateVoucherTypeReq_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_UpdateVoucherTypeReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpdateVoucherTypeReq_descriptor,
         new java.lang.String[] { "Status", "Description", "Name", "Value", "VoucherId", "BrandId", });
     internal_static_UpdateVoucherTypeRes_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_UpdateVoucherTypeRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpdateVoucherTypeRes_descriptor,
         new java.lang.String[] { "UpdatedVoucherType", });
     internal_static_GenerateVoucherRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_GenerateVoucherRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GenerateVoucherRequest_descriptor,
         new java.lang.String[] { "VoucherTypeId", "Duration", "BrandId", "PlayerId", });
     internal_static_GenerateVoucherResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_GenerateVoucherResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GenerateVoucherResponse_descriptor,
         new java.lang.String[] { "Id", "IssuedAt", "ExpiredDate", "Status", "QRCode", "VoucherType", });
     internal_static_CreateVoucherTypeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_CreateVoucherTypeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateVoucherTypeRequest_descriptor,
         new java.lang.String[] { "Name", "Value", "ImageUrl", "Description", "BrandId", });
     internal_static_CreateVoucherTypeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_CreateVoucherTypeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateVoucherTypeResponse_descriptor,
         new java.lang.String[] { "VoucherType", });
     internal_static_VoucherType_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_VoucherType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VoucherType_descriptor,
         new java.lang.String[] { "Id", "Name", "Value", "ImageUrl", "Description", "BrandId", });
     internal_static_GetCampaignsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_GetCampaignsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetCampaignsRequest_descriptor,
         new java.lang.String[] { "StartDate", "EndDate", });
     internal_static_GetCampaignsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_GetCampaignsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetCampaignsResponse_descriptor,
         new java.lang.String[] { "Campaigns", });
     internal_static_Campaign_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_Campaign_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Campaign_descriptor,
         new java.lang.String[] { "Id", "Name", "ImageUrl", "Description", "StartDate", "EndDate", "Status", });
     internal_static_SearchCampaignRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_SearchCampaignRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SearchCampaignRequest_descriptor,
         new java.lang.String[] { "Term", });
     internal_static_SearchCampaignResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_SearchCampaignResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SearchCampaignResponse_descriptor,
         new java.lang.String[] { "Campaigns", });
     internal_static_CreateCampaignRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_CreateCampaignRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateCampaignRequest_descriptor,
         new java.lang.String[] { "Name", "ImageUrl", "StartDate", "EndDate", "Status", "BrandId", });
     internal_static_CreateCampaignResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_CreateCampaignResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateCampaignResponse_descriptor,
         new java.lang.String[] { "Campaign", });
     internal_static_GetCampaignsByBrandIdReq_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_GetCampaignsByBrandIdReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetCampaignsByBrandIdReq_descriptor,
         new java.lang.String[] { "BrandId", });
     internal_static_GetCampaignsByBrandIdRes_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_GetCampaignsByBrandIdRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetCampaignsByBrandIdRes_descriptor,
         new java.lang.String[] { "Campaigns", });
     internal_static_UpdateCampaignReq_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_UpdateCampaignReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpdateCampaignReq_descriptor,
         new java.lang.String[] { "CampaignId", "NewName", "NewImageUrl", "NewStartDate", "NewEndDate", "NewStatus", });
     internal_static_UpdateCampaignRes_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_UpdateCampaignRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpdateCampaignRes_descriptor,
         new java.lang.String[] { "Campaign", });
+    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

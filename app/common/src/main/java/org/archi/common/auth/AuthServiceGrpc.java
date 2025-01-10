@@ -604,6 +604,99 @@ public final class AuthServiceGrpc {
     return getGetPlayersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.RetrievePlayerProfileRequest,
+      org.archi.common.auth.RetrievePlayerProfileResponse> getRetrievePlayerProfileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RetrievePlayerProfile",
+      requestType = org.archi.common.auth.RetrievePlayerProfileRequest.class,
+      responseType = org.archi.common.auth.RetrievePlayerProfileResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.auth.RetrievePlayerProfileRequest,
+      org.archi.common.auth.RetrievePlayerProfileResponse> getRetrievePlayerProfileMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.auth.RetrievePlayerProfileRequest, org.archi.common.auth.RetrievePlayerProfileResponse> getRetrievePlayerProfileMethod;
+    if ((getRetrievePlayerProfileMethod = AuthServiceGrpc.getRetrievePlayerProfileMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getRetrievePlayerProfileMethod = AuthServiceGrpc.getRetrievePlayerProfileMethod) == null) {
+          AuthServiceGrpc.getRetrievePlayerProfileMethod = getRetrievePlayerProfileMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.auth.RetrievePlayerProfileRequest, org.archi.common.auth.RetrievePlayerProfileResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RetrievePlayerProfile"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.auth.RetrievePlayerProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.auth.RetrievePlayerProfileResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("RetrievePlayerProfile"))
+              .build();
+        }
+      }
+    }
+    return getRetrievePlayerProfileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerByEmailRequest,
+      org.archi.common.auth.GetPlayerByEmailResponse> getGetPlayerByEmailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPlayerByEmail",
+      requestType = org.archi.common.auth.GetPlayerByEmailRequest.class,
+      responseType = org.archi.common.auth.GetPlayerByEmailResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerByEmailRequest,
+      org.archi.common.auth.GetPlayerByEmailResponse> getGetPlayerByEmailMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerByEmailRequest, org.archi.common.auth.GetPlayerByEmailResponse> getGetPlayerByEmailMethod;
+    if ((getGetPlayerByEmailMethod = AuthServiceGrpc.getGetPlayerByEmailMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getGetPlayerByEmailMethod = AuthServiceGrpc.getGetPlayerByEmailMethod) == null) {
+          AuthServiceGrpc.getGetPlayerByEmailMethod = getGetPlayerByEmailMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.auth.GetPlayerByEmailRequest, org.archi.common.auth.GetPlayerByEmailResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlayerByEmail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.auth.GetPlayerByEmailRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.auth.GetPlayerByEmailResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetPlayerByEmail"))
+              .build();
+        }
+      }
+    }
+    return getGetPlayerByEmailMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerByPhoneNumberRequest,
+      org.archi.common.auth.GetPlayerByPhoneNumberResponse> getGetPlayerByPhoneNumberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPlayerByPhoneNumber",
+      requestType = org.archi.common.auth.GetPlayerByPhoneNumberRequest.class,
+      responseType = org.archi.common.auth.GetPlayerByPhoneNumberResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerByPhoneNumberRequest,
+      org.archi.common.auth.GetPlayerByPhoneNumberResponse> getGetPlayerByPhoneNumberMethod() {
+    io.grpc.MethodDescriptor<org.archi.common.auth.GetPlayerByPhoneNumberRequest, org.archi.common.auth.GetPlayerByPhoneNumberResponse> getGetPlayerByPhoneNumberMethod;
+    if ((getGetPlayerByPhoneNumberMethod = AuthServiceGrpc.getGetPlayerByPhoneNumberMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getGetPlayerByPhoneNumberMethod = AuthServiceGrpc.getGetPlayerByPhoneNumberMethod) == null) {
+          AuthServiceGrpc.getGetPlayerByPhoneNumberMethod = getGetPlayerByPhoneNumberMethod =
+              io.grpc.MethodDescriptor.<org.archi.common.auth.GetPlayerByPhoneNumberRequest, org.archi.common.auth.GetPlayerByPhoneNumberResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlayerByPhoneNumber"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.auth.GetPlayerByPhoneNumberRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.archi.common.auth.GetPlayerByPhoneNumberResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetPlayerByPhoneNumber"))
+              .build();
+        }
+      }
+    }
+    return getGetPlayerByPhoneNumberMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -783,6 +876,27 @@ public final class AuthServiceGrpc {
     default void getPlayers(org.archi.common.auth.GetPlayersRequest request,
         io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayersResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlayersMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void retrievePlayerProfile(org.archi.common.auth.RetrievePlayerProfileRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.auth.RetrievePlayerProfileResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRetrievePlayerProfileMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getPlayerByEmail(org.archi.common.auth.GetPlayerByEmailRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayerByEmailResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlayerByEmailMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getPlayerByPhoneNumber(org.archi.common.auth.GetPlayerByPhoneNumberRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayerByPhoneNumberResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlayerByPhoneNumberMethod(), responseObserver);
     }
   }
 
@@ -964,6 +1078,30 @@ public final class AuthServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPlayersMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void retrievePlayerProfile(org.archi.common.auth.RetrievePlayerProfileRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.auth.RetrievePlayerProfileResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRetrievePlayerProfileMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPlayerByEmail(org.archi.common.auth.GetPlayerByEmailRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayerByEmailResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPlayerByEmailMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPlayerByPhoneNumber(org.archi.common.auth.GetPlayerByPhoneNumberRequest request,
+        io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayerByPhoneNumberResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPlayerByPhoneNumberMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1113,6 +1251,27 @@ public final class AuthServiceGrpc {
     public org.archi.common.auth.GetPlayersResponse getPlayers(org.archi.common.auth.GetPlayersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPlayersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.auth.RetrievePlayerProfileResponse retrievePlayerProfile(org.archi.common.auth.RetrievePlayerProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrievePlayerProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.auth.GetPlayerByEmailResponse getPlayerByEmail(org.archi.common.auth.GetPlayerByEmailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPlayerByEmailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.archi.common.auth.GetPlayerByPhoneNumberResponse getPlayerByPhoneNumber(org.archi.common.auth.GetPlayerByPhoneNumberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPlayerByPhoneNumberMethod(), getCallOptions(), request);
     }
   }
 
@@ -1283,6 +1442,30 @@ public final class AuthServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPlayersMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.RetrievePlayerProfileResponse> retrievePlayerProfile(
+        org.archi.common.auth.RetrievePlayerProfileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRetrievePlayerProfileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetPlayerByEmailResponse> getPlayerByEmail(
+        org.archi.common.auth.GetPlayerByEmailRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPlayerByEmailMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.archi.common.auth.GetPlayerByPhoneNumberResponse> getPlayerByPhoneNumber(
+        org.archi.common.auth.GetPlayerByPhoneNumberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPlayerByPhoneNumberMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_POST_REGISTER = 0;
@@ -1304,6 +1487,9 @@ public final class AuthServiceGrpc {
   private static final int METHODID_GET_ACCOUNTS = 16;
   private static final int METHODID_GET_BRANDS = 17;
   private static final int METHODID_GET_PLAYERS = 18;
+  private static final int METHODID_RETRIEVE_PLAYER_PROFILE = 19;
+  private static final int METHODID_GET_PLAYER_BY_EMAIL = 20;
+  private static final int METHODID_GET_PLAYER_BY_PHONE_NUMBER = 21;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1397,6 +1583,18 @@ public final class AuthServiceGrpc {
         case METHODID_GET_PLAYERS:
           serviceImpl.getPlayers((org.archi.common.auth.GetPlayersRequest) request,
               (io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayersResponse>) responseObserver);
+          break;
+        case METHODID_RETRIEVE_PLAYER_PROFILE:
+          serviceImpl.retrievePlayerProfile((org.archi.common.auth.RetrievePlayerProfileRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.auth.RetrievePlayerProfileResponse>) responseObserver);
+          break;
+        case METHODID_GET_PLAYER_BY_EMAIL:
+          serviceImpl.getPlayerByEmail((org.archi.common.auth.GetPlayerByEmailRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayerByEmailResponse>) responseObserver);
+          break;
+        case METHODID_GET_PLAYER_BY_PHONE_NUMBER:
+          serviceImpl.getPlayerByPhoneNumber((org.archi.common.auth.GetPlayerByPhoneNumberRequest) request,
+              (io.grpc.stub.StreamObserver<org.archi.common.auth.GetPlayerByPhoneNumberResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1549,6 +1747,27 @@ public final class AuthServiceGrpc {
               org.archi.common.auth.GetPlayersRequest,
               org.archi.common.auth.GetPlayersResponse>(
                 service, METHODID_GET_PLAYERS)))
+        .addMethod(
+          getRetrievePlayerProfileMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.auth.RetrievePlayerProfileRequest,
+              org.archi.common.auth.RetrievePlayerProfileResponse>(
+                service, METHODID_RETRIEVE_PLAYER_PROFILE)))
+        .addMethod(
+          getGetPlayerByEmailMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.auth.GetPlayerByEmailRequest,
+              org.archi.common.auth.GetPlayerByEmailResponse>(
+                service, METHODID_GET_PLAYER_BY_EMAIL)))
+        .addMethod(
+          getGetPlayerByPhoneNumberMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.archi.common.auth.GetPlayerByPhoneNumberRequest,
+              org.archi.common.auth.GetPlayerByPhoneNumberResponse>(
+                service, METHODID_GET_PLAYER_BY_PHONE_NUMBER)))
         .build();
   }
 
@@ -1616,6 +1835,9 @@ public final class AuthServiceGrpc {
               .addMethod(getGetAccountsMethod())
               .addMethod(getGetBrandsMethod())
               .addMethod(getGetPlayersMethod())
+              .addMethod(getRetrievePlayerProfileMethod())
+              .addMethod(getGetPlayerByEmailMethod())
+              .addMethod(getGetPlayerByPhoneNumberMethod())
               .build();
         }
       }

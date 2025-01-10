@@ -1,5 +1,6 @@
 package org.archi.bff.exceptions;
 
+import jakarta.servlet.ServletException;
 import lombok.extern.slf4j.Slf4j;
 import org.archi.bff.response.ExceptionResponse;
 import org.springframework.core.NestedRuntimeException;
@@ -10,18 +11,19 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.Map;
+
 @Slf4j
 @RestControllerAdvice(annotations = RestController.class)
 @Order(1)
 public class GlobalExceptionsHandling {
   @ExceptionHandler({NestedRuntimeException.class})
   public ResponseEntity<ExceptionResponse> handleNestedRuntimeException(NestedRuntimeException exception) {
-    return ResponseEntity.ok().body(new ExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),  "Invalid input params", null));
+    return ResponseEntity.ok().body(new ExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Invalid input/output params", null));
   }
-
 
   @ExceptionHandler({RuntimeException.class})
   public ResponseEntity<ExceptionResponse> handleRuntimeException(RuntimeException exception) {
-    return ResponseEntity.ok().body(new ExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),  exception.getMessage(),null));
+    return ResponseEntity.ok().body(new ExceptionResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), exception.getMessage(), null));
   }
 }

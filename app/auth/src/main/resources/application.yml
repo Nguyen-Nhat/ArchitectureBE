@@ -26,8 +26,6 @@ management:
 spring:
   application:
     name: auth
-  profiles:
-    active: dev
   mail:
     host: smtp.gmail.com
     port: 587
@@ -45,9 +43,9 @@ spring:
           writetimeout: 5000
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://ap-east-1.8ada6794-d1df-4c6b-99c0-4799c810b909.aws.yugabyte.cloud:5433/postgres
-    username: admin
-    password: Software-2025
+    url: jdbc:postgresql://advancedweb-hoangvanquoc923-advancedweb.d.aivencloud.com:21884/defaultdb
+    username: avnadmin
+    password: AVNS_1Yc9NIUpzEeH2nrgK_8
   jpa:
     show-sql: true
     properties:

@@ -487,8 +487,8 @@ public class AuthenticationService {
               .build();
     }
 
-    if (request.hasName())  brand.setName(request.getName().getValue());
-    if (request.hasField())  brand.setField(request.getField().getValue());
+    if (request.hasName()) brand.setName(request.getName().getValue());
+    if (request.hasField()) brand.setField(request.getField().getValue());
     if (request.hasAddress()) brand.setAddress(request.getAddress().getValue());
     if (request.hasGps()) brand.setGps(request.getGps().getValue());
 
@@ -561,8 +561,8 @@ public class AuthenticationService {
               .build();
     }
 
-    if (request.hasName())  player.setName(request.getName().getValue());
-    if (request.hasAvatar())  player.setAvatar(request.getAvatar().getValue());
+    if (request.hasName()) player.setName(request.getName().getValue());
+    if (request.hasAvatar()) player.setAvatar(request.getAvatar().getValue());
     if (request.hasBirthDate()) {
       java.sql.Date birthDate = java.sql.Date.valueOf(request.getBirthDate().getValue());
       player.setBirthDate(birthDate);
@@ -586,7 +586,7 @@ public class AuthenticationService {
 
     Pageable pageable = null;
     if (request.hasSort()) {
-      String sort = request.getSort().getValue() ;
+      String sort = request.getSort().getValue();
       List<Sort.Order> orders = new ArrayList<>();
       String[] list = sort.split(",");
       for (String element : list) {
@@ -720,6 +720,96 @@ public class AuthenticationService {
             .setTotalPage(players.getTotalPages())
             .setPage(players.getNumber())
             .setSize(players.getSize())
+            .build();
+  }
+
+  public RetrievePlayerProfileResponse retrievePlayerProfile(RetrievePlayerProfileRequest request) {
+    long accountId = request.getId();
+    Account account = accountService.findById(accountId);
+
+    if (account == null || account.getId() <= 0) {
+      return RetrievePlayerProfileResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Account not found")
+              .build();
+    }
+
+    Player player = playerService.findByAccount(account);
+    if (player == null || player.getId() <= 0) {
+      return RetrievePlayerProfileResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Player not found")
+              .build();
+    }
+
+    return RetrievePlayerProfileResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .setPlayer(org.archi.common.auth.Player.newBuilder()
+                    .setId(player.getId())
+                    .setName(player.getName())
+                    .setAvatar(player.getAvatar())
+                    .setBirthDate(player.getBirthDate().toString())
+                    .setFacebook(player.getFacebook())
+                    .build())
+            .build();
+  }
+
+  public GetPlayerByEmailResponse getPlayerByEmail(GetPlayerByEmailRequest request) {
+    String email = request.getEmail();
+    Account account = accountService.findByEmail(email);
+    if (account == null || account.getId() <= 0) {
+      return GetPlayerByEmailResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Account not found")
+              .build();
+    }
+    Player player = playerService.findByAccount(account);
+    if (player == null || player.getId() <= 0) {
+      return GetPlayerByEmailResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Player not found")
+              .build();
+    }
+    return GetPlayerByEmailResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .setPlayer(org.archi.common.auth.Player.newBuilder()
+                    .setId(player.getId())
+                    .setName(player.getName())
+                    .setAvatar(player.getAvatar())
+                    .setBirthDate(player.getBirthDate().toString())
+                    .setFacebook(player.getFacebook())
+                    .build())
+            .build();
+  }
+
+  public GetPlayerByPhoneNumberResponse getPlayerByPhoneNumber(GetPlayerByPhoneNumberRequest request) {
+    String phoneNumber = request.getPhoneNumber();
+    Account account = accountService.findByPhoneNumber(phoneNumber);
+    if (account == null || account.getId() <= 0) {
+      return GetPlayerByPhoneNumberResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Account not found")
+              .build();
+    }
+    Player player = playerService.findByAccount(account);
+    if (player == null || player.getId() <= 0) {
+      return GetPlayerByPhoneNumberResponse.newBuilder()
+              .setStatus(HttpStatus.NOT_FOUND.value())
+              .setMessage("Player not found")
+              .build();
+    }
+    return GetPlayerByPhoneNumberResponse.newBuilder()
+            .setStatus(HttpStatus.OK.value())
+            .setMessage("Success")
+            .setPlayer(org.archi.common.auth.Player.newBuilder()
+                    .setId(player.getId())
+                    .setName(player.getName())
+                    .setAvatar(player.getAvatar())
+                    .setBirthDate(player.getBirthDate().toString())
+                    .setFacebook(player.getFacebook())
+                    .build())
             .build();
   }
 }

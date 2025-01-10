@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vou-puzzle-db
+    username: postgres
+    password: 49@Da5J,[KsemDN
