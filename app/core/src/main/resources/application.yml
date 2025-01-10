@@ -3,6 +3,17 @@ spring:
     active: dev
   application:
     name: core
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
   datasource:
     url: jdbc:postgresql://pg-123-software-archietecture.g.aivencloud.com:24304/defaultdb
     username: avnadmin
@@ -15,6 +26,7 @@ spring:
       properties:
         hibernate:
           dialect: org.hibernate.dialect.PostgreSQLDialec
+
 grpc:
   server:
     port: 9443

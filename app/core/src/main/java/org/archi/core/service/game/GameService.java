@@ -1,6 +1,7 @@
 package org.archi.core.service.game;
 
 import lombok.RequiredArgsConstructor;
+import org.archi.common.quiz.ScheduledQuizDTO;
 import org.archi.core.entity.campaign.Campaign;
 import org.archi.core.entity.campaign.Item;
 import org.archi.core.entity.game.Game;
@@ -13,10 +14,13 @@ import org.archi.core.service.campaign.PieceService;
 import org.archi.core.service.campaign.VoucherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -30,8 +34,10 @@ public class GameService {
     private final CampaignService campaignService;
     private final VoucherService voucherService;
     private final PieceService pieceService;
+    private final RabbitTemplate rabbitTemplate;
+    private final ThreadPoolTaskScheduler taskScheduler;
 
-//    @Transactional
+
     public List<Game> getAllGames() {
         return gameRepo.findAll();
     }
@@ -60,7 +66,13 @@ public class GameService {
         game.setType(gameType);
         game.setCampaign(campaign);
 
-        return gameRepo.save(game);
+        Game savedGame = gameRepo.save(game);
+
+        if (game.getStartAt() != null) {
+            scheduleQuizStart(savedGame);
+        }
+
+        return savedGame;
     }
 
     public Game updateGame(Long gameId, Game updatedGame) {
@@ -113,6 +125,17 @@ public class GameService {
         }
         else {
             return pieceService.getRandomPiece(playerId, gameId);
+        }
+    }
+
+    private void scheduleQuizStart(Game game) {
+        LocalDateTime now = LocalDateTime.now();
+        long delay = Duration.between(now, game.getStartAt().minusMinutes(5)).toMillis();
+
+        if (delay > 0) {
+            taskScheduler.schedule(() -> {
+                rabbitTemplate.convertAndSend("quiz.schedule.exchange", "quiz.schedule", new ScheduledQuizDTO(game.getId(), game.getStartAt()));
+            }, new Date(System.currentTimeMillis() + delay));
         }
     }
 }

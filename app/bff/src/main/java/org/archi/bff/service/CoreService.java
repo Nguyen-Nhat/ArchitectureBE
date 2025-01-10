@@ -322,7 +322,7 @@ public class CoreService {
         return response.getHasWin();
     }
 
-    private GetWinItemResponse getWinItem(long playerId, long gameId) {
+    public GetWinItemResponse getWinItem(long playerId, long gameId) {
         GetWinItemRequest request = GetWinItemRequest.newBuilder()
                 .setPlayerId(playerId)
                 .setGameId(gameId)

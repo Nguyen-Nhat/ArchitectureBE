@@ -1,6 +1,12 @@
 spring:
   application:
     name: bff
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
 server:
   port: 8080
 grpc:
