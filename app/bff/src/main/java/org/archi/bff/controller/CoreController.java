@@ -3,6 +3,8 @@ package org.archi.bff.controller;
 import lombok.RequiredArgsConstructor;
 import org.archi.bff.request.ShakePhoneRequest;
 import org.archi.bff.response.PlayerInfo;
+import org.archi.bff.request.*;
+import org.archi.bff.request.CreateCampaignRequest;
 import org.archi.bff.response.ResponseData;
 import org.archi.bff.service.AuthService;
 import org.archi.bff.service.CoreService;
@@ -41,9 +43,10 @@ public class CoreController {
 
     @PostMapping("/voucher-types/create")
     @PreAuthorize("hasRole('BRAND')")
-    public ResponseEntity<ResponseData> createVoucherType(@RequestBody CreateVoucherTypeRequest request) {
+    public ResponseEntity<ResponseData> createVoucherType(@RequestBody CreateVoucherType request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        return coreService.createVoucherType(request);
+        long accountId= Long.parseLong(auth.getName());
+        return coreService.createVoucherType(accountId, request);
     }
 
     @PostMapping("/generate-voucher")
@@ -58,10 +61,12 @@ public class CoreController {
         }
     }
 
-    @PutMapping("/voucher-types")
+    @PatchMapping("/voucher-types/{id}")
     @PreAuthorize("hasRole('BRAND')")
-    public ResponseEntity<ResponseData> updateVoucherType(@RequestBody UpdateVoucherTypeReq request) {
-        return coreService.updateVoucherType(request);
+    public ResponseEntity<ResponseData> updateVoucherType(
+            @PathVariable Long id,
+            @RequestBody UpdateVoucherType request) {
+        return coreService.updateVoucherType(id, request);
     }
 
     @GetMapping("/vouchers/search")
@@ -73,6 +78,66 @@ public class CoreController {
     @PreAuthorize("hasRole('BRAND')")
     public ResponseEntity<ResponseData> searchVoucherType(@RequestParam String term) {
         return coreService.searchVoucherType(term);
+    }
+    @GetMapping("/campaigns")
+    public ResponseEntity<ResponseData> getCampaigns(@RequestParam String startDate, @RequestParam String endDate) {
+        return coreService.getCampaigns(startDate, endDate);
+    }
+
+    /*
+        {
+            url path: "localhost:8080/api/auth/core/campaigns/search?term=example"
+        }
+    * */
+    @GetMapping("/campaigns/search")
+    public ResponseEntity<ResponseData> searchCampaign(@RequestParam String term) {
+        return coreService.searchCampaign(term);
+    }
+
+    /*
+        API to create a new campaign
+        Request body:
+        {
+            "name": "Campaign 1"
+            "imageUrl": "campaign.url"
+            "description": "c des"
+            "startDate": "2025-01-01T12:30:00"
+            "endDate": "2025-01-30T12:30:00"
+            "status": "On going"
+        }
+    * */
+    @PreAuthorize("hasRole('BRAND')")
+    @PostMapping("/campaigns/create")
+    public ResponseEntity<ResponseData> createCampaign(@RequestBody CreateCampaignRequest request) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        long accountId = Long.parseLong(auth.getName());
+        return coreService.createCampaign(accountId, request);
+    }
+
+    /*
+     * path: /api/core/campaigns/by-brand-id?id=3
+     * */
+    @GetMapping("/campaigns/by-brand-id")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> getCampaignsByBrandId(@RequestParam Long id) {
+        return coreService.getCampaignsByBrandId(id);
+    }
+
+    /*
+     * path: /api/core/campaigns/3
+     * body:
+     *       {
+     *         "name": "New name",
+     *         "description": "New description"
+     *       }
+     * */
+    @PatchMapping("/campaigns/{id}")
+    @PreAuthorize("hasRole('BRAND')")
+    public ResponseEntity<ResponseData> updateCampaign(
+            @RequestBody UpdateCampaign request,
+            @PathVariable String id
+    ) {
+        return coreService.updateCampaign(id, request);
     }
 
 

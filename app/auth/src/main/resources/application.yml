@@ -1,7 +1,8 @@
 grpc:
   server:
     port: 9444
-
+server:
+  port: 8081
 
 management:
   endpoints:

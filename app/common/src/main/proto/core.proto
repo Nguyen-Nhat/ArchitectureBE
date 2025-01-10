@@ -161,10 +161,18 @@ message CreateCampaignRequest {
   string endDate = 4;
   string status = 5;
   int64 brandId = 6;
+  string description = 7;
 }
 
 message CreateCampaignResponse {
-  Campaign campaign = 1;
+  string name = 1;
+  string imageUrl = 2;
+  string startDate = 3;
+  string endDate = 4;
+  string status = 5;
+  int64 brandId = 6;
+  string description = 7;
+  int64 id = 8;
 }
 
 message GetCampaignsByBrandIdReq {
@@ -180,6 +188,7 @@ message UpdateCampaignReq {
   string newStartDate = 4;
   string newEndDate = 5;
   string newStatus = 6;
+  string newDescription = 7;
 }
 message UpdateCampaignRes {
   Campaign campaign = 1;

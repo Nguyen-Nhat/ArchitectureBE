@@ -1,53 +1,14 @@
 package org.archi.core.service.campaign;
 
-//import lombok.RequiredArgsConstructor;
-//import org.archi.core.entity.campaign.Campaign;
-//import org.archi.core.repo.campaign.CampaignRepo;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.stereotype.Service;
-//
-//import java.time.LocalDateTime;
-//import java.util.List;
-//import java.util.stream.Collectors;
-//
-//@Service
-//@RequiredArgsConstructor
-//public class CampaignService {
-//    private static final Logger logger = LoggerFactory.getLogger(CampaignService.class);
-//    private final CampaignRepo campaignRepo;
-//
-//    public List<Campaign> getAllCampaigns() {
-//        return campaignRepo.findAll();
-//    }
-//
-//    public Campaign getCampaignById(Long id) {
-//        return campaignRepo.findById(id)
-//                .orElseGet(() -> {
-//                    logger.warn("Campaign not found with id: {}", id);
-//                    return null;
-//                });
-//    }
-//
-//    public Campaign addCampaign(Campaign campaign) {
-//        return campaignRepo.save(campaign);
-//    }
-//
-//    public Campaign updateCampaign(Long id, Campaign updatedCampaign) {
-//        Campaign campaign = getCampaignById(id);
-//        campaign.setName(updatedCampaign.getName());
-//        return campaignRepo.save(campaign);
-//    }
-//}
-
-
 import lombok.RequiredArgsConstructor;
 import org.archi.common.core.CreateCampaignRequest;
 import org.archi.core.entity.campaign.Campaign;
+import org.archi.core.exception.InvalidArgumentException;
 import org.archi.core.repo.campaign.CampaignRepo;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -75,30 +36,47 @@ public class CampaignService {
         ).collect(Collectors.toList());
     }
 
-    public org.archi.common.core.Campaign createCampaign(CreateCampaignRequest campaignRequest) {
+public Campaign createCampaign(CreateCampaignRequest campaignRequest) {
 
-        Campaign campaign = new Campaign();
-        campaign.setName(campaignRequest.getName());
-        campaign.setImageUrl(campaignRequest.getImageUrl());
-        campaign.setStartDate(LocalDateTime.parse(campaignRequest.getStartDate()));
-        campaign.setEndDate(LocalDateTime.parse(campaignRequest.getEndDate()));
-        campaign.setStatus(campaignRequest.getStatus());
-        campaign.setBrandId(campaignRequest.getBrandId());
-
-        if (campaign.getStartDate().isAfter(campaign.getEndDate())) {
-            throw new IllegalArgumentException("Start date cannot be after end date.");
-        }
-        Campaign savedCampaign = campaignRepo.save(campaign);
-        return org.archi.common.core.Campaign.newBuilder()
-                .setId(savedCampaign.getId())
-                .setName(savedCampaign.getName())
-                .setImageUrl(savedCampaign.getImageUrl())
-                .setDescription(savedCampaign.getDescription())
-                .setStartDate(savedCampaign.getStartDate().toString())
-                .setEndDate(savedCampaign.getEndDate().toString())
-                .setStatus(savedCampaign.getStatus())
-                .build();
+    // Validate campaign request fields
+    if (campaignRequest.getName() == null || campaignRequest.getName().isEmpty()) {
+        throw new InvalidArgumentException("Campaign name must not be null or empty.");
     }
+    if (campaignRequest.getImageUrl() == null || campaignRequest.getImageUrl().isEmpty()) {
+        throw new InvalidArgumentException("Campaign image URL must not be null or empty.");
+    }
+    if (campaignRequest.getStartDate() == null || campaignRequest.getEndDate() == null) {
+        throw new InvalidArgumentException("Start date and end date must not be null.");
+    }
+
+    LocalDateTime startDate;
+    LocalDateTime endDate;
+    try {
+        startDate = LocalDateTime.parse(campaignRequest.getStartDate());
+        endDate = LocalDateTime.parse(campaignRequest.getEndDate());
+    } catch (DateTimeParseException e) {
+        throw new InvalidArgumentException("Invalid date format for start or end date. Use ISO format.", e);
+    }
+
+    if (startDate.isAfter(endDate)) {
+        throw new InvalidArgumentException("Start date cannot be after end date.");
+    }
+
+    // Map the request to a Campaign entity
+    Campaign campaign = new Campaign();
+    campaign.setName(campaignRequest.getName());
+    campaign.setImageUrl(campaignRequest.getImageUrl());
+    campaign.setStartDate(startDate);
+    campaign.setEndDate(endDate);
+    campaign.setStatus(campaignRequest.getStatus());
+    campaign.setBrandId(campaignRequest.getBrandId());
+    campaign.setDescription(campaignRequest.getDescription());
+
+    Campaign savedCampaign = campaignRepo.save(campaign);
+
+    return savedCampaign;
+
+}
 
     public Campaign getCampaignById(Long campaignId) {
         return campaignRepo.findById(campaignId)
