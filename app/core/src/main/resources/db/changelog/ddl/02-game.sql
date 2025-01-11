@@ -86,13 +86,13 @@ VALUES
 
 INSERT INTO quiz_question (game_id, question_number, question_title, question_content, answer_a, answer_b, answer_c, answer_d, correct_answer, answer_explanation)
 VALUES
-    ('1', 1, 'Question title 1 (game 1)', 'Question content 1 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'B', 'Answer explanation 1 (game 1)'),
-    ('1', 3, 'Question title 3 (game 1)', 'Question content 3 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'C', 'Answer explanation 3 (game 1)'),
-    ('1', 5, 'Question title 5 (game 1)', 'Question content 5 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'C', 'Answer explanation 5 (game 1)'),
-    ('1', 2, 'Question title 2 (game 1)', 'Question content 2 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'A', 'Answer explanation 2 (game 1)'),
-    ('1', 4, 'Question title 4 (game 1)', 'Question content 4 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'D', 'Answer explanation 4 (game 1)'),
+    (1, 1, 'Question title 1 (game 1)', 'Question content 1 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'B', 'Answer explanation 1 (game 1)'),
+    (1, 3, 'Question title 3 (game 1)', 'Question content 3 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'C', 'Answer explanation 3 (game 1)'),
+    (1, 5, 'Question title 5 (game 1)', 'Question content 5 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'C', 'Answer explanation 5 (game 1)'),
+    (1, 2, 'Question title 2 (game 1)', 'Question content 2 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'A', 'Answer explanation 2 (game 1)'),
+    (1, 4, 'Question title 4 (game 1)', 'Question content 4 (game 1)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'D', 'Answer explanation 4 (game 1)'),
 
-    ('4', 3, 'Question title 3 (game 4)', 'Question content 3 (game 4)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'C', 'Answer explanation 3 (game 4)'),
-    ('4', 1, 'Question title 1 (game 4)', 'Question content 1 (game 4)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'D', 'Answer explanation 1 (game 4)'),
-    ('4', 4, 'Question title 4 (game 4)', 'Question content 4 (game 4)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'A', 'Answer explanation 4 (game 4)'),
-    ('4', 2, 'Question title 2 (game 4)', 'Question content 2 (game 4)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'B', 'Answer explanation 2 (game 4)');
+    (4, 3, 'Question title 3 (game 4)', 'Question content 3 (game 4)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'C', 'Answer explanation 3 (game 4)'),
+    (4, 1, 'Question title 1 (game 4)', 'Question content 1 (game 4)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'D', 'Answer explanation 1 (game 4)'),
+    (4, 4, 'Question title 4 (game 4)', 'Question content 4 (game 4)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'A', 'Answer explanation 4 (game 4)'),
+    (4, 2, 'Question title 2 (game 4)', 'Question content 2 (game 4)', 'Answer A', 'Answer B', 'Answer C', 'Answer D', 'B', 'Answer explanation 2 (game 4)');

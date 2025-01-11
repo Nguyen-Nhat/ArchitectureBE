@@ -39,6 +39,10 @@ public final class DateTimeUtil {
     }
 
     public static LocalDateTime fromString(String timeStr) {
+        if (timeStr == null || timeStr.isEmpty()) {
+            return null;
+        }
+
         return LocalDateTime.parse(timeStr, formatter);
     }
 }

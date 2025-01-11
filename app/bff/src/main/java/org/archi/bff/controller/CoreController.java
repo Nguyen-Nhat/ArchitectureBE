@@ -1,9 +1,12 @@
 package org.archi.bff.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.archi.bff.request.ShakePhoneRequest;
+import org.archi.bff.response.PlayerInfo;
 import org.archi.bff.request.*;
 import org.archi.bff.request.CreateCampaignRequest;
 import org.archi.bff.response.ResponseData;
+import org.archi.bff.service.AuthService;
 import org.archi.bff.service.CoreService;
 import org.archi.common.core.*;
 import org.slf4j.Logger;
@@ -20,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 public class CoreController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CoreController.class);
     private final CoreService coreService;
+    private final AuthService authService;
 
     @GetMapping("/vouchers")
     @PreAuthorize("hasRole('PLAYER')")
@@ -203,7 +207,7 @@ public class CoreController {
     }
 
     @PostMapping("/games/create")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('BRAND')")
     public ResponseEntity<ResponseData> addGame(@RequestBody AddGameRequest request) {
         /*
           {
@@ -245,8 +249,12 @@ public class CoreController {
             "gameId": 4
           }
         */
+
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        long playerId = Long.parseLong(auth.getName());
+        String accountId = auth.getName();
+        ResponseData responseData = authService.getPlayerProfile(Long.parseLong(accountId));
+        long playerId = ((PlayerInfo) responseData.getData()).getId();
+
         return coreService.shakePhone(playerId, request.getGameId());
     }
 

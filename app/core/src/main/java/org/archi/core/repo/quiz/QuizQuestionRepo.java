@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface QuizQuestionRepo extends JpaRepository<QuizQuestion, Long> {
     List<QuizQuestion> findByGame(Game game);
+    List<QuizQuestion> findByGame_IdOrderByQuestionNumberAsc(Long gameId);
 }

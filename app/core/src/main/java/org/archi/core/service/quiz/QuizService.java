@@ -37,6 +37,10 @@ public class QuizService {
         return quizQuestionRepo.findByGame(game);
     }
 
+    public List<QuizQuestion> getQuizQuestionsByGameId(Long gameId) {
+        return quizQuestionRepo.findByGame_IdOrderByQuestionNumberAsc(gameId);
+    }
+
     public QuizPlayer addQuizPlayer(QuizPlayer quizPlayer) {
         return quizPlayerRepo.save(quizPlayer);
     }
