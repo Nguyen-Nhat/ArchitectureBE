@@ -25,6 +25,9 @@ service AuthService {
   rpc GetAccounts(GetAccountsRequest) returns(GetAccountsResponse);
   rpc GetBrands(GetBrandsRequest) returns(GetBrandsResponse);
   rpc GetPlayers(GetPlayersRequest) returns(GetPlayersResponse);
+  rpc RetrievePlayer(RetrievePlayerRequest) returns(RetrievePlayerResponse);
+  rpc GetPlayerByEmail(GetPlayerByEmailRequest) returns(GetPlayerByEmailResponse);
+  rpc GetPlayerByPhoneNumber(GetPlayerByPhoneNumberRequest) returns(GetPlayerByPhoneNumberResponse);
 }
 
 message GetPlayersRequest {
@@ -281,4 +284,33 @@ message GetPlayerInfoResponse {
   string birthDate = 6;
   string gender = 7;
   string facebook = 8;
+}
+
+
+message RetrievePlayerRequest {
+  int64 id = 1; // account id.
+}
+message RetrievePlayerResponse {
+  int64 status = 1;
+  string message = 2;
+  Player player = 3;
+}
+
+
+message GetPlayerByEmailRequest {
+  string email = 1;
+}
+message GetPlayerByEmailResponse {
+  int64 status = 1;
+  string message = 2;
+  Player player = 3;
+}
+
+message GetPlayerByPhoneNumberRequest {
+  string phoneNumber = 1;
+}
+message GetPlayerByPhoneNumberResponse  {
+  int64 status = 1;
+  string message = 2;
+  Player player = 3;
 }

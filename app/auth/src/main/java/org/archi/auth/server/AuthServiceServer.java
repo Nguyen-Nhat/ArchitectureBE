@@ -226,4 +226,32 @@ public class AuthServiceServer extends AuthServiceGrpc.AuthServiceImplBase {
     responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
+
+  @Override
+  public void retrievePlayer(RetrievePlayerRequest request, StreamObserver<RetrievePlayerResponse> responseObserver) {
+    RetrievePlayerResponse response = authenticationService.retrievePlayer(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  @Override
+  public void getPlayerByUsername(GetPlayerByUsernameRequest request, StreamObserver<GetPlayerByUsernameResponse> responseObserver) {
+    GetPlayerByUsernameResponse response = authenticationService.getPlayerByUsername(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  @Override
+  public void getPlayerByEmail(GetPlayerByEmailRequest request, StreamObserver<GetPlayerByEmailResponse> responseObserver) {
+    GetPlayerByEmailResponse response = authenticationService.getPlayerByEmail(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
+
+  @Override
+  public void getPlayerByPhoneNumber(GetPlayerByPhoneNumberRequest request, StreamObserver<GetPlayerByPhoneNumberResponse> responseObserver) {
+    GetPlayerByPhoneNumberResponse response = authenticationService.getPlayerByPhoneNumber(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
 }

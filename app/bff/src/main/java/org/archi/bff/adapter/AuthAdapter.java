@@ -84,4 +84,20 @@ public class AuthAdapter {
   public GetPlayersResponse getPlayers(GetPlayersRequest request) {
     return authServiceClient.getPlayers(request);
   }
+
+  public RetrievePlayerResponse retrievePlayerProfile(RetrievePlayerRequest request) {
+    return authServiceClient.retrievePlayer(request);
+  }
+
+  public GetPlayerByUsernameResponse getPlayerByUsername(GetPlayerByUsernameRequest request) {
+    return authServiceClient.getPlayerByUsername(request);
+  }
+
+  public GetPlayerByEmailResponse getPlayerByEmail(GetPlayerByEmailRequest emailRequest) {
+    return authServiceClient.getPlayerByEmail(emailRequest);
+  }
+
+  public GetPlayerByPhoneNumberResponse getPlayerByPhoneNumber(GetPlayerByPhoneNumberRequest phoneNumberRequest) {
+    return authServiceClient.getPlayerByPhoneNumber(phoneNumberRequest);
+  }
 }

@@ -36,89 +36,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetPlayerInfoResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8: {
-
-            status_ = input.readInt64();
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            message_ = s;
-            break;
-          }
-          case 24: {
-
-            id_ = input.readInt64();
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            avatar_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            birthDate_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            gender_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            facebook_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.archi.common.auth.AuthProto.internal_static_GetPlayerInfoResponse_descriptor;
@@ -399,28 +316,28 @@ private static final long serialVersionUID = 0L;
     if (status_ != 0L) {
       output.writeInt64(1, status_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
     if (id_ != 0L) {
       output.writeInt64(3, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
-    if (!getAvatarBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatar_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, avatar_);
     }
-    if (!getBirthDateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(birthDate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, birthDate_);
     }
-    if (!getGenderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, gender_);
     }
-    if (!getFacebookBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(facebook_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, facebook_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -433,29 +350,29 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, status_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
     if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
-    if (!getAvatarBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatar_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, avatar_);
     }
-    if (!getBirthDateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(birthDate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, birthDate_);
     }
-    if (!getGenderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, gender_);
     }
-    if (!getFacebookBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(facebook_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, facebook_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -486,7 +403,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGender())) return false;
     if (!getFacebook()
         .equals(other.getFacebook())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -515,7 +432,7 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getGender().hashCode();
     hash = (37 * hash) + FACEBOOK_FIELD_NUMBER;
     hash = (53 * hash) + getFacebook().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -632,18 +549,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.archi.common.auth.GetPlayerInfoResponse.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -776,7 +688,7 @@ private static final long serialVersionUID = 0L;
         facebook_ = other.facebook_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -791,17 +703,70 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.archi.common.auth.GetPlayerInfoResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              status_ = input.readInt64();
+
+              break;
+            } // case 8
+            case 18: {
+              message_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 18
+            case 24: {
+              id_ = input.readInt64();
+
+              break;
+            } // case 24
+            case 34: {
+              name_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 34
+            case 42: {
+              avatar_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 42
+            case 50: {
+              birthDate_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 50
+            case 58: {
+              gender_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 58
+            case 66: {
+              facebook_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 66
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.archi.common.auth.GetPlayerInfoResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1355,7 +1320,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetPlayerInfoResponse(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

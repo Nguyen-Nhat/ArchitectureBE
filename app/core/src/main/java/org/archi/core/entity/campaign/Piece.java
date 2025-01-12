@@ -1,21 +1,25 @@
+
 package org.archi.core.entity.campaign;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
-@Table(name = "piece")
-@Data
+@Getter
+@Setter
+@Table(name = "pieces")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Piece implements Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "piece_id")
     private Long id;
+    private String image;
+    private Integer ordinal;
+    private Integer quantity;
 
-    @Column(name = "image_url")
-    private String imageUrl;
+    @ManyToOne(targetEntity = Puzzle.class)
+    @JoinColumn(name = "puzzle_id", referencedColumnName = "id")
+    private Puzzle puzzle;
 }
