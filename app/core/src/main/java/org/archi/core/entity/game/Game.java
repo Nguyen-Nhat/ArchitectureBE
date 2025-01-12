@@ -33,8 +33,5 @@ public class Game {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "campaign_id", nullable = false)
     private Campaign campaign;
-
-    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<GamePlayer> gamePlayers;
 }
 
