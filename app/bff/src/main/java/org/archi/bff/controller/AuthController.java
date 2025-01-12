@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import org.archi.bff.request.*;
 import org.archi.bff.response.ResponseData;
 import org.archi.bff.service.AuthService;
+import org.archi.bff.service.CoreService;
+import org.archi.common.core.CreateGameTurnRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class AuthController {
   private final AuthService authService;
+  private final CoreService coreService;
 
   @PostMapping(value = "/register")
   public ResponseEntity<ResponseData> register(@RequestBody RegisterRequest request) {
@@ -28,6 +31,10 @@ public class AuthController {
         }
     */
     ResponseData responseData = authService.register(request);
+    /// Tạo mới một row cho game turn.
+    if (responseData.getStatus() == 201 && request.getRole().equalsIgnoreCase("player")) {
+      coreService.createGameTurn(request.getUsername());
+    }
     return ResponseEntity.ok(responseData);
   }
 
@@ -105,7 +112,6 @@ public class AuthController {
   /// done
   @PreAuthorize("hasRole('ADMIN')")
   @PatchMapping(value = "/accounts/{accountId}", consumes = "application/json")
-  /// done
   public ResponseEntity<ResponseData> updateAccount(@PathVariable String accountId, @RequestBody UpdatedAccount request) {
     ResponseData responseData = authService.updateAccount(Long.parseLong(accountId), request);
     return ResponseEntity.ok(responseData);

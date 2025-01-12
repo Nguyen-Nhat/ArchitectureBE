@@ -6,7 +6,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Builder
 public class UpdatedAccount {
   private String email;
   private String phoneNumber;

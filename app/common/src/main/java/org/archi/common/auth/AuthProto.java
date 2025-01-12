@@ -219,6 +219,46 @@ public final class AuthProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GetPlayerInfoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RetrievePlayerRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RetrievePlayerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RetrievePlayerResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RetrievePlayerResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPlayerByUsernameRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPlayerByUsernameRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPlayerByUsernameResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPlayerByUsernameResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPlayerByEmailRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPlayerByEmailRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPlayerByEmailResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPlayerByEmailResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPlayerByPhoneNumberRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPlayerByPhoneNumberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetPlayerByPhoneNumberResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetPlayerByPhoneNumberResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -330,39 +370,61 @@ public final class AuthProto {
       "\003\"\227\001\n\025GetPlayerInfoResponse\022\016\n\006status\030\001 " +
       "\001(\003\022\017\n\007message\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\014\n\004name" +
       "\030\004 \001(\t\022\016\n\006avatar\030\005 \001(\t\022\021\n\tbirthDate\030\006 \001(" +
-      "\t\022\016\n\006gender\030\007 \001(\t\022\020\n\010facebook\030\010 \001(\t2\301\t\n\013" +
-      "AuthService\022;\n\014PostRegister\022\024.PostRegist" +
-      "erRequest\032\025.PostRegisterResponse\0222\n\tPost" +
-      "Login\022\021.PostLoginRequest\032\022.PostLoginResp" +
-      "onse\0225\n\nPostLogout\022\022.PostLogoutRequest\032\023" +
-      ".PostLogoutResponse\022G\n\020PostRefreshToken\022" +
-      "\030.PostRefreshTokenRequest\032\031.PostRefreshT" +
-      "okenResponse\022A\n\016GetVerifyEmail\022\026.GetVeri" +
-      "fyEmailRequest\032\027.GetVerifyEmailResponse\022" +
-      "D\n\017PostVerifyToken\022\027.PostVerifyTokenRequ" +
-      "est\032\030.PostVerifyTokenResponse\022;\n\014GetBran" +
-      "dInfo\022\024.GetBrandInfoRequest\032\025.GetBrandIn" +
-      "foResponse\022>\n\rGetPlayerInfo\022\025.GetPlayerI" +
-      "nfoRequest\032\026.GetPlayerInfoResponse\022A\n\016Ge" +
-      "tAccountInfo\022\026.GetAccountInfoRequest\032\027.G" +
-      "etAccountInfoResponse\022J\n\021PostCreateAccou" +
-      "nt\022\031.PostCreateAccountRequest\032\032.PostCrea" +
-      "teAccountResponse\022>\n\rDeleteAccount\022\025.Del" +
-      "eteAccountRequest\032\026.DeleteAccountRespons" +
-      "e\022G\n\020PutUpdateAccount\022\030.PutUpdateAccount" +
-      "Request\032\031.PutUpdateAccountResponse\022D\n\017Ge" +
-      "tBrandProfile\022\027.GetBrandProfileRequest\032\030" +
-      ".GetBrandProfileResponse\0228\n\013UpdateBrand\022" +
-      "\023.UpdateBrandRequest\032\024.UpdateBrandRespon" +
-      "se\022A\n\020GetPlayerProfile\022\025.PlayerProfileRe" +
-      "quest\032\026.PlayerProfileResponse\022;\n\014UpdateP" +
-      "layer\022\024.UpdatePlayerRequest\032\025.UpdatePlay" +
-      "erResponse\0228\n\013GetAccounts\022\023.GetAccountsR" +
-      "equest\032\024.GetAccountsResponse\0222\n\tGetBrand" +
-      "s\022\021.GetBrandsRequest\032\022.GetBrandsResponse" +
-      "\0225\n\nGetPlayers\022\022.GetPlayersRequest\032\023.Get" +
-      "PlayersResponse2\017\n\rLogoutServiceB$\n\025org." +
-      "archi.common.authB\tAuthProtoP\001b\006proto3"
+      "\t\022\016\n\006gender\030\007 \001(\t\022\020\n\010facebook\030\010 \001(\t\"#\n\025R" +
+      "etrievePlayerRequest\022\n\n\002id\030\001 \001(\003\"R\n\026Retr" +
+      "ievePlayerResponse\022\016\n\006status\030\001 \001(\003\022\017\n\007me" +
+      "ssage\030\002 \001(\t\022\027\n\006player\030\003 \001(\0132\007.Player\".\n\032" +
+      "GetPlayerByUsernameRequest\022\020\n\010username\030\001" +
+      " \001(\t\"W\n\033GetPlayerByUsernameResponse\022\016\n\006s" +
+      "tatus\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\027\n\006player\030\003" +
+      " \001(\0132\007.Player\"(\n\027GetPlayerByEmailRequest" +
+      "\022\r\n\005email\030\001 \001(\t\"T\n\030GetPlayerByEmailRespo" +
+      "nse\022\016\n\006status\030\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\027\n\006" +
+      "player\030\003 \001(\0132\007.Player\"4\n\035GetPlayerByPhon" +
+      "eNumberRequest\022\023\n\013phoneNumber\030\001 \001(\t\"Z\n\036G" +
+      "etPlayerByPhoneNumberResponse\022\016\n\006status\030" +
+      "\001 \001(\003\022\017\n\007message\030\002 \001(\t\022\027\n\006player\030\003 \001(\0132\007" +
+      ".Player2\372\013\n\013AuthService\022;\n\014PostRegister\022" +
+      "\024.PostRegisterRequest\032\025.PostRegisterResp" +
+      "onse\0222\n\tPostLogin\022\021.PostLoginRequest\032\022.P" +
+      "ostLoginResponse\0225\n\nPostLogout\022\022.PostLog" +
+      "outRequest\032\023.PostLogoutResponse\022G\n\020PostR" +
+      "efreshToken\022\030.PostRefreshTokenRequest\032\031." +
+      "PostRefreshTokenResponse\022A\n\016GetVerifyEma" +
+      "il\022\026.GetVerifyEmailRequest\032\027.GetVerifyEm" +
+      "ailResponse\022D\n\017PostVerifyToken\022\027.PostVer" +
+      "ifyTokenRequest\032\030.PostVerifyTokenRespons" +
+      "e\022;\n\014GetBrandInfo\022\024.GetBrandInfoRequest\032" +
+      "\025.GetBrandInfoResponse\022>\n\rGetPlayerInfo\022" +
+      "\025.GetPlayerInfoRequest\032\026.GetPlayerInfoRe" +
+      "sponse\022A\n\016GetAccountInfo\022\026.GetAccountInf" +
+      "oRequest\032\027.GetAccountInfoResponse\022J\n\021Pos" +
+      "tCreateAccount\022\031.PostCreateAccountReques" +
+      "t\032\032.PostCreateAccountResponse\022>\n\rDeleteA" +
+      "ccount\022\025.DeleteAccountRequest\032\026.DeleteAc" +
+      "countResponse\022G\n\020PutUpdateAccount\022\030.PutU" +
+      "pdateAccountRequest\032\031.PutUpdateAccountRe" +
+      "sponse\022D\n\017GetBrandProfile\022\027.GetBrandProf" +
+      "ileRequest\032\030.GetBrandProfileResponse\0228\n\013" +
+      "UpdateBrand\022\023.UpdateBrandRequest\032\024.Updat" +
+      "eBrandResponse\022A\n\020GetPlayerProfile\022\025.Pla" +
+      "yerProfileRequest\032\026.PlayerProfileRespons" +
+      "e\022;\n\014UpdatePlayer\022\024.UpdatePlayerRequest\032" +
+      "\025.UpdatePlayerResponse\0228\n\013GetAccounts\022\023." +
+      "GetAccountsRequest\032\024.GetAccountsResponse" +
+      "\0222\n\tGetBrands\022\021.GetBrandsRequest\032\022.GetBr" +
+      "andsResponse\0225\n\nGetPlayers\022\022.GetPlayersR" +
+      "equest\032\023.GetPlayersResponse\022A\n\016RetrieveP" +
+      "layer\022\026.RetrievePlayerRequest\032\027.Retrieve" +
+      "PlayerResponse\022P\n\023GetPlayerByUsername\022\033." +
+      "GetPlayerByUsernameRequest\032\034.GetPlayerBy" +
+      "UsernameResponse\022G\n\020GetPlayerByEmail\022\030.G" +
+      "etPlayerByEmailRequest\032\031.GetPlayerByEmai" +
+      "lResponse\022Y\n\026GetPlayerByPhoneNumber\022\036.Ge" +
+      "tPlayerByPhoneNumberRequest\032\037.GetPlayerB" +
+      "yPhoneNumberResponse2\017\n\rLogoutServiceB$\n" +
+      "\025org.archi.common.authB\tAuthProtoP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -615,6 +677,54 @@ public final class AuthProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetPlayerInfoResponse_descriptor,
         new java.lang.String[] { "Status", "Message", "Id", "Name", "Avatar", "BirthDate", "Gender", "Facebook", });
+    internal_static_RetrievePlayerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_RetrievePlayerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RetrievePlayerRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_RetrievePlayerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(42);
+    internal_static_RetrievePlayerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RetrievePlayerResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Player", });
+    internal_static_GetPlayerByUsernameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_GetPlayerByUsernameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPlayerByUsernameRequest_descriptor,
+        new java.lang.String[] { "Username", });
+    internal_static_GetPlayerByUsernameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_GetPlayerByUsernameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPlayerByUsernameResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Player", });
+    internal_static_GetPlayerByEmailRequest_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_GetPlayerByEmailRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPlayerByEmailRequest_descriptor,
+        new java.lang.String[] { "Email", });
+    internal_static_GetPlayerByEmailResponse_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_GetPlayerByEmailResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPlayerByEmailResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Player", });
+    internal_static_GetPlayerByPhoneNumberRequest_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_GetPlayerByPhoneNumberRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPlayerByPhoneNumberRequest_descriptor,
+        new java.lang.String[] { "PhoneNumber", });
+    internal_static_GetPlayerByPhoneNumberResponse_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_GetPlayerByPhoneNumberResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetPlayerByPhoneNumberResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", "Player", });
     com.google.protobuf.WrappersProto.getDescriptor();
   }
 
