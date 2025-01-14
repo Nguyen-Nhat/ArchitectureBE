@@ -225,7 +225,7 @@ public class AuthService {
             .id(response.getId())
             .name(response.getName())
             .avatar(response.getAvatar())
-            .birthDate(Date.valueOf(response.getBirthDate()))
+            .birthDate(response.getBirthDate().isEmpty() ? null : Date.valueOf(response.getBirthDate()))
             .gender(response.getGender())
             .facebook(response.getFacebook())
             .build());
