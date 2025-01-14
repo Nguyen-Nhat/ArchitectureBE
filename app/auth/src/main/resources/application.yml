@@ -1,8 +1,6 @@
 grpc:
   server:
     port: 9444
-server:
-  port: 8081
 
 management:
   endpoints:
@@ -27,8 +25,6 @@ management:
 spring:
   application:
     name: auth
-  profiles:
-    active: dev
   mail:
     host: smtp.gmail.com
     port: 587
@@ -63,7 +59,7 @@ spring:
 application:
   security:
     jwt:
-      secret-key: $2a$12$iP3.JTboJiEaRDe3lLx4oOkZbBCf8Yf.7SO8UR8D8g2NWvNL3m0nu
-      expiration: 86400000 # a day
+      secret-key: {APPLICATION_SECURITY_JWT_SECRET_KEY | $2a$12$iP3.JTboJiEaRDe3lLx4oOkZbBCf8Yf.7SO8UR8D8g2NWvNL3m0nu}
+      expiration: {APPLICATION_SECURITY_JWT_EXPIRATION | 86400000}
       refresh-token:
-        expiration: 604800000 # 7 days
+        expiration: {APPLICATION_SECURITY_JWT_REFRESH_TOKEN_EXPIRATION | 604800000}
