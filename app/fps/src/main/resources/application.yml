@@ -26,8 +26,8 @@ management:
       probability: 1
 aws:
   bucket:
-    name: { AWS_BUCKET_NAME | software-architecture-s3 }
-    access_key: {AWS_BUCKET_AK | AKIA47CRXZEFI2GQPOHK}
-    secret_key: {AWS_BUCKET_SK | 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}
+    name: ${ AWS_BUCKET_NAME:software-architecture-s3 }
+    access_key: ${AWS_BUCKET_AK:AKIA47CRXZEFI2GQPOHK}
+    secret_key: ${AWS_BUCKET_SK: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}
   cloud_front:
-    distribution_domain: {AWS_CLOUDFRONT_DOMAIN | d17qqou2670rat.cloudfront.net}
+    distribution_domain: ${AWS_CLOUDFRONT_DOMAIN:d17qqou2670rat.cloudfront.net}
