@@ -14,9 +14,7 @@ public class VoucherType {
     private Long id;
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
     private Double value;
-    // the url to the image of voucher
     private String image;
     private String description;
     private Long brandId;

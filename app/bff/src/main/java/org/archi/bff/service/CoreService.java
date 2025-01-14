@@ -48,11 +48,11 @@ public class CoreService {
     }
   }
 
-  public ResponseEntity<ResponseData> getVoucherTypes(Long playerId) {
+  public ResponseEntity<ResponseData> getVoucherTypes(long brandId) {
     try {
       // Create gRPC request for voucher types
       GetVoucherTypesReq request = GetVoucherTypesReq.newBuilder()
-              .setBrandId(playerId)
+              .setBrandId(brandId)
               .build();
 
       GetVoucherTypesRes response = coreAdapter.getVoucherTypes(request);

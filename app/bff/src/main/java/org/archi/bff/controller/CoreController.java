@@ -35,10 +35,8 @@ public class CoreController {
 
   @GetMapping("/voucher-types")
   @PreAuthorize("hasRole('BRAND')")
-  public ResponseEntity<ResponseData> getVoucherTypes() {
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    Long playerId = Long.valueOf(authentication.getName());
-    return coreService.getVoucherTypes(playerId);
+  public ResponseEntity<ResponseData> getVoucherTypes(@RequestParam Long brandId) {
+    return coreService.getVoucherTypes(brandId);
   }
 
   @PostMapping("/voucher-types/create")
