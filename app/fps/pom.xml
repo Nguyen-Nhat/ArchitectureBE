@@ -64,20 +64,23 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>annotationProcessor</scope>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>fps</finalName>
+		<finalName>auth</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+				</configuration>
 				<executions>
 					<execution>
 						<configuration>
-							<mainClass>org.archi.fps.FpsApplication</mainClass>
+							<mainClass>org.archi.auth.AuthApplication</mainClass>
 						</configuration>
 					</execution>
 				</executions>

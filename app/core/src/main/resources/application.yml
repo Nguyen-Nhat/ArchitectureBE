@@ -3,11 +3,11 @@ spring:
     name: core
   data:
     redis:
-      host: localhost
+      host: 13.210.238.162
       port: 6379
 
   rabbitmq:
-    host: localhost
+    host: 13.210.238.162
     port: 5672
     username: admin
     password: admin

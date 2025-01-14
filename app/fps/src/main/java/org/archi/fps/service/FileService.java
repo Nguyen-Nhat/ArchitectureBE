@@ -31,7 +31,6 @@ public class FileService {
             }
 
             String objectKey = generateRandomName(file.getOriginalFilename());
-
             PutObjectRequest request = PutObjectRequest.builder()
                     .bucket(bucketName)
                     .key(objectKey)
@@ -44,6 +43,7 @@ public class FileService {
 
             return generateFileUrl(objectKey);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }
