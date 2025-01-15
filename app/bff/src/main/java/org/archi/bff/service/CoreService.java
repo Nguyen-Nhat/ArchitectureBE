@@ -66,7 +66,7 @@ public class CoreService {
                                       .name(vcType.getName())
                                       .imageUrl(vcType.getImageUrl())
                                       .description(vcType.getDescription())
-                                      .value((long) vcType.getValue())
+                                      .value(vcType.getValue())
                                       .build())
                       .collect(Collectors.toList())
       );
@@ -90,7 +90,7 @@ public class CoreService {
               .setBrandId(brandId)
               .setDescription(request.getDescription())
               .setName(request.getName())
-              .setValue(request.getValue())
+              .setValue((Double)request.getValue())
               .setImageUrl(request.getImageUrl())
               .build();
 

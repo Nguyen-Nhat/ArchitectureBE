@@ -1,7 +1,11 @@
 package org.archi.bff.request;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Data
 public class CreateVoucherType {
     private String name;

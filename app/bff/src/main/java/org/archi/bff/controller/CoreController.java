@@ -200,7 +200,6 @@ public class CoreController {
   }
 
   @GetMapping("/campaigns/{campaignId}/games")
-  @PreAuthorize("hasAnyRole('ADMIN', 'PLAYER')")
   public ResponseEntity<ResponseData> getGamesByCampaign(@PathVariable("campaignId") long campaignId) {
     return coreService.getGamesByCampaign(campaignId);
   }
