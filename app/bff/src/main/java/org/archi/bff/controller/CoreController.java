@@ -35,10 +35,8 @@ public class CoreController {
 
   @GetMapping("/voucher-types")
   @PreAuthorize("hasRole('BRAND')")
-  public ResponseEntity<ResponseData> getVoucherTypes() {
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    Long playerId = Long.valueOf(authentication.getName());
-    return coreService.getVoucherTypes(playerId);
+  public ResponseEntity<ResponseData> getVoucherTypes(@RequestParam Long brandId) {
+    return coreService.getVoucherTypes(brandId);
   }
 
   @PostMapping("/voucher-types/create")
@@ -202,7 +200,6 @@ public class CoreController {
   }
 
   @GetMapping("/campaigns/{campaignId}/games")
-  @PreAuthorize("hasAnyRole('ADMIN', 'PLAYER')")
   public ResponseEntity<ResponseData> getGamesByCampaign(@PathVariable("campaignId") long campaignId) {
     return coreService.getGamesByCampaign(campaignId);
   }

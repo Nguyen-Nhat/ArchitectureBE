@@ -48,11 +48,11 @@ public class CoreService {
     }
   }
 
-  public ResponseEntity<ResponseData> getVoucherTypes(Long playerId) {
+  public ResponseEntity<ResponseData> getVoucherTypes(long brandId) {
     try {
       // Create gRPC request for voucher types
       GetVoucherTypesReq request = GetVoucherTypesReq.newBuilder()
-              .setBrandId(playerId)
+              .setBrandId(brandId)
               .build();
 
       GetVoucherTypesRes response = coreAdapter.getVoucherTypes(request);
@@ -66,7 +66,7 @@ public class CoreService {
                                       .name(vcType.getName())
                                       .imageUrl(vcType.getImageUrl())
                                       .description(vcType.getDescription())
-                                      .value((long) vcType.getValue())
+                                      .value(vcType.getValue())
                                       .build())
                       .collect(Collectors.toList())
       );
@@ -90,7 +90,7 @@ public class CoreService {
               .setBrandId(brandId)
               .setDescription(request.getDescription())
               .setName(request.getName())
-              .setValue(request.getValue())
+              .setValue((Double)request.getValue())
               .setImageUrl(request.getImageUrl())
               .build();
 

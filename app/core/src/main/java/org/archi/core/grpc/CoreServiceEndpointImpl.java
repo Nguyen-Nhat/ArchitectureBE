@@ -40,9 +40,18 @@ public class CoreServiceEndpointImpl extends CoreServiceGrpc.CoreServiceImplBase
 
   @Override
   public void createVoucherType(CreateVoucherTypeRequest request, StreamObserver<CreateVoucherTypeResponse> responseObserver) {
-    CreateVoucherTypeResponse response = voucherService.createVoucherType(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+
+    try {
+      CreateVoucherTypeResponse response = voucherService.createVoucherType(request);
+      responseObserver.onNext(response);
+      responseObserver.onCompleted();
+    }catch (InvalidArgumentException e) {
+      // Example of specific error handling
+      responseObserver.onError(Status.INVALID_ARGUMENT
+              .withDescription("Invalid input provided: " + e.getMessage())
+              .withCause(e)
+              .asRuntimeException());
+    }
   }
 
   @Override

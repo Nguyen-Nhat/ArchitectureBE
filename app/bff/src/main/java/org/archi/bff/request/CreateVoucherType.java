@@ -1,14 +1,17 @@
 package org.archi.bff.request;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Data
-@Builder
 public class CreateVoucherType {
     private String name;
-    private double value;
+    private Double value;
     private String imageUrl;
     private String description;
     private Long brandId;
+
 }
