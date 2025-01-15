@@ -2,7 +2,7 @@ spring:
   application:
     name: bff
   rabbitmq:
-    host: 13.210.238.162
+    host: localhost
     port: 5672
     username: admin
     password: admin

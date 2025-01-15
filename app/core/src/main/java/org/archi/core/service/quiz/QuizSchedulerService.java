@@ -52,7 +52,7 @@ public class QuizSchedulerService {
 
         for (int i = 0; i < questions.size(); i++) {
             QuizQuestion question = questions.get(i);
-            long questionDelay = i * 20L;
+            long questionDelay = i * 40L;
 
             executorService.schedule(() -> {
                 String key = "game:" + quiz.getGameId() + ":status";
@@ -71,14 +71,14 @@ public class QuizSchedulerService {
                 rabbitTemplate.convertAndSend("quiz.answer.exchange", "",
                         new ScheduledCorrectAnswerDTO(quiz.getGameId(), quizMapper.toQuizAnswerDTO(question)));
 
-            }, questionDelay + 10, TimeUnit.SECONDS);
+            }, questionDelay + 20, TimeUnit.SECONDS);
         }
 
         executorService.schedule(() -> {
             results.set(quizPlayingService.calculateResults(quiz.getGameId()));
-        }, (questions.size() * 20L) - 5L, TimeUnit.SECONDS);
+        }, (questions.size() * 40L) - 10L, TimeUnit.SECONDS);
 
-        executorService.schedule(() -> endQuiz(quiz.getGameId(), results), questions.size() * 20L, TimeUnit.SECONDS);
+        executorService.schedule(() -> endQuiz(quiz.getGameId(), results), questions.size() * 40L, TimeUnit.SECONDS);
 
     }
 
