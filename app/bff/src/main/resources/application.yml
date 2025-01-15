@@ -12,10 +12,10 @@ server:
 grpc:
   client:
     coreService:
-      address: localhost:9443
+      address: ${GRPC_CLIENT_CORE_ADDRESS:localhost:9443}
       negotiation-type: plaintext
     authService:
-      address: localhost:9444
+      address: ${GRPC_CLIENT_AUTH_ADDRESS:localhost:9444}
       negotiation-type: plaintext
 
 management:
