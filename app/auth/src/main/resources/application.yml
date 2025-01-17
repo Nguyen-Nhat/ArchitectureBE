@@ -2,6 +2,9 @@ grpc:
   server:
     port: 9444
 
+server:
+  port: 9999
+
 management:
   endpoints:
     web:
